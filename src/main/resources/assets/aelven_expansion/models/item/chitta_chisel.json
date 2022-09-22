@@ -1,0 +1,6 @@
+{
+	"parent": "item/handheld",
+	"textures": {
+		"layer0": "aelven_expansion:items/chitta_chisel"
+	}
+}

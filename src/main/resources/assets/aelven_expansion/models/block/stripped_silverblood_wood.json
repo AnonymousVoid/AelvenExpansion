@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "aelven_expansion:blocks/stripped_silverblood_log",
+    "side": "aelven_expansion:blocks/stripped_silverblood_log"
+  }
+}

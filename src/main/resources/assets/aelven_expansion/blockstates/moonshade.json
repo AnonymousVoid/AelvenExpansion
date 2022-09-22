@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "aelven_expansion:block/moonshade_bottom"
+    },
+    "half=upper": {
+      "model": "aelven_expansion:block/moonshade_top"
+    }
+  }
+}

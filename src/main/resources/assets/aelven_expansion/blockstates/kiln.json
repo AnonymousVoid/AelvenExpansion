@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "aelven_expansion:block/kiln" },
+    "facing=east": { "model": "aelven_expansion:block/kiln", "y": 90 },
+    "facing=south": { "model": "aelven_expansion:block/kiln", "y": 180 },
+    "facing=west": { "model": "aelven_expansion:block/kiln", "y": 270 }
+  }
+}

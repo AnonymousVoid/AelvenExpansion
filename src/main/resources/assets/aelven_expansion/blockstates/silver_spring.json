@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "aelven_expansion:block/silver_spring_bottom"
+    },
+    "half=upper": {
+      "model": "aelven_expansion:block/silver_spring_top"
+    }
+  }
+}

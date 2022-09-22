@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "aelven_expansion:blocks/moon_fir_sapling"
+  }
+}

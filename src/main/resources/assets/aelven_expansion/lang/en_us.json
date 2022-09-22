@@ -1,0 +1,57 @@
+{
+	"block.aelven_expansion.moon_fir_log": "Moon Fir Log",
+	"block.aelven_expansion.stripped_moon_fir_log": "Stripped Moon Fir Log",
+	"block.aelven_expansion.moon_fir_wood": "Moon Fir Wood",
+	"block.aelven_expansion.stripped_moon_fir_wood": "Stripped Moon Fir Wood",
+	"block.aelven_expansion.moon_fir_beams": "Moon Fir Beams",
+	"block.aelven_expansion.stripped_moon_fir_beams": "Stripped Moon Fir Beams",
+	"block.aelven_expansion.moon_fir_planks": "Moon Fir Planks",
+	"block.aelven_expansion.moon_fir_sapling": "Moon Fir Sapling",
+	"block.aelven_expansion.moon_fir_leaves": "Moon Fir Leaves",
+
+	"block.aelven_expansion.silverblood_log": "Silverblood Log",
+	"block.aelven_expansion.stripped_silverblood_log": "Stripped Silverblood Log",
+	"block.aelven_expansion.silverblood_wood": "Silverblood Wood",
+	"block.aelven_expansion.stripped_silverblood_wood": "Stripped Silverblood Wood",
+	"block.aelven_expansion.silverblood_planks": "Silverblood Planks",
+
+	"block.aelven_expansion.moon_bloom": "Moon Bloom",
+	"block.aelven_expansion.moonshade": "Moonshade",
+	"block.aelven_expansion.silver_marigold": "Silver Marigold",
+	"block.aelven_expansion.silver_spring": "Silver Spring",
+	"block.aelven_expansion.peach_lavender": "Peach Lavender",
+	"block.aelven_expansion.peach_lilac": "Peach Lilac",
+
+	"item.aelven_expansion.chitta_chisel": "Chitta Chisel",
+
+	"block.aelven_expansion.cobbled_chitta": "Cobbled Chitta",
+	"block.aelven_expansion.cracked_chitta": "Cracked Chitta",
+	"block.aelven_expansion.chitta": "Chitta",
+	"block.aelven_expansion.chitta_bricks": "Chitta Bricks",
+	"block.aelven_expansion.carved_chitta_bricks": "Carved Chitta Bricks",
+	"block.aelven_expansion.carved_chitta_runed_bricks": "Runed Carved Chitta Bricks",
+	"block.aelven_expansion.chitta_tiles": "Chitta Tiles",
+	"block.aelven_expansion.carved_chitta_aelven_tiles": "Carved Chitta Tiles (Aelven)",
+	"block.aelven_expansion.carved_chitta_enchant_tiles": "Carved Chitta Tiles (Enchant)",
+	"block.aelven_expansion.carved_chitta_glyphic_tiles": "Carved Chitta Tiles (Glyphic)",
+	"block.aelven_expansion.carved_chitta_norse_tiles": "Carved Chitta Tiles (Norse)",
+	"block.aelven_expansion.carved_chitta_aelven_runed_tiles": "Runed Carved Chitta Tiles (Aelven)",
+	"block.aelven_expansion.carved_chitta_enchant_runed_tiles": "Runed Carved Chitta Tiles (Enchant)",
+	"block.aelven_expansion.carved_chitta_glyphic_runed_tiles": "Runed Carved Chitta Tiles (Glyphic)",
+	"block.aelven_expansion.carved_chitta_norse_runed_tiles": "Runed Carved Chitta Tiles (Norse)",
+	"block.aelven_expansion.chitta_large_tile": "Chitta Large Tile",
+	"block.aelven_expansion.carved_chitta_large_tile": "Carved Chitta Large Tile",
+	"block.aelven_expansion.carved_chitta_runed_large_tile": "Runed Carved Chitta Large Tile",
+
+	"block.aelven_expansion.kiln": "Kiln",
+
+	"item.aelven_expansion.elerium": "Elerium",
+	"item.aelven_expansion.elerium_paste": "Elerium Paste",
+
+	"block.aelven_expansion.elerium_ore": "Elerium Ore",
+	"block.aelven_expansion.elerium_block": "Block of Elerium",
+
+
+
+	"itemGroup.aelven_expansion_tab": "Aelven Expansion"
+}
