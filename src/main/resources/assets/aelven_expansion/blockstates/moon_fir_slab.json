@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "aelven_expansion:block/moon_fir_slab"
+    },
+    "type=double": {
+      "model": "aelven_expansion:block/moon_fir_planks"
+    },
+    "type=top": {
+      "model": "aelven_expansion:block/moon_fir_slab_top"
+    }
+  }
+}

@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cube_column",
   "textures": {
-    "end": "aelven_expansion:blocks/stripped_moon_fir_beams_top",
-    "side": "aelven_expansion:blocks/stripped_moon_fir_beams"
+    "end": "aelven_expansion:block/stripped_moon_fir_beams_top",
+    "side": "aelven_expansion:block/stripped_moon_fir_beams"
   }
 }

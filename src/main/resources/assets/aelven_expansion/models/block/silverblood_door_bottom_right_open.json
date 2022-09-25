@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_right_open",
+  "textures": {
+    "bottom": "aelven_expansion:block/silverblood_door_bottom",
+    "top": "aelven_expansion:block/silverblood_door_top"
+  }
+}

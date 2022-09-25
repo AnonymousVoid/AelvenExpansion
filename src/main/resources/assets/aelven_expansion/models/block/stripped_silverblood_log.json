@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cube_column",
   "textures": {
-    "end": "aelven_expansion:blocks/stripped_silverblood_log_top",
-    "side": "aelven_expansion:blocks/stripped_silverblood_log"
+    "end": "aelven_expansion:block/stripped_silverblood_log_top",
+    "side": "aelven_expansion:block/stripped_silverblood_log"
   }
 }

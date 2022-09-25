@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "aelven_expansion:blocks/moonshade_top"
+    "layer0": "aelven_expansion:block/moonshade_top"
   }
 }

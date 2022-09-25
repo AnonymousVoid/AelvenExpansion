@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "aelven_expansion:silverblood_log",
+    "aelven_expansion:silverblood_wood",
+    "aelven_expansion:silverblood_beams",
+    "aelven_expansion:stripped_silverblood_log",
+    "aelven_expansion:stripped_silverblood_wood",
+    "aelven_expansion:stripped_silverblood_beams"
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/tinted_cross",
   "textures": {
-    "cross": "aelven_expansion:blocks/moonshade_top"
+    "cross": "aelven_expansion:block/moonshade_top"
   }
 }

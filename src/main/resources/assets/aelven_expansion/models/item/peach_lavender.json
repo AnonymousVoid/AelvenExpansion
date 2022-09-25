@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "aelven_expansion:blocks/peach_lavender"
+    "layer0": "aelven_expansion:block/peach_lavender"
   }
 }

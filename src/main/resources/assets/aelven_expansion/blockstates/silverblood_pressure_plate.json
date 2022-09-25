@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "aelven_expansion:block/silverblood_pressure_plate"
+    },
+    "powered=true": {
+      "model": "aelven_expansion:block/silverblood_pressure_plate_down"
+    }
+  }
+}

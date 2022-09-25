@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "aelven_expansion:blocks/moon_bloom"
+    "layer0": "aelven_expansion:block/moon_bloom"
   }
 }

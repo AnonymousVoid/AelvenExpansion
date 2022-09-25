@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/tinted_cross",
   "textures": {
-    "cross": "aelven_expansion:blocks/silver_spring_bottom"
+    "cross": "aelven_expansion:block/silver_spring_bottom"
   }
 }

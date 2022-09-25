@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "aelven_expansion:blocks/moon_fir_planks"
+    "all": "aelven_expansion:block/moon_fir_planks"
   }
 }

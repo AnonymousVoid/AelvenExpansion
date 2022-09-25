@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cross",
   "textures": {
-    "cross": "aelven_expansion:blocks/moon_fir_sapling"
+    "cross": "aelven_expansion:block/moon_fir_sapling"
   }
 }

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "aelven_expansion:block/silverblood_sapling"
+  }
+}

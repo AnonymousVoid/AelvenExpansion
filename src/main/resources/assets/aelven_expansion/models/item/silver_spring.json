@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "aelven_expansion:blocks/silver_spring_top"
+    "layer0": "aelven_expansion:block/silver_spring_top"
   }
 }

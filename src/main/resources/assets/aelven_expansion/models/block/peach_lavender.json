@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/tinted_cross",
   "textures": {
-    "cross": "aelven_expansion:blocks/peach_lavender"
+    "cross": "aelven_expansion:block/peach_lavender"
   }
 }

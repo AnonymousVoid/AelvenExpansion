@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/tinted_cross",
   "textures": {
-    "cross": "aelven_expansion:blocks/silver_marigold"
+    "cross": "aelven_expansion:block/silver_marigold"
   }
 }

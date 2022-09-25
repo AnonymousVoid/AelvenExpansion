@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/pressure_plate_down",
+  "textures": {
+    "texture": "aelven_expansion:block/moon_fir_planks"
+  }
+}

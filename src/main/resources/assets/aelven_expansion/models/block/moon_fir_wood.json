@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cube_column",
   "textures": {
-    "end": "aelven_expansion:blocks/moon_fir_log",
-    "side": "aelven_expansion:blocks/moon_fir_log"
+    "end": "aelven_expansion:block/moon_fir_log",
+    "side": "aelven_expansion:block/moon_fir_log"
   }
 }

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "aelven_expansion:block/moon_fir_planks",
+    "side": "aelven_expansion:block/moon_fir_planks",
+    "top": "aelven_expansion:block/moon_fir_planks"
+  }
+}

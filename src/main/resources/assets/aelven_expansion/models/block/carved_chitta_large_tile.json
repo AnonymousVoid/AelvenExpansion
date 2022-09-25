@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "aelven_expansion:blocks/carved_chitta_large_tile"
+    "all": "aelven_expansion:block/carved_chitta_large_tile"
   }
 }

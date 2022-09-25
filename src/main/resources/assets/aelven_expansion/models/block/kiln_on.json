@@ -1,9 +1,9 @@
 {
   "parent": "minecraft:block/orientable_with_bottom",
   "textures": {
-    "top": "aelven_expansion:blocks/kiln_top",
-    "bottom": "aelven_expansion:blocks/kiln_bottom",
-    "side": "aelven_expansion:blocks/kiln_side",
-    "front": "aelven_expansion:blocks/kiln_front_on"
+    "top": "aelven_expansion:block/kiln_top",
+    "bottom": "aelven_expansion:block/kiln_bottom",
+    "side": "aelven_expansion:block/kiln_side",
+    "front": "aelven_expansion:block/kiln_front_on"
   }
 }

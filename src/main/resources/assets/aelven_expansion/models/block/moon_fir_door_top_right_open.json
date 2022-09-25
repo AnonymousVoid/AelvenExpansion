@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_right_open",
+  "textures": {
+    "bottom": "aelven_expansion:block/moon_fir_door_bottom",
+    "top": "aelven_expansion:block/moon_fir_door_top"
+  }
+}

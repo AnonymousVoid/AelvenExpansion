@@ -8,12 +8,51 @@
 	"block.aelven_expansion.moon_fir_planks": "Moon Fir Planks",
 	"block.aelven_expansion.moon_fir_sapling": "Moon Fir Sapling",
 	"block.aelven_expansion.moon_fir_leaves": "Moon Fir Leaves",
+	"block.aelven_expansion.moon_fir_stairs": "Moon Fir Stairs",
+	"block.aelven_expansion.moon_fir_slab": "Moon Fir Slab",
+	"block.aelven_expansion.moon_fir_fence": "Moon Fir Fence",
+	"block.aelven_expansion.moon_fir_fence_gate": "Moon Fir Fence Gate",
+	"block.aelven_expansion.moon_fir_button": "Moon Fir Button",
+	"block.aelven_expansion.moon_fir_pressure_plate": "Moon Fir Pressure Plate",
+	"block.aelven_expansion.moon_fir_door": "Moon Fir Door",
+	"block.aelven_expansion.moon_fir_trapdoor": "Moon Fir Trapdoor",
 
 	"block.aelven_expansion.silverblood_log": "Silverblood Log",
 	"block.aelven_expansion.stripped_silverblood_log": "Stripped Silverblood Log",
 	"block.aelven_expansion.silverblood_wood": "Silverblood Wood",
 	"block.aelven_expansion.stripped_silverblood_wood": "Stripped Silverblood Wood",
+	"block.aelven_expansion.silverblood_beams": "Silverblood Beams",
+	"block.aelven_expansion.stripped_silverblood_beams": "Stripped Silverblood Beams",
 	"block.aelven_expansion.silverblood_planks": "Silverblood Planks",
+	"block.aelven_expansion.silverblood_sapling": "Silverblood Sapling",
+	"block.aelven_expansion.silverblood_leaves": "Silverblood Leaves",
+	"block.aelven_expansion.silverblood_stairs": "Silverblood Stairs",
+	"block.aelven_expansion.silverblood_slab": "Silverblood Slab",
+	"block.aelven_expansion.silverblood_fence": "Silverblood Fence",
+	"block.aelven_expansion.silverblood_fence_gate": "Silverblood Fence Gate",
+	"block.aelven_expansion.silverblood_button": "Silverblood Button",
+	"block.aelven_expansion.silverblood_pressure_plate": "Silverblood Pressure Plate",
+	"block.aelven_expansion.silverblood_door": "Silverblood Door",
+	"block.aelven_expansion.silverblood_trapdoor": "Silverblood Trapdoor",
+
+	"block.aelven_expansion.peachgrove_log": "Peachgrove Log",
+	"block.aelven_expansion.stripped_peachgrove_log": "Stripped Peachgrove Log",
+	"block.aelven_expansion.peachgrove_wood": "Peachgrove Wood",
+	"block.aelven_expansion.stripped_peachgrove_wood": "Stripped Peachgrove Wood",
+	"block.aelven_expansion.peachgrove_beams": "Peachgrove Beams",
+	"block.aelven_expansion.stripped_peachgrove_beams": "Stripped Peachgrove Beams",
+	"block.aelven_expansion.peachgrove_planks": "Peachgrove Planks",
+	"block.aelven_expansion.peachgrove_sapling": "Peachgrove Sapling",
+	"block.aelven_expansion.peachgrove_leaves": "Peachgrove Leaves",
+	"block.aelven_expansion.peachgrove_stairs": "Peachgrove Stairs",
+	"block.aelven_expansion.peachgrove_slab": "Peachgrove Slab",
+	"block.aelven_expansion.peachgrove_fence": "Peachgrove Fence",
+	"block.aelven_expansion.peachgrove_fence_gate": "Peachgrove Fence Gate",
+	"block.aelven_expansion.peachgrove_button": "Peachgrove Button",
+	"block.aelven_expansion.peachgrove_pressure_plate": "Peachgrove Pressure Plate",
+	"block.aelven_expansion.peachgrove_door": "Peachgrove Door",
+	"block.aelven_expansion.peachgrove_trapdoor": "Peachgrove Trapdoor",
+
 
 	"block.aelven_expansion.moon_bloom": "Moon Bloom",
 	"block.aelven_expansion.moonshade": "Moonshade",
@@ -21,6 +60,7 @@
 	"block.aelven_expansion.silver_spring": "Silver Spring",
 	"block.aelven_expansion.peach_lavender": "Peach Lavender",
 	"block.aelven_expansion.peach_lilac": "Peach Lilac",
+
 
 	"item.aelven_expansion.chitta_chisel": "Chitta Chisel",
 
@@ -44,6 +84,7 @@
 	"block.aelven_expansion.carved_chitta_runed_large_tile": "Runed Carved Chitta Large Tile",
 
 	"block.aelven_expansion.kiln": "Kiln",
+
 
 	"item.aelven_expansion.elerium": "Elerium",
 	"item.aelven_expansion.elerium_paste": "Elerium Paste",
