@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "aelven_expansion:block/chitta_tiles",
+    "side": "aelven_expansion:block/chitta_tiles",
+    "top": "aelven_expansion:block/chitta_tiles"
+  }
+}

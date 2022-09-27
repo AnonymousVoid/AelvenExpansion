@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "aelven_expansion:block/cobbled_chitta_slab"
+    },
+    "type=double": {
+      "model": "aelven_expansion:block/cobbled_chitta"
+    },
+    "type=top": {
+      "model": "aelven_expansion:block/cobbled_chitta_slab_top"
+    }
+  }
+}

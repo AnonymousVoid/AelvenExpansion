@@ -1,6 +1,7 @@
 package dev.anonymousvoid.aelven_expansion.block;
 
 import dev.anonymousvoid.aelven_expansion.AelvenExpansion;
+import dev.anonymousvoid.aelven_expansion.block.custom.KilnBlock;
 import dev.anonymousvoid.aelven_expansion.block.custom.ModFlammableRotatedPillarBlock;
 import dev.anonymousvoid.aelven_expansion.item.ModCreativeModeTab;
 import dev.anonymousvoid.aelven_expansion.item.ModItems;
@@ -9,6 +10,7 @@ import dev.anonymousvoid.aelven_expansion.world.feature.tree.PeachgroveTreeGrowe
 import dev.anonymousvoid.aelven_expansion.world.feature.tree.SilverbloodTreeGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -35,8 +37,8 @@ public class ModBlocks {
     private static final BlockBehaviour.Properties woodPropertiesNoOcclude = BlockBehaviour.Properties.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.WOOD).noOcclusion();
     private static final BlockBehaviour.Properties leavesProperties = BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES);
     private static final BlockBehaviour.Properties plantProperties = BlockBehaviour.Properties.of(Material.PLANT).noCollission().instabreak().sound(SoundType.GRASS);
-    private static final BlockBehaviour.Properties stoneProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.STONE);
-    private static final BlockBehaviour.Properties chittaProperties = stoneProperties.strength(1.5F, 6.0F);
+    private static final BlockBehaviour.Properties stoneProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.STONE).strength(1.5F, 6.0F);
+    private static final BlockBehaviour.Properties deepslateProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE).strength(4.5F, 3.0F);
 
 
     // BLOCKS
@@ -264,47 +266,101 @@ public class ModBlocks {
 
 
     public static final RegistryObject<Block> COBBLED_CHITTA = registerBlock("cobbled_chitta",
-            () -> new Block(chittaProperties), ModCreativeModeTab.MOD_TAB);
+            () -> new Block(stoneProperties), ModCreativeModeTab.MOD_TAB);
     public static final RegistryObject<Block> CRACKED_CHITTA = registerBlock("cracked_chitta",
-            () -> new Block(chittaProperties), ModCreativeModeTab.MOD_TAB);
+            () -> new Block(stoneProperties), ModCreativeModeTab.MOD_TAB);
     public static final RegistryObject<Block> CHITTA = registerBlock("chitta",
-            () -> new Block(chittaProperties), ModCreativeModeTab.MOD_TAB);
+            () -> new Block(stoneProperties), ModCreativeModeTab.MOD_TAB);
     public static final RegistryObject<Block> CHITTA_BRICKS = registerBlock("chitta_bricks",
-            () -> new Block(chittaProperties), ModCreativeModeTab.MOD_TAB);
+            () -> new Block(stoneProperties), ModCreativeModeTab.MOD_TAB);
     public static final RegistryObject<Block> CARVED_CHITTA_BRICKS = registerBlock("carved_chitta_bricks",
-            () -> new Block(chittaProperties), ModCreativeModeTab.MOD_TAB);
+            () -> new Block(stoneProperties), ModCreativeModeTab.MOD_TAB);
     public static final RegistryObject<Block> CARVED_CHITTA_RUNED_BRICKS = registerBlock("carved_chitta_runed_bricks",
-            () -> new Block(chittaProperties), ModCreativeModeTab.MOD_TAB);
+            () -> new Block(stoneProperties), ModCreativeModeTab.MOD_TAB);
     public static final RegistryObject<Block> CHITTA_TILES = registerBlock("chitta_tiles",
-            () -> new Block(chittaProperties), ModCreativeModeTab.MOD_TAB);
+            () -> new Block(stoneProperties), ModCreativeModeTab.MOD_TAB);
     public static final RegistryObject<Block> CARVED_CHITTA_AELVEN_TILES = registerBlock("carved_chitta_aelven_tiles",
-            () -> new Block(chittaProperties), ModCreativeModeTab.MOD_TAB);
+            () -> new Block(stoneProperties), ModCreativeModeTab.MOD_TAB);
     public static final RegistryObject<Block> CARVED_CHITTA_ENCHANT_TILES = registerBlock("carved_chitta_enchant_tiles",
-            () -> new Block(chittaProperties), ModCreativeModeTab.MOD_TAB);
+            () -> new Block(stoneProperties), ModCreativeModeTab.MOD_TAB);
     public static final RegistryObject<Block> CARVED_CHITTA_GLYPHIC_TILES = registerBlock("carved_chitta_glyphic_tiles",
-            () -> new Block(chittaProperties), ModCreativeModeTab.MOD_TAB);
+            () -> new Block(stoneProperties), ModCreativeModeTab.MOD_TAB);
     public static final RegistryObject<Block> CARVED_CHITTA_NORSE_TILES = registerBlock("carved_chitta_norse_tiles",
-            () -> new Block(chittaProperties), ModCreativeModeTab.MOD_TAB);
+            () -> new Block(stoneProperties), ModCreativeModeTab.MOD_TAB);
     public static final RegistryObject<Block> CARVED_CHITTA_AELVEN_RUNED_TILES = registerBlock("carved_chitta_aelven_runed_tiles",
-            () -> new Block(chittaProperties), ModCreativeModeTab.MOD_TAB);
+            () -> new Block(stoneProperties), ModCreativeModeTab.MOD_TAB);
     public static final RegistryObject<Block> CARVED_CHITTA_ENCHANT_RUNED_TILES = registerBlock("carved_chitta_enchant_runed_tiles",
-            () -> new Block(chittaProperties), ModCreativeModeTab.MOD_TAB);
+            () -> new Block(stoneProperties), ModCreativeModeTab.MOD_TAB);
     public static final RegistryObject<Block> CARVED_CHITTA_GLYPHIC_RUNED_TILES = registerBlock("carved_chitta_glyphic_runed_tiles",
-            () -> new Block(chittaProperties), ModCreativeModeTab.MOD_TAB);
+            () -> new Block(stoneProperties), ModCreativeModeTab.MOD_TAB);
     public static final RegistryObject<Block> CARVED_CHITTA_NORSE_RUNED_TILES = registerBlock("carved_chitta_norse_runed_tiles",
-            () -> new Block(chittaProperties), ModCreativeModeTab.MOD_TAB);
+            () -> new Block(stoneProperties), ModCreativeModeTab.MOD_TAB);
     public static final RegistryObject<Block> CHITTA_LARGE_TILE = registerBlock("chitta_large_tile",
-            () -> new Block(chittaProperties), ModCreativeModeTab.MOD_TAB);
+            () -> new Block(stoneProperties), ModCreativeModeTab.MOD_TAB);
     public static final RegistryObject<Block> CARVED_CHITTA_LARGE_TILE = registerBlock("carved_chitta_large_tile",
-            () -> new Block(chittaProperties), ModCreativeModeTab.MOD_TAB);
+            () -> new Block(stoneProperties), ModCreativeModeTab.MOD_TAB);
     public static final RegistryObject<Block> CARVED_CHITTA_RUNED_LARGE_TILE = registerBlock("carved_chitta_runed_large_tile",
-            () -> new Block(chittaProperties), ModCreativeModeTab.MOD_TAB);
+            () -> new Block(stoneProperties), ModCreativeModeTab.MOD_TAB);
 
-//    public static final KilnBlock kiln = new KilnBlock(chittaProperties);
-//
-//
-//    public static final Block eleriumOre = new Block(stoneProperties.strength(1.5F, 6.0F));
-//    public static final Block eleriumBlock = new Block(stoneProperties.strength(1.5F, 6.0F));
+    public static final RegistryObject<Block> KILN = registerBlock("kiln",
+            () -> new KilnBlock(stoneProperties), ModCreativeModeTab.MOD_TAB);
+
+
+    public static final RegistryObject<Block> COBBLED_CHITTA_STAIRS = registerBlock("cobbled_chitta_stairs",
+            () -> new StairBlock(() -> ModBlocks.COBBLED_CHITTA.get().defaultBlockState(),
+                    stoneProperties), ModCreativeModeTab.MOD_TAB);
+    public static final RegistryObject<Block> COBBLED_CHITTA_SLAB = registerBlock("cobbled_chitta_slab",
+            () -> new SlabBlock(stoneProperties), ModCreativeModeTab.MOD_TAB);
+    public static final RegistryObject<Block> COBBLED_CHITTA_WALL = registerBlock("cobbled_chitta_wall",
+            () -> new WallBlock(stoneProperties), ModCreativeModeTab.MOD_TAB);
+
+    public static final RegistryObject<Block> CRACKED_CHITTA_STAIRS = registerBlock("cracked_chitta_stairs",
+            () -> new StairBlock(() -> ModBlocks.CRACKED_CHITTA.get().defaultBlockState(),
+                    stoneProperties), ModCreativeModeTab.MOD_TAB);
+    public static final RegistryObject<Block> CRACKED_CHITTA_SLAB = registerBlock("cracked_chitta_slab",
+            () -> new SlabBlock(stoneProperties), ModCreativeModeTab.MOD_TAB);
+    public static final RegistryObject<Block> CRACKED_CHITTA_WALL = registerBlock("cracked_chitta_wall",
+            () -> new WallBlock(stoneProperties), ModCreativeModeTab.MOD_TAB);
+
+    public static final RegistryObject<Block> CHITTA_STAIRS = registerBlock("chitta_stairs",
+            () -> new StairBlock(() -> ModBlocks.CHITTA.get().defaultBlockState(),
+                    stoneProperties), ModCreativeModeTab.MOD_TAB);
+    public static final RegistryObject<Block> CHITTA_SLAB = registerBlock("chitta_slab",
+            () -> new SlabBlock(stoneProperties), ModCreativeModeTab.MOD_TAB);
+    public static final RegistryObject<Block> CHITTA_WALL = registerBlock("chitta_wall",
+            () -> new WallBlock(stoneProperties), ModCreativeModeTab.MOD_TAB);
+
+    public static final RegistryObject<Block> CHITTA_BRICK_STAIRS = registerBlock("chitta_brick_stairs",
+            () -> new StairBlock(() -> ModBlocks.CHITTA_BRICKS.get().defaultBlockState(),
+                    stoneProperties), ModCreativeModeTab.MOD_TAB);
+    public static final RegistryObject<Block> CHITTA_BRICK_SLAB = registerBlock("chitta_brick_slab",
+            () -> new SlabBlock(stoneProperties), ModCreativeModeTab.MOD_TAB);
+    public static final RegistryObject<Block> CHITTA_BRICK_WALL = registerBlock("chitta_brick_wall",
+            () -> new WallBlock(stoneProperties), ModCreativeModeTab.MOD_TAB);
+
+    public static final RegistryObject<Block> CHITTA_TILE_STAIRS = registerBlock("chitta_tile_stairs",
+            () -> new StairBlock(() -> ModBlocks.CHITTA_TILES.get().defaultBlockState(),
+                    stoneProperties), ModCreativeModeTab.MOD_TAB);
+    public static final RegistryObject<Block> CHITTA_TILE_SLAB = registerBlock("chitta_tile_slab",
+            () -> new SlabBlock(stoneProperties), ModCreativeModeTab.MOD_TAB);
+    public static final RegistryObject<Block> CHITTA_TILE_WALL = registerBlock("chitta_tile_wall",
+            () -> new WallBlock(stoneProperties), ModCreativeModeTab.MOD_TAB);
+
+    public static final RegistryObject<Block> CHITTA_LARGE_TILE_STAIRS = registerBlock("chitta_large_tile_stairs",
+            () -> new StairBlock(() -> ModBlocks.CHITTA_LARGE_TILE.get().defaultBlockState(),
+                    stoneProperties), ModCreativeModeTab.MOD_TAB);
+    public static final RegistryObject<Block> CHITTA_LARGE_TILE_SLAB = registerBlock("chitta_large_tile_slab",
+            () -> new SlabBlock(stoneProperties), ModCreativeModeTab.MOD_TAB);
+    public static final RegistryObject<Block> CHITTA_LARGE_TILE_WALL = registerBlock("chitta_large_tile_wall",
+            () -> new WallBlock(stoneProperties), ModCreativeModeTab.MOD_TAB);
+
+
+    public static final RegistryObject<Block> ELERIUM_ORE = registerBlock("elerium_ore",
+            () -> new DropExperienceBlock(stoneProperties, UniformInt.of(3, 7)), ModCreativeModeTab.MOD_TAB);
+    public static final RegistryObject<Block> DEEPSLATE_ELERIUM_ORE = registerBlock("deepslate_elerium_ore",
+            () -> new DropExperienceBlock(deepslateProperties, UniformInt.of(3, 7)), ModCreativeModeTab.MOD_TAB);
+    public static final RegistryObject<Block> ELERIUM_BLOCK = registerBlock("elerium_block",
+            () -> new Block(stoneProperties), ModCreativeModeTab.MOD_TAB);
 
 
 

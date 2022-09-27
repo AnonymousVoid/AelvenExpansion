@@ -1,6 +1,6 @@
 {
 	"parent": "item/generated",
 	"textures": {
-		"layer0": "aelven_expansion:items/elerium"
+		"layer0": "aelven_expansion:item/elerium"
 	}
 }

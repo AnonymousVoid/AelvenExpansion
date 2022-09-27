@@ -86,10 +86,37 @@
 	"block.aelven_expansion.kiln": "Kiln",
 
 
+	"block.aelven_expansion.cobbled_chitta_stairs": "Cobbled Chitta Stairs",
+	"block.aelven_expansion.cobbled_chitta_slab": "Cobbled Chitta Slab",
+	"block.aelven_expansion.cobbled_chitta_wall": "Cobbled Chitta Wall",
+
+	"block.aelven_expansion.cracked_chitta_stairs": "Cracked Chitta Stairs",
+	"block.aelven_expansion.cracked_chitta_slab": "Cracked Chitta Slab",
+	"block.aelven_expansion.cracked_chitta_wall": "Cracked Chitta Wall",
+
+	"block.aelven_expansion.chitta_stairs": "Chitta Stairs",
+	"block.aelven_expansion.chitta_slab": "Chitta Slab",
+	"block.aelven_expansion.chitta_wall": "Chitta Wall",
+
+	"block.aelven_expansion.chitta_brick_stairs": "Chitta Brick Stairs",
+	"block.aelven_expansion.chitta_brick_slab": "Chitta Brick Slab",
+	"block.aelven_expansion.chitta_brick_wall": "Chitta Brick Wall",
+
+	"block.aelven_expansion.chitta_tile_stairs": "Chitta Tile Stairs",
+	"block.aelven_expansion.chitta_tile_slab": "Chitta Tile Slab",
+	"block.aelven_expansion.chitta_tile_wall": "Chitta Tile Wall",
+
+	"block.aelven_expansion.chitta_large_tile_stairs": "Chitta Large Tile Stairs",
+	"block.aelven_expansion.chitta_large_tile_slab": "Chitta Large Tile Slab",
+	"block.aelven_expansion.chitta_large_tile_wall": "Chitta Large Tile Wall",
+
+
+
 	"item.aelven_expansion.elerium": "Elerium",
 	"item.aelven_expansion.elerium_paste": "Elerium Paste",
 
 	"block.aelven_expansion.elerium_ore": "Elerium Ore",
+	"block.aelven_expansion.deepslate_elerium_ore": "Deepslate Elerium Ore",
 	"block.aelven_expansion.elerium_block": "Block of Elerium",
 
 

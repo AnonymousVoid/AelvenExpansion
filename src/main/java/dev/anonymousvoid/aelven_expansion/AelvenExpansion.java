@@ -2,9 +2,13 @@ package dev.anonymousvoid.aelven_expansion;
 
 import com.mojang.logging.LogUtils;
 import dev.anonymousvoid.aelven_expansion.block.ModBlocks;
+import dev.anonymousvoid.aelven_expansion.block.entity.ModBlockEntities;
 import dev.anonymousvoid.aelven_expansion.item.ModItems;
+import dev.anonymousvoid.aelven_expansion.screen.KilnScreen;
+import dev.anonymousvoid.aelven_expansion.screen.ModMenuTypes;
 import dev.anonymousvoid.aelven_expansion.world.biome_mods.ModBiomeModifiers;
 import dev.anonymousvoid.aelven_expansion.world.feature.ModPlacedFeatures;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.common.MinecraftForge;
@@ -32,6 +36,10 @@ public class AelvenExpansion {
 
         ModBiomeModifiers.register(modEventBus);
         ModPlacedFeatures.register(modEventBus);
+
+        ModBlockEntities.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
+
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::clientSetup);
@@ -73,7 +81,7 @@ public class AelvenExpansion {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
+            MenuScreens.register(ModMenuTypes.KILN_MENU.get(), KilnScreen::new);
         }
     }
 }
