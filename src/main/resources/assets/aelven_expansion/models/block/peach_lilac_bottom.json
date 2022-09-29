@@ -2,5 +2,6 @@
   "parent": "minecraft:block/tinted_cross",
   "textures": {
     "cross": "aelven_expansion:block/peach_lilac_bottom"
-  }
+  },
+  "render_type": "cutout"
 }

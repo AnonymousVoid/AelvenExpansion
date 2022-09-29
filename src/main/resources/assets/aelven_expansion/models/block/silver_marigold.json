@@ -2,5 +2,6 @@
   "parent": "minecraft:block/tinted_cross",
   "textures": {
     "cross": "aelven_expansion:block/silver_marigold"
-  }
+  },
+  "render_type": "cutout"
 }

@@ -48,6 +48,7 @@ public class AelvenExpansion {
     }
 
     private void clientSetup(final FMLClientSetupEvent event) {
+        // TODO see if ``` "render_type": "cutout" ``` works
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.MOON_FIR_SAPLING.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.MOON_FIR_LEAVES.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.MOON_FIR_DOOR.get(), RenderType.cutout());
@@ -62,13 +63,6 @@ public class AelvenExpansion {
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.PEACHGROVE_LEAVES.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.PEACHGROVE_DOOR.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.PEACHGROVE_TRAPDOOR.get(), RenderType.cutout());
-
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.MOON_BLOOM.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.MOONSHADE.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.SILVER_MARIGOLD.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.SILVER_SPRING.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.PEACH_LAVENDER.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.PEACH_LILAC.get(), RenderType.cutout());
 
     }
 
