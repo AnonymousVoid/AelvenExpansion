@@ -21,6 +21,8 @@ public class ModItems {
     public static final RegistryObject<Item> ELERIUM_PASTE = ITEMS.register("elerium_paste",
             () -> new EleriumPasteItem(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB).durability(8)));
 
+    public static final RegistryObject<Item> CHALK_DUST = ITEMS.register("chalk_dust_item",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

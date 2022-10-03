@@ -36,6 +36,7 @@ public class ModBlocks {
     private static final BlockBehaviour.Properties woodPropertiesNoCollide = BlockBehaviour.Properties.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.WOOD).noCollission();
     private static final BlockBehaviour.Properties woodPropertiesNoOcclude = BlockBehaviour.Properties.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.WOOD).noOcclusion();
     private static final BlockBehaviour.Properties leavesProperties = BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES);
+    private static final BlockBehaviour.Properties sandProperties = BlockBehaviour.Properties.copy(Blocks.SAND);
     private static final BlockBehaviour.Properties plantProperties = BlockBehaviour.Properties.of(Material.PLANT).noCollission().instabreak().sound(SoundType.GRASS);
     private static final BlockBehaviour.Properties stoneProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.STONE).strength(1.5F, 6.0F);
     private static final BlockBehaviour.Properties deepslateProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE).strength(4.5F, 3.0F);
@@ -362,6 +363,17 @@ public class ModBlocks {
     public static final RegistryObject<Block> ELERIUM_BLOCK = registerBlock("elerium_block",
             () -> new Block(stoneProperties), ModCreativeModeTab.MOD_TAB);
 
+
+    public static final RegistryObject<Block> CHALK = registerBlock("chalk",
+            () -> new Block(stoneProperties), ModCreativeModeTab.MOD_TAB);
+    public static final RegistryObject<Block> CHALK_BRICKS = registerBlock("chalk_bricks",
+            () -> new Block(stoneProperties), ModCreativeModeTab.MOD_TAB);
+    public static final RegistryObject<Block> POLISHED_CHALK = registerBlock("polished_chalk",
+            () -> new Block(stoneProperties), ModCreativeModeTab.MOD_TAB);
+    public static final RegistryObject<Block> CHALK_DUST_BLOCK = registerBlock("chalk_dust_block",
+            () -> new FallingBlock(sandProperties), ModCreativeModeTab.MOD_TAB);
+    public static final RegistryObject<Block> CHALK_DUST = registerBlock("chalk_dust",
+            () -> new SnowLayerBlock(sandProperties),  ModCreativeModeTab.MOD_TAB);
 
 
 

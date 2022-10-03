@@ -120,6 +120,14 @@
 	"block.aelven_expansion.elerium_block": "Block of Elerium",
 
 
+	"block.aelven_expansion.chalk": "Chalk",
+	"block.aelven_expansion.chalk_bricks": "Chalk Bricks",
+	"block.aelven_expansion.polished_chalk": "Polished Chalk",
+	"block.aelven_expansion.chalk_dust": "Chalk Dust",
+	"block.aelven_expansion.chalk_dust_block": "Chalk Dust Block",
+	"item.aelven_expansion.chalk_dust_item": "Chalk Dust",
+
+
 
 	"itemGroup.aelven_expansion_tab": "Aelven Expansion"
 }
