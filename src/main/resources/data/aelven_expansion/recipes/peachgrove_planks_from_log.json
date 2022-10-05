@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "peachgrove_planks",
+  "ingredients":[
+    {
+      "item": "aelven_expansion:peachgrove_log"
+    }
+  ],
+  "result": {
+    "item": "aelven_expansion:peachgrove_planks",
+    "count": 4
+  }
+}

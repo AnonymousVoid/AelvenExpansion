@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "silverblood_wood",
+  "pattern": [
+    "   ",
+    "## ",
+    "## "
+  ],
+  "key": {
+    "#": {
+      "item": "aelven_expansion:silverblood_log"
+    }
+  },
+  "result": {
+    "item": "aelven_expansion:silverblood_wood",
+    "count": 4
+  }
+}

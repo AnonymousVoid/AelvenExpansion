@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "   ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "aelven_expansion:silverblood_planks"
+    }
+  },
+  "result": {
+    "item": "aelven_expansion:silverblood_slab",
+    "count": 6
+  }
+}

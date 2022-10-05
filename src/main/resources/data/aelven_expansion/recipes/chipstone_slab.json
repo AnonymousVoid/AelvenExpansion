@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "   ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "aelven_expansion:chipstone"
+    }
+  },
+  "result": {
+    "item": "aelven_expansion:chipstone_slab",
+    "count": 6
+  }
+}

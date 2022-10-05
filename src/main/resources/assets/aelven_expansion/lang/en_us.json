@@ -135,11 +135,30 @@
 	"block.aelven_expansion.polished_chalk_slab": "Polished Chalk Slab",
 	"block.aelven_expansion.polished_chalk_wall": "Polished Chalk Wall",
 
-
 	"block.aelven_expansion.chalk_dust": "Chalk Dust",
 	"block.aelven_expansion.chalk_dust_block": "Chalk Dust Block",
 	"item.aelven_expansion.chalk_dust_item": "Chalk Dust",
 
+	"block.aelven_expansion.chipstone": "Chipstone",
+	"block.aelven_expansion.chipstone_stairs": "Chipstone Stairs",
+	"block.aelven_expansion.chipstone_slab": "Chipstone Slab",
+	"block.aelven_expansion.chipstone_wall": "Chipstone Wall",
+
+
+	"block.aelven_expansion.polished_chipstone": "Polished Chipstone",
+	"block.aelven_expansion.polished_chipstone_stairs": "Polished Chipstone Stairs",
+	"block.aelven_expansion.polished_chipstone_slab": "Polished Chipstone Slab",
+	"block.aelven_expansion.polished_chipstone_wall": "Polished Chipstone Wall",
+
+	"block.aelven_expansion.drystone": "Drystone",
+	"block.aelven_expansion.drystone_stairs": "Drystone Stairs",
+	"block.aelven_expansion.drystone_slab": "Drystone Slab",
+	"block.aelven_expansion.drystone_wall": "Drystone Wall",
+
+	"block.aelven_expansion.drystone_bricks": "Drystone Bricks",
+	"block.aelven_expansion.drystone_brick_stairs": "Drystone Brick Stairs",
+	"block.aelven_expansion.drystone_brick_slab": "Drystone Brick Slab",
+	"block.aelven_expansion.drystone_brick_wall": "Drystone Brick Wall",
 
 
 

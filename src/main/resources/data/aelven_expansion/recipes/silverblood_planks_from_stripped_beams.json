@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shapeless",
+  "group": "silverblood_planks",
   "ingredients":[
     {
       "item": "aelven_expansion:stripped_silverblood_beams"

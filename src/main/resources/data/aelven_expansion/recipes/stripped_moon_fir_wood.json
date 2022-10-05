@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "moon_fir_wood",
+  "pattern": [
+    "   ",
+    "## ",
+    "## "
+  ],
+  "key": {
+    "#": {
+      "item": "aelven_expansion:stripped_moon_fir_log"
+    }
+  },
+  "result": {
+    "item": "aelven_expansion:stripped_moon_fir_wood",
+    "count": 4
+  }
+}

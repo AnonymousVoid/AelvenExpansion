@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "aelven_expansion:block/polished_chipstone_slab"
+    },
+    "type=double": {
+      "model": "aelven_expansion:block/polished_chipstone"
+    },
+    "type=top": {
+      "model": "aelven_expansion:block/polished_chipstone_slab_top"
+    }
+  }
+}
