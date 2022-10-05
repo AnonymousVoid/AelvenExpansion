@@ -12,6 +12,6 @@ public class MoonFirTreeGrower extends AbstractTreeGrower {
     @Nullable
     @Override
     protected Holder<? extends ConfiguredFeature<?, ?>> getConfiguredFeature(@NotNull RandomSource randomSource, boolean b) {
-        return ModConfiguredFeatures.MOON_FIR_TREE;
+        return ModConfiguredFeatures.TreeGeneration.MOON_FIR_TREE;
     }
 }

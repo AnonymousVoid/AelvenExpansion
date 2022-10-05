@@ -2,5 +2,6 @@
   "parent": "minecraft:block/cross",
   "textures": {
     "cross": "aelven_expansion:block/moon_fir_sapling"
-  }
+  },
+  "render_type": "cutout"
 }

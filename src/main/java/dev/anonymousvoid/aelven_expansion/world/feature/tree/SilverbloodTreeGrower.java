@@ -12,6 +12,6 @@ public class SilverbloodTreeGrower extends AbstractTreeGrower {
     @Nullable
     @Override
     protected Holder<? extends ConfiguredFeature<?, ?>> getConfiguredFeature(@NotNull RandomSource randomSource, boolean b) {
-        return ModConfiguredFeatures.SILVERBLOOD_TREE;
+        return ModConfiguredFeatures.TreeGeneration.SILVERBLOOD_TREE;
     }
 }

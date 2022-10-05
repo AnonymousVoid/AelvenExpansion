@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients":[
+    {
+      "item": "aelven_expansion:stripped_silverblood_log"
+    }
+  ],
+  "result": {
+    "item": "aelven_expansion:silverblood_planks",
+    "count": 4
+  }
+}

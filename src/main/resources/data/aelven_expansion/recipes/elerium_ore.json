@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "elerium",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "aelven_expansion:elerium"
+    }
+  },
+  "result": {
+    "item": "aelven_expansion:elerium_block"
+  }
+}

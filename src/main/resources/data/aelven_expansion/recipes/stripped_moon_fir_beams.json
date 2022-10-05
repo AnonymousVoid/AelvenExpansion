@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "#",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "aelven_expansion:stripped_moon_fir_log"
+    }
+  },
+  "result": {
+    "item": "aelven_expansion:stripped_moon_fir_beams",
+    "count": 3
+  }
+}

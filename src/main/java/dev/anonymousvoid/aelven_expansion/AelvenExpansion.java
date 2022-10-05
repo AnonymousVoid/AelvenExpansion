@@ -7,6 +7,7 @@ import dev.anonymousvoid.aelven_expansion.item.ModItems;
 import dev.anonymousvoid.aelven_expansion.screen.KilnScreen;
 import dev.anonymousvoid.aelven_expansion.screen.ModMenuTypes;
 import dev.anonymousvoid.aelven_expansion.world.biome_mods.ModBiomeModifiers;
+import dev.anonymousvoid.aelven_expansion.world.feature.ModConfiguredFeatures;
 import dev.anonymousvoid.aelven_expansion.world.feature.ModPlacedFeatures;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
@@ -36,10 +37,10 @@ public class AelvenExpansion {
 
         ModBiomeModifiers.register(modEventBus);
         ModPlacedFeatures.register(modEventBus);
+        ModConfiguredFeatures.register(modEventBus);
 
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
-
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::clientSetup);
@@ -49,17 +50,14 @@ public class AelvenExpansion {
 
     private void clientSetup(final FMLClientSetupEvent event) {
         // TODO see if ``` "render_type": "cutout" ``` works
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.MOON_FIR_SAPLING.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.MOON_FIR_LEAVES.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.MOON_FIR_DOOR.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.MOON_FIR_TRAPDOOR.get(), RenderType.cutout());
 
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.SILVERBLOOD_SAPLING.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.SILVERBLOOD_LEAVES.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.SILVERBLOOD_DOOR.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.SILVERBLOOD_TRAPDOOR.get(), RenderType.cutout());
 
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.PEACHGROVE_SAPLING.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.PEACHGROVE_LEAVES.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.PEACHGROVE_DOOR.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.PEACHGROVE_TRAPDOOR.get(), RenderType.cutout());

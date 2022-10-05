@@ -366,10 +366,31 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> CHALK = registerBlock("chalk",
             () -> new Block(stoneProperties), ModCreativeModeTab.MOD_TAB);
+    public static final RegistryObject<Block> CHALK_STAIRS = registerBlock("chalk_stairs",
+            () -> new StairBlock(() -> ModBlocks.CHALK.get().defaultBlockState(),
+                    stoneProperties), ModCreativeModeTab.MOD_TAB);
+    public static final RegistryObject<Block> CHALK_SLAB = registerBlock("chalk_slab",
+            () -> new SlabBlock(stoneProperties), ModCreativeModeTab.MOD_TAB);
+    public static final RegistryObject<Block> CHALK_WALL = registerBlock("chalk_wall",
+            () -> new WallBlock(stoneProperties), ModCreativeModeTab.MOD_TAB);
     public static final RegistryObject<Block> CHALK_BRICKS = registerBlock("chalk_bricks",
             () -> new Block(stoneProperties), ModCreativeModeTab.MOD_TAB);
+    public static final RegistryObject<Block> CHALK_BRICK_STAIRS = registerBlock("chalk_brick_stairs",
+            () -> new StairBlock(() -> ModBlocks.CHALK_BRICKS.get().defaultBlockState(),
+                    stoneProperties), ModCreativeModeTab.MOD_TAB);
+    public static final RegistryObject<Block> CHALK_BRICK_SLAB = registerBlock("chalk_brick_slab",
+            () -> new SlabBlock(stoneProperties), ModCreativeModeTab.MOD_TAB);
+    public static final RegistryObject<Block> CHALK_BRICK_WALL = registerBlock("chalk_brick_wall",
+            () -> new WallBlock(stoneProperties), ModCreativeModeTab.MOD_TAB);
     public static final RegistryObject<Block> POLISHED_CHALK = registerBlock("polished_chalk",
             () -> new Block(stoneProperties), ModCreativeModeTab.MOD_TAB);
+    public static final RegistryObject<Block> POLISHED_CHALK_STAIRS = registerBlock("polished_chalk_stairs",
+            () -> new StairBlock(() -> ModBlocks.POLISHED_CHALK.get().defaultBlockState(),
+                    stoneProperties), ModCreativeModeTab.MOD_TAB);
+    public static final RegistryObject<Block> POLISHED_CHALK_SLAB = registerBlock("polished_chalk_slab",
+            () -> new SlabBlock(stoneProperties), ModCreativeModeTab.MOD_TAB);
+    public static final RegistryObject<Block> POLISHED_CHALK_WALL = registerBlock("polished_chalk_wall",
+            () -> new WallBlock(stoneProperties), ModCreativeModeTab.MOD_TAB);
     public static final RegistryObject<Block> CHALK_DUST_BLOCK = registerBlock("chalk_dust_block",
             () -> new FallingBlock(sandProperties), ModCreativeModeTab.MOD_TAB);
     public static final RegistryObject<Block> CHALK_DUST = registerBlock("chalk_dust",

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "aelven_expansion:block/polished_chalk",
+    "side": "aelven_expansion:block/polished_chalk",
+    "top": "aelven_expansion:block/polished_chalk"
+  }
+}

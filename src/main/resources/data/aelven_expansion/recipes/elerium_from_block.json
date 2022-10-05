@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "elerium",
+  "ingredients":[
+    {
+      "item": "aelven_expansion:elerium_block"
+    }
+  ],
+  "result": {
+    "item": "aelven_expansion:elerium",
+    "count": 9
+  }
+}

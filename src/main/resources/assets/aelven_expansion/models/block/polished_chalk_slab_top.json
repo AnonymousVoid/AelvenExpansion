@@ -1,0 +1,8 @@
+S{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "aelven_expansion:block/polished_chalk",
+    "side": "aelven_expansion:block/polished_chalk",
+    "top": "aelven_expansion:block/polished_chalk"
+  }
+}

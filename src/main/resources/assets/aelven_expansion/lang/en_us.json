@@ -121,11 +121,26 @@
 
 
 	"block.aelven_expansion.chalk": "Chalk",
+	"block.aelven_expansion.chalk_stairs": "Chalk Stairs",
+	"block.aelven_expansion.chalk_slab": "Chalk Slab",
+	"block.aelven_expansion.chalk_wall": "Chalk Wall",
+
 	"block.aelven_expansion.chalk_bricks": "Chalk Bricks",
+	"block.aelven_expansion.chalk_brick_stairs": "Chalk Brick Stairs",
+	"block.aelven_expansion.chalk_brick_slab": "Chalk Brick Slab",
+	"block.aelven_expansion.chalk_brick_wall": "Chalk Brick Wall",
+
 	"block.aelven_expansion.polished_chalk": "Polished Chalk",
+	"block.aelven_expansion.polished_chalk_stairs": "Polished Chalk Stairs",
+	"block.aelven_expansion.polished_chalk_slab": "Polished Chalk Slab",
+	"block.aelven_expansion.polished_chalk_wall": "Polished Chalk Wall",
+
+
 	"block.aelven_expansion.chalk_dust": "Chalk Dust",
 	"block.aelven_expansion.chalk_dust_block": "Chalk Dust Block",
 	"item.aelven_expansion.chalk_dust_item": "Chalk Dust",
+
+
 
 
 
