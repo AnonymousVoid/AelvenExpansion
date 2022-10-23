@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "silver_ingot",
+  "ingredients":[
+    {
+      "item": "aelven_expansion:silver_ingot_item"
+    }
+  ],
+  "result": {
+    "item": "aelven_expansion:silver_nugget_item",
+    "count": 9
+  }
+}

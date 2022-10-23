@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "moon_fir_pressure_plate",
+  "key": {
+    "#": {
+      "item": "aelven_expansion:moon_fir_planks"
+    }
+  },
+  "pattern": [
+    "##"
+  ],
+  "result": {
+    "item": "aelven_expansion:moon_fir_pressure_plate"
+  }
+}

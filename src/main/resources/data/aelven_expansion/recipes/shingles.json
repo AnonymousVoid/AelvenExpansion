@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "shingles",
+  "key": {
+    "#": {
+      "item": "minecraft:clay_ball"
+    },
+    "W": {
+      "item": "minecraft:brick"
+    }
+  },
+  "pattern": [
+    "   ",
+    "#W ",
+    "W# "
+  ],
+  "result": {
+    "item": "aelven_expansion:shingles",
+    "count": 2
+  }
+}

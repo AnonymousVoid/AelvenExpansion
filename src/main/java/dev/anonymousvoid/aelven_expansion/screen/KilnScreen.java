@@ -37,7 +37,9 @@ public class KilnScreen extends AbstractContainerScreen<KilnMenu> {
 
     private void renderProgressArrow(PoseStack stack, int x, int y) {
         if (menu.isCrafting()) {
-            blit(stack, x+105, y+33, 176, 0, menu.getScaledProgress(), 16);
+            blit(stack, x+80, y+8, 176, 0, menu.getScaledProgress(), 16);
+            blit(stack, x+80, y+34, 176, 0, menu.getScaledProgress(), 16);
+            blit(stack, x+80, y+60, 176, 0, menu.getScaledProgress(), 16);
         }
     }
 

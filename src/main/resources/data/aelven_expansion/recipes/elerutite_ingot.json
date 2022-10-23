@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "elerutite_block",
+  "ingredients": [
+    {
+      "item": "aelven_expansion:elerium"
+    },
+    {
+      "item": "aelven_expansion:elerium"
+    },
+    {
+      "item": "aelven_expansion:elerium"
+    },
+    {
+      "item": "aelven_expansion:elerium"
+    },
+    {
+      "item": "aelven_expansion:silver_ingot_item"
+    },
+    {
+      "item": "aelven_expansion:silver_ingot_item"
+    },
+    {
+      "item": "aelven_expansion:silver_ingot_item"
+    },
+    {
+      "item": "aelven_expansion:silver_ingot_item"
+    }
+  ],
+  "result": {
+    "item": "aelven_expansion:elerutite_ingot_item"
+  }
+}

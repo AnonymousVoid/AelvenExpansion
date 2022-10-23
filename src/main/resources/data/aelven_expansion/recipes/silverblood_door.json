@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "silverblood_door",
+  "key": {
+    "#": {
+      "item": "aelven_expansion:silverblood_planks"
+    }
+  },
+  "pattern": [
+    "##",
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 3,
+    "item": "aelven_expansion:silverblood_door"
+  }
+}

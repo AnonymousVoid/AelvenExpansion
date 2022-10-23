@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "moon_fir_trapdoor",
+  "key": {
+    "#": {
+      "item": "aelven_expansion:moon_fir_planks"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 2,
+    "item": "aelven_expansion:moon_fir_trapdoor"
+  }
+}

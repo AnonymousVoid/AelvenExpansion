@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "elerutite_block",
+  "ingredients":[
+    {
+      "item": "aelven_expansion:elerutite_block"
+    }
+  ],
+  "result": {
+    "item": "aelven_expansion:elerutite_ingot_item",
+    "count": 9
+  }
+}

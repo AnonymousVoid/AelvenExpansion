@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "silverblood_pressure_plate",
+  "key": {
+    "#": {
+      "item": "aelven_expansion:silverblood_planks"
+    }
+  },
+  "pattern": [
+    "##"
+  ],
+  "result": {
+    "item": "aelven_expansion:silverblood_pressure_plate"
+  }
+}

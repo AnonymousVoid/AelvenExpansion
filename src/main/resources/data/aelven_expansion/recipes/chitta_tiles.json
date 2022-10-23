@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "chitta",
+  "pattern": [
+    "   ",
+    "## ",
+    "## "
+  ],
+  "key": {
+    "#": {
+      "item": "aelven_expansion:chitta_large_tile"
+    }
+  },
+  "result": {
+    "item": "aelven_expansion:chitta_tiles",
+    "count": 4
+  }
+}

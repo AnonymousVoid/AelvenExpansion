@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "item": "aelven_expansion:elerium_paste"
+    },
+    "title": "The Aelven Expansion",
+    "description": "The Grace lies inbetween that which cannot be seen",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "background": "aelven_expansion:textures/block/chitta_tiles.png"
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "aelven_expansion:elerium"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

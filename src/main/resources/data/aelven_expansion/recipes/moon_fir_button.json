@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "moon_fir_button",
+  "ingredients": [
+    {
+      "item": "aelven_expansion:moon_fir_planks"
+    }
+  ],
+  "result": {
+    "item": "aelven_expansion:moon_fir_button"
+  }
+}

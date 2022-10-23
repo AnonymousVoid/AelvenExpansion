@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "###",
+    "   "
+  ],
+  "key": {
+    "#": {
+      "item": "aelven_expansion:chalk_dust_block"
+    }
+  },
+  "result": {
+    "item": "aelven_expansion:chalk_dust",
+    "count": 6
+  }
+}

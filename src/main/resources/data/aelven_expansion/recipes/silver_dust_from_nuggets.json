@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "addition": {
+    "item": "aelven_expansion:silver_nugget_item"
+  },
+  "base": {
+    "item": "aelven_expansion:silver_nugget_item"
+  },
+  "result": {
+    "item": "aelven_expansion:silver_dust_item"
+  }
+}

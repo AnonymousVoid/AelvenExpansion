@@ -23,7 +23,7 @@ public class KilnMenu extends AbstractContainerMenu {
 
     public KilnMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
         super(ModMenuTypes.KILN_MENU.get(), id);
-        checkContainerSize(inv, 3);
+        checkContainerSize(inv, 7);
         blockEntity = (KilnBlockEntity) entity;
         this.level = inv.player.level;
         this.data = data;
@@ -32,9 +32,13 @@ public class KilnMenu extends AbstractContainerMenu {
         addPlayerHotbar(inv);
 
         this.blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(handler -> {
-            this.addSlot(new SlotItemHandler(handler, 0, 56, 17));
+            this.addSlot(new SlotItemHandler(handler, 0, 20, 35));
+            this.addSlot(new SlotItemHandler(handler, 1, 56, 17));
+            this.addSlot(new SlotItemHandler(handler, 1, 56, 35));
             this.addSlot(new SlotItemHandler(handler, 1, 56, 53));
+            this.addSlot(new SlotItemHandler(handler, 2, 116, 9));
             this.addSlot(new SlotItemHandler(handler, 2, 116, 35));
+            this.addSlot(new SlotItemHandler(handler, 2, 116, 61));
         });
 
         addDataSlots(data);
@@ -69,7 +73,7 @@ public class KilnMenu extends AbstractContainerMenu {
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
 
     // THIS YOU HAVE TO DEFINE!
-    private static final int TE_INVENTORY_SLOT_COUNT = 3;  // must be the number of slots you have!
+    private static final int TE_INVENTORY_SLOT_COUNT = 7;  // must be the number of slots you have!
 
     @Override
     public ItemStack quickMoveStack(Player playerIn, int index) {

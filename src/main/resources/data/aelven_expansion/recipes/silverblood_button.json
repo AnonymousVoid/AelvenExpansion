@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "silverblood_button",
+  "ingredients": [
+    {
+      "item": "aelven_expansion:silverblood_planks"
+    }
+  ],
+  "result": {
+    "item": "aelven_expansion:silverblood_button"
+  }
+}

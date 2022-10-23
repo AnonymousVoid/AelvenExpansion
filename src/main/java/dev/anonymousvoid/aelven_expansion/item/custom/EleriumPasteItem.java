@@ -24,7 +24,11 @@ public class EleriumPasteItem extends Item {
         Player player = context.getPlayer();
         BlockPos pos = context.getClickedPos();
         ItemStack stack = context.getItemInHand();
-        if (level.getBlockState(pos) == ModBlocks.CARVED_CHITTA_LARGE_TILE.get().defaultBlockState()) {
+        if (level.getBlockState(pos) == ModBlocks.CARVED_CHITTA_BRICKS.get().defaultBlockState()) {
+            level.setBlockAndUpdate(pos, ModBlocks.CARVED_CHITTA_RUNED_BRICKS.get().defaultBlockState());
+            usePaste(level, player, pos, stack);
+            return InteractionResult.SUCCESS;
+        } else if (level.getBlockState(pos) == ModBlocks.CARVED_CHITTA_LARGE_TILE.get().defaultBlockState()) {
             level.setBlockAndUpdate(pos, ModBlocks.CARVED_CHITTA_RUNED_LARGE_TILE.get().defaultBlockState());
             usePaste(level, player, pos, stack);
             return InteractionResult.SUCCESS;
@@ -49,7 +53,7 @@ public class EleriumPasteItem extends Item {
     }
 
     private void usePaste(Level level, Player player, BlockPos pos, ItemStack stack) {
-        level.playSound(player, pos, SoundEvents.HONEY_BLOCK_SLIDE, SoundSource.BLOCKS, 1.0F, new Random().nextFloat()*0.2F + 0.8F);
+        level.playSound(player, pos, SoundEvents.ENCHANTMENT_TABLE_USE, SoundSource.BLOCKS, 1.0F, new Random().nextFloat()*0.2F + 0.8F);
         stack.hurtAndBreak(1, player, (entity) -> {
             entity.broadcastBreakEvent(EquipmentSlot.MAINHAND);
         });

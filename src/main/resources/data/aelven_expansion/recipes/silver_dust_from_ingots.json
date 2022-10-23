@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smithing",
+  "addition": {
+    "item": "aelven_expansion:silver_ingot_item"
+  },
+  "base": {
+    "item": "aelven_expansion:silver_ingot_item"
+  },
+  "result": {
+    "item": "aelven_expansion:silver_dust_item",
+    "count": 9
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "elerutite_block",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "aelven_expansion:elerutite_ingot_item"
+    }
+  },
+  "result": {
+    "item": "aelven_expansion:elerutite_block"
+  }
+}

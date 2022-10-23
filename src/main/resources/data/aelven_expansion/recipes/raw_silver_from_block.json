@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "raw_silver_block",
+  "ingredients":[
+    {
+      "item": "aelven_expansion:raw_silver_block"
+    }
+  ],
+  "result": {
+    "item": "aelven_expansion:raw_silver_item",
+    "count": 9
+  }
+}

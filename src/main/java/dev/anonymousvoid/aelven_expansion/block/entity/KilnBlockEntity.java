@@ -166,8 +166,8 @@ public class KilnBlockEntity extends BlockEntity implements MenuProvider {
             inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
         }
 
-        boolean hasIngredient = entity.itemHandler.getStackInSlot(0).getItem() == Items.HONEY_BOTTLE;
-        boolean hasFuel = entity.itemHandler.getStackInSlot(1).getItem() == ModItems.ELERIUM.get();
+        boolean hasIngredient = entity.itemHandler.getStackInSlot(1).getItem() == Items.HONEY_BOTTLE;
+        boolean hasFuel = entity.itemHandler.getStackInSlot(0).getItem() == ModItems.ELERIUM.get();
 
         return hasIngredient && hasFuel && canOutput(inventory, new ItemStack(Items.EXPERIENCE_BOTTLE, 1));
     }

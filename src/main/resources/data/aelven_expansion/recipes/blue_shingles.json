@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "shingles",
+  "key": {
+    "#": {
+      "item": "aelven_expansion:shingles"
+    },
+    "W": {
+      "item": "minecraft:blue_dye"
+    }
+  },
+  "pattern": [
+    "###",
+    "#W#",
+    "###"
+  ],
+  "result": {
+    "item": "aelven_expansion:blue_shingles",
+    "count": 8
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "item": "aelven_expansion:silver_pumice_item"
+    },
+    "title": "A Silver Lining",
+    "description": "Craft a Silver Pumice Stone",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "aelven_expansion:aelven_expansion",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "aelven_expansion:silver_pumice_item"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

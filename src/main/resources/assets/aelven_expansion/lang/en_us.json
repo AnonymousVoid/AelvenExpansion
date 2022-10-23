@@ -53,7 +53,6 @@
 	"block.aelven_expansion.peachgrove_door": "Peachgrove Door",
 	"block.aelven_expansion.peachgrove_trapdoor": "Peachgrove Trapdoor",
 
-
 	"block.aelven_expansion.moon_bloom": "Moon Bloom",
 	"block.aelven_expansion.moonshade": "Moonshade",
 	"block.aelven_expansion.silver_marigold": "Silver Marigold",
@@ -115,9 +114,29 @@
 	"item.aelven_expansion.elerium": "Elerium",
 	"item.aelven_expansion.elerium_paste": "Elerium Paste",
 
+	"item.aelven_expansion.elerutite_ingot_item": "Elerutite Ingot",
+	"block.aelven_expansion.elerutite_block": "Elerutite Block",
+
 	"block.aelven_expansion.elerium_ore": "Elerium Ore",
 	"block.aelven_expansion.deepslate_elerium_ore": "Deepslate Elerium Ore",
 	"block.aelven_expansion.elerium_block": "Block of Elerium",
+
+	"item.aelven_expansion.raw_silver_item": "Raw Silver",
+	"item.aelven_expansion.silver_ingot_item": "Silver Ingot",
+	"item.aelven_expansion.silver_nugget_item": "Silver Nugget",
+	"item.aelven_expansion.silver_dust_item": "Silver Dust",
+	"item.aelven_expansion.silver_pumice_item": "Silver Pumice",
+	"block.aelven_expansion.silver_ore": "Silver Ore",
+	"block.aelven_expansion.deepslate_silver_ore": "Deepslate Silver Ore",
+	"block.aelven_expansion.raw_silver_block": "Block of Raw Silver",
+	"block.aelven_expansion.silver_block": "Block of Silver",
+
+	"item.aelven_expansion.silver_sword": "Silver Sword",
+	"item.aelven_expansion.silver_dagger": "Silver Dagger",
+	"item.aelven_expansion.silver_shovel": "Silver Shovel",
+	"item.aelven_expansion.silver_pickaxe": "Silver Pickaxe",
+	"item.aelven_expansion.silver_axe": "Silver Axe",
+	"item.aelven_expansion.silver_hoe": "Silver Hoe",
 
 
 	"block.aelven_expansion.chalk": "Chalk",
@@ -160,8 +179,28 @@
 	"block.aelven_expansion.drystone_brick_slab": "Drystone Brick Slab",
 	"block.aelven_expansion.drystone_brick_wall": "Drystone Brick Wall",
 
+	"block.aelven_expansion.shingles": "Shingles",
+	"block.aelven_expansion.shingle_stairs": "Shingle Stairs",
+	"block.aelven_expansion.shingle_slab": "Shingle Slab",
+	"block.aelven_expansion.shingle_wall": "Shingle Wall",
 
+	"block.aelven_expansion.white_shingles": "White Shingles",
+	"block.aelven_expansion.orange_shingles": "Orange Shingles",
+	"block.aelven_expansion.magenta_shingles": "Magenta Shingles",
+	"block.aelven_expansion.light_blue_shingles": "Light Blue Shingles",
+	"block.aelven_expansion.yellow_shingles": "Yellow Shingles",
+	"block.aelven_expansion.lime_shingles": "Lime Shingles",
+	"block.aelven_expansion.pink_shingles": "Pink Shingles",
+	"block.aelven_expansion.gray_shingles": "Gray Shingles",
+	"block.aelven_expansion.light_gray_shingles": "Light Gray Shingles",
+	"block.aelven_expansion.cyan_shingles": "Cyan Shingles",
+	"block.aelven_expansion.purple_shingles": "Purple Shingles",
+	"block.aelven_expansion.blue_shingles": "Blue Shingles",
+	"block.aelven_expansion.brown_shingles": "Brown Shingles",
+	"block.aelven_expansion.green_shingles": "Green Shingles",
+	"block.aelven_expansion.red_shingles": "Red Shingles",
+	"block.aelven_expansion.black_shingles": "Black Shingles",
 
-
-	"itemGroup.aelven_expansion_tab": "Aelven Expansion"
+	"itemGroup.aelven_expansion_blocks": "Aelven Expansion Blocks",
+	"itemGroup.aelven_expansion_items": "Aelven Expansion Items"
 }

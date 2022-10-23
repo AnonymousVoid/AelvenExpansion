@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/template_orientable_trapdoor_top",
+  "parent": "aelven_expansion:block/template_orientable_trapdoor_top",
   "textures": {
     "texture": "aelven_expansion:block/silverblood_trapdoor"
   }
