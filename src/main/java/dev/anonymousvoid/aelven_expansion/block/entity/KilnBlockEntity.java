@@ -153,7 +153,7 @@ public class KilnBlockEntity extends BlockEntity implements MenuProvider {
             entity.itemHandler.extractItem(0, 1, false);
             entity.itemHandler.extractItem(1, 1, false);
             entity.itemHandler.setStackInSlot(4, new ItemStack(Items.EXPERIENCE_BOTTLE,
-                    entity.itemHandler.getStackInSlot(2).getCount() + 1));
+                    entity.itemHandler.getStackInSlot(4).getCount() + 1));
 
             entity.resetProgress();
         }
