@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "kiln",
+  "key": {
+    "#": {
+      "item": "aelven_expansion:elerium"
+    },
+    "W": {
+      "item": "aelven_expansion:cobbled_chitta"
+    },
+    "X": {
+      "item": "minecraft:furnace"
+    }
+  },
+  "pattern": [
+    "W#W",
+    "#X#",
+    "W#W"
+  ],
+  "result": {
+    "item": "aelven_expansion:kiln"
+  }
+}

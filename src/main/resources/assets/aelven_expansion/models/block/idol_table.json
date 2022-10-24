@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "top": "aelven_expansion:block/idol_table_top",
+    "bottom": "aelven_expansion:block/idol_table_bottom",
+    "side": "aelven_expansion:block/idol_table_side",
+    "front": "aelven_expansion:block/idol_table_front"
+  }
+}

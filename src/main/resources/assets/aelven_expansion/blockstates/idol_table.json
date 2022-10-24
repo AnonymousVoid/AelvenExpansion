@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "aelven_expansion:block/idol_table" },
+    "facing=east": { "model": "aelven_expansion:block/idol_table", "y": 90 },
+    "facing=south": { "model": "aelven_expansion:block/idol_table", "y": 180 },
+    "facing=west": { "model": "aelven_expansion:block/idol_table", "y": 270 }
+  }
+}

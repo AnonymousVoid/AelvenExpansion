@@ -17,6 +17,8 @@ public class ModMenuTypes {
     public static final RegistryObject<MenuType<KilnMenu>> KILN_MENU =
             registerMenuType(KilnMenu::new, "kiln_menu");
 
+    public static final RegistryObject<MenuType<IdolTableMenu>> IDOL_TABLE_MENU =
+            registerMenuType(IdolTableMenu::new, "idol_table_menu");
 
     private static <T extends AbstractContainerMenu> RegistryObject<MenuType<T>> registerMenuType(IContainerFactory<T> factory,
                                                                                                   String name) {

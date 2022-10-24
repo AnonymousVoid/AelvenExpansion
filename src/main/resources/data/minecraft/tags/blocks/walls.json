@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+    "aelven_expansion:cobbled_chitta_wall",
+    "aelven_expansion:cracked_chitta_wall",
+    "aelven_expansion:chitta_wall",
+    "aelven_expansion:chitta_brick_wall",
+    "aelven_expansion:chitta_tile_wall",
+    "aelven_expansion:chitta_large_tile_wall",
+    "aelven_expansion:chalk_wall",
+    "aelven_expansion:polished_chalk_wall",
+    "aelven_expansion:chalk_brick_wall",
+    "aelven_expansion:chipstone_wall",
+    "aelven_expansion:polished_chipstone_wall",
+    "aelven_expansion:drystone_wall",
+    "aelven_expansion:drystone_brick_wall",
+    "aelven_expansion:shingle_wall",
+    "aelven_expansion:white_shingle_wall",
+    "aelven_expansion:orange_shingle_wall",
+    "aelven_expansion:magenta_shingle_wall"
+  ]
+}

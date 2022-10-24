@@ -3,11 +3,11 @@
   "group": "silver_ingot",
   "ingredients":[
     {
-      "item": "aelven_expansion:silver_ingot_item"
+      "item": "aelven_expansion:silver_ingot"
     }
   ],
   "result": {
-    "item": "aelven_expansion:silver_nugget_item",
+    "item": "aelven_expansion:silver_nugget",
     "count": 9
   }
 }

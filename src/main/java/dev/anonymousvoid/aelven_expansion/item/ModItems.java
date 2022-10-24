@@ -3,14 +3,20 @@ package dev.anonymousvoid.aelven_expansion.item;
 import dev.anonymousvoid.aelven_expansion.AelvenExpansion;
 import dev.anonymousvoid.aelven_expansion.item.custom.ChiselItem;
 import dev.anonymousvoid.aelven_expansion.item.custom.EleriumPasteItem;
+import dev.anonymousvoid.aelven_expansion.item.custom.ModArmorMaterial;
 import dev.anonymousvoid.aelven_expansion.item.custom.SilverPumiceItem;
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.SwordItem;
+import net.minecraft.client.resources.sounds.Sound;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.*;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraftforge.common.ForgeTier;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import org.checkerframework.checker.units.qual.A;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -32,40 +38,54 @@ public class ModItems {
     public static final RegistryObject<Item> CHALK_DUST = ITEMS.register("chalk_dust_item",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
 
-    public static final RegistryObject<Item> RAW_SILVER = ITEMS.register("raw_silver_item",
+    public static final RegistryObject<Item> RAW_SILVER = ITEMS.register("raw_silver",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
-    public static final RegistryObject<Item> SILVER_INGOT = ITEMS.register("silver_ingot_item",
+    public static final RegistryObject<Item> SILVER_INGOT = ITEMS.register("silver_ingot",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
-    public static final RegistryObject<Item> SILVER_NUGGET = ITEMS.register("silver_nugget_item",
+    public static final RegistryObject<Item> SILVER_NUGGET = ITEMS.register("silver_nugget",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
-    public static final RegistryObject<Item> SILVER_DUST = ITEMS.register("silver_dust_item",
+    public static final RegistryObject<Item> SILVER_DUST = ITEMS.register("silver_dust",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
-    public static final RegistryObject<Item> SILVER_PUMICE = ITEMS.register("silver_pumice_item",
+    public static final RegistryObject<Item> SILVER_PUMICE = ITEMS.register("silver_pumice",
             () -> new SilverPumiceItem(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS).durability(64)));
 
-    public static final RegistryObject<Item> SILVER_SWORD = ITEMS.register("silver_sword",
-            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
-    public static final RegistryObject<Item> SILVER_DAGGER = ITEMS.register("silver_dagger",
-            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
-    public static final RegistryObject<Item> SILVER_SHOVEL = ITEMS.register("silver_shovel",
-            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
-    public static final RegistryObject<Item> SILVER_PICKAXE = ITEMS.register("silver_pickaxe",
-            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
-    public static final RegistryObject<Item> SILVER_AXE = ITEMS.register("silver_axe",
-            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
-    public static final RegistryObject<Item> SILVER_HOE = ITEMS.register("silver_hoe",
-            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
+    public static final RegistryObject<SwordItem> SILVER_SWORD = ITEMS.register("silver_sword",
+            () -> new SwordItem(Tiers.SILVER, 3, -2.4F, new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
+    public static final RegistryObject<SwordItem> SILVER_DAGGER = ITEMS.register("silver_dagger",
+            () -> new SwordItem(Tiers.SILVER, 1, 4.0F, new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
+    public static final RegistryObject<ShovelItem> SILVER_SHOVEL = ITEMS.register("silver_shovel",
+            () -> new ShovelItem(Tiers.SILVER, 1.5F, -3.0F, new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
+    public static final RegistryObject<PickaxeItem> SILVER_PICKAXE = ITEMS.register("silver_pickaxe",
+            () -> new PickaxeItem(Tiers.SILVER, 1, -2.8F, new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
+    public static final RegistryObject<AxeItem> SILVER_AXE = ITEMS.register("silver_axe",
+            () -> new AxeItem(Tiers.SILVER, 6.0F, -3.1F, new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
+    public static final RegistryObject<HoeItem> SILVER_HOE = ITEMS.register("silver_hoe",
+            () -> new HoeItem(Tiers.SILVER, -2, -1.0F, new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
 
-    public static final RegistryObject<Item> SILVER_HELMET = ITEMS.register("silver_helmet",
-            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
-    public static final RegistryObject<Item> SILVER_CHESTPLATE = ITEMS.register("silver_chestplate",
-            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
-    public static final RegistryObject<Item> SILVER_LEGGINGS = ITEMS.register("silver_leggings",
-            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
-    public static final RegistryObject<Item> SILVER_BOOTS = ITEMS.register("silver_boots",
-            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
+    public static final RegistryObject<ArmorItem> SILVER_HELMET = ITEMS.register("silver_helmet",
+            () -> new ArmorItem(ArmorTiers.SILVER, EquipmentSlot.HEAD, new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
+    public static final RegistryObject<ArmorItem> SILVER_CHESTPLATE = ITEMS.register("silver_chestplate",
+            () -> new ArmorItem(ArmorTiers.SILVER, EquipmentSlot.CHEST, new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
+    public static final RegistryObject<ArmorItem> SILVER_LEGGINGS = ITEMS.register("silver_leggings",
+            () -> new ArmorItem(ArmorTiers.SILVER, EquipmentSlot.LEGS, new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
+    public static final RegistryObject<ArmorItem> SILVER_BOOTS = ITEMS.register("silver_boots",
+            () -> new ArmorItem(ArmorTiers.SILVER, EquipmentSlot.FEET, new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
+    public static class Tiers {
+        public static final Tier SILVER = new ForgeTier(2,200,6.5F,2.75F,25,null, () -> Ingredient.of(ModItems.SILVER_INGOT.get()));
+    }
 
-
+    public static class ArmorTiers {
+        public static final ArmorMaterial SILVER = new ModArmorMaterial(
+                "silver",
+                1,
+                new int[] { 3, 7, 8, 3 },
+                25,
+                SoundEvents.ARMOR_EQUIP_IRON,
+                0.0f,
+                0.0f,
+                () -> Ingredient.of(ModItems.SILVER_INGOT.get())
+        );
+    }
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

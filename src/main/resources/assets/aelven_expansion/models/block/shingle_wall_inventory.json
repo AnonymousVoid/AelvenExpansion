@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/wall_inventory",
   "textures": {
-    "wall": "aelven_expansion:block/roof_tiles"
+    "wall": "aelven_expansion:block/shingles"
   }
 }

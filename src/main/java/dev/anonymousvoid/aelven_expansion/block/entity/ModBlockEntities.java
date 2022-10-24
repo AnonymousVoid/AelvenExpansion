@@ -2,6 +2,7 @@ package dev.anonymousvoid.aelven_expansion.block.entity;
 
 import dev.anonymousvoid.aelven_expansion.AelvenExpansion;
 import dev.anonymousvoid.aelven_expansion.block.ModBlocks;
+import dev.anonymousvoid.aelven_expansion.block.custom.IdolTableBlock;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -17,7 +18,10 @@ public class ModBlockEntities {
                     BlockEntityType.Builder.of(KilnBlockEntity::new,
                             ModBlocks.KILN.get()).build(null));
 
-
+    public static final RegistryObject<BlockEntityType<IdolTableBlockEntity>> IDOL_TABLE =
+            BLOCK_ENTITIES.register("idol_table", () ->
+                    BlockEntityType.Builder.of(IdolTableBlockEntity::new,
+                            ModBlocks.IDOL_TABLE.get()).build(null));
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }

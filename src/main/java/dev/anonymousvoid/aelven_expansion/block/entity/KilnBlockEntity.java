@@ -28,7 +28,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class KilnBlockEntity extends BlockEntity implements MenuProvider {
-    private final ItemStackHandler itemHandler = new ItemStackHandler(3) {
+    private final ItemStackHandler itemHandler = new ItemStackHandler(7) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -63,7 +63,7 @@ public class KilnBlockEntity extends BlockEntity implements MenuProvider {
 
             @Override
             public int getCount() {
-                return 2;
+                return 6;
             }
         };
     }
@@ -152,7 +152,7 @@ public class KilnBlockEntity extends BlockEntity implements MenuProvider {
         if (hasRecipe(entity)) {
             entity.itemHandler.extractItem(0, 1, false);
             entity.itemHandler.extractItem(1, 1, false);
-            entity.itemHandler.setStackInSlot(2, new ItemStack(Items.EXPERIENCE_BOTTLE,
+            entity.itemHandler.setStackInSlot(4, new ItemStack(Items.EXPERIENCE_BOTTLE,
                     entity.itemHandler.getStackInSlot(2).getCount() + 1));
 
             entity.resetProgress();

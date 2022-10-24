@@ -18,7 +18,7 @@ public class KilnMenu extends AbstractContainerMenu {
     private final ContainerData data;
 
     public KilnMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
-        this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(2));
+        this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(6));
     }
 
     public KilnMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
@@ -34,11 +34,11 @@ public class KilnMenu extends AbstractContainerMenu {
         this.blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(handler -> {
             this.addSlot(new SlotItemHandler(handler, 0, 20, 35));
             this.addSlot(new SlotItemHandler(handler, 1, 56, 17));
-            this.addSlot(new SlotItemHandler(handler, 1, 56, 35));
-            this.addSlot(new SlotItemHandler(handler, 1, 56, 53));
-            this.addSlot(new SlotItemHandler(handler, 2, 116, 9));
-            this.addSlot(new SlotItemHandler(handler, 2, 116, 35));
-            this.addSlot(new SlotItemHandler(handler, 2, 116, 61));
+            this.addSlot(new SlotItemHandler(handler, 2, 56, 35));
+            this.addSlot(new SlotItemHandler(handler, 3, 56, 53));
+            this.addSlot(new SlotItemHandler(handler, 4, 116, 9));
+            this.addSlot(new SlotItemHandler(handler, 5, 116, 35));
+            this.addSlot(new SlotItemHandler(handler, 6, 116, 61));
         });
 
         addDataSlots(data);

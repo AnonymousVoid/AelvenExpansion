@@ -83,6 +83,7 @@
 	"block.aelven_expansion.carved_chitta_runed_large_tile": "Runed Carved Chitta Large Tile",
 
 	"block.aelven_expansion.kiln": "Kiln",
+	"block.aelven_expansion.idol_table": "Idol Table",
 
 
 	"block.aelven_expansion.cobbled_chitta_stairs": "Cobbled Chitta Stairs",
@@ -109,8 +110,6 @@
 	"block.aelven_expansion.chitta_large_tile_slab": "Chitta Large Tile Slab",
 	"block.aelven_expansion.chitta_large_tile_wall": "Chitta Large Tile Wall",
 
-
-
 	"item.aelven_expansion.elerium": "Elerium",
 	"item.aelven_expansion.elerium_paste": "Elerium Paste",
 
@@ -121,15 +120,16 @@
 	"block.aelven_expansion.deepslate_elerium_ore": "Deepslate Elerium Ore",
 	"block.aelven_expansion.elerium_block": "Block of Elerium",
 
-	"item.aelven_expansion.raw_silver_item": "Raw Silver",
-	"item.aelven_expansion.silver_ingot_item": "Silver Ingot",
-	"item.aelven_expansion.silver_nugget_item": "Silver Nugget",
-	"item.aelven_expansion.silver_dust_item": "Silver Dust",
-	"item.aelven_expansion.silver_pumice_item": "Silver Pumice",
+	"item.aelven_expansion.raw_silver": "Raw Silver",
+	"item.aelven_expansion.silver_ingot": "Silver Ingot",
+	"item.aelven_expansion.silver_nugget": "Silver Nugget",
+	"item.aelven_expansion.silver_dust": "Silver Dust",
+	"item.aelven_expansion.silver_pumice": "Silver Pumice",
 	"block.aelven_expansion.silver_ore": "Silver Ore",
 	"block.aelven_expansion.deepslate_silver_ore": "Deepslate Silver Ore",
 	"block.aelven_expansion.raw_silver_block": "Block of Raw Silver",
 	"block.aelven_expansion.silver_block": "Block of Silver",
+
 
 	"item.aelven_expansion.silver_sword": "Silver Sword",
 	"item.aelven_expansion.silver_dagger": "Silver Dagger",
@@ -137,7 +137,10 @@
 	"item.aelven_expansion.silver_pickaxe": "Silver Pickaxe",
 	"item.aelven_expansion.silver_axe": "Silver Axe",
 	"item.aelven_expansion.silver_hoe": "Silver Hoe",
-
+	"item.aelven_expansion.silver_helmet": "Silver Helmet",
+	"item.aelven_expansion.silver_chestplate": "Silver Chestplate",
+	"item.aelven_expansion.silver_leggings": "Silver Leggings",
+	"item.aelven_expansion.silver_boots": "Silver Boots",
 
 	"block.aelven_expansion.chalk": "Chalk",
 	"block.aelven_expansion.chalk_stairs": "Chalk Stairs",
@@ -185,8 +188,20 @@
 	"block.aelven_expansion.shingle_wall": "Shingle Wall",
 
 	"block.aelven_expansion.white_shingles": "White Shingles",
+	"block.aelven_expansion.white_shingle_stairs": "White Shingle Stairs",
+	"block.aelven_expansion.white_shingle_slab": "White Shingle Slab",
+	"block.aelven_expansion.white_shingle_wall": "White Shingle Wall",
+
 	"block.aelven_expansion.orange_shingles": "Orange Shingles",
+	"block.aelven_expansion.orange_shingle_stairs": "Orange Shingle Stairs",
+	"block.aelven_expansion.orange_shingle_slab": "Orange Shingle Slab",
+	"block.aelven_expansion.orange_shingle_wall": "Orange Shingle Wall",
+
 	"block.aelven_expansion.magenta_shingles": "Magenta Shingles",
+	"block.aelven_expansion.magenta_shingle_stairs": "Magenta Shingle Stairs",
+	"block.aelven_expansion.magenta_shingle_slab": "Magenta Shingle Slab",
+	"block.aelven_expansion.magenta_shingle_wall": "Magenta Shingle Wall",
+
 	"block.aelven_expansion.light_blue_shingles": "Light Blue Shingles",
 	"block.aelven_expansion.yellow_shingles": "Yellow Shingles",
 	"block.aelven_expansion.lime_shingles": "Lime Shingles",

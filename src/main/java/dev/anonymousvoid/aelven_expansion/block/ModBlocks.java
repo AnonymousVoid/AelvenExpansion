@@ -1,6 +1,7 @@
 package dev.anonymousvoid.aelven_expansion.block;
 
 import dev.anonymousvoid.aelven_expansion.AelvenExpansion;
+import dev.anonymousvoid.aelven_expansion.block.custom.IdolTableBlock;
 import dev.anonymousvoid.aelven_expansion.block.custom.KilnBlock;
 import dev.anonymousvoid.aelven_expansion.block.custom.ModFlammableRotatedPillarBlock;
 import dev.anonymousvoid.aelven_expansion.item.ModCreativeModeTab;
@@ -32,13 +33,16 @@ public class ModBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, AelvenExpansion.MODID);
 
     // BLOCK PROPERTIES
-    private static final BlockBehaviour.Properties woodProperties = BlockBehaviour.Properties.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.WOOD);
+    private static final BlockBehaviour.Properties woodProperties = BlockBehaviour.Properties.of(Material.WOOD).requiresCorrectToolForDrops().strength(2.0F, 3.0F).sound(SoundType.WOOD);
     private static final BlockBehaviour.Properties woodPropertiesNoCollide = BlockBehaviour.Properties.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.WOOD).noCollission();
     private static final BlockBehaviour.Properties woodPropertiesNoOcclude = BlockBehaviour.Properties.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.WOOD).noOcclusion();
-    private static final BlockBehaviour.Properties sandProperties = BlockBehaviour.Properties.copy(Blocks.SAND);
+    private static final BlockBehaviour.Properties sandProperties = BlockBehaviour.Properties.copy(Blocks.SAND).requiresCorrectToolForDrops();
     private static final BlockBehaviour.Properties azaleaProperties = BlockBehaviour.Properties.copy(Blocks.AZALEA_LEAVES);
 
-    private static final BlockBehaviour.Properties boneProperties = BlockBehaviour.Properties.copy(Blocks.BONE_BLOCK);
+    private static final BlockBehaviour.Properties metalProperties = BlockBehaviour.Properties.copy(Blocks.COPPER_BLOCK).requiresCorrectToolForDrops();
+    private static final BlockBehaviour.Properties deepmetalProperties = BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound((SoundType.NETHERITE_BLOCK)).requiresCorrectToolForDrops();
+
+    private static final BlockBehaviour.Properties boneProperties = BlockBehaviour.Properties.copy(Blocks.BONE_BLOCK).requiresCorrectToolForDrops();
     private static final BlockBehaviour.Properties plantProperties = BlockBehaviour.Properties.of(Material.PLANT).noCollission().instabreak().sound(SoundType.GRASS);
     private static final BlockBehaviour.Properties stoneProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.STONE).strength(1.5F, 6.0F);
     private static final BlockBehaviour.Properties deepslateProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE).strength(4.5F, 3.0F);
@@ -319,6 +323,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> KILN = registerBlock("kiln",
             () -> new KilnBlock(deepslatebrickProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
+    public static final RegistryObject<Block> IDOL_TABLE = registerBlock("idol_table",
+            () -> new IdolTableBlock(stoneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
 
     public static final RegistryObject<Block> COBBLED_CHITTA_STAIRS = registerBlock("cobbled_chitta_stairs",
             () -> new StairBlock(() -> ModBlocks.COBBLED_CHITTA.get().defaultBlockState(),
@@ -376,7 +383,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> ELERIUM_BLOCK = registerBlock("elerium_block",
             () -> new Block(stoneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> ELERUTITE_BLOCK = registerBlock("elerutite_block",
-            () -> new Block(stoneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new Block(metalProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
 
     public static final RegistryObject<Block> CHALK = registerBlock("chalk",
@@ -453,18 +460,18 @@ public class ModBlocks {
             () -> new WallBlock(deepslatebrickProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
     public static final RegistryObject<Block> SILVER_ORE = registerBlock("silver_ore",
-            () -> new DropExperienceBlock(stoneProperties, UniformInt.of(3, 7)), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new Block(stoneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> DEEPSLATE_SILVER_ORE = registerBlock("deepslate_silver_ore",
-            () -> new DropExperienceBlock(deepslateProperties, UniformInt.of(3, 7)), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new Block(deepslateProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> RAW_SILVER_BLOCK = registerBlock("raw_silver_block",
             () -> new Block(stoneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> SILVER_BLOCK = registerBlock("silver_block",
-            () -> new Block(stoneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new Block(deepmetalProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
     public static final RegistryObject<Block> SHINGLES = registerBlock("shingles",
             () -> new Block(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> SHINGLE_STAIRS = registerBlock("shingle_stairs",
-            () -> new StairBlock(() -> ModBlocks.DRYSTONE.get().defaultBlockState(),
+            () -> new StairBlock(() -> ModBlocks.SHINGLES.get().defaultBlockState(),
                     boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> SHINGLE_SLAB = registerBlock("shingle_slab",
             () -> new SlabBlock(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
@@ -473,10 +480,34 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> WHITE_SHINGLES = registerBlock("white_shingles",
             () -> new Block(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> WHITE_SHINGLE_STAIRS = registerBlock("white_shingle_stairs",
+            () -> new StairBlock(() -> ModBlocks.WHITE_SHINGLES.get().defaultBlockState(),
+                    boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> WHITE_SHINGLE_SLAB = registerBlock("white_shingle_slab",
+            () -> new SlabBlock(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> WHITE_SHINGLE_WALL = registerBlock("white_shingle_wall",
+            () -> new WallBlock(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
     public static final RegistryObject<Block> ORANGE_SHINGLES = registerBlock("orange_shingles",
             () -> new Block(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> ORANGE_SHINGLE_STAIRS = registerBlock("orange_shingle_stairs",
+            () -> new StairBlock(() -> ModBlocks.ORANGE_SHINGLES.get().defaultBlockState(),
+                    boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> ORANGE_SHINGLE_SLAB = registerBlock("orange_shingle_slab",
+            () -> new SlabBlock(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> ORANGE_SHINGLE_WALL = registerBlock("orange_shingle_wall",
+            () -> new WallBlock(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
     public static final RegistryObject<Block> MAGENTA_SHINGLES = registerBlock("magenta_shingles",
             () -> new Block(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> MAGENTA_SHINGLE_STAIRS = registerBlock("magenta_shingle_stairs",
+            () -> new StairBlock(() -> ModBlocks.MAGENTA_SHINGLES.get().defaultBlockState(),
+                    boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> MAGENTA_SHINGLE_SLAB = registerBlock("magenta_shingle_slab",
+            () -> new SlabBlock(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> MAGENTA_SHINGLE_WALL = registerBlock("magenta_shingle_wall",
+            () -> new WallBlock(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
     public static final RegistryObject<Block> LIGHT_BLUE_SHINGLES = registerBlock("light_blue_shingles",
             () -> new Block(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> YELLOW_SHINGLES = registerBlock("yellow_shingles",

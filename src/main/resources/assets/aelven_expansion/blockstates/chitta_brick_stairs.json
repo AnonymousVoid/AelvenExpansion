@@ -1,20 +1,20 @@
 {
   "variants": {
     "facing=east,half=bottom,shape=inner_left": {
-      "model": "aelven_expansion:block/chitta_brick_brick_stairs_inner",
+      "model": "aelven_expansion:block/chitta_brick_stairs_inner",
       "uvlock": true,
       "y": 270
     },
     "facing=east,half=bottom,shape=inner_right": {
-      "model": "aelven_expansion:block/chitta_brick_brick_stairs_inner"
+      "model": "aelven_expansion:block/chitta_brick_stairs_inner"
     },
     "facing=east,half=bottom,shape=outer_left": {
-      "model": "aelven_expansion:block/chitta_brick_brick_stairs_outer",
+      "model": "aelven_expansion:block/chitta_brick_stairs_outer",
       "uvlock": true,
       "y": 270
     },
     "facing=east,half=bottom,shape=outer_right": {
-      "model": "aelven_expansion:block/chitta_brick_brick_stairs_outer"
+      "model": "aelven_expansion:block/chitta_brick_stairs_outer"
     },
     "facing=east,half=bottom,shape=straight": {
       "model": "aelven_expansion:block/chitta_brick_stairs"

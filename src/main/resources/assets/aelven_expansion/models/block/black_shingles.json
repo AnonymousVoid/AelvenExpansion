@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "aelven_expansion:block/black_roof_tiles"
+    "all": "aelven_expansion:block/black_shingles"
   }
 }

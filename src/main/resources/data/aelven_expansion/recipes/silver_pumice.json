@@ -3,7 +3,7 @@
   "group": "silver_pumice",
   "key": {
     "#": {
-      "item": "aelven_expansion:silver_dust_item"
+      "item": "aelven_expansion:silver_dust"
     },
     "W": {
       "item": "minecraft:calcite"
@@ -15,6 +15,6 @@
     " # "
   ],
   "result": {
-    "item": "aelven_expansion:silver_pumice_item"
+    "item": "aelven_expansion:silver_pumice"
   }
 }

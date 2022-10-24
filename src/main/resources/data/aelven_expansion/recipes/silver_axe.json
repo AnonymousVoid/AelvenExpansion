@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "silver",
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "W": {
+      "item": "aelven_expansion:silver_ingot"
+    }
+  },
+  "pattern": [
+    "WW ",
+    "W# ",
+    " # "
+  ],
+  "result": {
+    "item": "aelven_expansion:silver_axe",
+    "count": 1
+  }
+}
