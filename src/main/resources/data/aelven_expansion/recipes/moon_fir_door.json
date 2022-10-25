@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "moon_fir_door",
+  "group": "minecraft:wooden_door",
   "key": {
     "#": {
       "item": "aelven_expansion:moon_fir_planks"

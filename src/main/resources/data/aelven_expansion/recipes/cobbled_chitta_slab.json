@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "chitta_slab",
+  "pattern": [
+    "   ",
+    "   ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "aelven_expansion:cobbled_chitta"
+    }
+  },
+  "result": {
+    "item": "aelven_expansion:cobbled_chitta_slab",
+    "count": 6
+  }
+}

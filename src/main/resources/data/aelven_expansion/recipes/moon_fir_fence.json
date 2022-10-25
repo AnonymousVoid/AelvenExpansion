@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "moon_fir_fence",
+  "group": "minecraft:wooden_fence",
   "key": {
     "#": {
       "item": "minecraft:stick"

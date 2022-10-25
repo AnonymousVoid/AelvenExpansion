@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "peachgrove_trapdoor",
+  "group": "minecraft:wooden_trapdoor",
   "key": {
     "#": {
       "item": "aelven_expansion:peachgrove_planks"

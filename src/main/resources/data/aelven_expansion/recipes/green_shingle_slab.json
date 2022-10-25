@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "shingle_slab",
+  "pattern": [
+    "   ",
+    "   ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "aelven_expansion:green_shingles"
+    }
+  },
+  "result": {
+    "item": "aelven_expansion:green_shingle_slab",
+    "count": 6
+  }
+}

@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "group": "elerutite_block",
+  "group": "elerutite",
   "ingredients":[
     {
       "item": "aelven_expansion:elerutite_block"

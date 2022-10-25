@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "group": "peachgrove_button",
+  "group": "minecraft:wooden_button",
   "ingredients": [
     {
       "item": "aelven_expansion:peachgrove_planks"

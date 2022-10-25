@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "group": "silverblood_planks",
+  "group": "minecraft:planks",
   "ingredients":[
     {
       "item": "aelven_expansion:silverblood_wood"

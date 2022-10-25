@@ -1,6 +1,7 @@
 package dev.anonymousvoid.aelven_expansion.item;
 
 import dev.anonymousvoid.aelven_expansion.AelvenExpansion;
+import dev.anonymousvoid.aelven_expansion.block.ModBlocks;
 import dev.anonymousvoid.aelven_expansion.item.custom.ChiselItem;
 import dev.anonymousvoid.aelven_expansion.item.custom.EleriumPasteItem;
 import dev.anonymousvoid.aelven_expansion.item.custom.ModArmorMaterial;
@@ -70,6 +71,16 @@ public class ModItems {
             () -> new ArmorItem(ArmorTiers.SILVER, EquipmentSlot.LEGS, new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
     public static final RegistryObject<ArmorItem> SILVER_BOOTS = ITEMS.register("silver_boots",
             () -> new ArmorItem(ArmorTiers.SILVER, EquipmentSlot.FEET, new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
+
+    public static final RegistryObject<Item> MOON_FIR_SIGN = ITEMS.register("moon_fir_sign",
+            () -> new SignItem(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_BLOCKS).stacksTo(16),
+                    ModBlocks.MOON_FIR_SIGN.get(), ModBlocks.MOON_FIR_WALL_SIGN.get()));
+    public static final RegistryObject<Item> SILVERBLOOD_SIGN = ITEMS.register("silverblood_sign",
+            () -> new SignItem(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_BLOCKS).stacksTo(16),
+                    ModBlocks.SILVERBLOOD_SIGN.get(), ModBlocks.SILVERBLOOD_WALL_SIGN.get()));
+    public static final RegistryObject<Item> PEACHGROVE_SIGN = ITEMS.register("peachgrove_sign",
+            () -> new SignItem(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_BLOCKS).stacksTo(16),
+                    ModBlocks.PEACHGROVE_SIGN.get(), ModBlocks.PEACHGROVE_WALL_SIGN.get()));
     public static class Tiers {
         public static final Tier SILVER = new ForgeTier(2,200,6.5F,2.75F,25,null, () -> Ingredient.of(ModItems.SILVER_INGOT.get()));
     }

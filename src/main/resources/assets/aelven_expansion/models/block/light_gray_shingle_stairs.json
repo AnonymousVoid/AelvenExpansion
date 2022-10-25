@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "aelven_expansion:block/light_gray_shingles",
+    "side": "aelven_expansion:block/light_gray_shingles",
+    "top": "aelven_expansion:block/light_gray_shingles"
+  }
+}

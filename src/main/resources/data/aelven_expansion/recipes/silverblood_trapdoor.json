@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "silverblood_trapdoor",
+  "group": "minecraft:wooden_trapdoor",
   "key": {
     "#": {
       "item": "aelven_expansion:silverblood_planks"

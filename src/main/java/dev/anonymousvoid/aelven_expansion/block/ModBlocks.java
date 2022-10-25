@@ -1,9 +1,8 @@
 package dev.anonymousvoid.aelven_expansion.block;
 
 import dev.anonymousvoid.aelven_expansion.AelvenExpansion;
-import dev.anonymousvoid.aelven_expansion.block.custom.IdolTableBlock;
-import dev.anonymousvoid.aelven_expansion.block.custom.KilnBlock;
-import dev.anonymousvoid.aelven_expansion.block.custom.ModFlammableRotatedPillarBlock;
+import dev.anonymousvoid.aelven_expansion.block.custom.*;
+import dev.anonymousvoid.aelven_expansion.block.entity.ModWoodTypes;
 import dev.anonymousvoid.aelven_expansion.item.ModCreativeModeTab;
 import dev.anonymousvoid.aelven_expansion.item.ModItems;
 import dev.anonymousvoid.aelven_expansion.world.feature.tree.MoonFirTreeGrower;
@@ -111,8 +110,12 @@ public class ModBlocks {
                 @Override public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 5; }
             }, ModCreativeModeTab.MOD_TAB_BLOCKS);
 
-    public static final RegistryObject<Block> MOON_FIR_SIGN = registerBlock("moon_fir_sign",
-            () -> log(MaterialColor.COLOR_GRAY, MaterialColor.COLOR_BLUE), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> MOON_FIR_WALL_SIGN = registerBlockWithoutBlockItem("moon_fir_wall_sign",
+            () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.MOON_FIR));
+
+    public static final RegistryObject<Block> MOON_FIR_SIGN = registerBlockWithoutBlockItem("moon_fir_sign",
+            () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.MOON_FIR));
+
     public static final RegistryObject<Block> MOON_FIR_SAPLING = registerBlock("moon_fir_sapling",
             () -> new SaplingBlock(new MoonFirTreeGrower(), plantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> MOON_FIR_LEAVES = registerBlock("moon_fir_leaves",
@@ -184,8 +187,11 @@ public class ModBlocks {
                 @Override public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 5; }
             }, ModCreativeModeTab.MOD_TAB_BLOCKS);
 
-    public static final RegistryObject<Block> SILVERBLOOD_SIGN = registerBlock("silverblood_sign",
-            () -> log(MaterialColor.COLOR_LIGHT_GRAY, MaterialColor.COLOR_PINK), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> SILVERBLOOD_WALL_SIGN = registerBlockWithoutBlockItem("silverblood_wall_sign",
+            () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.SILVERBLOOD));
+
+    public static final RegistryObject<Block> SILVERBLOOD_SIGN = registerBlockWithoutBlockItem("silverblood_sign",
+            () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.SILVERBLOOD));
     public static final RegistryObject<Block> SILVERBLOOD_SAPLING = registerBlock("silverblood_sapling",
             () -> new SaplingBlock(new SilverbloodTreeGrower(), plantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> SILVERBLOOD_LEAVES = registerBlock("silverblood_leaves",
@@ -256,8 +262,11 @@ public class ModBlocks {
                 @Override public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 5; }
             }, ModCreativeModeTab.MOD_TAB_BLOCKS);
 
-    public static final RegistryObject<Block> PEACHGROVE_SIGN = registerBlock("peachgrove_sign",
-            () -> log(MaterialColor.COLOR_GRAY, MaterialColor.COLOR_BLUE), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> PEACHGROVE_WALL_SIGN = registerBlockWithoutBlockItem("peachgrove_wall_sign",
+            () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.PEACHGROVE));
+
+    public static final RegistryObject<Block> PEACHGROVE_SIGN = registerBlockWithoutBlockItem("peachgrove_sign",
+            () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.PEACHGROVE));
     public static final RegistryObject<Block> PEACHGROVE_SAPLING = registerBlock("peachgrove_sapling",
             () -> new SaplingBlock(new PeachgroveTreeGrower(), plantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> PEACHGROVE_LEAVES = registerBlock("peachgrove_leaves",
@@ -510,37 +519,143 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> LIGHT_BLUE_SHINGLES = registerBlock("light_blue_shingles",
             () -> new Block(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> LIGHT_BLUE_SHINGLE_STAIRS = registerBlock("light_blue_shingle_stairs",
+            () -> new StairBlock(() -> ModBlocks.LIGHT_BLUE_SHINGLES.get().defaultBlockState(),
+                    boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> LIGHT_BLUE_SHINGLE_SLAB = registerBlock("light_blue_shingle_slab",
+            () -> new SlabBlock(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> LIGHT_BLUE_SHINGLE_WALL = registerBlock("light_blue_shingle_wall",
+            () -> new WallBlock(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    
     public static final RegistryObject<Block> YELLOW_SHINGLES = registerBlock("yellow_shingles",
             () -> new Block(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> YELLOW_SHINGLE_STAIRS = registerBlock("yellow_shingle_stairs",
+            () -> new StairBlock(() -> ModBlocks.YELLOW_SHINGLES.get().defaultBlockState(),
+                    boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> YELLOW_SHINGLE_SLAB = registerBlock("yellow_shingle_slab",
+            () -> new SlabBlock(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> YELLOW_SHINGLE_WALL = registerBlock("yellow_shingle_wall",
+            () -> new WallBlock(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    
     public static final RegistryObject<Block> LIME_SHINGLES = registerBlock("lime_shingles",
             () -> new Block(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> LIME_SHINGLE_STAIRS = registerBlock("lime_shingle_stairs",
+            () -> new StairBlock(() -> ModBlocks.LIME_SHINGLES.get().defaultBlockState(),
+                    boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> LIME_SHINGLE_SLAB = registerBlock("lime_shingle_slab",
+            () -> new SlabBlock(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> LIME_SHINGLE_WALL = registerBlock("lime_shingle_wall",
+            () -> new WallBlock(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    
     public static final RegistryObject<Block> PINK_SHINGLES = registerBlock("pink_shingles",
             () -> new Block(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> PINK_SHINGLE_STAIRS = registerBlock("pink_shingle_stairs",
+            () -> new StairBlock(() -> ModBlocks.PINK_SHINGLES.get().defaultBlockState(),
+                    boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> PINK_SHINGLE_SLAB = registerBlock("pink_shingle_slab",
+            () -> new SlabBlock(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> PINK_SHINGLE_WALL = registerBlock("pink_shingle_wall",
+            () -> new WallBlock(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    
     public static final RegistryObject<Block> GRAY_SHINGLES = registerBlock("gray_shingles",
             () -> new Block(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> GRAY_SHINGLE_STAIRS = registerBlock("gray_shingle_stairs",
+            () -> new StairBlock(() -> ModBlocks.GRAY_SHINGLES.get().defaultBlockState(),
+                    boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> GRAY_SHINGLE_SLAB = registerBlock("gray_shingle_slab",
+            () -> new SlabBlock(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> GRAY_SHINGLE_WALL = registerBlock("gray_shingle_wall",
+            () -> new WallBlock(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    
     public static final RegistryObject<Block> LIGHT_GRAY_SHINGLES = registerBlock("light_gray_shingles",
             () -> new Block(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> LIGHT_GRAY_SHINGLE_STAIRS = registerBlock("light_gray_shingle_stairs",
+            () -> new StairBlock(() -> ModBlocks.LIGHT_GRAY_SHINGLES.get().defaultBlockState(),
+                    boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> LIGHT_GRAY_SHINGLE_SLAB = registerBlock("light_gray_shingle_slab",
+            () -> new SlabBlock(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> LIGHT_GRAY_SHINGLE_WALL = registerBlock("light_gray_shingle_wall",
+            () -> new WallBlock(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
     public static final RegistryObject<Block> CYAN_SHINGLES = registerBlock("cyan_shingles",
             () -> new Block(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> CYAN_SHINGLE_STAIRS = registerBlock("cyan_shingle_stairs",
+            () -> new StairBlock(() -> ModBlocks.CYAN_SHINGLES.get().defaultBlockState(),
+                    boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> CYAN_SHINGLE_SLAB = registerBlock("cyan_shingle_slab",
+            () -> new SlabBlock(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> CYAN_SHINGLE_WALL = registerBlock("cyan_shingle_wall",
+            () -> new WallBlock(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    
     public static final RegistryObject<Block> PURPLE_SHINGLES = registerBlock("purple_shingles",
             () -> new Block(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> PURPLE_SHINGLE_STAIRS = registerBlock("purple_shingle_stairs",
+            () -> new StairBlock(() -> ModBlocks.PURPLE_SHINGLES.get().defaultBlockState(),
+                    boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> PURPLE_SHINGLE_SLAB = registerBlock("purple_shingle_slab",
+            () -> new SlabBlock(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> PURPLE_SHINGLE_WALL = registerBlock("purple_shingle_wall",
+            () -> new WallBlock(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
     public static final RegistryObject<Block> BLUE_SHINGLES = registerBlock("blue_shingles",
             () -> new Block(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> BLUE_SHINGLE_STAIRS = registerBlock("blue_shingle_stairs",
+            () -> new StairBlock(() -> ModBlocks.BLUE_SHINGLES.get().defaultBlockState(),
+                    boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> BLUE_SHINGLE_SLAB = registerBlock("blue_shingle_slab",
+            () -> new SlabBlock(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> BLUE_SHINGLE_WALL = registerBlock("blue_shingle_wall",
+            () -> new WallBlock(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    
     public static final RegistryObject<Block> BROWN_SHINGLES = registerBlock("brown_shingles",
             () -> new Block(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> BROWN_SHINGLE_STAIRS = registerBlock("brown_shingle_stairs",
+            () -> new StairBlock(() -> ModBlocks.BROWN_SHINGLES.get().defaultBlockState(),
+                    boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> BROWN_SHINGLE_SLAB = registerBlock("brown_shingle_slab",
+            () -> new SlabBlock(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> BROWN_SHINGLE_WALL = registerBlock("brown_shingle_wall",
+            () -> new WallBlock(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
     public static final RegistryObject<Block> GREEN_SHINGLES = registerBlock("green_shingles",
             () -> new Block(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> GREEN_SHINGLE_STAIRS = registerBlock("green_shingle_stairs",
+            () -> new StairBlock(() -> ModBlocks.GREEN_SHINGLES.get().defaultBlockState(),
+                    boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> GREEN_SHINGLE_SLAB = registerBlock("green_shingle_slab",
+            () -> new SlabBlock(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> GREEN_SHINGLE_WALL = registerBlock("green_shingle_wall",
+            () -> new WallBlock(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    
     public static final RegistryObject<Block> RED_SHINGLES = registerBlock("red_shingles",
             () -> new Block(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> RED_SHINGLE_STAIRS = registerBlock("red_shingle_stairs",
+            () -> new StairBlock(() -> ModBlocks.RED_SHINGLES.get().defaultBlockState(),
+                    boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> RED_SHINGLE_SLAB = registerBlock("red_shingle_slab",
+            () -> new SlabBlock(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> RED_SHINGLE_WALL = registerBlock("red_shingle_wall",
+            () -> new WallBlock(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    
     public static final RegistryObject<Block> BLACK_SHINGLES = registerBlock("black_shingles",
             () -> new Block(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> BLACK_SHINGLE_STAIRS = registerBlock("black_shingle_stairs",
+            () -> new StairBlock(() -> ModBlocks.BLACK_SHINGLES.get().defaultBlockState(),
+                    boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> BLACK_SHINGLE_SLAB = registerBlock("black_shingle_slab",
+            () -> new SlabBlock(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> BLACK_SHINGLE_WALL = registerBlock("black_shingle_wall",
+            () -> new WallBlock(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
     private static ModFlammableRotatedPillarBlock log(MaterialColor c1, MaterialColor c2) {
         return new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, (state) ->
                 state.getValue(RotatedPillarBlock.AXIS) ==
                         Direction.Axis.Y ? c1 : c2).strength(2.0F, 3.0F).sound(SoundType.WOOD));
-    }
 
+    }
+    private static <T extends Block> RegistryObject<T> registerBlockWithoutBlockItem(String name, Supplier<T> block) {
+        return BLOCKS.register(name, block);
+    }
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
@@ -548,11 +663,11 @@ public class ModBlocks {
         return toReturn;
     }
 
+
     private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block,
                                                                             CreativeModeTab tab) {
         return ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));
     }
-
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
     }

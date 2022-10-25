@@ -16,6 +16,7 @@
 	"block.aelven_expansion.moon_fir_pressure_plate": "Moon Fir Pressure Plate",
 	"block.aelven_expansion.moon_fir_door": "Moon Fir Door",
 	"block.aelven_expansion.moon_fir_trapdoor": "Moon Fir Trapdoor",
+	"block.aelven_expansion.moon_fir_sign": "Moon Fir Sign",
 
 	"block.aelven_expansion.silverblood_log": "Silverblood Log",
 	"block.aelven_expansion.stripped_silverblood_log": "Stripped Silverblood Log",
@@ -34,6 +35,7 @@
 	"block.aelven_expansion.silverblood_pressure_plate": "Silverblood Pressure Plate",
 	"block.aelven_expansion.silverblood_door": "Silverblood Door",
 	"block.aelven_expansion.silverblood_trapdoor": "Silverblood Trapdoor",
+	"block.aelven_expansion.silverblood_sign": "Silverblood Sign",
 
 	"block.aelven_expansion.peachgrove_log": "Peachgrove Log",
 	"block.aelven_expansion.stripped_peachgrove_log": "Stripped Peachgrove Log",
@@ -52,6 +54,7 @@
 	"block.aelven_expansion.peachgrove_pressure_plate": "Peachgrove Pressure Plate",
 	"block.aelven_expansion.peachgrove_door": "Peachgrove Door",
 	"block.aelven_expansion.peachgrove_trapdoor": "Peachgrove Trapdoor",
+	"block.aelven_expansion.peachgrove_sign": "Peachgrove Sign",
 
 	"block.aelven_expansion.moon_bloom": "Moon Bloom",
 	"block.aelven_expansion.moonshade": "Moonshade",
@@ -166,7 +169,6 @@
 	"block.aelven_expansion.chipstone_slab": "Chipstone Slab",
 	"block.aelven_expansion.chipstone_wall": "Chipstone Wall",
 
-
 	"block.aelven_expansion.polished_chipstone": "Polished Chipstone",
 	"block.aelven_expansion.polished_chipstone_stairs": "Polished Chipstone Stairs",
 	"block.aelven_expansion.polished_chipstone_slab": "Polished Chipstone Slab",
@@ -203,18 +205,69 @@
 	"block.aelven_expansion.magenta_shingle_wall": "Magenta Shingle Wall",
 
 	"block.aelven_expansion.light_blue_shingles": "Light Blue Shingles",
+	"block.aelven_expansion.light_blue_shingle_stairs": "Light Blue Shingle Stairs",
+	"block.aelven_expansion.light_blue_shingle_slab": "Light Blue Shingle Slab",
+	"block.aelven_expansion.light_blue_shingle_wall": "Light Blue Shingle Wall",
+
 	"block.aelven_expansion.yellow_shingles": "Yellow Shingles",
+	"block.aelven_expansion.yellow_shingle_stairs": "Yellow Shingle Stairs",
+	"block.aelven_expansion.yellow_shingle_slab": "Yellow Shingle Slab",
+	"block.aelven_expansion.yellow_shingle_wall": "Yellow Shingle Wall",
+
 	"block.aelven_expansion.lime_shingles": "Lime Shingles",
+	"block.aelven_expansion.lime_shingle_stairs": "Lime Shingle Stairs",
+	"block.aelven_expansion.lime_shingle_slab": "Lime Shingle Slab",
+	"block.aelven_expansion.lime_shingle_wall": "Lime Shingle Wall",
+
 	"block.aelven_expansion.pink_shingles": "Pink Shingles",
+	"block.aelven_expansion.pink_shingle_stairs": "Pink Shingle Stairs",
+	"block.aelven_expansion.pink_shingle_slab": "Pink Shingle Slab",
+	"block.aelven_expansion.pink_shingle_wall": "Pink Shingle Wall",
+
 	"block.aelven_expansion.gray_shingles": "Gray Shingles",
+	"block.aelven_expansion.gray_shingle_stairs": "Gray Shingle Stairs",
+	"block.aelven_expansion.gray_shingle_slab": "Gray Shingle Slab",
+	"block.aelven_expansion.gray_shingle_wall": "Gray Shingle Wall",
+
 	"block.aelven_expansion.light_gray_shingles": "Light Gray Shingles",
+	"block.aelven_expansion.light_gray_shingle_stairs": "Light Gray Shingle Stairs",
+	"block.aelven_expansion.light_gray_shingle_slab": "Light Gray Shingle Slab",
+	"block.aelven_expansion.light_gray_shingle_wall": "Light Gray Shingle Wall",
+
 	"block.aelven_expansion.cyan_shingles": "Cyan Shingles",
+	"block.aelven_expansion.cyan_shingle_stairs": "Cyan Shingle Stairs",
+	"block.aelven_expansion.cyan_shingle_slab": "Cyan Shingle Slab",
+	"block.aelven_expansion.cyan_shingle_wall": "Cyan Shingle Wall",
+
 	"block.aelven_expansion.purple_shingles": "Purple Shingles",
+	"block.aelven_expansion.purple_shingle_stairs": "Purple Shingle Stairs",
+	"block.aelven_expansion.purple_shingle_slab": "Purple Shingle Slab",
+	"block.aelven_expansion.purple_shingle_wall": "Purple Shingle Wall",
+
 	"block.aelven_expansion.blue_shingles": "Blue Shingles",
+	"block.aelven_expansion.blue_shingle_stairs": "Blue Shingle Stairs",
+	"block.aelven_expansion.blue_shingle_slab": "Blue Shingle Slab",
+	"block.aelven_expansion.blue_shingle_wall": "Blue Shingle Wall",
+
 	"block.aelven_expansion.brown_shingles": "Brown Shingles",
+	"block.aelven_expansion.brown_shingle_stairs": "Brown Shingle Stairs",
+	"block.aelven_expansion.brown_shingle_slab": "Brown Shingle Slab",
+	"block.aelven_expansion.brown_shingle_wall": "Brown Shingle Wall",
+
 	"block.aelven_expansion.green_shingles": "Green Shingles",
+	"block.aelven_expansion.green_shingle_stairs": "Green Shingle Stairs",
+	"block.aelven_expansion.green_shingle_slab": "Green Shingle Slab",
+	"block.aelven_expansion.green_shingle_wall": "Green Shingle Wall",
+
 	"block.aelven_expansion.red_shingles": "Red Shingles",
+	"block.aelven_expansion.red_shingle_stairs": "Red Shingle Stairs",
+	"block.aelven_expansion.red_shingle_slab": "Red Shingle Slab",
+	"block.aelven_expansion.red_shingle_wall": "Red Shingle Wall",
+
 	"block.aelven_expansion.black_shingles": "Black Shingles",
+	"block.aelven_expansion.black_shingle_stairs": "Black Shingle Stairs",
+	"block.aelven_expansion.black_shingle_slab": "Black Shingle Slab",
+	"block.aelven_expansion.black_shingle_wall": "Black Shingle Wall",
 
 	"itemGroup.aelven_expansion_blocks": "Aelven Expansion Blocks",
 	"itemGroup.aelven_expansion_items": "Aelven Expansion Items"

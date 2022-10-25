@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "group": "peachgrove_planks",
+  "group": "minecraft:planks",
   "ingredients":[
     {
       "item": "aelven_expansion:stripped_peachgrove_beams"

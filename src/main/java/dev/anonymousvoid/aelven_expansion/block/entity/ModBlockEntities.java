@@ -22,6 +22,22 @@ public class ModBlockEntities {
             BLOCK_ENTITIES.register("idol_table", () ->
                     BlockEntityType.Builder.of(IdolTableBlockEntity::new,
                             ModBlocks.IDOL_TABLE.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<ModSignBlockEntity>> SIGN_BLOCK_ENTITIES =
+            BLOCK_ENTITIES.register("sign_block_entity", () ->
+                    BlockEntityType.Builder.of(ModSignBlockEntity::new,
+                            ModBlocks.MOON_FIR_WALL_SIGN.get(),
+                            ModBlocks.MOON_FIR_SIGN.get(),
+                            ModBlocks.SILVERBLOOD_WALL_SIGN.get(),
+                            ModBlocks.SILVERBLOOD_SIGN.get(),
+                            ModBlocks.PEACHGROVE_WALL_SIGN.get(),
+                            ModBlocks.PEACHGROVE_SIGN.get()).build(null));
+
+
+
+
+
+
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }

@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "group": "moon_fir_planks",
+  "group": "minecraft:planks",
   "ingredients":[
     {
       "item": "aelven_expansion:stripped_moon_fir_wood"

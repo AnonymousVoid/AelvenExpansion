@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "shingle_wall",
+  "pattern": [
+    "   ",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "aelven_expansion:brown_shingles"
+    }
+  },
+  "result": {
+    "item": "aelven_expansion:brown_shingle_wall",
+    "count": 6
+  }
+}

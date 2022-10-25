@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "group": "moon_fir_button",
+  "group": "minecraft:wooden_button",
   "ingredients": [
     {
       "item": "aelven_expansion:moon_fir_planks"

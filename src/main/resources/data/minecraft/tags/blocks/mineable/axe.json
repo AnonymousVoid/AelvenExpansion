@@ -16,6 +16,7 @@
     "aelven_expansion:moon_fir_trapdoor",
     "aelven_expansion:moon_fir_pressure_plate",
     "aelven_expansion:moon_fir_button",
+    "aelven_expansion:moon_fir_sign",
     "aelven_expansion:silverblood_log",
     "aelven_expansion:silverblood_wood",
     "aelven_expansion:silverblood_beams",
@@ -31,6 +32,7 @@
     "aelven_expansion:silverblood_trapdoor",
     "aelven_expansion:silverblood_pressure_plate",
     "aelven_expansion:silverblood_button",
+    "aelven_expansion:silverblood_sign",
     "aelven_expansion:peachgrove_log",
     "aelven_expansion:peachgrove_wood",
     "aelven_expansion:peachgrove_beams",
@@ -46,6 +48,7 @@
     "aelven_expansion:peachgrove_trapdoor",
     "aelven_expansion:peachgrove_pressure_plate",
     "aelven_expansion:peachgrove_button",
+    "aelven_expansion:peachgrove_sign",
     "aelven_expansion:idol_table"
   ]
 }

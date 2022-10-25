@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "aelven_expansion:block/light_gray_shingle_slab"
+    },
+    "type=double": {
+      "model": "aelven_expansion:block/light_gray_shingles"
+    },
+    "type=top": {
+      "model": "aelven_expansion:block/light_gray_shingle_slab_top"
+    }
+  }
+}

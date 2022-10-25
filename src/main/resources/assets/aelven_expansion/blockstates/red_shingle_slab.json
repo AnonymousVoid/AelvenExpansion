@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "aelven_expansion:block/red_shingle_slab"
+    },
+    "type=double": {
+      "model": "aelven_expansion:block/red_shingles"
+    },
+    "type=top": {
+      "model": "aelven_expansion:block/red_shingle_slab_top"
+    }
+  }
+}
