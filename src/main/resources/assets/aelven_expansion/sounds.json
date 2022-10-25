@@ -1,0 +1,10 @@
+{
+  "music_disc": {
+    "sounds": [
+      {
+        "name": "aelven_expansion:music_disc",
+        "stream": true
+      }
+    ]
+  }
+}

@@ -18,6 +18,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.checkerframework.checker.units.qual.A;
+import net.minecraft.world.item.RecordItem;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -33,7 +34,6 @@ public class ModItems {
 
     public static final RegistryObject<Item> ELERUTITE_INGOT = ITEMS.register("elerutite_ingot_item",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
-
 
 
     public static final RegistryObject<Item> CHALK_DUST = ITEMS.register("chalk_dust_item",
@@ -81,6 +81,10 @@ public class ModItems {
     public static final RegistryObject<Item> PEACHGROVE_SIGN = ITEMS.register("peachgrove_sign",
             () -> new SignItem(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_BLOCKS).stacksTo(16),
                     ModBlocks.PEACHGROVE_SIGN.get(), ModBlocks.PEACHGROVE_WALL_SIGN.get()));
+
+    public static final RegistryObject<Item> MUSIC_DISC = ITEMS.register("music_disc",
+            () -> new RecordItem(7, ModSounds.MUSIC_DISC, new Item.Properties().stacksTo(1).tab(ModCreativeModeTab.MOD_TAB_ITEMS).rarity(Rarity.RARE), 203));
+
     public static class Tiers {
         public static final Tier SILVER = new ForgeTier(2,200,6.5F,2.75F,25,null, () -> Ingredient.of(ModItems.SILVER_INGOT.get()));
     }

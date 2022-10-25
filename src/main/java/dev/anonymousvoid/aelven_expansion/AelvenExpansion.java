@@ -5,6 +5,8 @@ import dev.anonymousvoid.aelven_expansion.block.ModBlocks;
 import dev.anonymousvoid.aelven_expansion.block.entity.ModBlockEntities;
 import dev.anonymousvoid.aelven_expansion.block.entity.ModWoodTypes;
 import dev.anonymousvoid.aelven_expansion.item.ModItems;
+import dev.anonymousvoid.aelven_expansion.item.ModSounds;
+import dev.anonymousvoid.aelven_expansion.recipe.ModRecipes;
 import dev.anonymousvoid.aelven_expansion.screen.IdolTableScreen;
 import dev.anonymousvoid.aelven_expansion.screen.KilnScreen;
 import dev.anonymousvoid.aelven_expansion.screen.ModMenuTypes;
@@ -47,6 +49,8 @@ public class AelvenExpansion {
 
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
+        ModSounds.register(modEventBus);
+        ModRecipes.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::clientSetup);

@@ -45,14 +45,39 @@ public class KilnMenu extends AbstractContainerMenu {
 
     }
 
-    public boolean isCrafting() {
+    public boolean isCrafting1() {
+        return data.get(0) > 0;
+    }
+    public boolean isCrafting2() {
+        return data.get(0) > 0;
+    }
+    public boolean isCrafting3() {
         return data.get(0) > 0;
     }
 
-    public int getScaledProgress() {
-        int progress = this.data.get(0);
-        int maxProgress = this.data.get(1);
+    public int getScaledProgress1() {
+        int progress = this.data.get(1);
+        int maxProgress = this.data.get(0);
         int progressArrowSize = 26;
+
+
+        return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
+    }
+
+    public int getScaledProgress2() {
+        int progress = this.data.get(2);
+        int maxProgress = this.data.get(0);
+        int progressArrowSize = 26;
+
+
+        return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
+    }
+
+    public int getScaledProgress3() {
+        int progress = this.data.get(3);
+        int maxProgress = this.data.get(0);
+        int progressArrowSize = 26;
+
 
         return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
     }

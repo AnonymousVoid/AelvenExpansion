@@ -63,8 +63,9 @@
 	"block.aelven_expansion.peach_lavender": "Peach Lavender",
 	"block.aelven_expansion.peach_lilac": "Peach Lilac",
 
-
 	"item.aelven_expansion.chitta_chisel": "Chitta Chisel",
+	"item.aelven_expansion.music_disc": "Music Disc",
+	"item.aelven_expansion.music_disc.desc": "Aliyah Jubilee - Valor's Quest",
 
 	"block.aelven_expansion.cobbled_chitta": "Cobbled Chitta",
 	"block.aelven_expansion.cracked_chitta": "Cracked Chitta",

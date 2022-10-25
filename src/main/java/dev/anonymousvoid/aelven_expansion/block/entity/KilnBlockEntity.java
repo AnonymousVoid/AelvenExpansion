@@ -2,6 +2,7 @@ package dev.anonymousvoid.aelven_expansion.block.entity;
 
 import dev.anonymousvoid.aelven_expansion.block.ModBlocks;
 import dev.anonymousvoid.aelven_expansion.item.ModItems;
+import dev.anonymousvoid.aelven_expansion.recipe.KilnRecipe;
 import dev.anonymousvoid.aelven_expansion.screen.KilnMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -27,6 +28,8 @@ import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Optional;
+
 public class KilnBlockEntity extends BlockEntity implements MenuProvider {
     private final ItemStackHandler itemHandler = new ItemStackHandler(7) {
         @Override
@@ -38,8 +41,10 @@ public class KilnBlockEntity extends BlockEntity implements MenuProvider {
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
 
     protected final ContainerData data;
-    private int progress = 0;
-    private int maxProgress = 40;
+    private int progress1 = 0;
+    private int progress2 = 0;
+    private int progress3 = 0;
+    private int maxProgress = 240;
 
     public KilnBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.KILN.get(), pos, state);
@@ -47,8 +52,10 @@ public class KilnBlockEntity extends BlockEntity implements MenuProvider {
             @Override
             public int get(int index) {
                 return switch (index) {
-                    case 0 -> KilnBlockEntity.this.progress;
-                    case 1 -> KilnBlockEntity.this.maxProgress;
+                    case 0 -> KilnBlockEntity.this.maxProgress;
+                    case 1 -> KilnBlockEntity.this.progress1;
+                    case 2 -> KilnBlockEntity.this.progress2;
+                    case 3 -> KilnBlockEntity.this.progress3;
                     default -> 0;
                 };
             }
@@ -56,8 +63,10 @@ public class KilnBlockEntity extends BlockEntity implements MenuProvider {
             @Override
             public void set(int index, int value) {
                 switch (index) {
-                    case 0 -> KilnBlockEntity.this.progress = value;
-                    case 1 -> KilnBlockEntity.this.maxProgress = value;
+                    case 0 -> KilnBlockEntity.this.maxProgress = value;
+                    case 1 -> KilnBlockEntity.this.progress1 = value;
+                    case 2 -> KilnBlockEntity.this.progress2 = value;
+                    case 3 -> KilnBlockEntity.this.progress3 = value;
                 }
             }
 
@@ -103,7 +112,9 @@ public class KilnBlockEntity extends BlockEntity implements MenuProvider {
     @Override
     protected void saveAdditional(CompoundTag nbt) {
         nbt.put("inventory", itemHandler.serializeNBT());
-        nbt.putInt("kiln.progress", this.progress);
+        nbt.putInt("kiln.progress1", this.progress1);
+        nbt.putInt("kiln.progress2", this.progress2);
+        nbt.putInt("kiln.progress3", this.progress3);
 
         super.saveAdditional(nbt);
     }
@@ -112,7 +123,9 @@ public class KilnBlockEntity extends BlockEntity implements MenuProvider {
     public void load(CompoundTag nbt) {
         super.load(nbt);
         itemHandler.deserializeNBT(nbt.getCompound("inventory"));
-        progress = nbt.getInt("kiln.progress");
+        progress1 = nbt.getInt("kiln.progress1");
+        progress2 = nbt.getInt("kiln.progress2");
+        progress3 = nbt.getInt("kiln.progress3");
     }
 
     public void drops() {
@@ -129,54 +142,177 @@ public class KilnBlockEntity extends BlockEntity implements MenuProvider {
             return;
         }
 
-        if (hasRecipe(entity)) {
-            entity.progress++;
+        if (hasRecipe1(entity)) {
+            entity.progress1++;
             setChanged(level, pos, state);
 
-            if (entity.progress >= entity.maxProgress) {
-                craftItem(entity);
+            if (entity.progress1 >= entity.maxProgress) {
+                craftItem1(entity);
             }
         } else {
-            entity.resetProgress();
+            entity.resetProgress1();
             setChanged(level, pos, state);
         }
+        if (hasRecipe2(entity)) {
+            entity.progress2++;
+            setChanged(level, pos, state);
 
-    }
-
-    private void resetProgress() {
-        this.progress = 0;
-    }
-
-    private static void craftItem(KilnBlockEntity entity) {
-
-        if (hasRecipe(entity)) {
-            entity.itemHandler.extractItem(0, 1, false);
-            entity.itemHandler.extractItem(1, 1, false);
-            entity.itemHandler.setStackInSlot(4, new ItemStack(Items.EXPERIENCE_BOTTLE,
-                    entity.itemHandler.getStackInSlot(4).getCount() + 1));
-
-            entity.resetProgress();
+            if (entity.progress2 >= entity.maxProgress) {
+                craftItem2(entity);
+            }
+        } else {
+            entity.resetProgress2();
+            setChanged(level, pos, state);
         }
+        if (hasRecipe3(entity)) {
+            entity.progress3++;
+            setChanged(level, pos, state);
 
+            if (entity.progress3 >= entity.maxProgress) {
+                craftItem3(entity);
+            }
+        } else {
+            entity.resetProgress3();
+            setChanged(level, pos, state);
+        }
     }
 
-    private static boolean hasRecipe(KilnBlockEntity entity) {
+    private void resetProgress1() {
+        this.progress1 = 0;
+    }
+    private void resetProgress2() {
+        this.progress2 = 0;
+    }
+    private void resetProgress3() {
+        this.progress3 = 0;
+    }
+
+    private static void craftItem1(KilnBlockEntity entity) {
+        Level level1 = entity.level;
         SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
         for (int i = 0; i < entity.itemHandler.getSlots(); i++) {
             inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
         }
 
-        boolean hasIngredient = entity.itemHandler.getStackInSlot(1).getItem() == Items.HONEY_BOTTLE;
-        boolean hasFuel = entity.itemHandler.getStackInSlot(0).getItem() == ModItems.ELERIUM.get();
+        Optional<KilnRecipe> recipe = level1.getRecipeManager()
+                .getRecipeFor(KilnRecipe.Type.INSTANCE, inventory, level1);
 
-        return hasIngredient && hasFuel && canOutput(inventory, new ItemStack(Items.EXPERIENCE_BOTTLE, 1));
+        if (hasRecipe1(entity)) {
+            entity.itemHandler.extractItem(0, 1, false);
+            entity.itemHandler.extractItem(1, 1, false);
+            entity.itemHandler.setStackInSlot(4, new ItemStack(recipe.get().getResultItem().getItem(),
+                    entity.itemHandler.getStackInSlot(4).getCount() + 1));
+
+            entity.resetProgress1();
+        }
+
+    }
+    private static void craftItem2(KilnBlockEntity entity) {
+        Level level2 = entity.level;
+        SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
+        for (int i = 0; i < entity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
+        }
+
+        Optional<KilnRecipe> recipe = level2.getRecipeManager()
+                .getRecipeFor(KilnRecipe.Type.INSTANCE, inventory, level2);
+
+        if (hasRecipe2(entity)) {
+            entity.itemHandler.extractItem(0, 1, false);
+            entity.itemHandler.extractItem(2, 1, false);
+            entity.itemHandler.setStackInSlot(5, new ItemStack(recipe.get().getResultItem().getItem(),
+                    entity.itemHandler.getStackInSlot(5).getCount() + 1));
+
+            entity.resetProgress2();
+        }
+
+    }
+    private static void craftItem3(KilnBlockEntity entity) {
+        Level level3 = entity.level;
+        SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
+        for (int i = 0; i < entity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
+        }
+
+        Optional<KilnRecipe> recipe = level3.getRecipeManager()
+                .getRecipeFor(KilnRecipe.Type.INSTANCE, inventory, level3);
+
+        if (hasRecipe3(entity)) {
+            entity.itemHandler.extractItem(0, 1, false);
+            entity.itemHandler.extractItem(3, 1, false);
+            entity.itemHandler.setStackInSlot(6, new ItemStack(recipe.get().getResultItem().getItem(),
+                    entity.itemHandler.getStackInSlot(6).getCount() + 1));
+
+            entity.resetProgress3();
+        }
+
     }
 
-    private static boolean canOutput(SimpleContainer inventory, ItemStack stack) {
-        boolean outputMatches = inventory.getItem(2).getItem() ==
-                stack.getItem() || inventory.getItem(2).isEmpty();
-        boolean keepsLimit = inventory.getItem(2).getMaxStackSize() >=
-                inventory.getItem(2).getCount() + stack.getCount();
+    private static boolean hasRecipe1(KilnBlockEntity entity) {
+        Level level1 = entity.level;
+        SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
+        for (int i = 0; i < entity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
+        }
+
+        Optional<KilnRecipe> recipe = level1.getRecipeManager()
+                .getRecipeFor(KilnRecipe.Type.INSTANCE, inventory, level1);
+
+       /* boolean hasIngredient = entity.itemHandler.getStackInSlot(1).getItem() == Items.HONEY_BOTTLE; */
+        boolean hasFuel = entity.itemHandler.getStackInSlot(0).getItem() == ModItems.ELERIUM.get();
+
+        return recipe.isPresent() && hasFuel && canOutput1(inventory, recipe.get().getResultItem());
+    }
+    private static boolean hasRecipe2(KilnBlockEntity entity) {
+        Level level2 = entity.level;
+        SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
+        for (int i = 0; i < entity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
+        }
+
+        Optional<KilnRecipe> recipe = level2.getRecipeManager()
+                .getRecipeFor(KilnRecipe.Type.INSTANCE, inventory, level2);
+
+       /* boolean hasIngredient = entity.itemHandler.getStackInSlot(1).getItem() == Items.HONEY_BOTTLE; */
+        boolean hasFuel = entity.itemHandler.getStackInSlot(0).getItem() == ModItems.ELERIUM.get();
+
+        return recipe.isPresent() && hasFuel && canOutput2(inventory, recipe.get().getResultItem());
+    }
+    private static boolean hasRecipe3(KilnBlockEntity entity) {
+        Level level3 = entity.level;
+        SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
+        for (int i = 0; i < entity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
+        }
+
+        Optional<KilnRecipe> recipe = level3.getRecipeManager()
+                .getRecipeFor(KilnRecipe.Type.INSTANCE, inventory, level3);
+
+       /* boolean hasIngredient = entity.itemHandler.getStackInSlot(1).getItem() == Items.HONEY_BOTTLE; */
+        boolean hasFuel = entity.itemHandler.getStackInSlot(0).getItem() == ModItems.ELERIUM.get();
+
+        return recipe.isPresent() && hasFuel && canOutput3(inventory, recipe.get().getResultItem());
+    }
+
+    private static boolean canOutput1(SimpleContainer inventory, ItemStack stack) {
+        boolean outputMatches = inventory.getItem(4).getItem() ==
+                stack.getItem() || inventory.getItem(4).isEmpty();
+        boolean keepsLimit = inventory.getItem(4).getMaxStackSize() >=
+                inventory.getItem(4).getCount() + stack.getCount();
+        return outputMatches && keepsLimit;
+    }
+    private static boolean canOutput2(SimpleContainer inventory, ItemStack stack) {
+        boolean outputMatches = inventory.getItem(5).getItem() ==
+                stack.getItem() || inventory.getItem(5).isEmpty();
+        boolean keepsLimit = inventory.getItem(5).getMaxStackSize() >=
+                inventory.getItem(5).getCount() + stack.getCount();
+        return outputMatches && keepsLimit;
+    }
+    private static boolean canOutput3(SimpleContainer inventory, ItemStack stack) {
+        boolean outputMatches = inventory.getItem(6).getItem() ==
+                stack.getItem() || inventory.getItem(6).isEmpty();
+        boolean keepsLimit = inventory.getItem(6).getMaxStackSize() >=
+                inventory.getItem(6).getCount() + stack.getCount();
         return outputMatches && keepsLimit;
     }
 }
