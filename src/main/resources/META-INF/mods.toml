@@ -42,8 +42,7 @@ authors="AnonymousVoid" #optional
 
 # The description text for the mod (multi line!) (#mandatory)
 description='''
-Aelven Expansion is about magical creatures and places, especially when it comes to elves.
-'''
+Aelven Expansion is about magical creatures and places, especially when it comes to elves.'''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.aelven_expansion]] #optional
     # the modid of the dependency
