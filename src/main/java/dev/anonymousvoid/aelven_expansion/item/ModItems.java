@@ -53,7 +53,7 @@ public class ModItems {
     public static final RegistryObject<SwordItem> SILVER_SWORD = ITEMS.register("silver_sword",
             () -> new SwordItem(Tiers.SILVER, 3, -2.4F, new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
     public static final RegistryObject<SwordItem> SILVER_DAGGER = ITEMS.register("silver_dagger",
-            () -> new SwordItem(Tiers.SILVER, 1, 4.0F, new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
+            () -> new SwordItem(Tiers.SILVER, -1, 4.0F, new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
     public static final RegistryObject<ShovelItem> SILVER_SHOVEL = ITEMS.register("silver_shovel",
             () -> new ShovelItem(Tiers.SILVER, 1.5F, -3.0F, new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
     public static final RegistryObject<PickaxeItem> SILVER_PICKAXE = ITEMS.register("silver_pickaxe",
