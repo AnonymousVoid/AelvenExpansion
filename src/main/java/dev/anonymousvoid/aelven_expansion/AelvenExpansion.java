@@ -49,6 +49,7 @@ public class AelvenExpansion {
 
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
+
         ModSounds.register(modEventBus);
         ModRecipes.register(modEventBus);
 
