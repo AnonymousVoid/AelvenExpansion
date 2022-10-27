@@ -13,6 +13,7 @@ import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 
+import javax.swing.plaf.PanelUI;
 
 public class KilnRecipe implements Recipe<SimpleContainer> {
     private final ResourceLocation id;
@@ -31,8 +32,11 @@ public class KilnRecipe implements Recipe<SimpleContainer> {
         if(pLevel.isClientSide()) {
             return false;
         }
-
         return recipeItems.get(0).test(pContainer.getItem(1));
+    }
+    @Override
+    public NonNullList<Ingredient> getIngredients() {
+        return recipeItems;
     }
 
     @Override
@@ -41,7 +45,7 @@ public class KilnRecipe implements Recipe<SimpleContainer> {
     }
 
     @Override
-    public boolean canCraftInDimensions(int p_43999_, int p_44000_) {
+    public boolean canCraftInDimensions(int pWidth, int pHeight) {
         return true;
     }
 
@@ -65,10 +69,8 @@ public class KilnRecipe implements Recipe<SimpleContainer> {
         return Type.INSTANCE;
     }
 
-    public static class Type implements RecipeType<KilnRecipe> {
-        private Type() {
-        }
-
+    public static  class Type implements RecipeType<KilnRecipe> {
+        private Type() { }
         public static final Type INSTANCE = new Type();
         public static final String ID = "kiln";
     }

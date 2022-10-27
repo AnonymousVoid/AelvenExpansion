@@ -32,7 +32,7 @@ public class ModItems {
     public static final RegistryObject<Item> ELERIUM_PASTE = ITEMS.register("elerium_paste",
             () -> new EleriumPasteItem(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS).durability(32)));
 
-    public static final RegistryObject<Item> ELERUTITE_INGOT = ITEMS.register("elerutite_ingot_item",
+    public static final RegistryObject<Item> ELERUTITE_INGOT = ITEMS.register("elerutite_ingot",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
 
 
