@@ -17,11 +17,12 @@ import net.minecraft.world.level.levelgen.feature.configurations.RandomFeatureCo
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.RandomSpreadFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.BendingTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -38,6 +39,7 @@ public class ModConfiguredFeatures {
                         BlockStateProvider.simple(ModBlocks.MOON_FIR_LEAVES.get()),
                         new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 4),
                         new TwoLayersFeatureSize(1, 0, 2)).build());
+
         public static final Holder<ConfiguredFeature<TreeConfiguration, ?>> SILVERBLOOD_TREE =
                 FeatureUtils.register("silverblood_tree", Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                         BlockStateProvider.simple(ModBlocks.SILVERBLOOD_LOG.get()),
@@ -45,12 +47,13 @@ public class ModConfiguredFeatures {
                         BlockStateProvider.simple(ModBlocks.SILVERBLOOD_LEAVES.get()),
                         new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 4),
                         new TwoLayersFeatureSize(1, 0, 2)).build());
+
         public static final Holder<ConfiguredFeature<TreeConfiguration, ?>> PEACHGROVE_TREE =
                 FeatureUtils.register("peachggrove_tree", Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                         BlockStateProvider.simple(ModBlocks.PEACHGROVE_LOG.get()),
                         new StraightTrunkPlacer(5, 6, 3),
                         BlockStateProvider.simple(ModBlocks.PEACHGROVE_LEAVES.get()),
-                        new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 4),
+                        new RandomSpreadFoliagePlacer(ConstantInt.of(5), ConstantInt.of(2), ConstantInt.of(4), 100),
                         new TwoLayersFeatureSize(1, 0, 2)).build());
 
 

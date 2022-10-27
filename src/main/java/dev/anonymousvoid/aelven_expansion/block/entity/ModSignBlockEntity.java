@@ -6,8 +6,8 @@ import net.minecraft.world.level.block.entity.SignBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class ModSignBlockEntity extends SignBlockEntity {
-    public ModSignBlockEntity(BlockPos p_155700_, BlockState p_155701_) {
-        super(p_155700_, p_155701_);
+    public ModSignBlockEntity(BlockPos pos, BlockState state) {
+        super(pos, state);
     }
 
     @Override

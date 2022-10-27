@@ -2,7 +2,6 @@ package dev.anonymousvoid.aelven_expansion.block.entity;
 
 import dev.anonymousvoid.aelven_expansion.AelvenExpansion;
 import dev.anonymousvoid.aelven_expansion.block.ModBlocks;
-import dev.anonymousvoid.aelven_expansion.block.custom.IdolTableBlock;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;

@@ -2,7 +2,6 @@ package dev.anonymousvoid.aelven_expansion.block.entity;
 
 import dev.anonymousvoid.aelven_expansion.item.ModItems;
 import dev.anonymousvoid.aelven_expansion.screen.IdolTableMenu;
-import dev.anonymousvoid.aelven_expansion.screen.IdolTableMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;

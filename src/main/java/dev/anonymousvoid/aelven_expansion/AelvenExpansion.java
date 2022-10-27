@@ -7,7 +7,6 @@ import dev.anonymousvoid.aelven_expansion.block.entity.ModWoodTypes;
 import dev.anonymousvoid.aelven_expansion.item.ModItems;
 import dev.anonymousvoid.aelven_expansion.item.ModSounds;
 import dev.anonymousvoid.aelven_expansion.recipe.ModRecipes;
-import dev.anonymousvoid.aelven_expansion.screen.IdolTableScreen;
 import dev.anonymousvoid.aelven_expansion.screen.KilnScreen;
 import dev.anonymousvoid.aelven_expansion.screen.ModMenuTypes;
 import dev.anonymousvoid.aelven_expansion.world.biome_mods.ModBiomeModifiers;
@@ -29,7 +28,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
-// The value here should match an entry in the META-INF/mods.toml file
 @SuppressWarnings("removal")
 @Mod(AelvenExpansion.MODID)
 public class AelvenExpansion {
@@ -60,7 +58,6 @@ public class AelvenExpansion {
     }
 
     private void clientSetup(final FMLClientSetupEvent event) {
-        // TODO see if ``` "render_type": "cutout" ``` works
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.MOON_FIR_LEAVES.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.MOON_FIR_DOOR.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.MOON_FIR_TRAPDOOR.get(), RenderType.cutout());

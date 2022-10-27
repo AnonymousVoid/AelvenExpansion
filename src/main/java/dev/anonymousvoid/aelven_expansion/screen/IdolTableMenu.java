@@ -2,7 +2,6 @@ package dev.anonymousvoid.aelven_expansion.screen;
 
 import dev.anonymousvoid.aelven_expansion.block.ModBlocks;
 import dev.anonymousvoid.aelven_expansion.block.entity.IdolTableBlockEntity;
-import dev.anonymousvoid.aelven_expansion.block.entity.IdolTableBlockEntity;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
