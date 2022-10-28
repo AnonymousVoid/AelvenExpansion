@@ -1,0 +1,11 @@
+{
+  "type": "aelven_expansion:kiln",
+  "ingredients": [
+    {
+      "item": "aelven_expansion:cobbled_chitta"
+    }
+  ],
+  "output": {
+    "item": "aelven_expansion:chitta"
+  }
+}

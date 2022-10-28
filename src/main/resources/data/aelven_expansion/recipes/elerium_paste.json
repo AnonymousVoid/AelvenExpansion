@@ -1,0 +1,11 @@
+{
+  "type": "aelven_expansion:kiln",
+  "ingredients": [
+    {
+      "item": "aelven_expansion:slime_paste"
+    }
+  ],
+  "output": {
+    "item": "aelven_expansion:elerium_paste"
+  }
+}

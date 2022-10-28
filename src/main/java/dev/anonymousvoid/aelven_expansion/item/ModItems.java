@@ -20,6 +20,8 @@ import net.minecraftforge.registries.RegistryObject;
 import org.checkerframework.checker.units.qual.A;
 import net.minecraft.world.item.RecordItem;
 
+import javax.swing.*;
+
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, AelvenExpansion.MODID);
@@ -28,6 +30,8 @@ public class ModItems {
             () -> new ChiselItem(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS).durability(512)));
 
     public static final RegistryObject<Item> ELERIUM = ITEMS.register("elerium",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
+    public static final RegistryObject<Item> SLIME_PASTE = ITEMS.register("slime_paste",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
     public static final RegistryObject<Item> ELERIUM_PASTE = ITEMS.register("elerium_paste",
             () -> new EleriumPasteItem(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS).durability(32)));
@@ -81,6 +85,11 @@ public class ModItems {
     public static final RegistryObject<Item> PEACHGROVE_SIGN = ITEMS.register("peachgrove_sign",
             () -> new SignItem(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_BLOCKS).stacksTo(16),
                     ModBlocks.PEACHGROVE_SIGN.get(), ModBlocks.PEACHGROVE_WALL_SIGN.get()));
+
+    public static final RegistryObject<Item> QUESTION_MARK = ITEMS.register("question_mark",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> QUEST_MARK = ITEMS.register("quest_mark",
+            () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> MUSIC_DISC = ITEMS.register("music_disc",
             () -> new RecordItem(7, ModSounds.MUSIC_DISC, new Item.Properties().stacksTo(1).tab(ModCreativeModeTab.MOD_TAB_ITEMS).rarity(Rarity.RARE), 203));

@@ -1,0 +1,36 @@
+{
+  "name": "Silver Ingot",
+  "category": "aelven_expansion:vital_category_two",
+  "icon": "aelven_expansion:silver_ingot",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The Silver Ingot (temporary text)"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "aelven_expansion:silver_sword",
+      "recipe2": "aelven_expansion:silver_dagger"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "aelven_expansion:silver_pickaxe",
+      "recipe2": "aelven_expansion:silver_axe"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "aelven_expansion:silver_shovel",
+      "recipe2": "aelven_expansion:silver_hoe"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "aelven_expansion:silver_block",
+      "recipe2": "aelven_expansion:silver_ingot_from_block"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "aelven_expansion:silver_ingot_from_nugget",
+      "recipe2": "aelven_expansion:silver_nugget"
+    }
+  ]
+}

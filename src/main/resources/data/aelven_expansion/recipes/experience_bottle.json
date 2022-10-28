@@ -1,0 +1,11 @@
+{
+  "type": "aelven_expansion:kiln",
+  "ingredients": [
+    {
+      "item": "minecraft:honey_bottle"
+    }
+  ],
+  "output": {
+    "item": "minecraft:experience_bottle"
+  }
+}

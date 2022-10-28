@@ -40,7 +40,6 @@ public class ModBlocks {
 
     private static final BlockBehaviour.Properties metalProperties = BlockBehaviour.Properties.copy(Blocks.COPPER_BLOCK).requiresCorrectToolForDrops();
     private static final BlockBehaviour.Properties deepmetalProperties = BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound((SoundType.NETHERITE_BLOCK)).requiresCorrectToolForDrops();
-
     private static final BlockBehaviour.Properties boneProperties = BlockBehaviour.Properties.copy(Blocks.BONE_BLOCK).requiresCorrectToolForDrops();
     private static final BlockBehaviour.Properties plantProperties = BlockBehaviour.Properties.of(Material.PLANT).noCollission().instabreak().sound(SoundType.GRASS);
     private static final BlockBehaviour.Properties stoneProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.STONE).strength(1.5F, 6.0F);

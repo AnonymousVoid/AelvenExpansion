@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "paste",
+  "key": {
+    "#": {
+      "item": "aelven_expansion:chalk_dust_item"
+    },
+    "W": {
+      "item": "minecraft:slime_ball"
+    }
+  },
+  "pattern": [
+    "   ",
+    "#W ",
+    "W# "
+  ],
+  "result": {
+    "item": "aelven_expansion:slime_paste",
+    "count": 2
+  }
+}

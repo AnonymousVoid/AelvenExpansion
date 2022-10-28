@@ -115,6 +115,7 @@
 	"block.aelven_expansion.chitta_large_tile_wall": "Chitta Large Tile Wall",
 
 	"item.aelven_expansion.elerium": "Elerium",
+	"item.aelven_expansion.slime_paste": "Slime Paste",
 	"item.aelven_expansion.elerium_paste": "Elerium Paste",
 
 	"item.aelven_expansion.elerutite_ingot": "Elerutite Ingot",
@@ -269,6 +270,9 @@
 	"block.aelven_expansion.black_shingle_stairs": "Black Shingle Stairs",
 	"block.aelven_expansion.black_shingle_slab": "Black Shingle Slab",
 	"block.aelven_expansion.black_shingle_wall": "Black Shingle Wall",
+
+	"item.aelven_expansion.question_mark": "Question Mark",
+	"item.aelven_expansion.quest_mark": "Quest Mark",
 
 	"itemGroup.aelven_expansion_blocks": "Aelven Expansion Blocks",
 	"itemGroup.aelven_expansion_items": "Aelven Expansion Items"

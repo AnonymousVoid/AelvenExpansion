@@ -34,7 +34,6 @@ public class AelvenExpansion {
     public static final String MODID = "aelven_expansion";
     private static final Logger LOGGER = LogUtils.getLogger();
 
-
     public AelvenExpansion() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 

@@ -52,6 +52,9 @@ minecraft {
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
             property 'forge.enabledGameTestNamespaces', 'aelven_expansion'
 
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
+
             mods {
                 aelven_expansion {
                     source sourceSets.main
@@ -127,6 +130,9 @@ repositories {
         name = "ModMaven"
         url = "https://modmaven.dev"
     }
+    maven {
+        url = "https://maven.blamejared.com"
+    }
 }
     // Put repositories for dependencies here
     // ForgeGradle automatically adds the Forge maven and Maven Central for you
@@ -147,6 +153,9 @@ dependencies {
     compileOnly(fg.deobf("mezz.jei:jei-${mc_version}-forge-api:${jei_version}"))
     // at runtime, use the full JEI jar for Forge
     runtimeOnly(fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}"))
+
+    compileOnly fg.deobf("vazkii.patchouli:Patchouli:[1.19.2-77]:api")
+    runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:[1.19.2-77]")
 }
 
     // Real mod deobf dependency examples - these get remapped to your current mappings
