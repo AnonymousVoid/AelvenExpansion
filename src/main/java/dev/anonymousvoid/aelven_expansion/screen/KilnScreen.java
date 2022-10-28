@@ -39,12 +39,12 @@ public class KilnScreen extends AbstractContainerScreen<KilnMenu> {
         if (menu.isCrafting1()) {
             blit(stack, x+80, y+8, 176, 0, menu.getScaledProgress1(), 16);
         }
-        if (menu.isCrafting2()) {
-            blit(stack, x+80, y+34, 176, 0, menu.getScaledProgress2(), 16);
-        }
-        if (menu.isCrafting3()) {
-            blit(stack, x+80, y+60, 176, 0, menu.getScaledProgress3(), 16);
-        }
+//        if (menu.isCrafting2()) {
+//            blit(stack, x+80, y+34, 176, 0, menu.getScaledProgress2(), 16);
+//        }
+//        if (menu.isCrafting3()) {
+//            blit(stack, x+80, y+60, 176, 0, menu.getScaledProgress3(), 16);
+//        }
     }
     @Override
     public void render(PoseStack stack, int mouseX, int mouseY, float delta) {

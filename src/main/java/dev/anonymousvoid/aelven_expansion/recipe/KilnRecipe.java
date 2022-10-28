@@ -32,6 +32,7 @@ public class KilnRecipe implements Recipe<SimpleContainer> {
         }
         return recipeItems.get(0).test(pContainer.getItem(1));
     }
+
     @Override
     public NonNullList<Ingredient> getIngredients() {
         return recipeItems;
