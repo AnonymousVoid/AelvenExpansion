@@ -12,7 +12,7 @@ public class ModRecipes {
             DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, AelvenExpansion.MODID);
 
     public static final RegistryObject<RecipeSerializer<KilnRecipe>> KILN_SERIALIZER =
-            SERIALIZERS.register("kiln", () -> KilnRecipe.Serializer.INSTANCE);
+            SERIALIZERS.register("kilning", () -> KilnRecipe.Serializer.INSTANCE);
 
     public static void register(IEventBus eventBus) {
         SERIALIZERS.register(eventBus);

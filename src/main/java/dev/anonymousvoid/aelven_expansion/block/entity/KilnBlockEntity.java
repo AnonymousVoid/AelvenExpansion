@@ -26,6 +26,7 @@ import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.List;
 import java.util.Optional;
 
 public class KilnBlockEntity extends BlockEntity implements MenuProvider {
@@ -41,7 +42,7 @@ public class KilnBlockEntity extends BlockEntity implements MenuProvider {
     protected final ContainerData data;
     private int maxProgress = 240;
     private int progress1 = 0;
-//    private int progress2 = 0;
+    private int progress2 = 0;
 //    private int progress3 = 0;
 
     public KilnBlockEntity(BlockPos pos, BlockState state) {
@@ -52,7 +53,7 @@ public class KilnBlockEntity extends BlockEntity implements MenuProvider {
                 return switch (index) {
                     case 0 -> KilnBlockEntity.this.maxProgress;
                     case 1 -> KilnBlockEntity.this.progress1;
-//                    case 2 -> KilnBlockEntity.this.progress2;
+                    case 2 -> KilnBlockEntity.this.progress2;
 //                    case 3 -> KilnBlockEntity.this.progress3;
                     default -> 0;
                 };
@@ -63,22 +64,18 @@ public class KilnBlockEntity extends BlockEntity implements MenuProvider {
                 switch (index) {
                     case 0 -> KilnBlockEntity.this.maxProgress = value;
                     case 1 -> KilnBlockEntity.this.progress1 = value;
-//                    case 2 -> KilnBlockEntity.this.progress2 = value;
+                    case 2 -> KilnBlockEntity.this.progress2 = value;
 //                    case 3 -> KilnBlockEntity.this.progress3 = value;
                 }
             }
 
             @Override
-            public int getCount() {
-                return 6;
-            }
+            public int getCount() { return 6; }
         };
     }
 
     @Override
-    public Component getDisplayName() {
-        return Component.literal("Kiln");
-    }
+    public Component getDisplayName() { return Component.literal("Kiln"); }
 
     @Nullable
     @Override
@@ -111,7 +108,7 @@ public class KilnBlockEntity extends BlockEntity implements MenuProvider {
     protected void saveAdditional(CompoundTag nbt) {
         nbt.put("inventory", itemHandler.serializeNBT());
         nbt.putInt("kiln.progress1", this.progress1);
-//        nbt.putInt("kiln.progress2", this.progress2);
+        nbt.putInt("kiln.progress2", this.progress2);
 //        nbt.putInt("kiln.progress3", this.progress3);
 
         super.saveAdditional(nbt);
@@ -122,7 +119,7 @@ public class KilnBlockEntity extends BlockEntity implements MenuProvider {
         super.load(nbt);
         itemHandler.deserializeNBT(nbt.getCompound("inventory"));
         progress1 = nbt.getInt("kiln.progress1");
-//        progress2 = nbt.getInt("kiln.progress2");
+        progress2 = nbt.getInt("kiln.progress2");
 //        progress3 = nbt.getInt("kiln.progress3");
     }
 
@@ -153,18 +150,18 @@ public class KilnBlockEntity extends BlockEntity implements MenuProvider {
             setChanged(level, pos, state);
         }
 
-//        if (hasRecipe2(entity)) {
-//            entity.progress2++;
-//            setChanged(level, pos, state);
-//
-//            if (entity.progress2 >= entity.maxProgress) {
-//                craftItem2(entity);
-//            }
-//        } else {
-//            entity.resetProgress2();
-//            setChanged(level, pos, state);
-//        }
-//
+        if (hasRecipe2(entity)) {
+            entity.progress2++;
+            setChanged(level, pos, state);
+
+            if (entity.progress2 >= entity.maxProgress) {
+                craftItem2(entity);
+            }
+        } else {
+            entity.resetProgress2();
+            setChanged(level, pos, state);
+        }
+
 //        if (hasRecipe3(entity)) {
 //            entity.progress3++;
 //            setChanged(level, pos, state);
@@ -180,7 +177,7 @@ public class KilnBlockEntity extends BlockEntity implements MenuProvider {
 
 
     private void resetProgress1() { this.progress1 = 0; }
-//    private void resetProgress2() { this.progress2 = 0; }
+    private void resetProgress2() { this.progress2 = 0; }
 //    private void resetProgress3() { this.progress3 = 0; }
 
 
@@ -205,27 +202,27 @@ public class KilnBlockEntity extends BlockEntity implements MenuProvider {
 
     }
 
-//    private static void craftItem2(KilnBlockEntity entity) {
-//        Level lvl = entity.level;
-//        SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
-//        for (int i = 0; i < entity.itemHandler.getSlots(); i++) {
-//            inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
-//        }
-//
-//        Optional<KilnRecipe> recipe = lvl.getRecipeManager()
-//                .getRecipeFor(KilnRecipe.Type.INSTANCE, inventory, lvl);
-//
-//        if (hasRecipe2(entity)) {
-//            entity.itemHandler.extractItem(0, 1, false);
-//            entity.itemHandler.extractItem(2, 1, false);
-//            entity.itemHandler.setStackInSlot(5, new ItemStack(recipe.get().getResultItem().getItem(),
-//                    entity.itemHandler.getStackInSlot(5).getCount() + 1));
-//
-//            entity.resetProgress2();
-//        }
-//
-//    }
-//
+    private static void craftItem2(KilnBlockEntity entity) {
+        Level lvl = entity.level;
+        SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
+        for (int i = 0; i < entity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
+        }
+
+        Optional<KilnRecipe> recipe = lvl.getRecipeManager()
+                .getRecipeFor(KilnRecipe.Type.INSTANCE, inventory, lvl);//TODO
+
+        if (hasRecipe2(entity)) {
+            entity.itemHandler.extractItem(0, 1, false);
+            entity.itemHandler.extractItem(2, 1, false);
+            entity.itemHandler.setStackInSlot(5, new ItemStack(recipe.get().getResultItem().getItem(),
+                    entity.itemHandler.getStackInSlot(5).getCount() + 1));
+
+            entity.resetProgress2();
+        }
+
+    }
+
 //    private static void craftItem3(KilnBlockEntity entity) {
 //        Level lvl = entity.level;
 //        SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
@@ -263,21 +260,25 @@ public class KilnBlockEntity extends BlockEntity implements MenuProvider {
         return recipe.isPresent() && hasFuel && canOutput1(inventory, recipe.get().getResultItem());
     }
 
-//    private static boolean hasRecipe2(KilnBlockEntity entity) {
-//        Level lvl = entity.level;
-//        SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
-//        for (int i = 0; i < entity.itemHandler.getSlots(); i++) {
-//            inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
-//        }
-//
+    private static boolean hasRecipe2(KilnBlockEntity entity) {
+        Level lvl = entity.level;
+        SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
+        for (int i = 0; i < entity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
+        }
+
 //        Optional<KilnRecipe> recipe = lvl.getRecipeManager()
-//                .getRecipeFor(KilnRecipe.Type.INSTANCE, inventory, lvl);
-//
-//        boolean hasFuel = entity.itemHandler.getStackInSlot(0).getItem() == ModItems.ELERIUM.get();
-//
-//        return recipe.isPresent() && hasFuel && canOutput2(inventory, recipe.get().getResultItem());
-//    }
-//
+//                .getRecipeFor(KilnRecipe.Type.INSTANCE, inventory, lvl);//TODO
+        List<KilnRecipe> list = lvl.getRecipeManager().getRecipesFor(KilnRecipe.Type.INSTANCE, inventory, lvl);
+        Optional<KilnRecipe> recipe1 = Optional.ofNullable(list.get(0));;
+        Optional<KilnRecipe> recipe2 = Optional.ofNullable(list.get(1));;
+
+
+        boolean hasFuel = entity.itemHandler.getStackInSlot(0).getItem() == ModItems.ELERIUM.get();
+
+        return recipe2.isPresent() && hasFuel && canOutput2(inventory, recipe2.get().getResultItem());
+    }
+
 //    private static boolean hasRecipe3(KilnBlockEntity entity) {
 //        Level lvl = entity.level;
 //        SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
@@ -302,14 +303,14 @@ public class KilnBlockEntity extends BlockEntity implements MenuProvider {
         return outputMatches && keepsLimit;
     }
 
-//    private static boolean canOutput2(SimpleContainer inventory, ItemStack stack) {
-//        boolean outputMatches = inventory.getItem(5).getItem() ==
-//                stack.getItem() || inventory.getItem(5).isEmpty();
-//        boolean keepsLimit = inventory.getItem(5).getMaxStackSize() >=
-//                inventory.getItem(5).getCount() + stack.getCount();
-//        return outputMatches && keepsLimit;
-//    }
-//
+    private static boolean canOutput2(SimpleContainer inventory, ItemStack stack) {
+        boolean outputMatches = inventory.getItem(5).getItem() ==
+                stack.getItem() || inventory.getItem(5).isEmpty();
+        boolean keepsLimit = inventory.getItem(5).getMaxStackSize() >=
+                inventory.getItem(5).getCount() + stack.getCount();
+        return outputMatches && keepsLimit;
+    }
+
 //    private static boolean canOutput3(SimpleContainer inventory, ItemStack stack) {
 //        boolean outputMatches = inventory.getItem(6).getItem() ==
 //                stack.getItem() || inventory.getItem(6).isEmpty();

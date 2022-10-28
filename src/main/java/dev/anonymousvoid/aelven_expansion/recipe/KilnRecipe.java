@@ -30,54 +30,43 @@ public class KilnRecipe implements Recipe<SimpleContainer> {
         if(pLevel.isClientSide()) {
             return false;
         }
-        return recipeItems.get(0).test(pContainer.getItem(1));
+        if (recipeItems.get(0).test(pContainer.getItem(1))) return true;
+        if (recipeItems.get(0).test(pContainer.getItem(2))) return true;
+//        if (recipeItems.get(0).test(pContainer.getItem(3))) return true;
+        return false;
     }
 
     @Override
-    public NonNullList<Ingredient> getIngredients() {
-        return recipeItems;
-    }
+    public NonNullList<Ingredient> getIngredients() { return recipeItems; }
 
     @Override
-    public ItemStack assemble(SimpleContainer pContainer) {
-        return output;
-    }
+    public ItemStack assemble(SimpleContainer pContainer) { return output; }
 
     @Override
-    public boolean canCraftInDimensions(int pWidth, int pHeight) {
-        return true;
-    }
+    public boolean canCraftInDimensions(int pWidth, int pHeight) { return true; }
 
     @Override
-    public ItemStack getResultItem() {
-        return output.copy();
-    }
+    public ItemStack getResultItem() { return output.copy(); }
 
     @Override
-    public ResourceLocation getId() {
-        return id;
-    }
+    public ResourceLocation getId() { return id; }
 
     @Override
-    public RecipeSerializer<?> getSerializer() {
-        return Serializer.INSTANCE;
-    }
+    public RecipeSerializer<?> getSerializer() { return Serializer.INSTANCE; }
 
     @Override
-    public RecipeType<?> getType() {
-        return Type.INSTANCE;
-    }
+    public RecipeType<?> getType() { return Type.INSTANCE; }
 
     public static  class Type implements RecipeType<KilnRecipe> {
         private Type() { }
         public static final Type INSTANCE = new Type();
-        public static final String ID = "kiln";
+        public static final String ID = "kilning";
     }
 
     public static class Serializer implements RecipeSerializer<KilnRecipe> {
         public static final Serializer INSTANCE = new Serializer();
         public static final ResourceLocation ID =
-                new ResourceLocation(AelvenExpansion.MODID, "kiln");
+                new ResourceLocation(AelvenExpansion.MODID, "kilning");
 
         @Override
         public KilnRecipe fromJson(ResourceLocation pRecipeId, JsonObject pSerializedRecipe) {
@@ -96,11 +85,9 @@ public class KilnRecipe implements Recipe<SimpleContainer> {
         @Override
         public @Nullable KilnRecipe fromNetwork(ResourceLocation id, FriendlyByteBuf buf) {
             NonNullList<Ingredient> inputs = NonNullList.withSize(buf.readInt(), Ingredient.EMPTY);
-
             for (int i = 0; i < inputs.size(); i++) {
                 inputs.set(i, Ingredient.fromNetwork(buf));
             }
-
             ItemStack output = buf.readItem();
             return new KilnRecipe(id, output, inputs);
         }
@@ -108,7 +95,6 @@ public class KilnRecipe implements Recipe<SimpleContainer> {
         @Override
         public void toNetwork(FriendlyByteBuf buf, KilnRecipe recipe) {
             buf.writeInt(recipe.getIngredients().size());
-
             for (Ingredient ing : recipe.getIngredients()) {
                 ing.toNetwork(buf);
             }
