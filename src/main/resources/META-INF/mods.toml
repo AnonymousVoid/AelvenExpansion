@@ -29,9 +29,9 @@ displayName="Aelven Expansion" #mandatory
 # A file name (in the root of the mod JAR) containing a logo for display
 logoFile="aelven_expansion.png" #optional
 # A text field displayed in the mod UI
-credits="SamIr0n provided all the textures. MandMLOL provided the music. Kaupenjoe's tutorials helped with code organization." #optional
+credits="AnonymousVoid and SamIr0n did all the code with help from Blce. And SamIr0n provided all the textures. MandMLOL provided the music. Kaupenjoe's tutorials helped a lot with navigating forge and makin an easy way to organize our code." #optional
 # A text field displayed in the mod UI
-authors="AnonymousVoid" #optional
+authors="AnonymousVoid, SamIr0n, MandMLOL" #optional
 # Display Test controls the display for your mod in the server connection screen
 # MATCH_VERSION means that your mod will cause a red X if the versions on client and server differ. This is the default behaviour and should be what you choose if you have server and client elements to your mod.
 # IGNORE_SERVER_VERSION means that your mod will not cause a red X if it's present on the server but not on the client. This is what you should use if you're a server only mod.

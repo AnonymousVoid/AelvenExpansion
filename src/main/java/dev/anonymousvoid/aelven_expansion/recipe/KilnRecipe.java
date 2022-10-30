@@ -32,7 +32,7 @@ public class KilnRecipe implements Recipe<SimpleContainer> {
         }
         if (recipeItems.get(0).test(pContainer.getItem(1))) return true;
         if (recipeItems.get(0).test(pContainer.getItem(2))) return true;
-//        if (recipeItems.get(0).test(pContainer.getItem(3))) return true;
+        if (recipeItems.get(0).test(pContainer.getItem(3))) return true;
         return false;
     }
 
