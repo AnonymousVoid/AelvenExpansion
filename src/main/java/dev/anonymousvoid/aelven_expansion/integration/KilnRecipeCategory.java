@@ -34,24 +34,16 @@ public class KilnRecipeCategory implements IRecipeCategory<KilnRecipe> {
     }
 
     @Override
-    public RecipeType<KilnRecipe> getRecipeType() {
-        return JEIAelvenExpansionModPlugin.KILN_TYPE;
-    }
+    public RecipeType<KilnRecipe> getRecipeType() { return JEIAelvenExpansionModPlugin.KILN_TYPE; }
 
     @Override
-    public Component getTitle() {
-        return Component.literal("Kiln");
-    }
+    public Component getTitle() { return Component.translatable("jei.kilning"); }
 
     @Override
-    public IDrawable getBackground() {
-        return this.background;
-    }
+    public IDrawable getBackground() { return this.background; }
 
     @Override
-    public IDrawable getIcon() {
-        return this.icon;
-    }
+    public IDrawable getIcon() { return this.icon; }
 
     @Override
     public void setRecipe(IRecipeLayoutBuilder builder, KilnRecipe recipe, IFocusGroup focuses) {
