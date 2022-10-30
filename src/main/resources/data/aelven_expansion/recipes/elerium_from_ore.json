@@ -1,0 +1,12 @@
+{
+  "type": "aelven_expansion:kilning",
+  "ingredients": [
+    {
+      "item": "aelven_expansion:elerium_ore"
+    }
+  ],
+  "output": {
+    "item": "aelven_expansion:elerium",
+    "count": 6
+  }
+}
