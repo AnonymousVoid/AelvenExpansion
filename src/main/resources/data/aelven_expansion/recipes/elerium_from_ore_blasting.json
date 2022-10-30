@@ -1,8 +1,8 @@
 {
-  "type": "minecraft:smelting",
+  "type": "minecraft:blasting",
   "ingredients": [
     {
-      "item": "aelven_expansion:deepslate_elerium_ore"
+      "item": "aelven_expansion:elerium_ore"
     }
   ],
   "output": {
