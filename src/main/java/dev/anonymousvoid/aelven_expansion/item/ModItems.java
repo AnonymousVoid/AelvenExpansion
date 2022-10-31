@@ -2,14 +2,11 @@ package dev.anonymousvoid.aelven_expansion.item;
 
 import dev.anonymousvoid.aelven_expansion.AelvenExpansion;
 import dev.anonymousvoid.aelven_expansion.block.ModBlocks;
-import dev.anonymousvoid.aelven_expansion.item.custom.ChiselItem;
-import dev.anonymousvoid.aelven_expansion.item.custom.EleriumPasteItem;
-import dev.anonymousvoid.aelven_expansion.item.custom.ModArmorMaterial;
-import dev.anonymousvoid.aelven_expansion.item.custom.SilverPumiceItem;
-import net.minecraft.client.resources.sounds.Sound;
-import net.minecraft.sounds.SoundEvent;
+import dev.anonymousvoid.aelven_expansion.entity.vehicle.ModBoat;
+import dev.anonymousvoid.aelven_expansion.item.custom.*;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.ForgeTier;
@@ -17,10 +14,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import org.checkerframework.checker.units.qual.A;
 import net.minecraft.world.item.RecordItem;
-
-import javax.swing.*;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -85,6 +79,27 @@ public class ModItems {
     public static final RegistryObject<Item> PEACHGROVE_SIGN = ITEMS.register("peachgrove_sign",
             () -> new SignItem(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_BLOCKS).stacksTo(16),
                     ModBlocks.PEACHGROVE_SIGN.get(), ModBlocks.PEACHGROVE_WALL_SIGN.get()));
+
+    public static final RegistryObject<ModBoatItem> MOON_FIR_BOAT = ITEMS.register("moon_fir_boat",
+            () -> new ModBoatItem(false, ModBoat.Type.MOON_FIR,
+                    new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS).stacksTo(1)));
+    public static final RegistryObject<ModBoatItem> MOON_FIR_CHEST_BOAT = ITEMS.register("moon_fir_chest_boat",
+            () -> new ModBoatItem(true, ModBoat.Type.MOON_FIR,
+                    new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS).stacksTo(1)));
+    public static final RegistryObject<ModBoatItem> SILVERBLOOD_BOAT = ITEMS.register("silverblood_boat",
+            () -> new ModBoatItem(false, ModBoat.Type.SILVERBLOOD,
+                    new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS).stacksTo(1)));
+    public static final RegistryObject<ModBoatItem> SILVERBLOOD_CHEST_BOAT = ITEMS.register("silverblood_chest_boat",
+            () -> new ModBoatItem(true, ModBoat.Type.SILVERBLOOD,
+                    new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS).stacksTo(1)));
+    public static final RegistryObject<ModBoatItem> PEACHGROVE_BOAT = ITEMS.register("peachgrove_boat",
+            () -> new ModBoatItem(false, ModBoat.Type.PEACHGROVE,
+                    new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS).stacksTo(1)));
+    public static final RegistryObject<ModBoatItem> PEACHGROVE_CHEST_BOAT = ITEMS.register("peachgrove_chest_boat",
+            () -> new ModBoatItem(true, ModBoat.Type.PEACHGROVE,
+                    new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS).stacksTo(1)));
+
+
 
     public static final RegistryObject<Item> QUESTION_MARK = ITEMS.register("question_mark",
             () -> new Item(new Item.Properties()));

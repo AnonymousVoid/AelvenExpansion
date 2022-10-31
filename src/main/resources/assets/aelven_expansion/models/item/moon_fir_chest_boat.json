@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "aelven_expansion:item/moon_fir_chest_boat"
+  }
+}

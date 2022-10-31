@@ -17,6 +17,8 @@
 	"block.aelven_expansion.moon_fir_door": "Moon Fir Door",
 	"block.aelven_expansion.moon_fir_trapdoor": "Moon Fir Trapdoor",
 	"block.aelven_expansion.moon_fir_sign": "Moon Fir Sign",
+	"item.aelven_expansion.moon_fir_boat": "Moon Fir Boat",
+	"item.aelven_expansion.moon_fir_chest_boat": "Moon Fir Boat with Chest",
 
 	"block.aelven_expansion.silverblood_log": "Silverblood Log",
 	"block.aelven_expansion.stripped_silverblood_log": "Stripped Silverblood Log",
@@ -36,6 +38,8 @@
 	"block.aelven_expansion.silverblood_door": "Silverblood Door",
 	"block.aelven_expansion.silverblood_trapdoor": "Silverblood Trapdoor",
 	"block.aelven_expansion.silverblood_sign": "Silverblood Sign",
+	"item.aelven_expansion.silverblood_boat": "Silverblood Boat",
+	"item.aelven_expansion.silverblood_chest_boat": "Silverblood Boat with Chest",
 
 	"block.aelven_expansion.peachgrove_log": "Peachgrove Log",
 	"block.aelven_expansion.stripped_peachgrove_log": "Stripped Peachgrove Log",
@@ -55,6 +59,11 @@
 	"block.aelven_expansion.peachgrove_door": "Peachgrove Door",
 	"block.aelven_expansion.peachgrove_trapdoor": "Peachgrove Trapdoor",
 	"block.aelven_expansion.peachgrove_sign": "Peachgrove Sign",
+	"item.aelven_expansion.peachgrove_boat": "Peachgrove Boat",
+	"item.aelven_expansion.peachgrove_chest_boat": "Peachgrove Boat with Chest",
+
+	"entity.aelven_expansion.mod_boat": "Boat",
+	"entity.aelven_expansion.mod_chest_boat": "Boat with Chest",
 
 	"block.aelven_expansion.moon_bloom": "Moon Bloom",
 	"block.aelven_expansion.moonshade": "Moonshade",
