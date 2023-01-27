@@ -1,15 +1,15 @@
 {
   "display": {
     "icon": {
-      "item": "aelven_expansion:elerium_paste"
+      "item": "aelven_expansion:silver_dagger"
     },
-    "title": "The Aelven Expansion",
-    "description": "The mod deal with it ;)",
+    "title": "Old Knives Tale",
+    "description": "Craft a Silver Dagger",
     "frame": "task",
     "show_toast": true,
-    "announce_to_chat": true,
-    "background": "aelven_expansion:textures/block/chitta_tiles.png"
+    "announce_to_chat": true
   },
+  "parent": "aelven_expansion:aelven_expansion",
   "criteria": {
     "requirement": {
       "trigger": "minecraft:inventory_changed",
@@ -17,7 +17,7 @@
         "items": [
           {
             "items": [
-              "aelven_expansion:elerium"
+              "aelven_expansion:silver_dagger"
             ]
           }
         ]

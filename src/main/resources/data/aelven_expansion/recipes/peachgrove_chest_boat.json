@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "chest_boat",
+  "ingredients": [
+    {
+      "item": "minecraft:chest"
+    },
+    {
+      "item": "aelven_expansion:peachgrove_boat"
+    }
+  ],
+  "result": {
+    "item": "aelven_expansion:peachgrove_chest_boat"
+  }
+}

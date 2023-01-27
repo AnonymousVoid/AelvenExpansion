@@ -457,6 +457,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> DRYSTONE_WALL = registerBlock("drystone_wall",
             () -> new WallBlock(deepslateProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
+
     public static final RegistryObject<Block> DRYSTONE_BRICKS = registerBlock("drystone_bricks",
             () -> new Block(deepslatebrickProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> DRYSTONE_BRICK_STAIRS = registerBlock("drystone_brick_stairs",
