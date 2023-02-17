@@ -1,7 +1,15 @@
 {
   "variants": {
-    "": {
-      "model": "aelven_expansion:block/silverblood_leaves"
-    }
+    "": [
+      {
+        "model": "aelven_expansion:block/silverblood_leaves", "weight": 400
+      },
+      {
+        "model": "aelven_expansion:block/silverblood_leaves2", "weight": 200
+      },
+      {
+        "model": "aelven_expansion:block/silverblood_leaves3", "weight": 200
+      }
+    ]
   }
 }

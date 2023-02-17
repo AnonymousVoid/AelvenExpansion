@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_overworld",
+  "features": "aelven_expansion:chitta_geode_placed",
+  "step": "underground_ores"
+}

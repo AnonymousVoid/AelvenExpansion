@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "aelven_expansion:block/moon_fir_leaves3"
+  }
+}

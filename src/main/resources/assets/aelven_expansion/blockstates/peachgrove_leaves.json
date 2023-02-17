@@ -1,7 +1,12 @@
 {
   "variants": {
-    "": {
-      "model": "aelven_expansion:block/peachgrove_leaves"
-    }
+    "": [
+      {
+        "model": "aelven_expansion:block/peachgrove_leaves", "weight": 600
+      },
+      {
+        "model": "aelven_expansion:block/peachgrove_leaves2", "weight": 400
+      }
+    ]
   }
 }

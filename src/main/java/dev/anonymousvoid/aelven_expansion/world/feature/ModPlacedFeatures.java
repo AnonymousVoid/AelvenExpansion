@@ -47,6 +47,19 @@ public class ModPlacedFeatures {
                     commonOrePlacement(4, // VeinsPerChunk
                             HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-100), VerticalAnchor.aboveBottom(100)))));
 
+    public static final RegistryObject<PlacedFeature> CHITTA_GEODE_PLACED = PLACED_FEATURES.register("chitta_geode_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.CHITTA_GEODE.getHolder().get(), List.of(
+                    RarityFilter.onAverageOnceEvery(50), InSquarePlacement.spread(),
+                    HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(6), VerticalAnchor.absolute(50)),
+                    BiomeFilter.biome())));
+
+    public static final RegistryObject<PlacedFeature> CHALK_GEODE_PLACED = PLACED_FEATURES.register("chalk_geode_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.CHALK_GEODE.getHolder().get(), List.of(
+                    RarityFilter.onAverageOnceEvery(50), InSquarePlacement.spread(),
+                    HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(6), VerticalAnchor.absolute(50)),
+                    BiomeFilter.biome())));
+
+
     public static List<PlacementModifier> orePlacement(PlacementModifier p_195347_, PlacementModifier p_195348_) {
         return List.of(p_195347_, InSquarePlacement.spread(), p_195348_, BiomeFilter.biome());
     }

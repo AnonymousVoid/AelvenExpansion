@@ -9,10 +9,17 @@ import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.features.OreFeatures;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.levelgen.GeodeBlockSettings;
+import net.minecraft.world.level.levelgen.GeodeCrackSettings;
+import net.minecraft.world.level.levelgen.GeodeLayerSettings;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.WeightedPlacedFeature;
+import net.minecraft.world.level.levelgen.feature.configurations.GeodeConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
@@ -97,6 +104,39 @@ public class ModConfiguredFeatures {
 
     public static final RegistryObject<ConfiguredFeature<?, ?>> SILVER_ORE = CONFIGURED_FEATURES.register("silver_ore",
             () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_SILVER_ORES.get(),4)));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> CHITTA_GEODE = CONFIGURED_FEATURES.register("chitta_geode",
+            () -> new ConfiguredFeature<>(Feature.GEODE,
+                    new GeodeConfiguration(new GeodeBlockSettings(BlockStateProvider.simple(Blocks.AIR),
+                            BlockStateProvider.simple(ModBlocks.CHITTA.get()),
+                            BlockStateProvider.simple(ModBlocks.CHITTA.get()),
+                            BlockStateProvider.simple(ModBlocks.CHITTA.get()),
+                            BlockStateProvider.simple(ModBlocks.DRYSTONE.get()),
+                            List.of(Blocks.AIR.defaultBlockState()),
+                            BlockTags.FEATURES_CANNOT_REPLACE , BlockTags.GEODE_INVALID_BLOCKS),
+                            new GeodeLayerSettings(1.7D, 1.2D, 2.5D, 3.5D),
+                            new GeodeCrackSettings(0.25D, 1.5D, 1), 0.5D, 0.1D,
+                            true, UniformInt.of(3, 8),
+                            UniformInt.of(2, 6), UniformInt.of(1, 2),
+                            -18, 18, 0.075D, 1)));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> CHALK_GEODE = CONFIGURED_FEATURES.register("chalk_geode",
+            () -> new ConfiguredFeature<>(Feature.GEODE,
+                    new GeodeConfiguration(new GeodeBlockSettings(BlockStateProvider.simple(Blocks.AIR),
+                            BlockStateProvider.simple(ModBlocks.CHALK.get()),
+                            BlockStateProvider.simple(ModBlocks.CHALK.get()),
+                            BlockStateProvider.simple(ModBlocks.CHALK.get()),
+                            BlockStateProvider.simple(ModBlocks.CHIPSTONE.get()),
+                            List.of(Blocks.AIR.defaultBlockState()),
+                            BlockTags.FEATURES_CANNOT_REPLACE , BlockTags.GEODE_INVALID_BLOCKS),
+                            new GeodeLayerSettings(1.7D, 1.2D, 2.5D, 3.5D),
+                            new GeodeCrackSettings(0.25D, 1.5D, 1), 0.5D, 0.1D,
+                            true, UniformInt.of(3, 8),
+                            UniformInt.of(2, 6), UniformInt.of(1, 2),
+                            -18, 18, 0.075D, 1)));
+
+
+
 
     public static void register(IEventBus eventBus) {
          CONFIGURED_FEATURES.register(eventBus);
