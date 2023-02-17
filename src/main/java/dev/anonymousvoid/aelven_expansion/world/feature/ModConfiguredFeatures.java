@@ -16,11 +16,11 @@ import net.minecraft.world.level.levelgen.feature.WeightedPlacedFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.feature.featuresize.ThreeLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.RandomSpreadFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.DarkOakFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.BendingTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -28,6 +28,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.List;
+import java.util.OptionalInt;
 import java.util.function.Supplier;
 
 public class ModConfiguredFeatures {
@@ -52,10 +53,10 @@ public class ModConfiguredFeatures {
         public static final Holder<ConfiguredFeature<TreeConfiguration, ?>> PEACHGROVE_TREE =
                 FeatureUtils.register("peachggrove_tree", Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                         BlockStateProvider.simple(ModBlocks.PEACHGROVE_LOG.get()),
-                        new LargeStraightTrunkPlacer(5, 6, 3),
+                        new LargeStraightTrunkPlacer(10, 3, 3),
                         BlockStateProvider.simple(ModBlocks.PEACHGROVE_LEAVES.get()),
-                        new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 4),
-                        new TwoLayersFeatureSize(1, 0, 2)).build());
+                        new DarkOakFoliagePlacer(ConstantInt.of(1), ConstantInt.of(0)),
+                        new ThreeLayersFeatureSize(1, 1, 0, 1, 2, OptionalInt.empty())).build());
 
 
         public static final Holder<PlacedFeature> MOON_FIR_TREE_CHECKED = PlacementUtils.register("moon_fir_tree_checked",
