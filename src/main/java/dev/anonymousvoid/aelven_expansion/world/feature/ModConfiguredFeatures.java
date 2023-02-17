@@ -3,6 +3,7 @@ package dev.anonymousvoid.aelven_expansion.world.feature;
 import com.google.common.base.Suppliers;
 import dev.anonymousvoid.aelven_expansion.AelvenExpansion;
 import dev.anonymousvoid.aelven_expansion.block.ModBlocks;
+import dev.anonymousvoid.aelven_expansion.world.feature.tree.placer.LargeStraightTrunkPlacer;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.features.FeatureUtils;
@@ -51,9 +52,9 @@ public class ModConfiguredFeatures {
         public static final Holder<ConfiguredFeature<TreeConfiguration, ?>> PEACHGROVE_TREE =
                 FeatureUtils.register("peachggrove_tree", Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                         BlockStateProvider.simple(ModBlocks.PEACHGROVE_LOG.get()),
-                        new StraightTrunkPlacer(5, 6, 3),
+                        new LargeStraightTrunkPlacer(5, 6, 3),
                         BlockStateProvider.simple(ModBlocks.PEACHGROVE_LEAVES.get()),
-                        new RandomSpreadFoliagePlacer(ConstantInt.of(5), ConstantInt.of(2), ConstantInt.of(4), 100),
+                        new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 4),
                         new TwoLayersFeatureSize(1, 0, 2)).build());
 
 
