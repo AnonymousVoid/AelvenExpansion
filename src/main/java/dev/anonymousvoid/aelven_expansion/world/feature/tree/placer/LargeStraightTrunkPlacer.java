@@ -30,7 +30,14 @@ public class LargeStraightTrunkPlacer extends TrunkPlacer {
         return TrunkPlacerType.DARK_OAK_TRUNK_PLACER;
     }
 
-    public List<FoliagePlacer.FoliageAttachment> placeTrunk(LevelSimulatedReader level, BiConsumer<BlockPos, BlockState> consumer, RandomSource random, int height, BlockPos blockPos, TreeConfiguration config) {
+    public List<FoliagePlacer.FoliageAttachment> placeTrunk(
+            LevelSimulatedReader level, BiConsumer<BlockPos, BlockState> consumer, RandomSource random,
+            int height, BlockPos blockPos, TreeConfiguration config) {
+
+        // GENERAL
+        List<FoliagePlacer.FoliageAttachment> list = Lists.newArrayList();
+        list.add(new FoliagePlacer.FoliageAttachment(blockPos.above(height), 0, true));
+
         BlockPos blockpos = blockPos.below();
         setDirtAt(level, consumer, random, blockpos, config);
         setDirtAt(level, consumer, random, blockpos.east(), config);
@@ -44,14 +51,6 @@ public class LargeStraightTrunkPlacer extends TrunkPlacer {
         int i1 = blockPos.getZ();
         int l1 = l + height - 1;
 
-        BlockPos blockpos1 = new BlockPos(k, l, i1);
-        List<BlockPos> roots = List.of(
-                blockpos1.north(), blockpos1.west(),
-                blockpos1.east().north(), blockpos1.east(2),
-                blockpos1.south().west(), blockpos1.south(2),
-                blockpos1.east(2).south(), blockpos1.east().south(2));
-
-
         for(int i2 = 0; i2 < height; ++i2) {
 
             int j2 = l + i2;
@@ -63,19 +62,40 @@ public class LargeStraightTrunkPlacer extends TrunkPlacer {
                 this.placeLog(level, consumer, random, blockpos2.east().south(), config);
             }
         }
-        for(BlockPos rootPos : roots) {
-            if (random.nextBoolean() || random.nextBoolean()) {
-                boolean rootDepth = random.nextBoolean();
-                boolean rootHeight = random.nextBoolean();
 
-                this.placeLog(level, consumer, random, rootPos, config);
-                this.placeLog(level, consumer, random, rootPos.below(), config);
-                this.placeLog(level, consumer, random, rootPos.below(2), config);
-                if (rootDepth) this.placeLog(level, consumer, random, rootPos.below(3), config);
-                if (rootHeight) this.placeLog(level, consumer, random, rootPos.above(1), config);
+
+        // ROOTS
+        BlockPos blockpos1 = new BlockPos(k, l, i1);
+        List<BlockPos> r1 = List.of(
+                blockpos1.north(), blockpos1.east(2), blockpos1.east().south(2), blockpos1.south().west());
+        List<BlockPos> r2 = List.of(
+                blockpos1.west(), blockpos1.south(2), blockpos1.south().east(2), blockpos1.east().north());
+        List<BlockPos> roots1 = r1;
+        List<BlockPos> roots2 = r2;
+        if (random.nextBoolean()) roots1 = r2; roots2 = r1;
+
+        if (random.nextInt(20) == 0) {
+            placeRoot(roots2.get(random.nextInt(roots2.size())), random.nextBoolean(), random.nextBoolean(),
+                    level, consumer, random, config);
+        }
+        for(BlockPos rootPos : roots1) {
+            if (random.nextInt(100) > 0) {
+                placeRoot(rootPos, random.nextBoolean(), random.nextBoolean(), level, consumer, random, config);
             }
         }
 
-        return ImmutableList.of(new FoliagePlacer.FoliageAttachment(blockPos.above(height), 0, false));
+        // BRANCHES TODO
+        //
+
+        return list;
+    }
+
+    private void placeRoot(BlockPos pos, boolean depth, boolean height, LevelSimulatedReader level,
+                           BiConsumer<BlockPos, BlockState> consumer, RandomSource random, TreeConfiguration config) {
+        this.placeLog(level, consumer, random, pos, config);
+        this.placeLog(level, consumer, random, pos.below(), config);
+        this.placeLog(level, consumer, random, pos.below(2), config);
+        if (depth) this.placeLog(level, consumer, random, pos.below(3), config);
+        if (height) this.placeLog(level, consumer, random, pos.above(1), config);
     }
 }

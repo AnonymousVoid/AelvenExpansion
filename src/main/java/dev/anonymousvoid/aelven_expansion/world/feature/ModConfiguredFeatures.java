@@ -3,6 +3,7 @@ package dev.anonymousvoid.aelven_expansion.world.feature;
 import com.google.common.base.Suppliers;
 import dev.anonymousvoid.aelven_expansion.AelvenExpansion;
 import dev.anonymousvoid.aelven_expansion.block.ModBlocks;
+import dev.anonymousvoid.aelven_expansion.world.feature.tree.placer.DroopyFoliagePlacer;
 import dev.anonymousvoid.aelven_expansion.world.feature.tree.placer.LargeStraightTrunkPlacer;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
@@ -62,7 +63,7 @@ public class ModConfiguredFeatures {
                         BlockStateProvider.simple(ModBlocks.PEACHGROVE_LOG.get()),
                         new LargeStraightTrunkPlacer(10, 3, 3),
                         BlockStateProvider.simple(ModBlocks.PEACHGROVE_LEAVES.get()),
-                        new DarkOakFoliagePlacer(ConstantInt.of(1), ConstantInt.of(0)),
+                        new DroopyFoliagePlacer(ConstantInt.of(5), ConstantInt.of(0)),
                         new ThreeLayersFeatureSize(1, 1, 0, 1, 2, OptionalInt.empty())).build());
 
 
