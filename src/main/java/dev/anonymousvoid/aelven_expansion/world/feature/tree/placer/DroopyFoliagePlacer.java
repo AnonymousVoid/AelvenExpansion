@@ -40,25 +40,28 @@ public class DroopyFoliagePlacer extends FoliagePlacer {
 
 
         BlockPos.MutableBlockPos blockpos$mutableblockpos = blockpos.mutable();
+        boolean j = true;
 
-        for(int i = 0; i < radius * Math.PI / 1.5; ++i) {
+        for(int i = 0; i < radius * 2; ++i) {
+            j = !j;
             blockpos$mutableblockpos.setWithOffset(blockpos, random.nextInt(radius) - random.nextInt(radius),
                     -1 - (int)Math.floor(height / 2), random.nextInt(radius) - random.nextInt(radius));
             tryPlaceLeaf(level, blockSetter, random, config, blockpos$mutableblockpos);
+            if (j) tryPlaceLeaf(level, blockSetter, random, config, blockpos$mutableblockpos.below());
         }
 
     }
 
     public int foliageHeight(RandomSource random, int height, TreeConfiguration config) {
-        return 6;
+        return 5;
     }
 
     protected boolean shouldSkipLocationSigned(RandomSource random, int localX, int localY, int localZ, int range, boolean large) {
-        return dist(dist(localX, localZ), localY+0.5) >= range;// || random.nextInt(10) == 0;
+        return dist(dist(localX, localZ), localY+0.5) >= range || random.nextInt(50) == 0;
     }
 
     protected boolean shouldSkipLocation(RandomSource random, int localX, int localY, int localZ, int range, boolean large) {
-        return dist(dist(localX, localZ), localY+0.5) >= range;// || random.nextInt(10) == 0;
+        return dist(dist(localX, localZ), localY+0.5) >= range || random.nextInt(50) == 0;
     }
 
     private double dist(double x, double y) {
