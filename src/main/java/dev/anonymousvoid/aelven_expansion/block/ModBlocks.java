@@ -41,7 +41,7 @@ public class ModBlocks {
     private static final BlockBehaviour.Properties metalProperties = BlockBehaviour.Properties.copy(Blocks.COPPER_BLOCK).requiresCorrectToolForDrops();
     private static final BlockBehaviour.Properties deepmetalProperties = BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound((SoundType.NETHERITE_BLOCK)).requiresCorrectToolForDrops();
     private static final BlockBehaviour.Properties boneProperties = BlockBehaviour.Properties.copy(Blocks.BONE_BLOCK).requiresCorrectToolForDrops();
-    private static final BlockBehaviour.Properties plantProperties = BlockBehaviour.Properties.of(Material.PLANT).noCollission().instabreak().sound(SoundType.GRASS);
+    private static final BlockBehaviour.Properties plantProperties = BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ);
     private static final BlockBehaviour.Properties stoneProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.STONE).strength(1.5F, 6.0F);
     private static final BlockBehaviour.Properties deepslateProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE).strength(4.5F, 3.0F);
     private static final BlockBehaviour.Properties deepslatebrickProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE_BRICKS).strength(4.5F, 3.0F);
@@ -280,15 +280,15 @@ public class ModBlocks {
     public static final RegistryObject<Block> MOON_BLOOM = registerBlock("moon_bloom",
             () -> new TallGrassBlock(plantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> MOONSHADE = registerBlock("moonshade",
-            () -> new DoublePlantBlock(plantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new TallFlowerBlock(plantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> SILVER_MARIGOLD = registerBlock("silver_marigold",
             () -> new TallGrassBlock(plantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> SILVER_SPRING = registerBlock("silver_spring",
-            () -> new DoublePlantBlock(plantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new TallFlowerBlock(plantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> PEACH_LAVENDER = registerBlock("peach_lavender",
             () -> new TallGrassBlock(plantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> PEACH_LILAC = registerBlock("peach_lilac",
-            () -> new DoublePlantBlock(plantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new TallFlowerBlock(plantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
 
     public static final RegistryObject<Block> COBBLED_CHITTA = registerBlock("cobbled_chitta",
