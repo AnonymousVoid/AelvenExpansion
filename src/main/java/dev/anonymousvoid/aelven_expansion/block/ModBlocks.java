@@ -457,6 +457,15 @@ public class ModBlocks {
     public static final RegistryObject<Block> DRYSTONE_WALL = registerBlock("drystone_wall",
             () -> new WallBlock(deepslateProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
+    public static final RegistryObject<Block> MOSSY_DRYSTONE = registerBlock("mossy_drystone",
+            () -> new Block(deepslateProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> MOSSY_DRYSTONE_STAIRS = registerBlock("mossy_drystone_stairs",
+            () -> new StairBlock(() -> ModBlocks.DRYSTONE.get().defaultBlockState(),
+                    deepslateProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> MOSSY_DRYSTONE_SLAB = registerBlock("mossy_drystone_slab",
+            () -> new SlabBlock(deepslateProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> MOSSY_DRYSTONE_WALL = registerBlock("mossy_drystone_wall",
+            () -> new WallBlock(deepslateProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
     public static final RegistryObject<Block> DRYSTONE_BRICKS = registerBlock("drystone_bricks",
             () -> new Block(deepslatebrickProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
@@ -466,6 +475,26 @@ public class ModBlocks {
     public static final RegistryObject<Block> DRYSTONE_BRICK_SLAB = registerBlock("drystone_brick_slab",
             () -> new SlabBlock(deepslatebrickProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> DRYSTONE_BRICK_WALL = registerBlock("drystone_brick_wall",
+            () -> new WallBlock(deepslatebrickProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
+    public static final RegistryObject<Block> CRACKED_DRYSTONE_BRICKS = registerBlock("cracked_drystone_bricks",
+            () -> new Block(deepslatebrickProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> CRACKED_DRYSTONE_BRICK_STAIRS = registerBlock("cracked_drystone_brick_stairs",
+            () -> new StairBlock(() -> ModBlocks.DRYSTONE_BRICKS.get().defaultBlockState(),
+                    deepslatebrickProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> CRACKED_DRYSTONE_BRICK_SLAB = registerBlock("cracked_drystone_brick_slab",
+            () -> new SlabBlock(deepslatebrickProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> CRACKED_DRYSTONE_BRICK_WALL = registerBlock("cracked_drystone_brick_wall",
+            () -> new WallBlock(deepslatebrickProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
+    public static final RegistryObject<Block> MOSSY_DRYSTONE_BRICKS = registerBlock("mossy_drystone_bricks",
+            () -> new Block(deepslatebrickProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> MOSSY_DRYSTONE_BRICK_STAIRS = registerBlock("mossy_drystone_brick_stairs",
+            () -> new StairBlock(() -> ModBlocks.DRYSTONE_BRICKS.get().defaultBlockState(),
+                    deepslatebrickProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> MOSSY_DRYSTONE_BRICK_SLAB = registerBlock("mossy_drystone_brick_slab",
+            () -> new SlabBlock(deepslatebrickProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> MOSSY_DRYSTONE_BRICK_WALL = registerBlock("mossy_drystone_brick_wall",
             () -> new WallBlock(deepslatebrickProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
     public static final RegistryObject<Block> SILVER_ORE = registerBlock("silver_ore",

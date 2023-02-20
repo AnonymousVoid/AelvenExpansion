@@ -2,7 +2,7 @@
   "parent": "minecraft:block/stairs",
   "textures": {
     "bottom": "aelven_expansion:block/chipstone",
-    "side": "aelven_expansion:block/chipstone",
+    "side": "aelven_expansion:block/chipstone_side",
     "top": "aelven_expansion:block/chipstone"
   }
 }

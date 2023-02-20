@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/template_wall_post",
   "textures": {
-    "wall": "aelven_expansion:block/drystone_bricks"
+    "wall": "aelven_expansion:block/drystone_brick_top"
   }
 }

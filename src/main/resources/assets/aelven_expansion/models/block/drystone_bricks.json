@@ -1,6 +1,7 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/cube_column",
   "textures": {
-    "all": "aelven_expansion:block/drystone_bricks"
+    "end": "aelven_expansion:block/drystone_brick_top",
+    "side": "aelven_expansion:block/drystone_brick_side"
   }
 }

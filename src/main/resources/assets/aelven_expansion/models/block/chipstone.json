@@ -1,6 +1,7 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/cube_column",
   "textures": {
-    "all": "aelven_expansion:block/chipstone"
+    "end": "aelven_expansion:block/chipstone_top",
+    "side": "aelven_expansion:block/chipstone_side"
   }
 }

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "aelven_expansion:block/cracked_drystone_brick_slab"
+    },
+    "type=double": {
+      "model": "aelven_expansion:block/cracked_drystone_bricks"
+    },
+    "type=top": {
+      "model": "aelven_expansion:block/cracked_drystone_brick_slab_top"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "aelven_expansion:block/mossy_drystone_brick_top"
+  }
+}

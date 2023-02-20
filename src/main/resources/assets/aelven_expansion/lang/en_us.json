@@ -192,10 +192,25 @@
 	"block.aelven_expansion.drystone_slab": "Drystone Slab",
 	"block.aelven_expansion.drystone_wall": "Drystone Wall",
 
+	"block.aelven_expansion.mossy_drystone": "Mossy Drystone",
+	"block.aelven_expansion.mossy_drystone_stairs": "Mossy Drystone Stairs",
+	"block.aelven_expansion.mossy_drystone_slab": "Mossy Drystone Slab",
+	"block.aelven_expansion.mossy_drystone_wall": "Mossy Drystone Wall",
+
 	"block.aelven_expansion.drystone_bricks": "Drystone Bricks",
 	"block.aelven_expansion.drystone_brick_stairs": "Drystone Brick Stairs",
 	"block.aelven_expansion.drystone_brick_slab": "Drystone Brick Slab",
 	"block.aelven_expansion.drystone_brick_wall": "Drystone Brick Wall",
+	
+	"block.aelven_expansion.cracked_drystone_bricks": "Cracked Drystone Bricks",
+	"block.aelven_expansion.cracked_drystone_brick_stairs": "Cracked Drystone Brick Stairs",
+	"block.aelven_expansion.cracked_drystone_brick_slab": "Cracked Drystone Brick Slab",
+	"block.aelven_expansion.cracked_drystone_brick_wall": "Cracked Drystone Brick Wall",
+	
+	"block.aelven_expansion.mossy_drystone_bricks": "Mossy Drystone Bricks",
+	"block.aelven_expansion.mossy_drystone_brick_stairs": "Mossy Drystone Brick Stairs",
+	"block.aelven_expansion.mossy_drystone_brick_slab": "Mossy Drystone Brick Slab",
+	"block.aelven_expansion.mossy_drystone_brick_wall": "Mossy Drystone Brick Wall",
 
 	"block.aelven_expansion.shingles": "Shingles",
 	"block.aelven_expansion.shingle_stairs": "Shingle Stairs",

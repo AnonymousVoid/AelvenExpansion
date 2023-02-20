@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "aelven_expansion:block/cracked_drystone_brick_top",
+    "side": "aelven_expansion:block/cracked_drystone_brick_side",
+    "top": "aelven_expansion:block/cracked_drystone_brick_top"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "aelven_expansion:block/mossy_drystone_brick_top",
+    "side": "aelven_expansion:block/mossy_drystone_brick_side",
+    "top": "aelven_expansion:block/mossy_drystone_brick_top"
+  }
+}

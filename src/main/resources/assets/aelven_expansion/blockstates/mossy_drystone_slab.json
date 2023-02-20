@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "aelven_expansion:block/mossy_drystone_slab"
+    },
+    "type=double": {
+      "model": "aelven_expansion:block/mossy_drystone1"
+    },
+    "type=top": {
+      "model": "aelven_expansion:block/mossy_drystone_slab_top"
+    }
+  }
+}
