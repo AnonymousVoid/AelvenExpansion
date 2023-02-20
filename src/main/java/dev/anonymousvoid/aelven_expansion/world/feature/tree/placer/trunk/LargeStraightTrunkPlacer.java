@@ -62,25 +62,25 @@ public class LargeStraightTrunkPlacer extends TrunkPlacer {
 
         // BRANCHES
         if (random.nextInt(5) > 0) {
-            BlockPos p = blockPos.north().east(random.nextInt(2)).above(5 + random.nextInt(height - 4));
+            BlockPos p = blockPos.north().east(random.nextInt(2)).above(5 + random.nextInt(height - 7));
             int l = random.nextInt(3) + 2;
             placeBranch(p, l, Direction.NORTH, level, blockSetter, random, config);
             list.add(new FoliagePlacer.FoliageAttachment(p.north(l), 0, false));
         }
         if (random.nextInt(5) > 0) {
-            BlockPos p = blockPos.east(2).south(random.nextInt(2)).above(5 + random.nextInt(height - 4));
+            BlockPos p = blockPos.east(2).south(random.nextInt(2)).above(5 + random.nextInt(height - 7));
             int l = random.nextInt(3) + 2;
-            placeBranch(p,l, Direction.EAST, level, blockSetter, random, config);
+            placeBranch(p, l, Direction.EAST, level, blockSetter, random, config);
             list.add(new FoliagePlacer.FoliageAttachment(p.east(l), 0, false));
         }
         if (random.nextInt(5) > 0) {
-            BlockPos p = blockPos.south(2).east(random.nextInt(2)).above(5 + random.nextInt(height - 4));
+            BlockPos p = blockPos.south(2).east(random.nextInt(2)).above(5 + random.nextInt(height - 7));
             int l = random.nextInt(3) + 2;
             placeBranch(p, l, Direction.SOUTH, level, blockSetter, random, config);
             list.add(new FoliagePlacer.FoliageAttachment(p.south(l), 0, false));
         }
         if (random.nextInt(5) > 0) {
-            BlockPos p = blockPos.west().south(random.nextInt(2)).above(5 + random.nextInt(height - 4));
+            BlockPos p = blockPos.west().south(random.nextInt(2)).above(5 + random.nextInt(height - 7));
             int l = random.nextInt(3) + 2;
             placeBranch(p, l, Direction.WEST, level, blockSetter, random, config);
             list.add(new FoliagePlacer.FoliageAttachment(p.west(l), 0, false));

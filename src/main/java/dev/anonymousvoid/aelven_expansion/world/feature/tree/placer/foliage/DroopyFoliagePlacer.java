@@ -41,13 +41,18 @@ public class DroopyFoliagePlacer extends FoliagePlacer {
 
         BlockPos.MutableBlockPos blockpos$mutableblockpos = blockpos.mutable();
         boolean j = true;
+        boolean k = true;
 
-        for(int i = 0; i < radius * 2; ++i) {
+        for(int i = 0; i < radius * 3; ++i) {
             j = !j;
             blockpos$mutableblockpos.setWithOffset(blockpos, random.nextInt(radius) - random.nextInt(radius),
                     -1 - (int)Math.floor(height / 2), random.nextInt(radius) - random.nextInt(radius));
             tryPlaceLeaf(level, blockSetter, random, config, blockpos$mutableblockpos);
-            if (j) tryPlaceLeaf(level, blockSetter, random, config, blockpos$mutableblockpos.below());
+            if (j) {
+                k = !k;
+                tryPlaceLeaf(level, blockSetter, random, config, blockpos$mutableblockpos.below());
+                if  (k) tryPlaceLeaf(level, blockSetter, random, config, blockpos$mutableblockpos.below(2));
+            }
         }
 
     }

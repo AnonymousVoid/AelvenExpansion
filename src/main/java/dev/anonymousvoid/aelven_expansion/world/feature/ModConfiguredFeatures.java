@@ -63,7 +63,7 @@ public class ModConfiguredFeatures {
                         BlockStateProvider.simple(ModBlocks.PEACHGROVE_LOG.get()),
                         new LargeStraightTrunkPlacer(12, 6, 3),
                         BlockStateProvider.simple(ModBlocks.PEACHGROVE_LEAVES.get()),
-                        new DroopyFoliagePlacer(ConstantInt.of(5), ConstantInt.of(0)),
+                        new DroopyFoliagePlacer(ConstantInt.of(4), ConstantInt.of(0)),
                         new ThreeLayersFeatureSize(1, 1, 0, 1, 2, OptionalInt.empty())).build());
 
 
