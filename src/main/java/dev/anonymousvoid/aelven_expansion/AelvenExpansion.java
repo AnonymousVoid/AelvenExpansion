@@ -24,7 +24,6 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
-import net.minecraft.client.renderer.entity.BoatRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.state.properties.WoodType;

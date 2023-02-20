@@ -1,4 +1,4 @@
-package dev.anonymousvoid.aelven_expansion.world.feature.tree.placer;
+package dev.anonymousvoid.aelven_expansion.world.feature.tree.placer.foliage;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;

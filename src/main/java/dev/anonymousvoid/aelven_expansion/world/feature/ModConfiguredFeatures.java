@@ -3,8 +3,9 @@ package dev.anonymousvoid.aelven_expansion.world.feature;
 import com.google.common.base.Suppliers;
 import dev.anonymousvoid.aelven_expansion.AelvenExpansion;
 import dev.anonymousvoid.aelven_expansion.block.ModBlocks;
-import dev.anonymousvoid.aelven_expansion.world.feature.tree.placer.DroopyFoliagePlacer;
-import dev.anonymousvoid.aelven_expansion.world.feature.tree.placer.LargeStraightTrunkPlacer;
+import dev.anonymousvoid.aelven_expansion.world.feature.tree.placer.foliage.DroopyFoliagePlacer;
+import dev.anonymousvoid.aelven_expansion.world.feature.tree.placer.trunk.LargeStraightTrunkPlacer;
+import dev.anonymousvoid.aelven_expansion.world.feature.tree.placer.trunk.SlantedTrunkPlacer;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.features.FeatureUtils;
@@ -27,7 +28,6 @@ import net.minecraft.world.level.levelgen.feature.configurations.TreeConfigurati
 import net.minecraft.world.level.levelgen.feature.featuresize.ThreeLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.DarkOakFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
@@ -53,7 +53,7 @@ public class ModConfiguredFeatures {
         public static final Holder<ConfiguredFeature<TreeConfiguration, ?>> SILVERBLOOD_TREE =
                 FeatureUtils.register("silverblood_tree", Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                         BlockStateProvider.simple(ModBlocks.SILVERBLOOD_LOG.get()),
-                        new StraightTrunkPlacer(5, 6, 3),
+                        new SlantedTrunkPlacer(10, 5, 5),
                         BlockStateProvider.simple(ModBlocks.SILVERBLOOD_LEAVES.get()),
                         new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 4),
                         new TwoLayersFeatureSize(1, 0, 2)).build());

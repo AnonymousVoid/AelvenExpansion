@@ -1,6 +1,5 @@
-package dev.anonymousvoid.aelven_expansion.world.feature.tree.placer;
+package dev.anonymousvoid.aelven_expansion.world.feature.tree.placer.trunk;
 
-import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -28,12 +27,10 @@ public class LargeStraightTrunkPlacer extends TrunkPlacer {
         super(baseHeight, rand1, rand2);
     }
 
-    protected TrunkPlacerType<?> type() {
-        return TrunkPlacerType.DARK_OAK_TRUNK_PLACER;
-    }
+    protected TrunkPlacerType<?> type() { return TrunkPlacerType.DARK_OAK_TRUNK_PLACER; }
 
     public List<FoliagePlacer.FoliageAttachment> placeTrunk(
-            LevelSimulatedReader level, BiConsumer<BlockPos, BlockState> consumer, RandomSource random,
+            LevelSimulatedReader level, BiConsumer<BlockPos, BlockState> blockSetter, RandomSource random,
             int height, BlockPos blockPos, TreeConfiguration config) {
 
         // GENERAL
@@ -41,10 +38,10 @@ public class LargeStraightTrunkPlacer extends TrunkPlacer {
         list.add(new FoliagePlacer.FoliageAttachment(blockPos.above(height), 0, true));
 
         BlockPos blockpos = blockPos.below();
-        setDirtAt(level, consumer, random, blockpos, config);
-        setDirtAt(level, consumer, random, blockpos.east(), config);
-        setDirtAt(level, consumer, random, blockpos.south(), config);
-        setDirtAt(level, consumer, random, blockpos.south().east(), config);
+        setDirtAt(level, blockSetter, random, blockpos, config);
+        setDirtAt(level, blockSetter, random, blockpos.east(), config);
+        setDirtAt(level, blockSetter, random, blockpos.south(), config);
+        setDirtAt(level, blockSetter, random, blockpos.south().east(), config);
 
         int i = blockPos.getX();
         int j = blockPos.getY();
@@ -55,10 +52,10 @@ public class LargeStraightTrunkPlacer extends TrunkPlacer {
             int j2 = j + i2;
             BlockPos blockpos2 = new BlockPos(i, j2, k);
             if (TreeFeature.isAirOrLeaves(level, blockpos2)) {
-                this.placeLog(level, consumer, random, blockpos2, config);
-                this.placeLog(level, consumer, random, blockpos2.east(), config);
-                this.placeLog(level, consumer, random, blockpos2.south(), config);
-                this.placeLog(level, consumer, random, blockpos2.east().south(), config);
+                this.placeLog(level, blockSetter, random, blockpos2, config);
+                this.placeLog(level, blockSetter, random, blockpos2.east(), config);
+                this.placeLog(level, blockSetter, random, blockpos2.south(), config);
+                this.placeLog(level, blockSetter, random, blockpos2.east().south(), config);
             }
         }
 
@@ -67,25 +64,25 @@ public class LargeStraightTrunkPlacer extends TrunkPlacer {
         if (random.nextInt(5) > 0) {
             BlockPos p = blockPos.north().east(random.nextInt(2)).above(5 + random.nextInt(height - 4));
             int l = random.nextInt(3) + 2;
-            placeBranch(p, l, Direction.NORTH, level, consumer, random, config);
+            placeBranch(p, l, Direction.NORTH, level, blockSetter, random, config);
             list.add(new FoliagePlacer.FoliageAttachment(p.north(l), 0, false));
         }
         if (random.nextInt(5) > 0) {
             BlockPos p = blockPos.east(2).south(random.nextInt(2)).above(5 + random.nextInt(height - 4));
             int l = random.nextInt(3) + 2;
-            placeBranch(p,l, Direction.EAST, level, consumer, random, config);
+            placeBranch(p,l, Direction.EAST, level, blockSetter, random, config);
             list.add(new FoliagePlacer.FoliageAttachment(p.east(l), 0, false));
         }
         if (random.nextInt(5) > 0) {
             BlockPos p = blockPos.south(2).east(random.nextInt(2)).above(5 + random.nextInt(height - 4));
             int l = random.nextInt(3) + 2;
-            placeBranch(p, l, Direction.SOUTH, level, consumer, random, config);
+            placeBranch(p, l, Direction.SOUTH, level, blockSetter, random, config);
             list.add(new FoliagePlacer.FoliageAttachment(p.south(l), 0, false));
         }
         if (random.nextInt(5) > 0) {
             BlockPos p = blockPos.west().south(random.nextInt(2)).above(5 + random.nextInt(height - 4));
             int l = random.nextInt(3) + 2;
-            placeBranch(p, l, Direction.WEST, level, consumer, random, config);
+            placeBranch(p, l, Direction.WEST, level, blockSetter, random, config);
             list.add(new FoliagePlacer.FoliageAttachment(p.west(l), 0, false));
         }
 
@@ -101,11 +98,11 @@ public class LargeStraightTrunkPlacer extends TrunkPlacer {
 
         if (random.nextInt(20) == 0) {
             placeRoot(roots2.get(random.nextInt(roots2.size())), random.nextBoolean(), random.nextBoolean(),
-                    level, consumer, random, config);
+                    level, blockSetter, random, config);
         }
         for(BlockPos rootPos : roots1) {
             if (random.nextInt(100) > 0) {
-                placeRoot(rootPos, random.nextBoolean(), random.nextBoolean(), level, consumer, random, config);
+                placeRoot(rootPos, random.nextBoolean(), random.nextBoolean(), level, blockSetter, random, config);
             }
         }
 
