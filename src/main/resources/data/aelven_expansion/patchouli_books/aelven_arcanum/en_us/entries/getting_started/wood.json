@@ -1,0 +1,23 @@
+{
+  "name": "Wood Types",
+  "category": "aelven_expansion:getting_started",
+  "icon": "aelven_expansion:moon_fir_sapling",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "There are three wood types within the Elven Expansion, They can all be found spawning naturally."
+    },
+    {
+      "type": "patchouli:text",
+      "text": ""
+    },
+    {
+      "type": "patchouli:text",
+      "text": ""
+    },
+    {
+      "type": "patchouli:text",
+      "text": ""
+    }
+  ]
+}
