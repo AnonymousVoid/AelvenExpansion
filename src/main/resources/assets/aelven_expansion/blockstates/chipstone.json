@@ -1,7 +1,16 @@
 {
   "variants": {
-    "": {
+    "axis=x": {
+      "model": "aelven_expansion:block/chipstone_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
       "model": "aelven_expansion:block/chipstone"
+    },
+    "axis=z": {
+      "model": "aelven_expansion:block/chipstone_horizontal",
+      "x": 90
     }
   }
 }

@@ -17,6 +17,7 @@ import dev.anonymousvoid.aelven_expansion.screen.ModMenuTypes;
 import dev.anonymousvoid.aelven_expansion.world.biome_mods.ModBiomeModifiers;
 import dev.anonymousvoid.aelven_expansion.world.feature.ModConfiguredFeatures;
 import dev.anonymousvoid.aelven_expansion.world.feature.ModPlacedFeatures;
+import dev.anonymousvoid.aelven_expansion.world.feature.tree.placer.trunk.ModTrunkPlacerType;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
@@ -60,6 +61,8 @@ public class AelvenExpansion {
         ModSounds.register(modEventBus);
 
         ModEntityTypes.register(modEventBus);
+
+//        ModTrunkPlacerType.register(modEventBus); //TODO
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::clientSetup);
