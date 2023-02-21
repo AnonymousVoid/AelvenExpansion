@@ -1,6 +1,7 @@
 {
-  "parent": "minecraft:block/template_wall_side_tall",
+  "parent": "aelven_expansion:block/template_wall_side_tall",
   "textures": {
-    "wall": "aelven_expansion:block/chipstone"
+    "end": "aelven_expansion:block/chipstone_top",
+    "side": "aelven_expansion:block/chipstone_side"
   }
 }

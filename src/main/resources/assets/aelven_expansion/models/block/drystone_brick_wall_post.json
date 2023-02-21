@@ -1,6 +1,7 @@
 {
-  "parent": "minecraft:block/template_wall_post",
+  "parent": "aelven_expansion:block/template_wall_post",
   "textures": {
-    "wall": "aelven_expansion:block/drystone_brick_top"
+    "end": "aelven_expansion:block/drystone_brick_top",
+    "side": "aelven_expansion:block/drystone_brick_side"
   }
 }

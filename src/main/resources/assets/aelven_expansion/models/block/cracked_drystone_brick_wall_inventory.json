@@ -1,6 +1,7 @@
 {
-  "parent": "minecraft:block/wall_inventory",
+  "parent": "aelven_expansion:block/wall_inventory",
   "textures": {
-    "wall": "aelven_expansion:block/cracked_drystone_brick_top"
+    "end": "aelven_expansion:block/cracked_drystone_brick_top",
+    "side": "aelven_expansion:block/cracked_drystone_brick_side"
   }
 }
