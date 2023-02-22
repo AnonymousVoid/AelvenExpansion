@@ -61,53 +61,25 @@ public class ModBlocks {
     public static final RegistryObject<Block> STRIPPED_MOON_FIR_BEAMS = registerBlock("stripped_moon_fir_beams",
             () -> log(MaterialColor.COLOR_GRAY, MaterialColor.COLOR_BLUE), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> MOON_FIR_PLANKS = registerBlock("moon_fir_planks",
-            () -> new Block(woodProperties) {
-                @Override public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return true; }
-                @Override public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 5; }
-                @Override public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 5; }
-            }, ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> flammableBlock(woodProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
     public static final RegistryObject<Block> MOON_FIR_STAIRS = registerBlock("moon_fir_stairs",
-            () -> new StairBlock(() -> ModBlocks.MOON_FIR_PLANKS.get().defaultBlockState(),
-                    woodProperties) {
-                @Override public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return true; }
-                @Override public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 5; }
-                @Override public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 5; }
-            }, ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> flammableStairBlock(() -> ModBlocks.MOON_FIR_PLANKS.get().defaultBlockState(), woodProperties),
+            ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> MOON_FIR_SLAB = registerBlock("moon_fir_slab",
-            () -> new SlabBlock(woodProperties) {
-                @Override public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return true; }
-                @Override public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 5; }
-                @Override public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 5; }
-            }, ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> flammableSlabBlock(woodProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> MOON_FIR_FENCE = registerBlock("moon_fir_fence",
-            () -> new FenceBlock(woodProperties) {
-                @Override public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return true; }
-                @Override public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 5; }
-                @Override public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 5; }
-            }, ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> flammableFenceBlock(woodProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> MOON_FIR_FENCE_GATE = registerBlock("moon_fir_fence_gate",
-            () -> new FenceGateBlock(woodProperties) {
-                @Override public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return true; }
-                @Override public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 5; }
-                @Override public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 5; }
-            }, ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> flammableFenceGateBlock(woodProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> MOON_FIR_BUTTON = registerBlock("moon_fir_button",
             () -> new WoodButtonBlock(woodPropertiesNoCollide), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> MOON_FIR_PRESSURE_PLATE = registerBlock("moon_fir_pressure_plate",
             () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, woodProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> MOON_FIR_DOOR = registerBlock("moon_fir_door",
-            () -> new DoorBlock(woodPropertiesNoOcclude) {
-                @Override public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return true; }
-                @Override public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 5; }
-                @Override public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 5; }
-            }, ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> flammableDoorBlock(woodPropertiesNoOcclude), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> MOON_FIR_TRAPDOOR = registerBlock("moon_fir_trapdoor",
-            () -> new TrapDoorBlock(woodPropertiesNoOcclude) {
-                @Override public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return true; }
-                @Override public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 5; }
-                @Override public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 5; }
-            }, ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> flammableTrapDoorBlock(woodPropertiesNoOcclude), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
     public static final RegistryObject<Block> MOON_FIR_WALL_SIGN = registerBlockWithoutBlockItem("moon_fir_wall_sign",
             () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.MOON_FIR));
@@ -118,11 +90,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> MOON_FIR_SAPLING = registerBlock("moon_fir_sapling",
             () -> new SaplingBlock(new MoonFirTreeGrower(), plantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> MOON_FIR_LEAVES = registerBlock("moon_fir_leaves",
-            () -> new LeavesBlock(azaleaProperties) {
-                @Override public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return true; }
-                @Override public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 60; }
-                @Override public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 30; }
-            }, ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> flammableLeavesBlock(azaleaProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     // Moon Fir Sign
 
     public static final RegistryObject<Block> SILVERBLOOD_LOG = registerBlock("silverblood_log",
@@ -138,53 +106,25 @@ public class ModBlocks {
     public static final RegistryObject<Block> STRIPPED_SILVERBLOOD_BEAMS = registerBlock("stripped_silverblood_beams",
             () -> log(MaterialColor.COLOR_LIGHT_GRAY, MaterialColor.COLOR_PINK), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> SILVERBLOOD_PLANKS = registerBlock("silverblood_planks",
-            () -> new Block(woodProperties) {
-                @Override public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return true; }
-                @Override public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 5; }
-                @Override public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 5; }
-            }, ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> flammableBlock(woodProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
     public static final RegistryObject<Block> SILVERBLOOD_STAIRS = registerBlock("silverblood_stairs",
-            () -> new StairBlock(() -> ModBlocks.SILVERBLOOD_PLANKS.get().defaultBlockState(),
-                    woodProperties) {
-                @Override public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return true; }
-                @Override public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 5; }
-                @Override public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 5; }
-            }, ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> flammableStairBlock(() -> ModBlocks.SILVERBLOOD_PLANKS.get().defaultBlockState(), woodProperties),
+            ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> SILVERBLOOD_SLAB = registerBlock("silverblood_slab",
-            () -> new SlabBlock(woodProperties) {
-                @Override public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return true; }
-                @Override public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 5; }
-                @Override public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 5; }
-            }, ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> flammableSlabBlock(woodProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> SILVERBLOOD_FENCE = registerBlock("silverblood_fence",
-            () -> new FenceBlock(woodProperties) {
-                @Override public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return true; }
-                @Override public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 5; }
-                @Override public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 5; }
-            }, ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> flammableFenceBlock(woodProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> SILVERBLOOD_FENCE_GATE = registerBlock("silverblood_fence_gate",
-            () -> new FenceGateBlock(woodProperties) {
-                @Override public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return true; }
-                @Override public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 5; }
-                @Override public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 5; }
-            }, ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> flammableFenceGateBlock(woodProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> SILVERBLOOD_BUTTON = registerBlock("silverblood_button",
             () -> new WoodButtonBlock(woodPropertiesNoCollide), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> SILVERBLOOD_PRESSURE_PLATE = registerBlock("silverblood_pressure_plate",
             () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, woodProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> SILVERBLOOD_DOOR = registerBlock("silverblood_door",
-            () -> new DoorBlock(woodPropertiesNoOcclude) {
-                @Override public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return true; }
-                @Override public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 5; }
-                @Override public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 5; }
-            }, ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> flammableDoorBlock(woodPropertiesNoOcclude), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> SILVERBLOOD_TRAPDOOR = registerBlock("silverblood_trapdoor",
-            () -> new TrapDoorBlock(woodPropertiesNoOcclude) {
-                @Override public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return true; }
-                @Override public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 5; }
-                @Override public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 5; }
-            }, ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> flammableTrapDoorBlock(woodPropertiesNoOcclude), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
     public static final RegistryObject<Block> SILVERBLOOD_WALL_SIGN = registerBlockWithoutBlockItem("silverblood_wall_sign",
             () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.SILVERBLOOD));
@@ -194,11 +134,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> SILVERBLOOD_SAPLING = registerBlock("silverblood_sapling",
             () -> new SaplingBlock(new SilverbloodTreeGrower(), plantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> SILVERBLOOD_LEAVES = registerBlock("silverblood_leaves",
-            () -> new LeavesBlock(azaleaProperties) {
-                @Override public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return true; }
-                @Override public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 60; }
-                @Override public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 30; }
-            }, ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> flammableLeavesBlock(azaleaProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
     public static final RegistryObject<Block> PEACHGROVE_LOG = registerBlock("peachgrove_log",
             () -> log(MaterialColor.COLOR_LIGHT_GRAY, MaterialColor.COLOR_PINK), ModCreativeModeTab.MOD_TAB_BLOCKS);
@@ -213,53 +149,25 @@ public class ModBlocks {
     public static final RegistryObject<Block> STRIPPED_PEACHGROVE_BEAMS = registerBlock("stripped_peachgrove_beams",
             () -> log(MaterialColor.COLOR_LIGHT_GRAY, MaterialColor.COLOR_PINK), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> PEACHGROVE_PLANKS = registerBlock("peachgrove_planks",
-            () -> new Block(woodProperties) {
-                @Override public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return true; }
-                @Override public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 5; }
-                @Override public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 5; }
-            }, ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> flammableBlock(woodProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
     public static final RegistryObject<Block> PEACHGROVE_STAIRS = registerBlock("peachgrove_stairs",
-            () -> new StairBlock(() -> ModBlocks.PEACHGROVE_PLANKS.get().defaultBlockState(),
-                    woodProperties) {
-                @Override public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return true; }
-                @Override public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 5; }
-                @Override public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 5; }
-            }, ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> flammableStairBlock(() -> ModBlocks.PEACHGROVE_PLANKS.get().defaultBlockState(), woodProperties),
+            ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> PEACHGROVE_SLAB = registerBlock("peachgrove_slab",
-            () -> new SlabBlock(woodProperties) {
-                @Override public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return true; }
-                @Override public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 5; }
-                @Override public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 5; }
-            }, ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> flammableSlabBlock(woodProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> PEACHGROVE_FENCE = registerBlock("peachgrove_fence",
-            () -> new FenceBlock(woodProperties) {
-                @Override public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return true; }
-                @Override public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 5; }
-                @Override public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 5; }
-            }, ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> flammableFenceBlock(woodProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> PEACHGROVE_FENCE_GATE = registerBlock("peachgrove_fence_gate",
-            () -> new FenceGateBlock(woodProperties) {
-                @Override public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return true; }
-                @Override public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 5; }
-                @Override public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 5; }
-            }, ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> flammableFenceGateBlock(woodProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> PEACHGROVE_BUTTON = registerBlock("peachgrove_button",
             () -> new WoodButtonBlock(woodPropertiesNoCollide), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> PEACHGROVE_PRESSURE_PLATE = registerBlock("peachgrove_pressure_plate",
             () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, woodProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> PEACHGROVE_DOOR = registerBlock("peachgrove_door",
-            () -> new DoorBlock(woodPropertiesNoOcclude) {
-                @Override public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return true; }
-                @Override public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 5; }
-                @Override public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 5; }
-            }, ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> flammableDoorBlock(woodPropertiesNoOcclude), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> PEACHGROVE_TRAPDOOR = registerBlock("peachgrove_trapdoor",
-            () -> new TrapDoorBlock(woodPropertiesNoOcclude) {
-                @Override public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return true; }
-                @Override public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 5; }
-                @Override public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 5; }
-            }, ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> flammableTrapDoorBlock(woodPropertiesNoOcclude), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
     public static final RegistryObject<Block> PEACHGROVE_WALL_SIGN = registerBlockWithoutBlockItem("peachgrove_wall_sign",
             () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.PEACHGROVE));
@@ -269,11 +177,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> PEACHGROVE_SAPLING = registerBlock("peachgrove_sapling",
             () -> new SaplingBlock(new PeachgroveTreeGrower(), plantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> PEACHGROVE_LEAVES = registerBlock("peachgrove_leaves",
-            () -> new LeavesBlock(azaleaProperties) {
-                @Override public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return true; }
-                @Override public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 60; }
-                @Override public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 30; }
-            }, ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> flammableLeavesBlock(azaleaProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     // Peachgrove Sign
 
 
@@ -676,12 +580,104 @@ public class ModBlocks {
     public static final RegistryObject<Block> BLACK_SHINGLE_WALL = registerBlock("black_shingle_wall",
             () -> new WallBlock(boneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
-    private static ModFlammableRotatedPillarBlock log(MaterialColor c1, MaterialColor c2) {
-        return new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, (state) ->
+
+
+    private static ModLogBlock log(MaterialColor c1, MaterialColor c2) {
+        return new ModLogBlock(BlockBehaviour.Properties.of(Material.WOOD, (state) ->
                 state.getValue(RotatedPillarBlock.AXIS) ==
                         Direction.Axis.Y ? c1 : c2).strength(2.0F, 3.0F).sound(SoundType.WOOD));
-
     }
+
+    private static Block flammableBlock(BlockBehaviour.Properties properties, int flammability, int spreadSpeed) {
+        return new Block(properties) {
+            @Override public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return true; }
+            @Override public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return flammability; }
+            @Override public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return spreadSpeed; }
+        };
+    }
+    private static Block flammableBlock(BlockBehaviour.Properties properties) {
+        return flammableBlock(properties, 5, 5);
+    }
+
+    private static StairBlock flammableStairBlock(Supplier<BlockState> defaultState, BlockBehaviour.Properties properties, int flammability, int spreadSpeed) {
+        return new StairBlock(defaultState, properties) {
+            @Override public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return true; }
+            @Override public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return flammability; }
+            @Override public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return spreadSpeed; }
+        };
+    }
+    private static StairBlock flammableStairBlock(Supplier<BlockState> defaultState, BlockBehaviour.Properties properties) {
+        return flammableStairBlock(defaultState, properties, 5, 5);
+    }
+
+    private static SlabBlock flammableSlabBlock(BlockBehaviour.Properties properties, int flammability, int spreadSpeed) {
+        return new SlabBlock(properties) {
+            @Override public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return true; }
+            @Override public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return flammability; }
+            @Override public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return spreadSpeed; }
+        };
+    }
+    private static SlabBlock flammableSlabBlock(BlockBehaviour.Properties properties) {
+        return flammableSlabBlock(properties, 5, 5);
+    }
+
+    private static FenceBlock flammableFenceBlock(BlockBehaviour.Properties properties, int flammability, int spreadSpeed) {
+        return new FenceBlock(properties) {
+            @Override public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return true; }
+            @Override public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return flammability; }
+            @Override public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return spreadSpeed; }
+        };
+    }
+    private static FenceBlock flammableFenceBlock(BlockBehaviour.Properties properties) {
+        return flammableFenceBlock(properties, 5, 5);
+    }
+
+    private static FenceGateBlock flammableFenceGateBlock(BlockBehaviour.Properties properties, int flammability, int spreadSpeed) {
+        return new FenceGateBlock(properties) {
+            @Override public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return true; }
+            @Override public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return flammability; }
+            @Override public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return spreadSpeed; }
+        };
+    }
+    private static FenceGateBlock flammableFenceGateBlock(BlockBehaviour.Properties properties) {
+        return flammableFenceGateBlock(properties, 5, 5);
+    }
+
+    private static DoorBlock flammableDoorBlock(BlockBehaviour.Properties properties, int flammability, int spreadSpeed) {
+        return new DoorBlock(properties) {
+            @Override public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return true; }
+            @Override public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return flammability; }
+            @Override public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return spreadSpeed; }
+        };
+    }
+    private static DoorBlock flammableDoorBlock(BlockBehaviour.Properties properties) {
+        return flammableDoorBlock(properties, 5, 5);
+    }
+
+    private static TrapDoorBlock flammableTrapDoorBlock(BlockBehaviour.Properties properties, int flammability, int spreadSpeed) {
+        return new TrapDoorBlock(properties) {
+            @Override public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return true; }
+            @Override public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return flammability; }
+            @Override public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return spreadSpeed; }
+        };
+    }
+    private static TrapDoorBlock flammableTrapDoorBlock(BlockBehaviour.Properties properties) {
+        return flammableTrapDoorBlock(properties, 5, 5);
+    }
+
+    private static LeavesBlock flammableLeavesBlock(BlockBehaviour.Properties properties, int flammability, int spreadSpeed) {
+        return new LeavesBlock(properties) {
+            @Override public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return true; }
+            @Override public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return flammability; }
+            @Override public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return spreadSpeed; }
+        };
+    }
+    private static LeavesBlock flammableLeavesBlock(BlockBehaviour.Properties properties) {
+        return flammableLeavesBlock(properties, 5, 5);
+    }
+
+
+    
     private static <T extends Block> RegistryObject<T> registerBlockWithoutBlockItem(String name, Supplier<T> block) {
         return BLOCKS.register(name, block);
     }
