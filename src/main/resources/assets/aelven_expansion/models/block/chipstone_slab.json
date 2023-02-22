@@ -1,8 +1,8 @@
 {
   "parent": "minecraft:block/slab",
   "textures": {
-    "bottom": "aelven_expansion:block/chipstone",
+    "bottom": "aelven_expansion:block/chipstone_top",
     "side": "aelven_expansion:block/chipstone_side",
-    "top": "aelven_expansion:block/chipstone"
+    "top": "aelven_expansion:block/chipstone_top"
   }
 }

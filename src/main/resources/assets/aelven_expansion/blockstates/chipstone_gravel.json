@@ -1,0 +1,15 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "aelven_expansion:block/chipstone_gravel", "weight": 400
+      },
+      {
+        "model": "aelven_expansion:block/chipstone_gravel2", "weight": 200
+      },
+      {
+        "model": "aelven_expansion:block/chipstone_gravel3", "weight": 200
+      }
+    ]
+  }
+}

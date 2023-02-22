@@ -1,8 +1,34 @@
 {
   "variants": {
-    "facing=north": { "model": "aelven_expansion:block/kiln" },
-    "facing=east": { "model": "aelven_expansion:block/kiln", "y": 90 },
-    "facing=south": { "model": "aelven_expansion:block/kiln", "y": 180 },
-    "facing=west": { "model": "aelven_expansion:block/kiln", "y": 270 }
+    "facing=east,lit=false": {
+      "model": "aelven_expansion:block/kiln",
+      "y": 90
+    },
+    "facing=east,lit=true": {
+      "model": "aelven_expansion:block/kiln_on",
+      "y": 90
+    },
+    "facing=north,lit=false": {
+      "model": "aelven_expansion:block/kiln"
+    },
+    "facing=north,lit=true": {
+      "model": "aelven_expansion:block/kiln_on"
+    },
+    "facing=south,lit=false": {
+      "model": "aelven_expansion:block/kiln",
+      "y": 180
+    },
+    "facing=south,lit=true": {
+      "model": "aelven_expansion:block/kiln_on",
+      "y": 180
+    },
+    "facing=west,lit=false": {
+      "model": "aelven_expansion:block/kiln",
+      "y": 270
+    },
+    "facing=west,lit=true": {
+      "model": "aelven_expansion:block/kiln_on",
+      "y": 270
+    }
   }
 }
