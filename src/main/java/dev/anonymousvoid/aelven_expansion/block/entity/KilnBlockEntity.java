@@ -1,5 +1,6 @@
 package dev.anonymousvoid.aelven_expansion.block.entity;
 
+import dev.anonymousvoid.aelven_expansion.block.custom.KilnBlock;
 import dev.anonymousvoid.aelven_expansion.item.ModItems;
 import dev.anonymousvoid.aelven_expansion.recipe.KilnRecipe;
 import dev.anonymousvoid.aelven_expansion.screen.KilnMenu;
@@ -137,8 +138,26 @@ public class KilnBlockEntity extends BlockEntity implements MenuProvider {
             return;
         }
 
+        boolean r1 = hasRecipe1(entity);
+        boolean r2 = hasRecipe2(entity);
+        boolean r3 = hasRecipe3(entity);
 
-        if (hasRecipe1(entity)) {
+        if (r1 || r2 || r3) {
+            if (!state.getValue(KilnBlock.LIT)) {
+                state = state.setValue(KilnBlock.LIT, Boolean.valueOf(true));
+                level.setBlock(pos, state, 3);
+                setChanged(level, pos, state);
+            }
+        } else {
+            if (state.getValue(KilnBlock.LIT)) {
+                state = state.setValue(KilnBlock.LIT, Boolean.valueOf(false));
+                level.setBlock(pos, state, 3);
+                setChanged(level, pos, state);
+            }
+        }
+
+
+        if (r1) {
             entity.progress1++;
             setChanged(level, pos, state);
 
@@ -150,7 +169,7 @@ public class KilnBlockEntity extends BlockEntity implements MenuProvider {
             setChanged(level, pos, state);
         }
 
-        if (hasRecipe2(entity)) {
+        if (r2) {
             entity.progress2++;
             setChanged(level, pos, state);
 
@@ -162,7 +181,7 @@ public class KilnBlockEntity extends BlockEntity implements MenuProvider {
             setChanged(level, pos, state);
         }
 
-        if (hasRecipe3(entity)) {
+        if (r3) {
             entity.progress3++;
             setChanged(level, pos, state);
 

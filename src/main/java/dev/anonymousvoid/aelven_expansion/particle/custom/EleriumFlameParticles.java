@@ -15,7 +15,7 @@ public class EleriumFlameParticles extends TextureSheetParticle {
         this.xd = xd;
         this.yd = yd;
         this.zd = zd;
-        this.quadSize *=0.85F;
+        this.quadSize *= 2.0F;
         this.lifetime = 20;
         this.setSpriteFromAge(spriteSet);
 
@@ -27,7 +27,12 @@ public class EleriumFlameParticles extends TextureSheetParticle {
     @Override
     public void tick() {
         super.tick();
-        fadeOut();
+//        fadeOut();
+    }
+
+    public float getQuadSize(float pScaleFactor) {
+        float f = ((float)this.age + pScaleFactor) / (float)this.lifetime;
+        return this.quadSize * (1.0F - f * f * 0.5F);
     }
 
     private void fadeOut() {
