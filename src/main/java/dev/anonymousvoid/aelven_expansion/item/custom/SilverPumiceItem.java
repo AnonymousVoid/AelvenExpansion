@@ -13,6 +13,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Random;
@@ -25,43 +26,45 @@ public class SilverPumiceItem extends Item {
         Level level = context.getLevel();
         Player player = context.getPlayer();
         BlockPos pos = context.getClickedPos();
+        Vec3 vPos = context.getClickLocation();
         ItemStack stack = context.getItemInHand();
         if (level.getBlockState(pos) == ModBlocks.CARVED_CHITTA_RUNED_BRICKS.get().defaultBlockState()) {
             level.setBlockAndUpdate(pos, ModBlocks.CARVED_CHITTA_BRICKS.get().defaultBlockState());
             usePaste(level, player, pos, stack);
-            spawnParticle(level, ParticleTypes.WAX_OFF, pos.getX(), pos.getY(), pos.getZ(), 0, 0, 0);
+            spawnParticle(level, ParticleTypes.WAX_OFF, context);
             return InteractionResult.SUCCESS;
         } else if (level.getBlockState(pos) == ModBlocks.CARVED_CHITTA_RUNED_LARGE_TILE.get().defaultBlockState()) {
             level.setBlockAndUpdate(pos, ModBlocks.CARVED_CHITTA_LARGE_TILE.get().defaultBlockState());
             usePaste(level, player, pos, stack);
-            spawnParticle(level, ParticleTypes.WAX_OFF, pos.getX(), pos.getY(), pos.getZ(), 0, 0, 0);
+            spawnParticle(level, ParticleTypes.WAX_OFF, context);
             return InteractionResult.SUCCESS;
         } else if (level.getBlockState(pos) == ModBlocks.CARVED_CHITTA_AELVEN_RUNED_TILES.get().defaultBlockState()) {
             level.setBlockAndUpdate(pos, ModBlocks.CARVED_CHITTA_AELVEN_TILES.get().defaultBlockState());
             usePaste(level, player, pos, stack);
-            spawnParticle(level, ParticleTypes.WAX_OFF, pos.getX(), pos.getY(), pos.getZ(), 0, 0, 0);
+            spawnParticle(level, ParticleTypes.WAX_OFF, context);
             return InteractionResult.SUCCESS;
         } else if (level.getBlockState(pos) == ModBlocks.CARVED_CHITTA_ENCHANT_RUNED_TILES.get().defaultBlockState()) {
             level.setBlockAndUpdate(pos, ModBlocks.CARVED_CHITTA_ENCHANT_TILES.get().defaultBlockState());
             usePaste(level, player, pos, stack);
-            spawnParticle(level, ParticleTypes.WAX_OFF, pos.getX(), pos.getY(), pos.getZ(), 0, 0, 0);
+            spawnParticle(level, ParticleTypes.WAX_OFF, context);
             return InteractionResult.SUCCESS;
         } else if (level.getBlockState(pos) == ModBlocks.CARVED_CHITTA_GLYPHIC_RUNED_TILES.get().defaultBlockState()) {
             level.setBlockAndUpdate(pos, ModBlocks.CARVED_CHITTA_GLYPHIC_TILES.get().defaultBlockState());
             usePaste(level, player, pos, stack);
-            spawnParticle(level, ParticleTypes.WAX_OFF, pos.getX(), pos.getY(), pos.getZ(), 0, 0, 0);
+            spawnParticle(level, ParticleTypes.WAX_OFF, context);
             return InteractionResult.SUCCESS;
         } else if (level.getBlockState(pos) == ModBlocks.CARVED_CHITTA_NORSE_RUNED_TILES.get().defaultBlockState()) {
             level.setBlockAndUpdate(pos, ModBlocks.CARVED_CHITTA_NORSE_TILES.get().defaultBlockState());
             usePaste(level, player, pos, stack);
-            spawnParticle(level, ParticleTypes.WAX_OFF, pos.getX(), pos.getY(), pos.getZ(), 0, 0, 0);
+            spawnParticle(level, ParticleTypes.WAX_OFF, context);
             return InteractionResult.SUCCESS;
         }
         return InteractionResult.FAIL;
     }
 
-    private void spawnParticle(Level level, ParticleOptions particle, int x, int y, int z, int xSpeed, int ySpeed, int zSpeed) {
-        level.addParticle(particle, x, y, z, xSpeed, ySpeed, zSpeed);
+    private void spawnParticle(Level level, ParticleOptions particle, UseOnContext context) {
+        Vec3 vPos = context.getClickLocation();
+        level.addParticle(ParticleTypes.WAX_OFF, vPos.x, vPos.y, vPos.z, 0.0D, 0.0D, 0.0D);
     }
 
     private void usePaste(Level level, Player player, BlockPos pos, ItemStack stack) {
@@ -70,5 +73,4 @@ public class SilverPumiceItem extends Item {
             entity.broadcastBreakEvent(EquipmentSlot.MAINHAND);
         });
     }
-
 }
