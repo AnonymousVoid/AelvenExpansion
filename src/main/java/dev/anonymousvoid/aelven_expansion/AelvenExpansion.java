@@ -11,6 +11,7 @@ import dev.anonymousvoid.aelven_expansion.entity.vehicle.ModBoat;
 import dev.anonymousvoid.aelven_expansion.entity.vehicle.ModChestBoat;
 import dev.anonymousvoid.aelven_expansion.item.ModItems;
 import dev.anonymousvoid.aelven_expansion.item.ModSounds;
+import dev.anonymousvoid.aelven_expansion.particle.ModParticles;
 import dev.anonymousvoid.aelven_expansion.recipe.ModRecipes;
 import dev.anonymousvoid.aelven_expansion.screen.KilnScreen;
 import dev.anonymousvoid.aelven_expansion.screen.ModMenuTypes;
@@ -59,6 +60,7 @@ public class AelvenExpansion {
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
         ModRecipes.register(modEventBus);
+        ModParticles.register(modEventBus);
 
         ModSounds.register(modEventBus);
 
