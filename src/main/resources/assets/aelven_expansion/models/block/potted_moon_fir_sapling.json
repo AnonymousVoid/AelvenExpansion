@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/flower_pot_cross",
   "textures": {
-    "plant": "aelven_expansion:block/potted_moon_fir_sapling"
+    "plant": "aelven_expansion:block/moon_fir_sapling"
   }
 }

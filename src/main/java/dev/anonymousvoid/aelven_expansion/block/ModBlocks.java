@@ -11,6 +11,7 @@ import dev.anonymousvoid.aelven_expansion.world.feature.tree.SilverbloodTreeGrow
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -43,6 +44,7 @@ public class ModBlocks {
     private static final BlockBehaviour.Properties deepmetalProperties = BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound((SoundType.NETHERITE_BLOCK)).requiresCorrectToolForDrops();
     private static final BlockBehaviour.Properties boneProperties = BlockBehaviour.Properties.copy(Blocks.BONE_BLOCK).requiresCorrectToolForDrops();
     private static final BlockBehaviour.Properties plantProperties = BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ);
+    private static final BlockBehaviour.Properties pottedPlantProperties = BlockBehaviour.Properties.copy(Blocks.FLOWER_POT);
     private static final BlockBehaviour.Properties stoneProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.STONE).strength(1.5F, 6.0F);
     private static final BlockBehaviour.Properties deepslateProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE).strength(4.5F, 3.0F);
     private static final BlockBehaviour.Properties deepslatebrickProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE_BRICKS).strength(4.5F, 3.0F);
@@ -63,12 +65,12 @@ public class ModBlocks {
             () -> log(MaterialColor.COLOR_GRAY, MaterialColor.COLOR_BLUE), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> MOON_FIR_PLANKS = registerBlock("moon_fir_planks",
             () -> flammableBlock(woodProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
-
     public static final RegistryObject<Block> MOON_FIR_STAIRS = registerBlock("moon_fir_stairs",
             () -> flammableStairBlock(() -> ModBlocks.MOON_FIR_PLANKS.get().defaultBlockState(), woodProperties),
             ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> MOON_FIR_SLAB = registerBlock("moon_fir_slab",
             () -> flammableSlabBlock(woodProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
     public static final RegistryObject<Block> MOON_FIR_FENCE = registerBlock("moon_fir_fence",
             () -> flammableFenceBlock(woodProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> MOON_FIR_FENCE_GATE = registerBlock("moon_fir_fence_gate",
@@ -81,21 +83,21 @@ public class ModBlocks {
             () -> flammableDoorBlock(woodPropertiesNoOcclude), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> MOON_FIR_TRAPDOOR = registerBlock("moon_fir_trapdoor",
             () -> flammableTrapDoorBlock(woodPropertiesNoOcclude), ModCreativeModeTab.MOD_TAB_BLOCKS);
-
     public static final RegistryObject<Block> MOON_FIR_WALL_SIGN = registerBlockWithoutBlockItem("moon_fir_wall_sign",
             () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.MOON_FIR));
-
     public static final RegistryObject<Block> MOON_FIR_SIGN = registerBlockWithoutBlockItem("moon_fir_sign",
             () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.MOON_FIR));
-
     public static final RegistryObject<Block> MOON_FIR_SAPLING = registerBlock("moon_fir_sapling",
             () -> new SaplingBlock(new MoonFirTreeGrower(), plantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
-
+    public static final RegistryObject<Block> POTTED_MOON_FIR_SAPLING = registerBlockWithoutBlockItem("potted_moon_fir_sapling",
+            () -> new FlowerPotBlock(null, MOON_FIR_SAPLING, pottedPlantProperties));
     public static final RegistryObject<Block> MOON_BLOOM = registerBlock("moon_bloom",
-            () -> new TallGrassBlock(plantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new FlowerBlock(MobEffects.NIGHT_VISION, 10, plantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> POTTED_MOON_BLOOM = registerBlockWithoutBlockItem("potted_moon_bloom",
+            () -> new FlowerPotBlock(null, MOON_BLOOM, pottedPlantProperties));
     public static final RegistryObject<Block> MOON_FIR_LEAVES = registerBlock("moon_fir_leaves",
             () -> flammableLeavesBlock(azaleaProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
-    // Moon Fir Sign
+
 
     public static final RegistryObject<Block> SILVERBLOOD_LOG = registerBlock("silverblood_log",
             () -> log(MaterialColor.COLOR_LIGHT_GRAY, MaterialColor.COLOR_PINK), ModCreativeModeTab.MOD_TAB_BLOCKS);
@@ -111,12 +113,12 @@ public class ModBlocks {
             () -> log(MaterialColor.COLOR_LIGHT_GRAY, MaterialColor.COLOR_PINK), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> SILVERBLOOD_PLANKS = registerBlock("silverblood_planks",
             () -> flammableBlock(woodProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
-
     public static final RegistryObject<Block> SILVERBLOOD_STAIRS = registerBlock("silverblood_stairs",
             () -> flammableStairBlock(() -> ModBlocks.SILVERBLOOD_PLANKS.get().defaultBlockState(), woodProperties),
             ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> SILVERBLOOD_SLAB = registerBlock("silverblood_slab",
             () -> flammableSlabBlock(woodProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
     public static final RegistryObject<Block> SILVERBLOOD_FENCE = registerBlock("silverblood_fence",
             () -> flammableFenceBlock(woodProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> SILVERBLOOD_FENCE_GATE = registerBlock("silverblood_fence_gate",
@@ -129,19 +131,21 @@ public class ModBlocks {
             () -> flammableDoorBlock(woodPropertiesNoOcclude), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> SILVERBLOOD_TRAPDOOR = registerBlock("silverblood_trapdoor",
             () -> flammableTrapDoorBlock(woodPropertiesNoOcclude), ModCreativeModeTab.MOD_TAB_BLOCKS);
-
     public static final RegistryObject<Block> SILVERBLOOD_WALL_SIGN = registerBlockWithoutBlockItem("silverblood_wall_sign",
             () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.SILVERBLOOD));
-
     public static final RegistryObject<Block> SILVERBLOOD_SIGN = registerBlockWithoutBlockItem("silverblood_sign",
             () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.SILVERBLOOD));
     public static final RegistryObject<Block> SILVERBLOOD_SAPLING = registerBlock("silverblood_sapling",
             () -> new SaplingBlock(new SilverbloodTreeGrower(), plantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
-
+    public static final RegistryObject<Block> POTTED_SILVERBLOOD_SAPLING = registerBlockWithoutBlockItem("potted_silverblood_sapling",
+            () -> new FlowerPotBlock(null, SILVERBLOOD_SAPLING, pottedPlantProperties));
     public static final RegistryObject<Block> SILVER_MARIGOLD = registerBlock("silver_marigold",
-            () -> new TallGrassBlock(plantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 10, plantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> POTTED_SILVER_MARIGOLD = registerBlockWithoutBlockItem("potted_silver_marigold",
+            () -> new FlowerPotBlock(null, SILVER_MARIGOLD, pottedPlantProperties));
     public static final RegistryObject<Block> SILVERBLOOD_LEAVES = registerBlock("silverblood_leaves",
             () -> flammableLeavesBlock(azaleaProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
 
     public static final RegistryObject<Block> PEACHGROVE_LOG = registerBlock("peachgrove_log",
             () -> log(MaterialColor.COLOR_LIGHT_GRAY, MaterialColor.COLOR_PINK), ModCreativeModeTab.MOD_TAB_BLOCKS);
@@ -157,12 +161,12 @@ public class ModBlocks {
             () -> log(MaterialColor.COLOR_LIGHT_GRAY, MaterialColor.COLOR_PINK), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> PEACHGROVE_PLANKS = registerBlock("peachgrove_planks",
             () -> flammableBlock(woodProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
-
     public static final RegistryObject<Block> PEACHGROVE_STAIRS = registerBlock("peachgrove_stairs",
             () -> flammableStairBlock(() -> ModBlocks.PEACHGROVE_PLANKS.get().defaultBlockState(), woodProperties),
             ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> PEACHGROVE_SLAB = registerBlock("peachgrove_slab",
             () -> flammableSlabBlock(woodProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
     public static final RegistryObject<Block> PEACHGROVE_FENCE = registerBlock("peachgrove_fence",
             () -> flammableFenceBlock(woodProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> PEACHGROVE_FENCE_GATE = registerBlock("peachgrove_fence_gate",
@@ -175,29 +179,27 @@ public class ModBlocks {
             () -> flammableDoorBlock(woodPropertiesNoOcclude), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> PEACHGROVE_TRAPDOOR = registerBlock("peachgrove_trapdoor",
             () -> flammableTrapDoorBlock(woodPropertiesNoOcclude), ModCreativeModeTab.MOD_TAB_BLOCKS);
-
     public static final RegistryObject<Block> PEACHGROVE_WALL_SIGN = registerBlockWithoutBlockItem("peachgrove_wall_sign",
             () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.PEACHGROVE));
-
     public static final RegistryObject<Block> PEACHGROVE_SIGN = registerBlockWithoutBlockItem("peachgrove_sign",
             () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.PEACHGROVE));
     public static final RegistryObject<Block> PEACHGROVE_SAPLING = registerBlock("peachgrove_sapling",
             () -> new SaplingBlock(new PeachgroveTreeGrower(), plantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
-
+    public static final RegistryObject<Block> POTTED_PEACHGROVE_SAPLING = registerBlockWithoutBlockItem("potted_peachgrove_sapling",
+            () -> new FlowerPotBlock(null, PEACHGROVE_SAPLING, pottedPlantProperties));
     public static final RegistryObject<Block> PEACH_LAVENDER = registerBlock("peach_lavender",
-            () -> new TallGrassBlock(plantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new FlowerBlock(MobEffects.ABSORPTION, 10, plantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> POTTED_PEACH_LAVENDER = registerBlockWithoutBlockItem("potted_peach_lavender",
+            () -> new FlowerPotBlock(null, PEACH_LAVENDER, pottedPlantProperties));
     public static final RegistryObject<Block> PEACHGROVE_LEAVES = registerBlock("peachgrove_leaves",
             () -> flammableLeavesBlock(azaleaProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
-    // Peachgrove Sign
 
 
 
     public static final RegistryObject<Block> MOONSHADE = registerBlock("moonshade",
             () -> new TallFlowerBlock(plantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
-
     public static final RegistryObject<Block> SILVER_SPRING = registerBlock("silver_spring",
             () -> new TallFlowerBlock(plantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
-
     public static final RegistryObject<Block> PEACH_LILAC = registerBlock("peach_lilac",
             () -> new TallFlowerBlock(plantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 

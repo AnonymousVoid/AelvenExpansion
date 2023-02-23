@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/flower_pot_cross",
   "textures": {
-    "plant": "aelven_expansion:block/potted_peach_lavender"
+    "plant": "aelven_expansion:block/peach_lavender"
   }
 }
