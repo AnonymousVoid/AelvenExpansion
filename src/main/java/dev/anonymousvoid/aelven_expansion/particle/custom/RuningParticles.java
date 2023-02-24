@@ -44,8 +44,6 @@ public class RuningParticles extends TextureSheetParticle {
                                        double x, double y, double z,
                                        double dx, double dy, double dz) {
             RuningParticles p = new RuningParticles(level, x, y, z, this.sprites, dx, dy, dz);
-//            p.setColor(0.51F, 0.42F, 0.74F); DARK
-//            p.setColor(0.55F, 0.55F, 0.82F); LIGHT
             p.setColor(0.55F, 0.55F, 0.82F);
             return p;
         }
