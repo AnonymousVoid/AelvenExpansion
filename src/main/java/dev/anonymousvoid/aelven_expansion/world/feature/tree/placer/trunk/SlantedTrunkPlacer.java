@@ -70,10 +70,14 @@ public class SlantedTrunkPlacer extends TrunkPlacer {
         }
 
         double y = height * 0.75 - 1;
-        this.placeLeavesRow(level, blockSetter, random, config, blockPos.offset(offX * y, y, offY * y), (height - 2) / 8, Direction.Axis.Y);
+        this.placeLeavesRow(level, blockSetter, random, config, blockPos.offset(offX * y, y, offY * y), (height - 2) / 7, Direction.Axis.Y);
         for (int i = 0; i < height * 0.75; i ++) {
             double y1 = height * 0.75 + i;
-            this.placeLeavesRow(level, blockSetter, random, config, blockPos.offset(offX * y1, y1, offY * y1), (height - i) / 8, Direction.Axis.Y);
+            this.placeLeavesRow(level, blockSetter, random, config, blockPos.offset(offX * y1, y1, offY * y1), (height - i) / 7, Direction.Axis.Y);
+        }
+        double y2 = height * 1.5;
+        for (int j = 0; j < (j > height / 2 ? 1 : 4); j ++) {
+            this.placeLeavesRow(level, blockSetter, random, config, blockPos.offset(offX * y2, y2 + j, offY * y2), 0, Direction.Axis.Y);
         }
 
         return ImmutableList.of();//new FoliagePlacer.FoliageAttachment(
@@ -89,7 +93,7 @@ public class SlantedTrunkPlacer extends TrunkPlacer {
         if (direction == Direction.SOUTH) p = p.north(1);
         if (direction == Direction.WEST) p = p.east(1);
 
-        this.placeLeavesRow(level, blockSetter, random, config, p, (length - 2) / 4, direction.getAxis());
+        this.placeLeavesRow(level, blockSetter, random, config, p, (length - 2) / 3, direction.getAxis());
 
         for (int i = 0; i <= length; i ++) {
             BlockPos p1 = pos;
@@ -106,7 +110,7 @@ public class SlantedTrunkPlacer extends TrunkPlacer {
                 });
             }
 
-            this.placeLeavesRow(level, blockSetter, random, config, p2, (length - i) / 4, direction.getAxis());
+            this.placeLeavesRow(level, blockSetter, random, config, p2, (length - i) / 3, direction.getAxis());
 
         }
     }
@@ -114,7 +118,7 @@ public class SlantedTrunkPlacer extends TrunkPlacer {
     protected void placeLeavesRow(LevelSimulatedReader level, BiConsumer<BlockPos, BlockState> blockSetter, RandomSource rand,
                                   TreeConfiguration config, BlockPos pos, int range, Direction.Axis axis) {
         BlockPos.MutableBlockPos blockpos$mutableblockpos = new BlockPos.MutableBlockPos();
-        int r = range + 1;
+        int r = range;
         for(int j = -r; j <= r; ++j) {
             for(int k = -r; k <= r; ++k) {
                 if (dist(j, k) <= r && rand.nextInt(10) != 0) {
