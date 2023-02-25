@@ -154,8 +154,6 @@ dependencies {
     // at runtime, use the full JEI jar for Forge
     runtimeOnly(fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}"))
 
-    compileOnly fg.deobf("vazkii.patchouli:Patchouli:[1.19.2-77]:api")
-    runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:[1.19.2-77]")
 }
 
     // Real mod deobf dependency examples - these get remapped to your current mappings

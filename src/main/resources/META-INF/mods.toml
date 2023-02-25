@@ -65,14 +65,6 @@ Aelven Expansion is about magical creatures and places, especially when it comes
     side="BOTH"
 
 [[dependencies.aelven_expansion]]
-modId="patchouli"
-mandatory=false
-# This version range declares a minimum of the current minecraft version up to but not including the next major version
-versionRange="[1.19.2-77]"
-ordering="NONE"
-side="BOTH"
-
-[[dependencies.aelven_expansion]]
 modId="jei"
 mandatory=false
 # This version range declares a minimum of the current minecraft version up to but not including the next major version
