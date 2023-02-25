@@ -1,5 +1,6 @@
 package dev.anonymousvoid.aelven_expansion.item.custom;
 
+import com.google.common.collect.ImmutableMap;
 import dev.anonymousvoid.aelven_expansion.block.ModBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
@@ -11,11 +12,22 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Map;
 import java.util.Random;
 
 public class ChiselItem extends Item {
+    protected static final Map<Block, Block> CHISELABLES = (new ImmutableMap.Builder<Block, Block>())
+            .put(ModBlocks.CHITTA_LARGE_TILE.get(), ModBlocks.CARVED_CHITTA_LARGE_TILE.get())
+            .put(ModBlocks.CHITTA_BRICKS.get(), ModBlocks.CARVED_CHITTA_BRICKS.get())
+            .put(ModBlocks.CHITTA_TILES.get(), ModBlocks.CARVED_CHITTA_AELVEN_TILES.get())
+            .put(ModBlocks.CARVED_CHITTA_AELVEN_TILES.get(), ModBlocks.CARVED_CHITTA_ENCHANT_TILES.get())
+            .put(ModBlocks.CARVED_CHITTA_ENCHANT_TILES.get(), ModBlocks.CARVED_CHITTA_GLYPHIC_TILES.get())
+            .put(ModBlocks.CARVED_CHITTA_GLYPHIC_TILES.get(), ModBlocks.CARVED_CHITTA_NORSE_TILES.get())
+            .put(ModBlocks.CARVED_CHITTA_NORSE_TILES.get(), ModBlocks.CARVED_CHITTA_AELVEN_TILES.get())
+            .build();
 
     public ChiselItem(Properties properties) { super(properties); }
 
@@ -24,43 +36,16 @@ public class ChiselItem extends Item {
         Player player = context.getPlayer();
         BlockPos pos = context.getClickedPos();
         ItemStack stack = context.getItemInHand();
-        if (level.getBlockState(pos) == ModBlocks.CHITTA_LARGE_TILE.get().defaultBlockState()) {
-            level.setBlockAndUpdate(pos, ModBlocks.CARVED_CHITTA_LARGE_TILE.get().defaultBlockState());
-            useChisel(level, player, pos, stack);
-            return InteractionResult.SUCCESS;
-        } else if (level.getBlockState(pos) == ModBlocks.CHITTA_BRICKS.get().defaultBlockState()) {
-            level.setBlockAndUpdate(pos, ModBlocks.CARVED_CHITTA_BRICKS.get().defaultBlockState());
-            useChisel(level, player, pos, stack);
-            return InteractionResult.SUCCESS;
-        } else if (level.getBlockState(pos) == ModBlocks.CHITTA_TILES.get().defaultBlockState()) {
-            level.setBlockAndUpdate(pos, ModBlocks.CARVED_CHITTA_AELVEN_TILES.get().defaultBlockState());
-            useChisel(level, player, pos, stack);
-            return InteractionResult.SUCCESS;
-        } else if (level.getBlockState(pos) == ModBlocks.CARVED_CHITTA_AELVEN_TILES.get().defaultBlockState()) {
-            level.setBlockAndUpdate(pos, ModBlocks.CARVED_CHITTA_ENCHANT_TILES.get().defaultBlockState());
-            useChisel(level, player, pos, stack);
-            return InteractionResult.SUCCESS;
-        } else if (level.getBlockState(pos) == ModBlocks.CARVED_CHITTA_ENCHANT_TILES.get().defaultBlockState()) {
-            level.setBlockAndUpdate(pos, ModBlocks.CARVED_CHITTA_GLYPHIC_TILES.get().defaultBlockState());
-            useChisel(level, player, pos, stack);
-            return InteractionResult.SUCCESS;
-        } else if (level.getBlockState(pos) == ModBlocks.CARVED_CHITTA_GLYPHIC_TILES.get().defaultBlockState()) {
-            level.setBlockAndUpdate(pos, ModBlocks.CARVED_CHITTA_NORSE_TILES.get().defaultBlockState());
-            useChisel(level, player, pos, stack);
-            return InteractionResult.SUCCESS;
-        } else if (level.getBlockState(pos) == ModBlocks.CARVED_CHITTA_NORSE_TILES.get().defaultBlockState()) {
-            level.setBlockAndUpdate(pos, ModBlocks.CARVED_CHITTA_AELVEN_TILES.get().defaultBlockState());
-            useChisel(level, player, pos, stack);
+        if (CHISELABLES.containsKey(level.getBlockState(pos).getBlock())) {
+            level.setBlockAndUpdate(pos, CHISELABLES.get(level.getBlockState(pos).getBlock())
+                    .withPropertiesOf(level.getBlockState(pos)));
+            level.playSound(player, pos, SoundEvents.UI_STONECUTTER_TAKE_RESULT, SoundSource.BLOCKS, 1.0F, new Random().nextFloat()*0.2F + 0.8F);
+            stack.hurtAndBreak(1, player, (entity) -> {
+                entity.broadcastBreakEvent(EquipmentSlot.MAINHAND);
+            });
             return InteractionResult.SUCCESS;
         }
         return InteractionResult.FAIL;
-    }
-
-    private void useChisel(Level level, Player player, BlockPos pos, ItemStack stack) {
-        level.playSound(player, pos, SoundEvents.UI_STONECUTTER_TAKE_RESULT, SoundSource.BLOCKS, 1.0F, new Random().nextFloat()*0.2F + 0.8F);
-        stack.hurtAndBreak(1, player, (entity) -> {
-            entity.broadcastBreakEvent(EquipmentSlot.MAINHAND);
-        });
     }
 
 }
