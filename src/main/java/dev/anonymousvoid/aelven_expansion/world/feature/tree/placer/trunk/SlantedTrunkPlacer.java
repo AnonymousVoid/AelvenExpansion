@@ -36,18 +36,22 @@ public class SlantedTrunkPlacer extends TrunkPlacer {
             int height, BlockPos blockPos, TreeConfiguration config) {
         setDirtAt(level, blockSetter, random, blockPos.below(), config);
 
-        double offX = ((double)random.nextInt(5) - 2) / height;
-        double offY = ((double)random.nextInt(5) - 2) / height;
+        double offX = ((double)random.nextInt(7) - 3) / height;
+        double offY = ((double)random.nextInt(7) - 3) / height;
+
+        // Branch Direction
+        int b = random.nextInt(4);
 
         for(int i = 0; i < height; i++) {
+            b++;
             BlockPos blockpos = blockPos.offset(offX * i, i, offY * i);
 
+            this.placeLog(level, blockSetter, random, blockpos.below(2), config);
             this.placeLog(level, blockSetter, random, blockpos.below(), config);
             this.placeLog(level, blockSetter, random, blockpos, config);
-            this.placeLog(level, blockSetter, random, blockpos.above(), config);
 
-            if (i > 3 && random.nextBoolean()) {
-                int side = random.nextInt(4);
+            if (i > height / 4 && random.nextInt(3) == 0) {
+                int side = b % 4;
                 BlockPos p = blockpos;
                 Direction d = Direction.UP;
 
@@ -65,23 +69,28 @@ public class SlantedTrunkPlacer extends TrunkPlacer {
                     d = Direction.WEST;
                 }
 
-                placeBranch((height - i)/2, p, d, level, blockSetter, random, config);
+                placeBranch((height - i)/3, p, d, level, blockSetter, random, config);
             }
         }
 
-        double y = height * 0.75 - 1;
-        this.placeLeavesRow(level, blockSetter, random, config, blockPos.offset(offX * y, y, offY * y), (height - 2) / 7, Direction.Axis.Y);
-        for (int i = 0; i < height * 0.75; i ++) {
-            double y1 = height * 0.75 + i;
-            this.placeLeavesRow(level, blockSetter, random, config, blockPos.offset(offX * y1, y1, offY * y1), (height - i) / 7, Direction.Axis.Y);
+        int step = 3;
+        for (int i = 0; i < height * 0.8; i ++) {
+            int y = 1 + i + height / 3;
+            this.placeLeavesRow(level, blockSetter, random, config,
+                    blockPos.offset(offX * y, y, offY * y),
+                    ((height - i) / 2 * step) / 7 + (i < height / 2 ? 1 : 0), Direction.Axis.Y);
+            step = step <= 1 ? 3 : step - 1;
         }
-        double y2 = height * 1.5;
-        for (int j = 0; j < (j > height / 2 ? 1 : 4); j ++) {
-            this.placeLeavesRow(level, blockSetter, random, config, blockPos.offset(offX * y2, y2 + j, offY * y2), 0, Direction.Axis.Y);
+        for (int i = -2; i < 3; i ++) {
+            tryPlaceLeaf(level, blockSetter, random, config,
+                    blockPos.offset(offX * (height + i), height + i - 1, offY * (height + i)));
+            tryPlaceLeaf(level, blockSetter, random, config,
+                    blockPos.offset(offX * (height + i), height + i, offY * (height + i)));
+            tryPlaceLeaf(level, blockSetter, random, config,
+                    blockPos.offset(offX * (height + i), height + i + 1, offY * (height + i)));
         }
 
-        return ImmutableList.of();//new FoliagePlacer.FoliageAttachment(
-//                blockPos.offset(offX * height, height + 1, offY * height), 0, false));
+        return ImmutableList.of();
     }
 
     private void placeBranch(int length, BlockPos pos, Direction direction, LevelSimulatedReader level,
@@ -93,7 +102,7 @@ public class SlantedTrunkPlacer extends TrunkPlacer {
         if (direction == Direction.SOUTH) p = p.north(1);
         if (direction == Direction.WEST) p = p.east(1);
 
-        this.placeLeavesRow(level, blockSetter, random, config, p, (length - 2) / 3, direction.getAxis());
+//        this.placeLeavesRow(level, blockSetter, random, config, p, (length - 2) / 3, direction.getAxis());
 
         for (int i = 0; i <= length; i ++) {
             BlockPos p1 = pos;
@@ -110,7 +119,7 @@ public class SlantedTrunkPlacer extends TrunkPlacer {
                 });
             }
 
-            this.placeLeavesRow(level, blockSetter, random, config, p2, (length - i) / 3, direction.getAxis());
+//            this.placeLeavesRow(level, blockSetter, random, config, p2, (length - i) / 3, direction.getAxis());
 
         }
     }
@@ -121,7 +130,7 @@ public class SlantedTrunkPlacer extends TrunkPlacer {
         int r = range;
         for(int j = -r; j <= r; ++j) {
             for(int k = -r; k <= r; ++k) {
-                if (dist(j, k) <= r && rand.nextInt(10) != 0) {
+                if (dist(j, k) <= r && (dist(j, k) >= r - 1 ? rand.nextInt(5) != 0 : true)) {
                     if (axis == Direction.Axis.X) blockpos$mutableblockpos.setWithOffset(pos, 0, j, k);
                     if (axis == Direction.Axis.Y) blockpos$mutableblockpos.setWithOffset(pos, j, 0, k);
                     if (axis == Direction.Axis.Z) blockpos$mutableblockpos.setWithOffset(pos, j, k, 0);
