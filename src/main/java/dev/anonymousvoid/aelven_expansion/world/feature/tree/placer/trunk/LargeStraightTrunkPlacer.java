@@ -27,7 +27,7 @@ public class LargeStraightTrunkPlacer extends TrunkPlacer {
         super(baseHeight, rand1, rand2);
     }
 
-    protected TrunkPlacerType<?> type() { return TrunkPlacerType.DARK_OAK_TRUNK_PLACER; }
+    protected TrunkPlacerType<?> type() { return ModTrunkPlacerType.LARGE_STRAIGHT_TRUNK_PLACER.get(); }
 
     public List<FoliagePlacer.FoliageAttachment> placeTrunk(
             LevelSimulatedReader level, BiConsumer<BlockPos, BlockState> blockSetter, RandomSource random,

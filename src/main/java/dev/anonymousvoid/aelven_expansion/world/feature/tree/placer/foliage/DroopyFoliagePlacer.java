@@ -23,7 +23,7 @@ public class DroopyFoliagePlacer extends FoliagePlacer {
     }
 
     protected FoliagePlacerType<?> type() {
-        return FoliagePlacerType.DARK_OAK_FOLIAGE_PLACER;
+        return ModFoliagePlacerType.DROOPY_FOLIAGE_PLACER.get();
     }
 
     protected void createFoliage(

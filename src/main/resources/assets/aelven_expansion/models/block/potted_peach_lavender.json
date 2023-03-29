@@ -2,5 +2,6 @@
   "parent": "minecraft:block/flower_pot_cross",
   "textures": {
     "plant": "aelven_expansion:block/peach_lavender"
-  }
+  },
+  "render_type": "cutout"
 }

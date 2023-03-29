@@ -18,6 +18,7 @@ import dev.anonymousvoid.aelven_expansion.screen.ModMenuTypes;
 import dev.anonymousvoid.aelven_expansion.world.biome_mods.ModBiomeModifiers;
 import dev.anonymousvoid.aelven_expansion.world.feature.ModConfiguredFeatures;
 import dev.anonymousvoid.aelven_expansion.world.feature.ModPlacedFeatures;
+import dev.anonymousvoid.aelven_expansion.world.feature.tree.placer.foliage.ModFoliagePlacerType;
 import dev.anonymousvoid.aelven_expansion.world.feature.tree.placer.trunk.ModTrunkPlacerType;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.model.geom.ModelLayerLocation;
@@ -57,6 +58,9 @@ public class AelvenExpansion {
         ModPlacedFeatures.register(modEventBus);
         ModConfiguredFeatures.register(modEventBus);
 
+        ModTrunkPlacerType.register(modEventBus);
+        ModFoliagePlacerType.register(modEventBus);
+
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
         ModRecipes.register(modEventBus);
@@ -66,8 +70,6 @@ public class AelvenExpansion {
 
         ModEntityTypes.register(modEventBus);
 
-//        ModTrunkPlacerType.register(modEventBus); //TODO
-
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::clientSetup);
 
@@ -75,23 +77,12 @@ public class AelvenExpansion {
     }
 
     private void clientSetup(final FMLClientSetupEvent event) {
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.MOON_FIR_LEAVES.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.MOON_FIR_DOOR.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.MOON_FIR_TRAPDOOR.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.POTTED_MOON_FIR_SAPLING.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.POTTED_MOON_BLOOM.get(), RenderType.cutout());
-
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.SILVERBLOOD_LEAVES.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.SILVERBLOOD_DOOR.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.SILVERBLOOD_TRAPDOOR.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.POTTED_SILVERBLOOD_SAPLING.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.POTTED_SILVER_MARIGOLD.get(), RenderType.cutout());
-
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.PEACHGROVE_LEAVES.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.PEACHGROVE_DOOR.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.PEACHGROVE_TRAPDOOR.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.POTTED_PEACHGROVE_SAPLING.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.POTTED_PEACH_LAVENDER.get(), RenderType.cutout());
 
         WoodType.register(ModWoodTypes.MOON_FIR);
         WoodType.register(ModWoodTypes.SILVERBLOOD);

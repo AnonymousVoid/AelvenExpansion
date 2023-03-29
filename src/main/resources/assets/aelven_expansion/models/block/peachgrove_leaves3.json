@@ -2,5 +2,6 @@
   "parent": "minecraft:block/leaves",
   "textures": {
     "all": "aelven_expansion:block/peachgrove_leaves3"
-  }
+  },
+  "render_type": "cutout"
 }

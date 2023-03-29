@@ -2,6 +2,8 @@ package dev.anonymousvoid.aelven_expansion.block;
 
 import dev.anonymousvoid.aelven_expansion.AelvenExpansion;
 import dev.anonymousvoid.aelven_expansion.block.custom.*;
+import dev.anonymousvoid.aelven_expansion.block.custom.ModStandingSignBlock;
+import dev.anonymousvoid.aelven_expansion.block.custom.ModWallSignBlock;
 import dev.anonymousvoid.aelven_expansion.block.entity.ModWoodTypes;
 import dev.anonymousvoid.aelven_expansion.item.ModCreativeModeTab;
 import dev.anonymousvoid.aelven_expansion.item.ModItems;
@@ -50,7 +52,6 @@ public class ModBlocks {
     private static final BlockBehaviour.Properties deepslatebrickProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE_BRICKS).strength(4.5F, 3.0F);
 
     // BLOCKS
-
     public static final RegistryObject<Block> MOON_FIR_LOG = registerBlock("moon_fir_log",
             () -> log(MaterialColor.COLOR_GRAY, MaterialColor.COLOR_BLUE), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> MOON_FIR_WOOD = registerBlock("moon_fir_wood",
