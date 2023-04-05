@@ -31,6 +31,7 @@ public class SilverPumiceItem extends Item {
             .put(ModBlocks.CARVED_CHITTA_NORSE_RUNED_TILES.get(), ModBlocks.CARVED_CHITTA_NORSE_TILES.get())
             .build();
 
+
     public SilverPumiceItem(Properties properties) { super(properties); }
 
     public @NotNull InteractionResult useOn(UseOnContext context) {
@@ -45,13 +46,19 @@ public class SilverPumiceItem extends Item {
             stack.hurtAndBreak(1, player, (entity) -> {
                 entity.broadcastBreakEvent(EquipmentSlot.MAINHAND);
             });
+            for (int i = 0; i < 10; i ++) spawnParticle(level, ParticleTypes.WAX_OFF, context);
             return InteractionResult.SUCCESS;
         }
         return InteractionResult.FAIL;
     }
 
     private void spawnParticle(Level level, ParticleOptions particle, UseOnContext context) {
+        Random rand = new Random();
         Vec3 vPos = context.getClickLocation();
-        level.addParticle(ParticleTypes.WAX_OFF, vPos.x, vPos.y, vPos.z, 0.0D, 0.0D, 0.0D);
+        double x = rand.nextFloat() * (Math.ceil(vPos.x) - Math.floor(vPos.x)) + Math.floor(vPos.x);
+        double y = rand.nextFloat() * (Math.ceil(vPos.y) - Math.floor(vPos.y)) + Math.floor(vPos.y);
+        double z = rand.nextFloat() * (Math.ceil(vPos.z) - Math.floor(vPos.z)) + Math.floor(vPos.z);
+        level.addParticle(particle, x, y, z, 0.0D, 0.0D, 0.0D);
     }
+
 }
