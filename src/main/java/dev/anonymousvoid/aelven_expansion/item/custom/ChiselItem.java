@@ -3,6 +3,7 @@ package dev.anonymousvoid.aelven_expansion.item.custom;
 import com.google.common.collect.ImmutableMap;
 import dev.anonymousvoid.aelven_expansion.block.ModBlocks;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -13,6 +14,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;
@@ -36,14 +38,15 @@ public class ChiselItem extends CustomItem {
         Player player = context.getPlayer();
         BlockPos pos = context.getClickedPos();
         ItemStack stack = context.getItemInHand();
-        if (CHISELABLES.containsKey(level.getBlockState(pos).getBlock())) {
+        Block block = level.getBlockState(pos).getBlock();
+        if (CHISELABLES.containsKey(block)) {
             level.setBlockAndUpdate(pos, CHISELABLES.get(level.getBlockState(pos).getBlock())
                     .withPropertiesOf(level.getBlockState(pos)));
             level.playSound(player, pos, SoundEvents.UI_STONECUTTER_TAKE_RESULT, SoundSource.BLOCKS, 1.0F, new Random().nextFloat()*0.2F + 0.8F);
             stack.hurtAndBreak(1, player, (entity) -> {
                 entity.broadcastBreakEvent(EquipmentSlot.MAINHAND);
             });
-            for (int i = 0; i < 10; i ++) spawnParticleCube(level, ParticleTypes.WAX_OFF, context);
+            for (int i = 0; i < 50; i ++) spawnParticleCube(level, new BlockParticleOption(ParticleTypes.BLOCK, block.defaultBlockState()), context);
             return InteractionResult.SUCCESS;
         }
         return InteractionResult.FAIL;

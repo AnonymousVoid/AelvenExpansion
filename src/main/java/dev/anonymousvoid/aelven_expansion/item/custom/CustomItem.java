@@ -1,6 +1,6 @@
 package dev.anonymousvoid.aelven_expansion.item.custom;
 
-import net.minecraft.core.Direction;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.context.UseOnContext;
@@ -16,17 +16,20 @@ public class CustomItem extends Item {
 
     protected void spawnParticleCube(Level level, ParticleOptions particle, UseOnContext context) {
         Random rand = new Random();
+        BlockPos pos = context.getClickedPos();
         Vec3 vPos = context.getClickLocation();
-        int rX = rand.nextInt(2);
-        int rY = rand.nextInt(2);
-        int rZ = rand.nextInt(2);
-        double vX = context.getClickedFace() == Direction.EAST ? Math.floor(vPos.x) - 1 : Math.floor(vPos.x);
-        double vY = context.getClickedFace() == Direction.UP ? Math.floor(vPos.y) - 1 : Math.floor(vPos.y);
-        double vZ = context.getClickedFace() == Direction.SOUTH ? Math.floor(vPos.z) - 1 : Math.floor(vPos.z);
-        System.out.println(vPos.x % 1);
-        double x = rand.nextFloat() * rX + vX;
-        double y = rand.nextFloat() * rY + vY;
-        double z = rand.nextFloat() * rZ + vZ;
+        double rX = rand.nextFloat() * 1.1 - 0.05;
+        double rY = rand.nextFloat() * 1.1 - 0.05;
+        double rZ = rand.nextFloat() * 1.1 - 0.05;
+
+        int axis = rand.nextInt(3);
+        if (axis == 0) rX = rand.nextInt(2) * 1.1 - 0.05;
+        else if (axis == 1) rY = rand.nextInt(2) * 1.1 - 0.05;
+        else if (axis == 2) rZ = rand.nextInt(2) * 1.1 - 0.05;
+
+        double x = rX + pos.getX();
+        double y = rY + pos.getY();
+        double z = rZ + pos.getZ();
         level.addParticle(particle, x, y, z, 0.0D, 0.0D, 0.0D);
     }
 

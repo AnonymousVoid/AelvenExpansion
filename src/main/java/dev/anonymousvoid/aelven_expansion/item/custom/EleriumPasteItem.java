@@ -2,8 +2,8 @@ package dev.anonymousvoid.aelven_expansion.item.custom;
 
 import com.google.common.collect.ImmutableMap;
 import dev.anonymousvoid.aelven_expansion.block.ModBlocks;
+import dev.anonymousvoid.aelven_expansion.particle.ModParticles;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
@@ -42,7 +42,7 @@ public class EleriumPasteItem extends CustomItem {
             stack.hurtAndBreak(1, player, (entity) -> {
                 entity.broadcastBreakEvent(EquipmentSlot.MAINHAND);
             });
-            for (int i = 0; i < 10; i ++) spawnParticleCube(level, ParticleTypes.WAX_OFF, context);
+            for (int i = 0; i < 50; i ++) spawnParticleCube(level, ModParticles.RUNING_PARTICLES.get(), context);
             return InteractionResult.SUCCESS;
         }
         return InteractionResult.FAIL;
