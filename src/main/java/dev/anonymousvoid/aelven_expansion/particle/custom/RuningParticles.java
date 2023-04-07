@@ -7,15 +7,15 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class RuningParticles extends TextureSheetParticle {
-    protected RuningParticles(ClientLevel Level, double xCoord, double yCoord, double zCoord, SpriteSet spriteSet, double xd, double yd, double zd) {
-        super(Level, xCoord, yCoord, zCoord, xd, yd, zd);
+    protected RuningParticles(ClientLevel level, double xCoord, double yCoord, double zCoord, SpriteSet spriteSet, double xd, double yd, double zd) {
+        super(level, xCoord, yCoord, zCoord, xd, yd, zd);
 
         this.friction = 0.8F;
         this.xd = xd;
         this.yd = yd;
         this.zd = zd;
-        this.quadSize *= 2.0F;
-        this.lifetime = 20;
+        this.quadSize *= 1.0F;
+        this.lifetime = (int)Math.floor(8.0D / (level.random.nextDouble() * 0.8D + 0.2D));
         this.setSpriteFromAge(spriteSet);
 
         this.rCol = 1f;
