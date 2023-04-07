@@ -20,11 +20,9 @@ import net.minecraft.world.level.levelgen.GeodeCrackSettings;
 import net.minecraft.world.level.levelgen.GeodeLayerSettings;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.ScatteredOreFeature;
 import net.minecraft.world.level.levelgen.feature.WeightedPlacedFeature;
-import net.minecraft.world.level.levelgen.feature.configurations.GeodeConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.RandomFeatureConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.featuresize.ThreeLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
@@ -32,6 +30,7 @@ import net.minecraft.world.level.levelgen.feature.foliageplacers.RandomSpreadFol
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.minecraft.world.level.levelgen.structure.ScatteredFeaturePiece;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
@@ -106,6 +105,22 @@ public class ModConfiguredFeatures {
 
     public static final RegistryObject<ConfiguredFeature<?, ?>> SILVER_ORE = CONFIGURED_FEATURES.register("silver_ore",
             () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_SILVER_ORES.get(),4)));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> CHITTA_ORE = CONFIGURED_FEATURES.register(
+            "chitta_ore", () -> new ConfiguredFeature<>(Feature.ORE,
+                    new OreConfiguration(OreFeatures.NATURAL_STONE, ModBlocks.CHITTA.get().defaultBlockState(), 64)));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> DRYSTONE_ORE = CONFIGURED_FEATURES.register(
+            "drystone_ore", () -> new ConfiguredFeature<>(Feature.ORE,
+                    new OreConfiguration(OreFeatures.NATURAL_STONE, ModBlocks.DRYSTONE.get().defaultBlockState(), 64)));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> CHALK_ORE = CONFIGURED_FEATURES.register(
+            "chalk_ore", () -> new ConfiguredFeature<>(Feature.ORE,
+                    new OreConfiguration(OreFeatures.NATURAL_STONE, ModBlocks.CHALK.get().defaultBlockState(), 64)));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> CHIPSTONE_ORE = CONFIGURED_FEATURES.register(
+            "chipstone_ore", () -> new ConfiguredFeature<>(Feature.ORE,
+                    new OreConfiguration(OreFeatures.NATURAL_STONE, ModBlocks.CHIPSTONE.get().defaultBlockState(), 64)));
 
     public static final RegistryObject<ConfiguredFeature<?, ?>> CHITTA_GEODE = CONFIGURED_FEATURES.register("chitta_geode",
             () -> new ConfiguredFeature<>(Feature.GEODE,

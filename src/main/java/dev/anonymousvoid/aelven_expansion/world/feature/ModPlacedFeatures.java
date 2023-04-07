@@ -37,25 +37,45 @@ public class ModPlacedFeatures {
                             ModConfiguredFeatures.TreeGeneration.PEACHGROVE_TREE_SPAWN, VegetationPlacements.treePlacement(
                             PlacementUtils.countExtra(3, 0.1f, 2))));
 
-    public  static final RegistryObject<PlacedFeature> ELERIUM_ORE_PLACED = PLACED_FEATURES.register("elerium_ore_placed",
+    public static final RegistryObject<PlacedFeature> ELERIUM_ORE_PLACED = PLACED_FEATURES.register("elerium_ore_placed",
             () -> new PlacedFeature(ModConfiguredFeatures.ELERIUM_ORE.getHolder().get(),
                     commonOrePlacement(8, // VeinsPerChunk
                             HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
 
-    public  static final RegistryObject<PlacedFeature> SILVER_ORE_PLACED = PLACED_FEATURES.register("silver_ore_placed",
+    public static final RegistryObject<PlacedFeature> SILVER_ORE_PLACED = PLACED_FEATURES.register("silver_ore_placed",
             () -> new PlacedFeature(ModConfiguredFeatures.SILVER_ORE.getHolder().get(),
                     commonOrePlacement(4, // VeinsPerChunk
                             HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-100), VerticalAnchor.aboveBottom(100)))));
 
+    public static final RegistryObject<PlacedFeature> CHITTA_ORE_PLACED = PLACED_FEATURES.register("chitta_ore_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.CHITTA_ORE.getHolder().get(),
+                    rareOrePlacement(1,
+                            HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-100), VerticalAnchor.aboveBottom(100)))));
+
+    public static final RegistryObject<PlacedFeature> DRYSTONE_ORE_PLACED = PLACED_FEATURES.register("drystone_ore_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.DRYSTONE_ORE.getHolder().get(),
+                    rareOrePlacement(1,
+                            HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-100), VerticalAnchor.aboveBottom(100)))));
+
+    public static final RegistryObject<PlacedFeature> CHALK_ORE_PLACED = PLACED_FEATURES.register("chalk_ore_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.CHALK_ORE.getHolder().get(),
+                    rareOrePlacement(1,
+                            HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-100), VerticalAnchor.aboveBottom(100)))));
+
+    public static final RegistryObject<PlacedFeature> CHIPSTONE_ORE_PLACED = PLACED_FEATURES.register("chipstone_ore_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.CHIPSTONE_ORE.getHolder().get(),
+                    rareOrePlacement(1,
+                            HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-100), VerticalAnchor.aboveBottom(100)))));
+
     public static final RegistryObject<PlacedFeature> CHITTA_GEODE_PLACED = PLACED_FEATURES.register("chitta_geode_placed",
             () -> new PlacedFeature(ModConfiguredFeatures.CHITTA_GEODE.getHolder().get(), List.of(
-                    RarityFilter.onAverageOnceEvery(50), InSquarePlacement.spread(),
+                    RarityFilter.onAverageOnceEvery(1000), InSquarePlacement.spread(),
                     HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(6), VerticalAnchor.absolute(50)),
                     BiomeFilter.biome())));
 
     public static final RegistryObject<PlacedFeature> CHALK_GEODE_PLACED = PLACED_FEATURES.register("chalk_geode_placed",
             () -> new PlacedFeature(ModConfiguredFeatures.CHALK_GEODE.getHolder().get(), List.of(
-                    RarityFilter.onAverageOnceEvery(50), InSquarePlacement.spread(),
+                    RarityFilter.onAverageOnceEvery(1000), InSquarePlacement.spread(),
                     HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(6), VerticalAnchor.absolute(50)),
                     BiomeFilter.biome())));
 
