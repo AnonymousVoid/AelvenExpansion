@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "chisel",
+  "pattern": [
+    "sc"
+  ],
+  "key": {
+    "s": {
+      "item": "minecraft:stick"
+    },
+    "c": {
+      "item": "aelven_expansion:chitta_slab"
+    }
+  },
+  "result": {
+    "item": "aelven_expansion:chitta_chisel"
+  }
+}

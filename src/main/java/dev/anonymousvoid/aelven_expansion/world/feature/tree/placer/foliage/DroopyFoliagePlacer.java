@@ -62,11 +62,11 @@ public class DroopyFoliagePlacer extends FoliagePlacer {
     }
 
     protected boolean shouldSkipLocationSigned(RandomSource random, int localX, int localY, int localZ, int range, boolean large) {
-        return dist(dist(localX, localZ), localY+0.5) >= range || random.nextInt(50) == 0;
+        return dist(dist(localX, localZ), localY+0.5) >= range - 0.5 || random.nextInt(50) == 0;
     }
 
     protected boolean shouldSkipLocation(RandomSource random, int localX, int localY, int localZ, int range, boolean large) {
-        return dist(dist(localX, localZ), localY+0.5) >= range || random.nextInt(50) == 0;
+        return dist(dist(localX, localZ), localY+0.5) >= range - 0.5 || random.nextInt(50) == 0;
     }
 
     private double dist(double x, double y) {

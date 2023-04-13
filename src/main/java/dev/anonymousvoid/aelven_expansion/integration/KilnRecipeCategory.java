@@ -37,6 +37,11 @@ public class KilnRecipeCategory implements IRecipeCategory<KilnRecipe> {
                 .buildAnimated(240, IDrawableAnimated.StartDirection.LEFT, false);
     }
 
+//    @Override
+//    public ResourceLocation getUid() {
+//        return RecipeType.create(AelvenExpansion.MODID, "kiln", #class);
+//    }
+
     @Override
     public RecipeType<KilnRecipe> getRecipeType() { return JEIAelvenExpansionModPlugin.KILN_TYPE; }
 

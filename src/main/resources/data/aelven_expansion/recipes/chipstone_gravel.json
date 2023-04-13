@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smithing",
+  "addition": {
+    "item": "aelven_expansion:chipstone"
+  },
+  "base": {
+    "item": "aelven_expansion:chipstone"
+  },
+  "result": {
+    "item": "aelven_expansion:chipstone_gravel",
+    "count": 2
+  }
+}
