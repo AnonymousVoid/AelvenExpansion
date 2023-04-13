@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "chitta_wall",
+  "group": "cracked_drystone_wall",
   "pattern": [
     "   ",
     "###",
@@ -8,11 +8,11 @@
   ],
   "key": {
     "#": {
-      "item": "aelven_expansion:chitta_large_tile"
+      "item": "aelven_expansion:cracked_drystone_bricks"
     }
   },
   "result": {
-    "item": "aelven_expansion:chitta_large_tile_wall",
+    "item": "aelven_expansion:cracked_drystone_brick_wall",
     "count": 6
   }
 }

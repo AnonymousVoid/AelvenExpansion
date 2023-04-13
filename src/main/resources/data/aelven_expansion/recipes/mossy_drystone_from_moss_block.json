@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "mossy_drystone",
+  "ingredients": [
+    {
+      "item": "aelven_expansion:drystone"
+    },
+    {
+      "item": "minecraft:moss_block"
+    }
+  ],
+  "result": {
+    "item": "aelven_expansion:mossy_drystone"
+  }
+}

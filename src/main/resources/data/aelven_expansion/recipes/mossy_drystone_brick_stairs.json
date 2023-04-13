@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "chitta_stairs",
+  "group": "mossy_drystone_stairs",
   "pattern": [
     "#  ",
     "## ",
@@ -8,11 +8,11 @@
   ],
   "key": {
     "#": {
-      "item": "aelven_expansion:chitta_large_tile"
+      "item": "aelven_expansion:mossy_drystone_bricks"
     }
   },
   "result": {
-    "item": "aelven_expansion:chitta_large_tile_stairs",
+    "item": "aelven_expansion:mossy_drystone_brick_stairs",
     "count": 6
   }
 }
