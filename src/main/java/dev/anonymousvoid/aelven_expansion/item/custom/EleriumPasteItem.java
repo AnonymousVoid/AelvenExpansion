@@ -42,7 +42,8 @@ public class EleriumPasteItem extends CustomItem {
             stack.hurtAndBreak(1, player, (entity) -> {
                 entity.broadcastBreakEvent(EquipmentSlot.MAINHAND);
             });
-            for (int i = 0; i < 50; i ++) spawnParticleCube(level, ModParticles.RUNING_PARTICLES.get(), context);
+            for (int i = 0; i < 50; i ++) spawnParticleCube(level, ModParticles.RUNING_PARTICLES.get(), context,
+                    -0.1D, 0.1D, 0.0D, 0.2D, -0.1D, 0.1D);
             return InteractionResult.SUCCESS;
         }
         return InteractionResult.FAIL;

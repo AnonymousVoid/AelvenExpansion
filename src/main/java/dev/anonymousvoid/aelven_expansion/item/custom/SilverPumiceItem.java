@@ -43,7 +43,7 @@ public class SilverPumiceItem extends CustomItem {
             stack.hurtAndBreak(1, player, (entity) -> {
                 entity.broadcastBreakEvent(EquipmentSlot.MAINHAND);
             });
-            for (int i = 0; i < 50; i ++) spawnParticleCube(level, ParticleTypes.WAX_OFF, context);
+            for (int i = 0; i < 50; i ++) spawnParticleCube(level, ParticleTypes.WAX_OFF, context, -0.5D, 0.5D);
             return InteractionResult.SUCCESS;
         }
         return InteractionResult.FAIL;

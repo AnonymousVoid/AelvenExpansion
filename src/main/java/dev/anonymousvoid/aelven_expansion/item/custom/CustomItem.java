@@ -14,7 +14,8 @@ public class CustomItem extends Item {
         super(properties);
     }
 
-    protected void spawnParticleCube(Level level, ParticleOptions particle, UseOnContext context) {
+    protected void spawnParticleCube(Level level, ParticleOptions particle, UseOnContext context,
+                                     double minX, double maxX, double minY, double maxY, double minZ, double maxZ) {
         Random rand = new Random();
         BlockPos pos = context.getClickedPos();
         Vec3 vPos = context.getClickLocation();
@@ -27,10 +28,22 @@ public class CustomItem extends Item {
         else if (axis == 1) rY = rand.nextInt(2) * 1.1 - 0.05;
         else if (axis == 2) rZ = rand.nextInt(2) * 1.1 - 0.05;
 
+        double vX = minX == maxX ? 0.0D : rand.nextDouble(maxX - minX) + minX;
+        double vY = minY == maxY ? 0.0D : rand.nextDouble(maxY - minY) + minY;
+        double vZ = minZ == maxZ ? 0.0D : rand.nextDouble(maxZ - minZ) + minZ;
+
         double x = rX + pos.getX();
         double y = rY + pos.getY();
         double z = rZ + pos.getZ();
-        level.addParticle(particle, x, y, z, 0.0D, 0.0D, 0.0D);
+        level.addParticle(particle, x, y, z, vX, vY, vZ);
+    }
+
+    protected void spawnParticleCube(Level level, ParticleOptions particle, UseOnContext context, double min, double max) {
+        spawnParticleCube(level, particle, context, min, max, min, max, min, max);
+    }
+
+    protected void spawnParticleCube(Level level, ParticleOptions particle, UseOnContext context) {
+        spawnParticleCube(level, particle, context, 0.0D, 0.0D);
     }
 
     protected void spawnParticleFace(Level level, ParticleOptions particle, UseOnContext context) {
