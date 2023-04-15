@@ -304,9 +304,6 @@
 	"block.aelven_expansion.black_shingle_slab": "Black Shingle Slab",
 	"block.aelven_expansion.black_shingle_wall": "Black Shingle Wall",
 
-	"item.aelven_expansion.question_mark": "Question Mark",
-	"item.aelven_expansion.quest_mark": "Quest Mark",
-
 	"itemGroup.aelven_expansion_blocks": "Aelven Expansion Blocks",
 	"itemGroup.aelven_expansion_items": "Aelven Expansion Items"
 }
