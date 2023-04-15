@@ -1,8 +1,7 @@
 {
   "replace": false,
   "values": [
-    "aelven_expansion:raw_silver_block",
-    "aelven_expansion:silver_ore",
-    "aelven_expansion:deepslate_silver_ore"
+    "aelven_expansion:elerium_block",
+    "aelven_expansion:elerium_ore"
   ]
 }

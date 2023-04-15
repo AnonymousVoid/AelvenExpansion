@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "group": "silver_block",
+  "group": "cyan_dye",
   "ingredients":[
     {
       "item": "aelven_expansion:silver_spring"
