@@ -40,14 +40,15 @@ public class ModBlocks {
     private static final BlockBehaviour.Properties woodPropertiesNoCollide = BlockBehaviour.Properties.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.WOOD).noCollission();
     private static final BlockBehaviour.Properties woodPropertiesNoOcclude = BlockBehaviour.Properties.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.WOOD).noOcclusion();
     private static final BlockBehaviour.Properties azaleaProperties = BlockBehaviour.Properties.copy(Blocks.AZALEA_LEAVES);
-    private static final BlockBehaviour.Properties plantProperties = BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ);
-    private static final BlockBehaviour.Properties pottedPlantProperties = BlockBehaviour.Properties.copy(Blocks.FLOWER_POT);
+    private static final BlockBehaviour.Properties flowerProperties = BlockBehaviour.Properties.of(Material.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ);
+    private static final BlockBehaviour.Properties pottedFlowerProperties = BlockBehaviour.Properties.of(Material.DECORATION).instabreak().noOcclusion();
 
     private static final BlockBehaviour.Properties chittaProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE).strength(2.0F, 6.0F);
     private static final BlockBehaviour.Properties chittaBrickProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE_BRICKS).strength(2.5F, 6.5F);
     private static final BlockBehaviour.Properties chittaTileProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE_TILES).strength(2.5F, 6.5F);
     private static final BlockBehaviour.Properties chittaPolishedProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.POLISHED_DEEPSLATE).strength(2.5F, 6.5F);
-    private static final BlockBehaviour.Properties chittaKilnProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.POLISHED_DEEPSLATE).strength(3.5F, 8.0F);
+    private static final BlockBehaviour.Properties chittaKilnProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.POLISHED_DEEPSLATE).strength(3.5F, 8.0F)
+            .lightLevel(state -> state.getValue(KilnBlock.LIT) ? 15 : 0);
 
     private static final BlockBehaviour.Properties chalkProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_WHITE).requiresCorrectToolForDrops().sound(SoundType.CALCITE).strength(0.6F, 0.5F);
     private static final BlockBehaviour.Properties chipstoneProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_GRAY).requiresCorrectToolForDrops().sound(SoundType.TUFF).strength(1.8F, 6.0F);
@@ -104,13 +105,13 @@ public class ModBlocks {
     public static final RegistryObject<Block> MOON_FIR_SIGN = registerBlockWithoutBlockItem("moon_fir_sign",
             () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.MOON_FIR));
     public static final RegistryObject<Block> MOON_FIR_SAPLING = registerBlock("moon_fir_sapling",
-            () -> new SaplingBlock(new MoonFirTreeGrower(), plantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new SaplingBlock(new MoonFirTreeGrower(), flowerProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> POTTED_MOON_FIR_SAPLING = registerBlockWithoutBlockItem("potted_moon_fir_sapling",
-            () -> new FlowerPotBlock(null, MOON_FIR_SAPLING, pottedPlantProperties));
+            () -> new FlowerPotBlock(MOON_FIR_SAPLING.get(), pottedFlowerProperties));
     public static final RegistryObject<Block> MOON_BLOOM = registerBlock("moon_bloom",
-            () -> new FlowerBlock(MobEffects.NIGHT_VISION, 10, plantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new FlowerBlock(MobEffects.NIGHT_VISION, 10, flowerProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> POTTED_MOON_BLOOM = registerBlockWithoutBlockItem("potted_moon_bloom",
-            () -> new FlowerPotBlock(null, MOON_BLOOM, pottedPlantProperties));
+            () -> new FlowerPotBlock(MOON_BLOOM.get(), pottedFlowerProperties));
     public static final RegistryObject<Block> MOON_FIR_LEAVES = registerBlock("moon_fir_leaves",
             () -> flammableLeavesBlock(azaleaProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
@@ -152,13 +153,13 @@ public class ModBlocks {
     public static final RegistryObject<Block> SILVERBLOOD_SIGN = registerBlockWithoutBlockItem("silverblood_sign",
             () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.SILVERBLOOD));
     public static final RegistryObject<Block> SILVERBLOOD_SAPLING = registerBlock("silverblood_sapling",
-            () -> new SaplingBlock(new SilverbloodTreeGrower(), plantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new SaplingBlock(new SilverbloodTreeGrower(), flowerProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> POTTED_SILVERBLOOD_SAPLING = registerBlockWithoutBlockItem("potted_silverblood_sapling",
-            () -> new FlowerPotBlock(null, SILVERBLOOD_SAPLING, pottedPlantProperties));
+            () -> new FlowerPotBlock(SILVERBLOOD_SAPLING.get(), pottedFlowerProperties));
     public static final RegistryObject<Block> SILVER_MARIGOLD = registerBlock("silver_marigold",
-            () -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 10, plantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 10, flowerProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> POTTED_SILVER_MARIGOLD = registerBlockWithoutBlockItem("potted_silver_marigold",
-            () -> new FlowerPotBlock(null, SILVER_MARIGOLD, pottedPlantProperties));
+            () -> new FlowerPotBlock(SILVER_MARIGOLD.get(), pottedFlowerProperties));
     public static final RegistryObject<Block> SILVERBLOOD_LEAVES = registerBlock("silverblood_leaves",
             () -> flammableLeavesBlock(azaleaProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
@@ -200,24 +201,24 @@ public class ModBlocks {
     public static final RegistryObject<Block> PEACHGROVE_SIGN = registerBlockWithoutBlockItem("peachgrove_sign",
             () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.PEACHGROVE));
     public static final RegistryObject<Block> PEACHGROVE_SAPLING = registerBlock("peachgrove_sapling",
-            () -> new SaplingBlock(new PeachgroveTreeGrower(), plantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new SaplingBlock(new PeachgroveTreeGrower(), flowerProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> POTTED_PEACHGROVE_SAPLING = registerBlockWithoutBlockItem("potted_peachgrove_sapling",
-            () -> new FlowerPotBlock(null, PEACHGROVE_SAPLING, pottedPlantProperties));
+            () -> new FlowerPotBlock(PEACHGROVE_SAPLING.get(), pottedFlowerProperties));
     public static final RegistryObject<Block> PEACH_LAVENDER = registerBlock("peach_lavender",
-            () -> new FlowerBlock(MobEffects.ABSORPTION, 10, plantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new FlowerBlock(MobEffects.ABSORPTION, 10, flowerProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> POTTED_PEACH_LAVENDER = registerBlockWithoutBlockItem("potted_peach_lavender",
-            () -> new FlowerPotBlock(null, PEACH_LAVENDER, pottedPlantProperties));
+            () -> new FlowerPotBlock(PEACH_LAVENDER.get(), pottedFlowerProperties));
     public static final RegistryObject<Block> PEACHGROVE_LEAVES = registerBlock("peachgrove_leaves",
             () -> flammableLeavesBlock(azaleaProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
 
 
     public static final RegistryObject<Block> MOONSHADE = registerBlock("moonshade",
-            () -> new TallFlowerBlock(plantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new TallFlowerBlock(flowerProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> SILVER_SPRING = registerBlock("silver_spring",
-            () -> new TallFlowerBlock(plantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new TallFlowerBlock(flowerProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> PEACH_LILAC = registerBlock("peach_lilac",
-            () -> new TallFlowerBlock(plantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new TallFlowerBlock(flowerProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
 
     public static final RegistryObject<Block> COBBLED_CHITTA = registerBlock("cobbled_chitta",

@@ -42,7 +42,7 @@ public class KilnBlock extends BaseEntityBlock {
     public BlockState getStateForPlacement(BlockPlaceContext context) {
         return this.defaultBlockState()
                 .setValue(FACING, context.getHorizontalDirection().getOpposite())
-                .setValue(LIT, Boolean.valueOf(false));
+                .setValue(LIT, Boolean.valueOf(true));
     }
 
     @Override
