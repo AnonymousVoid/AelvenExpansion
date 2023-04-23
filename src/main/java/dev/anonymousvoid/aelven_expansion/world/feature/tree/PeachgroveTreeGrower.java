@@ -1,6 +1,5 @@
 package dev.anonymousvoid.aelven_expansion.world.feature.tree;
 
-import dev.anonymousvoid.aelven_expansion.world.feature.ModConfiguredFeatures;
 import net.minecraft.core.Holder;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.grower.AbstractMegaTreeGrower;
@@ -17,6 +16,6 @@ public class PeachgroveTreeGrower extends AbstractMegaTreeGrower {
 
     @javax.annotation.Nullable
     protected Holder<? extends ConfiguredFeature<?, ?>> getConfiguredMegaFeature(RandomSource p_222922_) {
-        return ModConfiguredFeatures.TreeGeneration.PEACHGROVE_TREE;
+        return dev.anonymousvoid.aelven_expansion.world.feature.ModConfiguredFeatures.VegetalGeneration.PEACHGROVE_TREE;
     }
 }

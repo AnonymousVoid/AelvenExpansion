@@ -1,6 +1,5 @@
 package dev.anonymousvoid.aelven_expansion.world.feature.tree;
 
-import dev.anonymousvoid.aelven_expansion.world.feature.ModConfiguredFeatures;
 import net.minecraft.core.Holder;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.grower.AbstractTreeGrower;
@@ -12,6 +11,6 @@ public class SilverbloodTreeGrower extends AbstractTreeGrower {
     @Nullable
     @Override
     protected Holder<? extends ConfiguredFeature<?, ?>> getConfiguredFeature(@NotNull RandomSource randomSource, boolean b) {
-        return ModConfiguredFeatures.TreeGeneration.SILVERBLOOD_TREE;
+        return dev.anonymousvoid.aelven_expansion.world.feature.ModConfiguredFeatures.VegetalGeneration.SILVERBLOOD_TREE;
     }
 }

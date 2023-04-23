@@ -22,19 +22,19 @@ public class ModPlacedFeatures {
     public static final RegistryObject<PlacedFeature> MOON_FIR_TREE_PLACED =
             PLACED_FEATURES.register("moon_fir_tree_placed",
                     () -> new PlacedFeature((Holder<ConfiguredFeature<?, ?>>)(Holder<? extends ConfiguredFeature<?, ?>>)
-            ModConfiguredFeatures.TreeGeneration.MOON_FIR_TREE_SPAWN, VegetationPlacements.treePlacement(
+            dev.anonymousvoid.aelven_expansion.world.feature.ModConfiguredFeatures.VegetalGeneration.MOON_FIR_TREE_SPAWN, VegetationPlacements.treePlacement(
                     PlacementUtils.countExtra(3, 0.1f, 2))));
 
     public static final RegistryObject<PlacedFeature> SILVERBLOOD_TREE_PLACED =
             PLACED_FEATURES.register("silverblood_tree_placed",
                     () -> new PlacedFeature((Holder<ConfiguredFeature<?, ?>>)(Holder<? extends ConfiguredFeature<?, ?>>)
-                            ModConfiguredFeatures.TreeGeneration.SILVERBLOOD_TREE_SPAWN, VegetationPlacements.treePlacement(
+                            dev.anonymousvoid.aelven_expansion.world.feature.ModConfiguredFeatures.VegetalGeneration.SILVERBLOOD_TREE_SPAWN, VegetationPlacements.treePlacement(
                             PlacementUtils.countExtra(3, 0.1f, 2))));
 
     public static final RegistryObject<PlacedFeature> PEACHGROVE_TREE_PLACED =
             PLACED_FEATURES.register("peachgrove_tree_placed",
                     () -> new PlacedFeature((Holder<ConfiguredFeature<?, ?>>)(Holder<? extends ConfiguredFeature<?, ?>>)
-                            ModConfiguredFeatures.TreeGeneration.PEACHGROVE_TREE_SPAWN, VegetationPlacements.treePlacement(
+                            dev.anonymousvoid.aelven_expansion.world.feature.ModConfiguredFeatures.VegetalGeneration.PEACHGROVE_TREE_SPAWN, VegetationPlacements.treePlacement(
                             PlacementUtils.countExtra(3, 0.1f, 2))));
 
     public static final RegistryObject<PlacedFeature> ELERIUM_ORE_PLACED = PLACED_FEATURES.register("elerium_ore_placed",
