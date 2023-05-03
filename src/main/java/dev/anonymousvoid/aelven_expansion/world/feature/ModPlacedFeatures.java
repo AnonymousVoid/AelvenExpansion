@@ -22,19 +22,55 @@ public class ModPlacedFeatures {
     public static final RegistryObject<PlacedFeature> MOON_FIR_TREE_PLACED =
             PLACED_FEATURES.register("moon_fir_tree_placed",
                     () -> new PlacedFeature((Holder<ConfiguredFeature<?, ?>>)(Holder<? extends ConfiguredFeature<?, ?>>)
-            dev.anonymousvoid.aelven_expansion.world.feature.ModConfiguredFeatures.VegetalGeneration.MOON_FIR_TREE_SPAWN, VegetationPlacements.treePlacement(
-                    PlacementUtils.countExtra(3, 0.1f, 2))));
+                            ModConfiguredFeatures.VegetalGeneration.MOON_FIR_TREE_SPAWN, VegetationPlacements.treePlacement(
+                            PlacementUtils.countExtra(3, 0.1f, 2))));
 
     public static final RegistryObject<PlacedFeature> SILVERBLOOD_TREE_PLACED =
             PLACED_FEATURES.register("silverblood_tree_placed",
                     () -> new PlacedFeature((Holder<ConfiguredFeature<?, ?>>)(Holder<? extends ConfiguredFeature<?, ?>>)
-                            dev.anonymousvoid.aelven_expansion.world.feature.ModConfiguredFeatures.VegetalGeneration.SILVERBLOOD_TREE_SPAWN, VegetationPlacements.treePlacement(
+                            ModConfiguredFeatures.VegetalGeneration.SILVERBLOOD_TREE_SPAWN, VegetationPlacements.treePlacement(
                             PlacementUtils.countExtra(3, 0.1f, 2))));
 
     public static final RegistryObject<PlacedFeature> PEACHGROVE_TREE_PLACED =
             PLACED_FEATURES.register("peachgrove_tree_placed",
                     () -> new PlacedFeature((Holder<ConfiguredFeature<?, ?>>)(Holder<? extends ConfiguredFeature<?, ?>>)
-                            dev.anonymousvoid.aelven_expansion.world.feature.ModConfiguredFeatures.VegetalGeneration.PEACHGROVE_TREE_SPAWN, VegetationPlacements.treePlacement(
+                            ModConfiguredFeatures.VegetalGeneration.PEACHGROVE_TREE_SPAWN, VegetationPlacements.treePlacement(
+                            PlacementUtils.countExtra(3, 0.1f, 2))));
+
+    public static final RegistryObject<PlacedFeature> PATCH_SILVER_MARIGOLD_PLACED =
+            PLACED_FEATURES.register("patch_silver_marigold_placed",
+                    () -> new PlacedFeature((Holder<ConfiguredFeature<?,?>>)(Holder<? extends ConfiguredFeature<?, ?>>)
+                            ModConfiguredFeatures.VegetalGeneration.PATCH_SILVER_MARIGOLD, VegetationPlacements.treePlacement(
+                            PlacementUtils.countExtra(3, 0.1f, 2))));
+
+    public static final RegistryObject<PlacedFeature> PATCH_SILVER_SPRING_PLACED =
+            PLACED_FEATURES.register("patch_silver_spring_placed",
+                    () -> new PlacedFeature((Holder<ConfiguredFeature<?,?>>)(Holder<? extends ConfiguredFeature<?, ?>>)
+                            ModConfiguredFeatures.VegetalGeneration.PATCH_SILVER_SPRING, VegetationPlacements.treePlacement(
+                            PlacementUtils.countExtra(3, 0.1f, 2))));
+
+    public static final RegistryObject<PlacedFeature> PATCH_MOON_BLOOM_PLACED =
+            PLACED_FEATURES.register("patch_moon_bloom_placed",
+                    () -> new PlacedFeature((Holder<ConfiguredFeature<?,?>>)(Holder<? extends ConfiguredFeature<?, ?>>)
+                            ModConfiguredFeatures.VegetalGeneration.PATCH_MOON_BLOOM, VegetationPlacements.treePlacement(
+                            PlacementUtils.countExtra(3, 0.1f, 2))));
+
+    public static final RegistryObject<PlacedFeature> PATCH_MOONSHADE_PLACED =
+            PLACED_FEATURES.register("patch_moonshade_placed",
+                    () -> new PlacedFeature((Holder<ConfiguredFeature<?,?>>)(Holder<? extends ConfiguredFeature<?, ?>>)
+                            ModConfiguredFeatures.VegetalGeneration.PATCH_MOONSHADE, VegetationPlacements.treePlacement(
+                            PlacementUtils.countExtra(3, 0.1f, 2))));
+
+    public static final RegistryObject<PlacedFeature> PATCH_PEACH_LAVENDER_PLACED =
+            PLACED_FEATURES.register("patch_peach_lavender_placed",
+                    () -> new PlacedFeature((Holder<ConfiguredFeature<?,?>>)(Holder<? extends ConfiguredFeature<?, ?>>)
+                            ModConfiguredFeatures.VegetalGeneration.PATCH_PEACH_LAVENDER, VegetationPlacements.treePlacement(
+                            PlacementUtils.countExtra(3, 0.1f, 2))));
+
+    public static final RegistryObject<PlacedFeature> PATCH_PEACH_LILAC_PLACED =
+            PLACED_FEATURES.register("patch_peach_lilac_placed",
+                    () -> new PlacedFeature((Holder<ConfiguredFeature<?,?>>)(Holder<? extends ConfiguredFeature<?, ?>>)
+                            ModConfiguredFeatures.VegetalGeneration.PATCH_PEACH_LILAC, VegetationPlacements.treePlacement(
                             PlacementUtils.countExtra(3, 0.1f, 2))));
 
     public static final RegistryObject<PlacedFeature> ELERIUM_ORE_PLACED = PLACED_FEATURES.register("elerium_ore_placed",
