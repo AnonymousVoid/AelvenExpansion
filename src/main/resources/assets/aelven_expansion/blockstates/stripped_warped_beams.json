@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "aelven_expansion:block/stripped_warped_beams_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "aelven_expansion:block/stripped_warped_beams"
+    },
+    "axis=z": {
+      "model": "aelven_expansion:block/stripped_warped_beams_horizontal",
+      "x": 90
+    }
+  }
+}

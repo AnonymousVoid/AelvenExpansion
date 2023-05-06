@@ -63,6 +63,34 @@ public class ModLogBlock extends RotatedPillarBlock {
             if (state.is(ModBlocks.PEACHGROVE_BEAMS.get())) {
                 return ModBlocks.STRIPPED_PEACHGROVE_BEAMS.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
             }
+            
+            if (state.is(ModBlocks.OAK_BEAMS.get())) {
+                return ModBlocks.STRIPPED_OAK_BEAMS.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
+            }
+            if (state.is(ModBlocks.SPRUCE_BEAMS.get())) {
+                return ModBlocks.STRIPPED_SPRUCE_BEAMS.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
+            }
+            if (state.is(ModBlocks.BIRCH_BEAMS.get())) {
+                return ModBlocks.STRIPPED_BIRCH_BEAMS.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
+            }
+            if (state.is(ModBlocks.JUNGLE_BEAMS.get())) {
+                return ModBlocks.STRIPPED_JUNGLE_BEAMS.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
+            }
+            if (state.is(ModBlocks.DARK_OAK_BEAMS.get())) {
+                return ModBlocks.STRIPPED_DARK_OAK_BEAMS.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
+            }
+            if (state.is(ModBlocks.ACACIA_BEAMS.get())) {
+                return ModBlocks.STRIPPED_ACACIA_BEAMS.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
+            }
+            if (state.is(ModBlocks.MANGROVE_BEAMS.get())) {
+                return ModBlocks.STRIPPED_MANGROVE_BEAMS.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
+            }
+            if (state.is(ModBlocks.CRIMSON_BEAMS.get())) {
+                return ModBlocks.STRIPPED_CRIMSON_BEAMS.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
+            }
+            if (state.is(ModBlocks.WARPED_BEAMS.get())) {
+                return ModBlocks.STRIPPED_WARPED_BEAMS.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
+            }
         }
 
         return super.getToolModifiedState(state, context, toolAction, simulate);

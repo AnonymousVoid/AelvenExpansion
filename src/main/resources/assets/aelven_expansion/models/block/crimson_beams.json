@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "aelven_expansion:block/crimson_beams_top",
+    "side": "aelven_expansion:block/crimson_beams"
+  }
+}
