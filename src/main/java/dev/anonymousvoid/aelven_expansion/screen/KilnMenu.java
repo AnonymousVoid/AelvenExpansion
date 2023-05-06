@@ -2,7 +2,11 @@ package dev.anonymousvoid.aelven_expansion.screen;
 
 import dev.anonymousvoid.aelven_expansion.block.ModBlocks;
 import dev.anonymousvoid.aelven_expansion.block.entity.KilnBlockEntity;
+import dev.anonymousvoid.aelven_expansion.item.ModItems;
+import dev.anonymousvoid.aelven_expansion.screen.slot.ModInputSlot;
+import dev.anonymousvoid.aelven_expansion.screen.slot.ModOutputSlot;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.*;
@@ -32,13 +36,18 @@ public class KilnMenu extends AbstractContainerMenu {
         addPlayerHotbar(inv);
 
         this.blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(handler -> {
-            this.addSlot(new SlotItemHandler(handler, 0, 20, 35));
+            // Fuel all recipes
+            this.addSlot(new ModInputSlot(itemHolder -> itemHolder.get() == ModItems.ELERIUM.get(),
+                    handler, 0, 20, 35));
+            // Input recipe 1, 2, 3, respectively
             this.addSlot(new SlotItemHandler(handler, 1, 56, 17));
             this.addSlot(new SlotItemHandler(handler, 2, 56, 35));
             this.addSlot(new SlotItemHandler(handler, 3, 56, 53));
-            this.addSlot(new SlotItemHandler(handler, 4, 116, 9));
-            this.addSlot(new SlotItemHandler(handler, 5, 116, 35));
-            this.addSlot(new SlotItemHandler(handler, 6, 116, 61));
+            // Output recipe 1, 2, 3, respectively
+            this.addSlot(new ModOutputSlot(handler, 4, 116, 9));
+            this.addSlot(new ModOutputSlot(handler, 5, 116, 35));
+            this.addSlot(new ModOutputSlot(handler, 6, 116, 61));
+
         });
 
         addDataSlots(data);

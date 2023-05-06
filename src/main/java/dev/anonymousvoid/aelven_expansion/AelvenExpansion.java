@@ -16,7 +16,7 @@ import dev.anonymousvoid.aelven_expansion.recipe.ModRecipes;
 import dev.anonymousvoid.aelven_expansion.screen.KilnScreen;
 import dev.anonymousvoid.aelven_expansion.screen.ModMenuTypes;
 import dev.anonymousvoid.aelven_expansion.world.biome_mods.ModBiomeModifiers;
-import dev.anonymousvoid.aelven_expansion.world.feature.ModConfiguredFeatures;
+import dev.anonymousvoid.aelven_expansion.world.feature.*;
 import dev.anonymousvoid.aelven_expansion.world.feature.ModPlacedFeatures;
 import dev.anonymousvoid.aelven_expansion.world.feature.tree.placer.foliage.ModFoliagePlacerType;
 import dev.anonymousvoid.aelven_expansion.world.feature.tree.placer.trunk.ModTrunkPlacerType;

@@ -11,26 +11,17 @@ import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.features.OreFeatures;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.util.valueproviders.ConstantInt;
-import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.levelgen.GeodeBlockSettings;
-import net.minecraft.world.level.levelgen.GeodeCrackSettings;
-import net.minecraft.world.level.levelgen.GeodeLayerSettings;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.ScatteredOreFeature;
 import net.minecraft.world.level.levelgen.feature.WeightedPlacedFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.featuresize.ThreeLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.RandomSpreadFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
-import net.minecraft.world.level.levelgen.structure.ScatteredFeaturePiece;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
@@ -41,7 +32,7 @@ import java.util.function.Supplier;
 
 public class ModConfiguredFeatures {
 
-    public static class TreeGeneration {
+    public static class VegetalGeneration {
         public static final Holder<ConfiguredFeature<TreeConfiguration, ?>> MOON_FIR_TREE =
                 FeatureUtils.register("moon_fir_tree", Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                         BlockStateProvider.simple(ModBlocks.MOON_FIR_LOG.get()),
@@ -87,6 +78,37 @@ public class ModConfiguredFeatures {
                 FeatureUtils.register("peachgrove_tree_spawn", Feature.RANDOM_SELECTOR,
                         new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(PEACHGROVE_TREE_CHECKED,
                                 0.5f)), PEACHGROVE_TREE_CHECKED));
+
+
+        public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> PATCH_SILVER_MARIGOLD =
+                FeatureUtils.register("patch_silver_marigold", Feature.RANDOM_PATCH,
+                        FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
+                                new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.SILVER_MARIGOLD.get()))));
+
+        public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> PATCH_SILVER_SPRING =
+                FeatureUtils.register("patch_silver_spring", Feature.RANDOM_PATCH,
+                        FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
+                                new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.SILVER_SPRING.get()))));
+
+        public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> PATCH_MOON_BLOOM =
+                FeatureUtils.register("patch_moon_bloom", Feature.RANDOM_PATCH,
+                        FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
+                                new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.MOON_BLOOM.get()))));
+
+        public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> PATCH_MOONSHADE =
+                FeatureUtils.register("patch_moonshade", Feature.RANDOM_PATCH,
+                        FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
+                                new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.MOONSHADE.get()))));
+
+        public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> PATCH_PEACH_LAVENDER =
+                FeatureUtils.register("patch_peach_lavender", Feature.RANDOM_PATCH,
+                        FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
+                                new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.PEACH_LAVENDER.get()))));
+
+        public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> PATCH_PEACH_LILAC =
+                FeatureUtils.register("patch_peach_lilac", Feature.RANDOM_PATCH,
+                        FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
+                                new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.PEACH_LILAC.get()))));
     }
 
     public static final DeferredRegister<ConfiguredFeature<?, ?>> CONFIGURED_FEATURES =
