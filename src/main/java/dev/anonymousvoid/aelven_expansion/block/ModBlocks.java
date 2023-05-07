@@ -69,17 +69,17 @@ public class ModBlocks {
 
     // BLOCKS
     public static final RegistryObject<Block> MOON_FIR_LOG = registerBlock("moon_fir_log",
-            () -> log(MaterialColor.COLOR_GRAY, MaterialColor.COLOR_BLUE), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> logBlock(MaterialColor.COLOR_GRAY, MaterialColor.COLOR_BLUE), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> MOON_FIR_WOOD = registerBlock("moon_fir_wood",
-            () -> log(MaterialColor.COLOR_BLUE, MaterialColor.COLOR_BLUE), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> logBlock(MaterialColor.COLOR_BLUE, MaterialColor.COLOR_BLUE), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> MOON_FIR_BEAMS = registerBlock("moon_fir_beams",
-            () -> log(MaterialColor.COLOR_GRAY, MaterialColor.COLOR_BLUE), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> logBlock(MaterialColor.COLOR_GRAY, MaterialColor.COLOR_BLUE), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> STRIPPED_MOON_FIR_LOG = registerBlock("stripped_moon_fir_log",
-            () -> log(MaterialColor.COLOR_GRAY, MaterialColor.COLOR_BLUE), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> logBlock(MaterialColor.COLOR_GRAY, MaterialColor.COLOR_BLUE), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> STRIPPED_MOON_FIR_WOOD = registerBlock("stripped_moon_fir_wood",
-            () -> log(MaterialColor.COLOR_GRAY, MaterialColor.COLOR_GRAY), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> logBlock(MaterialColor.COLOR_GRAY, MaterialColor.COLOR_GRAY), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> STRIPPED_MOON_FIR_BEAMS = registerBlock("stripped_moon_fir_beams",
-            () -> log(MaterialColor.COLOR_GRAY, MaterialColor.COLOR_BLUE), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> logBlock(MaterialColor.COLOR_GRAY, MaterialColor.COLOR_BLUE), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> MOON_FIR_PLANKS = registerBlock("moon_fir_planks",
             () -> flammableBlock(woodProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> MOON_FIR_STAIRS = registerBlock("moon_fir_stairs",
@@ -117,17 +117,17 @@ public class ModBlocks {
 
 
     public static final RegistryObject<Block> SILVERBLOOD_LOG = registerBlock("silverblood_log",
-            () -> log(MaterialColor.COLOR_LIGHT_GRAY, MaterialColor.COLOR_PINK), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> logBlock(MaterialColor.COLOR_LIGHT_GRAY, MaterialColor.COLOR_PINK), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> SILVERBLOOD_WOOD = registerBlock("silverblood_wood",
-            () -> log(MaterialColor.COLOR_PINK, MaterialColor.COLOR_PINK), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> logBlock(MaterialColor.COLOR_PINK, MaterialColor.COLOR_PINK), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> SILVERBLOOD_BEAMS = registerBlock("silverblood_beams",
-            () -> log(MaterialColor.COLOR_LIGHT_GRAY, MaterialColor.COLOR_PINK), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> logBlock(MaterialColor.COLOR_LIGHT_GRAY, MaterialColor.COLOR_PINK), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> STRIPPED_SILVERBLOOD_LOG = registerBlock("stripped_silverblood_log",
-            () -> log(MaterialColor.COLOR_LIGHT_GRAY, MaterialColor.COLOR_PINK), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> logBlock(MaterialColor.COLOR_LIGHT_GRAY, MaterialColor.COLOR_PINK), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> STRIPPED_SILVERBLOOD_WOOD = registerBlock("stripped_silverblood_wood",
-            () -> log(MaterialColor.COLOR_LIGHT_GRAY, MaterialColor.COLOR_LIGHT_GRAY), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> logBlock(MaterialColor.COLOR_LIGHT_GRAY, MaterialColor.COLOR_LIGHT_GRAY), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> STRIPPED_SILVERBLOOD_BEAMS = registerBlock("stripped_silverblood_beams",
-            () -> log(MaterialColor.COLOR_LIGHT_GRAY, MaterialColor.COLOR_PINK), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> logBlock(MaterialColor.COLOR_LIGHT_GRAY, MaterialColor.COLOR_PINK), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> SILVERBLOOD_PLANKS = registerBlock("silverblood_planks",
             () -> flammableBlock(woodProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> SILVERBLOOD_STAIRS = registerBlock("silverblood_stairs",
@@ -165,17 +165,17 @@ public class ModBlocks {
 
 
     public static final RegistryObject<Block> PEACHGROVE_LOG = registerBlock("peachgrove_log",
-            () -> log(MaterialColor.COLOR_LIGHT_GRAY, MaterialColor.COLOR_PINK), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> logBlock(MaterialColor.COLOR_LIGHT_GRAY, MaterialColor.COLOR_PINK), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> PEACHGROVE_WOOD = registerBlock("peachgrove_wood",
-            () -> log(MaterialColor.COLOR_PINK, MaterialColor.COLOR_PINK), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> logBlock(MaterialColor.COLOR_PINK, MaterialColor.COLOR_PINK), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> PEACHGROVE_BEAMS = registerBlock("peachgrove_beams",
-            () -> log(MaterialColor.COLOR_LIGHT_GRAY, MaterialColor.COLOR_PINK), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> logBlock(MaterialColor.COLOR_LIGHT_GRAY, MaterialColor.COLOR_PINK), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> STRIPPED_PEACHGROVE_LOG = registerBlock("stripped_peachgrove_log",
-            () -> log(MaterialColor.COLOR_LIGHT_GRAY, MaterialColor.COLOR_PINK), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> logBlock(MaterialColor.COLOR_LIGHT_GRAY, MaterialColor.COLOR_PINK), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> STRIPPED_PEACHGROVE_WOOD = registerBlock("stripped_peachgrove_wood",
-            () -> log(MaterialColor.COLOR_LIGHT_GRAY, MaterialColor.COLOR_LIGHT_GRAY), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> logBlock(MaterialColor.COLOR_LIGHT_GRAY, MaterialColor.COLOR_LIGHT_GRAY), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> STRIPPED_PEACHGROVE_BEAMS = registerBlock("stripped_peachgrove_beams",
-            () -> log(MaterialColor.COLOR_LIGHT_GRAY, MaterialColor.COLOR_PINK), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> logBlock(MaterialColor.COLOR_LIGHT_GRAY, MaterialColor.COLOR_PINK), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> PEACHGROVE_PLANKS = registerBlock("peachgrove_planks",
             () -> flammableBlock(woodProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> PEACHGROVE_STAIRS = registerBlock("peachgrove_stairs",
@@ -213,49 +213,49 @@ public class ModBlocks {
 
 
     public static final RegistryObject<Block> OAK_BEAMS = registerBlock("oak_beams",
-            () -> log(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> STRIPPED_OAK_BEAMS = registerBlock("stripped_oak_beams",
-            () -> log(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
     
     public static final RegistryObject<Block> SPRUCE_BEAMS = registerBlock("spruce_beams",
-            () -> log(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> STRIPPED_SPRUCE_BEAMS = registerBlock("stripped_spruce_beams",
-            () -> log(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
     
     public static final RegistryObject<Block> BIRCH_BEAMS = registerBlock("birch_beams",
-            () -> log(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> STRIPPED_BIRCH_BEAMS = registerBlock("stripped_birch_beams",
-            () -> log(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
     public static final RegistryObject<Block> JUNGLE_BEAMS = registerBlock("jungle_beams",
-            () -> log(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> STRIPPED_JUNGLE_BEAMS = registerBlock("stripped_jungle_beams",
-            () -> log(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
-
-    public static final RegistryObject<Block> DARK_OAK_BEAMS = registerBlock("dark_oak_beams",
-            () -> log(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
-    public static final RegistryObject<Block> STRIPPED_DARK_OAK_BEAMS = registerBlock("stripped_dark_oak_beams",
-            () -> log(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
     public static final RegistryObject<Block> ACACIA_BEAMS = registerBlock("acacia_beams",
-            () -> log(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> STRIPPED_ACACIA_BEAMS = registerBlock("stripped_acacia_beams",
-            () -> log(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
+    public static final RegistryObject<Block> DARK_OAK_BEAMS = registerBlock("dark_oak_beams",
+            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> STRIPPED_DARK_OAK_BEAMS = registerBlock("stripped_dark_oak_beams",
+            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
     public static final RegistryObject<Block> MANGROVE_BEAMS = registerBlock("mangrove_beams",
-            () -> log(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> STRIPPED_MANGROVE_BEAMS = registerBlock("stripped_mangrove_beams",
-            () -> log(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
     
     public static final RegistryObject<Block> CRIMSON_BEAMS = registerBlock("crimson_beams",
-            () -> log(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> stemBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> STRIPPED_CRIMSON_BEAMS = registerBlock("stripped_crimson_beams",
-            () -> log(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> stemBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
     public static final RegistryObject<Block> WARPED_BEAMS = registerBlock("warped_beams",
-            () -> log(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> stemBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> STRIPPED_WARPED_BEAMS = registerBlock("stripped_warped_beams",
-            () -> log(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> stemBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
 
 
@@ -660,8 +660,13 @@ public class ModBlocks {
 
 
 
-    private static ModLogBlock log(MaterialColor c1, MaterialColor c2) {
+    private static ModLogBlock logBlock(MaterialColor c1, MaterialColor c2) {
         return new ModLogBlock(BlockBehaviour.Properties.of(Material.WOOD, (state) ->
+                state.getValue(RotatedPillarBlock.AXIS) ==
+                        Direction.Axis.Y ? c1 : c2).strength(2.0F, 3.0F).sound(SoundType.WOOD));
+    }
+    private static RotatedPillarBlock stemBlock(MaterialColor c1, MaterialColor c2) {
+        return new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.NETHER_WOOD, (state) ->
                 state.getValue(RotatedPillarBlock.AXIS) ==
                         Direction.Axis.Y ? c1 : c2).strength(2.0F, 3.0F).sound(SoundType.WOOD));
     }
