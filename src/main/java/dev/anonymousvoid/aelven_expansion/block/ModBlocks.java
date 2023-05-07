@@ -213,49 +213,49 @@ public class ModBlocks {
 
 
     public static final RegistryObject<Block> OAK_BEAMS = registerBlock("oak_beams",
-            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), null);
     public static final RegistryObject<Block> STRIPPED_OAK_BEAMS = registerBlock("stripped_oak_beams",
-            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), null);
     
     public static final RegistryObject<Block> SPRUCE_BEAMS = registerBlock("spruce_beams",
-            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), null);
     public static final RegistryObject<Block> STRIPPED_SPRUCE_BEAMS = registerBlock("stripped_spruce_beams",
-            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), null);
     
     public static final RegistryObject<Block> BIRCH_BEAMS = registerBlock("birch_beams",
-            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), null);
     public static final RegistryObject<Block> STRIPPED_BIRCH_BEAMS = registerBlock("stripped_birch_beams",
-            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), null);
 
     public static final RegistryObject<Block> JUNGLE_BEAMS = registerBlock("jungle_beams",
-            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), null);
     public static final RegistryObject<Block> STRIPPED_JUNGLE_BEAMS = registerBlock("stripped_jungle_beams",
-            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), null);
 
     public static final RegistryObject<Block> ACACIA_BEAMS = registerBlock("acacia_beams",
-            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), null);
     public static final RegistryObject<Block> STRIPPED_ACACIA_BEAMS = registerBlock("stripped_acacia_beams",
-            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), null);
 
     public static final RegistryObject<Block> DARK_OAK_BEAMS = registerBlock("dark_oak_beams",
-            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), null);
     public static final RegistryObject<Block> STRIPPED_DARK_OAK_BEAMS = registerBlock("stripped_dark_oak_beams",
-            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), null);
 
     public static final RegistryObject<Block> MANGROVE_BEAMS = registerBlock("mangrove_beams",
-            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), null);
     public static final RegistryObject<Block> STRIPPED_MANGROVE_BEAMS = registerBlock("stripped_mangrove_beams",
-            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), null);
     
     public static final RegistryObject<Block> CRIMSON_BEAMS = registerBlock("crimson_beams",
-            () -> stemBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> stemBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), null);
     public static final RegistryObject<Block> STRIPPED_CRIMSON_BEAMS = registerBlock("stripped_crimson_beams",
-            () -> stemBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> stemBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), null);
 
     public static final RegistryObject<Block> WARPED_BEAMS = registerBlock("warped_beams",
-            () -> stemBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> stemBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), null);
     public static final RegistryObject<Block> STRIPPED_WARPED_BEAMS = registerBlock("stripped_warped_beams",
-            () -> stemBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> stemBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), null);
 
 
 
@@ -311,7 +311,7 @@ public class ModBlocks {
             () -> new KilnBlock(chittaKilnProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
     public static final RegistryObject<Block> IDOL_TABLE = registerBlock("idol_table",
-            () -> new IdolTableBlock(woodProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new IdolTableBlock(woodProperties), null);
 
 
     public static final RegistryObject<Block> COBBLED_CHITTA_STAIRS = registerBlock("cobbled_chitta_stairs",
