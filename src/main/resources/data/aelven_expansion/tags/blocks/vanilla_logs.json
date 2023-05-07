@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "aelven_expansion:oak_beams",
+    "aelven_expansion:stripped_oak_beams",
+    "aelven_expansion:birch_beams",
+    "aelven_expansion:stripped_birch_beams",
+    "aelven_expansion:spruce_beams",
+    "aelven_expansion:stripped_spruce_beams",
+    "aelven_expansion:jungle_beams",
+    "aelven_expansion:stripped_jungle_beams",
+    "aelven_expansion:acacia_beams",
+    "aelven_expansion:stripped_acacia_beams",
+    "aelven_expansion:dark_oak_beams",
+    "aelven_expansion:stripped_dark_oak_beams",
+    "aelven_expansion:mangrove_beams",
+    "aelven_expansion:stripped_mangrove_beams"
+  ]
+}
