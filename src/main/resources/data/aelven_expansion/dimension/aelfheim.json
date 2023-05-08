@@ -1,0 +1,11 @@
+{
+  "type": "aelven_expansion:aelfheim",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "minecraft:overworld",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "aelven_expansion:peachgrove_swamp"
+    }
+  }
+}

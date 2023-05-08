@@ -15,7 +15,9 @@ import dev.anonymousvoid.aelven_expansion.particle.ModParticles;
 import dev.anonymousvoid.aelven_expansion.recipe.ModRecipes;
 import dev.anonymousvoid.aelven_expansion.screen.KilnScreen;
 import dev.anonymousvoid.aelven_expansion.screen.ModMenuTypes;
+import dev.anonymousvoid.aelven_expansion.world.biome.ModBiomes;
 import dev.anonymousvoid.aelven_expansion.world.biome_mods.ModBiomeModifiers;
+import dev.anonymousvoid.aelven_expansion.world.dimension.ModDimensions;
 import dev.anonymousvoid.aelven_expansion.world.feature.*;
 import dev.anonymousvoid.aelven_expansion.world.feature.ModPlacedFeatures;
 import dev.anonymousvoid.aelven_expansion.world.feature.tree.placer.foliage.ModFoliagePlacerType;
@@ -69,6 +71,9 @@ public class AelvenExpansion {
         ModSounds.register(modEventBus);
 
         ModEntityTypes.register(modEventBus);
+
+        ModBiomes.register(modEventBus);
+        ModDimensions.register();
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::clientSetup);
