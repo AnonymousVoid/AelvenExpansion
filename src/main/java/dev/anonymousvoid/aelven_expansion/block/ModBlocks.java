@@ -213,29 +213,29 @@ public class ModBlocks {
 
 
     public static final RegistryObject<Block> OAK_BEAMS = registerBlock("oak_beams",
-            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), null);
+            () -> logBlock(MaterialColor.WOOD, MaterialColor.PODZOL), null);
     public static final RegistryObject<Block> STRIPPED_OAK_BEAMS = registerBlock("stripped_oak_beams",
-            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), null);
+            () -> logBlock(MaterialColor.WOOD, MaterialColor.WOOD), null);
     
     public static final RegistryObject<Block> SPRUCE_BEAMS = registerBlock("spruce_beams",
-            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), null);
+            () -> logBlock(MaterialColor.PODZOL, MaterialColor.COLOR_BROWN), null);
     public static final RegistryObject<Block> STRIPPED_SPRUCE_BEAMS = registerBlock("stripped_spruce_beams",
-            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), null);
+            () -> logBlock(MaterialColor.PODZOL, MaterialColor.PODZOL), null);
     
     public static final RegistryObject<Block> BIRCH_BEAMS = registerBlock("birch_beams",
-            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), null);
+            () -> logBlock(MaterialColor.SAND, MaterialColor.QUARTZ), null);
     public static final RegistryObject<Block> STRIPPED_BIRCH_BEAMS = registerBlock("stripped_birch_beams",
-            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), null);
+            () -> logBlock(MaterialColor.SAND, MaterialColor.SAND), null);
 
     public static final RegistryObject<Block> JUNGLE_BEAMS = registerBlock("jungle_beams",
-            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), null);
+            () -> logBlock(MaterialColor.DIRT, MaterialColor.PODZOL), null);
     public static final RegistryObject<Block> STRIPPED_JUNGLE_BEAMS = registerBlock("stripped_jungle_beams",
-            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), null);
+            () -> logBlock(MaterialColor.DIRT, MaterialColor.DIRT), null);
 
     public static final RegistryObject<Block> ACACIA_BEAMS = registerBlock("acacia_beams",
-            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), null);
+            () -> logBlock(MaterialColor.COLOR_ORANGE, MaterialColor.STONE), null);
     public static final RegistryObject<Block> STRIPPED_ACACIA_BEAMS = registerBlock("stripped_acacia_beams",
-            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), null);
+            () -> logBlock(MaterialColor.COLOR_ORANGE, MaterialColor.COLOR_ORANGE), null);
 
     public static final RegistryObject<Block> DARK_OAK_BEAMS = registerBlock("dark_oak_beams",
             () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), null);
@@ -243,19 +243,19 @@ public class ModBlocks {
             () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), null);
 
     public static final RegistryObject<Block> MANGROVE_BEAMS = registerBlock("mangrove_beams",
-            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), null);
+            () -> logBlock(MaterialColor.COLOR_RED, MaterialColor.PODZOL), null);
     public static final RegistryObject<Block> STRIPPED_MANGROVE_BEAMS = registerBlock("stripped_mangrove_beams",
-            () -> logBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), null);
+            () -> logBlock(MaterialColor.COLOR_RED, MaterialColor.COLOR_RED), null);
     
     public static final RegistryObject<Block> CRIMSON_BEAMS = registerBlock("crimson_beams",
-            () -> stemBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), null);
+            () -> stemBlock(MaterialColor.CRIMSON_STEM, MaterialColor.CRIMSON_STEM), null);
     public static final RegistryObject<Block> STRIPPED_CRIMSON_BEAMS = registerBlock("stripped_crimson_beams",
-            () -> stemBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), null);
+            () -> stemBlock(MaterialColor.CRIMSON_STEM, MaterialColor.CRIMSON_STEM), null);
 
     public static final RegistryObject<Block> WARPED_BEAMS = registerBlock("warped_beams",
-            () -> stemBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), null);
+            () -> stemBlock(MaterialColor.WARPED_STEM, MaterialColor.WARPED_STEM), null);
     public static final RegistryObject<Block> STRIPPED_WARPED_BEAMS = registerBlock("stripped_warped_beams",
-            () -> stemBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN), null);
+            () -> stemBlock(MaterialColor.WARPED_STEM, MaterialColor.WARPED_STEM), null);
 
 
 
