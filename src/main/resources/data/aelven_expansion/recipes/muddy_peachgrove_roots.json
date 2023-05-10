@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "group": "muddy_peachgrove_leaves",
+  "group": "muddy_peachgrove_roots",
   "ingredients": [
     {
       "item": "minecraft:mud"

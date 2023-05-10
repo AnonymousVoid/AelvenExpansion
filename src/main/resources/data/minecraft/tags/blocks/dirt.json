@@ -1,0 +1,15 @@
+{
+  "values": [
+    "minecraft:dirt",
+    "minecraft:grass_block",
+    "minecraft:podzol",
+    "minecraft:coarse_dirt",
+    "minecraft:mycelium",
+    "minecraft:rooted_dirt",
+    "minecraft:moss_block",
+    "minecraft:mud",
+    "aelven_expansion:muddy_mulch",
+    "minecraft:muddy_mangrove_roots",
+    "aelven_expansion:muddy_peachgrove_roots"
+  ]
+}
