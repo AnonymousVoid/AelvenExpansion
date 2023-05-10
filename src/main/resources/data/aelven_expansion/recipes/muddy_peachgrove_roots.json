@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "muddy_peachgrove_leaves",
+  "ingredients": [
+    {
+      "item": "minecraft:mud"
+    },
+    {
+      "item": "aelven_expansion:peachgrove_roots"
+    }
+  ],
+  "result": {
+    "item": "aelven_expansion:muddy_peachgrove_roots"
+  }
+}

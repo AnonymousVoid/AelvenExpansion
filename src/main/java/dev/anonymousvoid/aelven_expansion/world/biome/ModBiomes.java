@@ -36,8 +36,8 @@ public class ModBiomes {
         return (new Biome.BiomeBuilder()).precipitation(Biome.Precipitation.RAIN).temperature(0.8F)
                 .downfall(0.4F).specialEffects((new BiomeSpecialEffects.Builder())
                         .skyColor(7907327).fogColor(12638463).waterColor(4603966)
-                        .waterFogColor(4603966).grassColorOverride(3288374)
-                        .foliageColorOverride(11741754).build()).mobSpawnSettings(spawnSettings.build())
+                        .waterFogColor(4603966).grassColorOverride(5395284)
+                        .foliageColorOverride(16212834).build()).mobSpawnSettings(spawnSettings.build())
                 .generationSettings(generationSettings.build()).build();
 
     }

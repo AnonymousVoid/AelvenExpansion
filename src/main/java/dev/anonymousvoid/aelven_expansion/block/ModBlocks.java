@@ -257,6 +257,18 @@ public class ModBlocks {
     public static final RegistryObject<Block> STRIPPED_WARPED_BEAMS = registerBlock("stripped_warped_beams",
             () -> stemBlock(MaterialColor.WARPED_STEM, MaterialColor.WARPED_STEM), null);
 
+    public static final RegistryObject<GrassBlock> MUDDY_MULCH = registerBlock("muddy_mulch",
+            () -> new GrassBlock(BlockBehaviour.Properties.copy(Blocks.MUD)), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> MULCHY_GRASS = registerBlock("mulchy_grass",
+            () -> new TallGrassBlock( flowerProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> TALL_MULCHY_GRASS = registerBlock("tall_mulchy_grass",
+            () -> new TallFlowerBlock(flowerProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<MangroveRootsBlock> PEACHGROVE_ROOTS = registerBlock("peachgrove_roots",
+            () -> new MangroveRootsBlock(BlockBehaviour.Properties.copy(Blocks.MANGROVE_ROOTS)), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<RotatedPillarBlock> MUDDY_PEACHGROVE_ROOTS = registerBlock("muddy_peachgrove_roots",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.MUDDY_MANGROVE_ROOTS)), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> MUDDY_PEACHGROVE_LEAVES = registerBlock("muddy_peachgrove_leaves",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.MUD)), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
 
 

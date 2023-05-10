@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "aelven_expansion:block/muddy_peachgrove_roots",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "aelven_expansion:block/muddy_peachgrove_roots"
+    },
+    "axis=z": {
+      "model": "aelven_expansion:block/muddy_peachgrove_roots",
+      "x": 90
+    }
+  }
+}

@@ -3,6 +3,9 @@
   "values": [
     "aelven_expansion:chalk_dust",
     "aelven_expansion:chalk_dust_block",
-    "aelven_expansion:chipstone_gravel"
+    "aelven_expansion:chipstone_gravel",
+    "aelven_expansion:muddy_mulch",
+    "aelven_expansion:muddy_peachgrove_leaves",
+    "aelven_expansion:muddy_peachgrove_roots"
   ]
 }

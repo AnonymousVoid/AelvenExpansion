@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/tinted_cross",
+  "textures": {
+    "cross": "aelven_expansion:block/mulchy_grass1"
+  },
+  "render_type": "cutout"
+}

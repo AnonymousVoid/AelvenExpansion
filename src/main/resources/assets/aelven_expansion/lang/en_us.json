@@ -323,6 +323,13 @@
 	"block.aelven_expansion.black_shingle_slab": "Black Shingle Slab",
 	"block.aelven_expansion.black_shingle_wall": "Black Shingle Wall",
 
+	"block.aelven_expansion.muddy_mulch": "Muddy Mulch",
+	"block.aelven_expansion.mulchy_grass": "Mulchy Grass",
+	"block.aelven_expansion.tall_mulchy_grass": "Tall Mulchy Grass",
+	"block.aelven_expansion.muddy_peachgrove_leaves": "Muddy Peachgrove Leaves",
+	"block.aelven_expansion.muddy_peachgrove_roots": "Muddy Peachgrove Roots",
+	"block.aelven_expansion.peachgrove_roots": "Peachgrove Roots",
+
 	"itemGroup.aelven_expansion_blocks": "Aelven Expansion Blocks",
 	"itemGroup.aelven_expansion_items": "Aelven Expansion Items"
 }

@@ -1,0 +1,17 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "aelven_expansion:block/muddy_peachgrove_leaves1"
+      },
+      {
+        "model": "aelven_expansion:block/muddy_peachgrove_leaves2",
+        "y": 90
+      },
+      {
+        "model": "aelven_expansion:block/muddy_peachgrove_leaves3",
+        "y": 180
+      }
+    ]
+  }
+}
