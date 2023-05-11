@@ -1,12 +1,14 @@
 package dev.anonymousvoid.aelven_expansion.world.biome;
 
 import dev.anonymousvoid.aelven_expansion.AelvenExpansion;
-import dev.anonymousvoid.aelven_expansion.world.feature.*;
-import net.minecraft.data.worldgen.BiomeDefaultFeatures;
-import net.minecraft.world.level.biome.Biome;
-import net.minecraft.world.level.biome.BiomeGenerationSettings;
-import net.minecraft.world.level.biome.BiomeSpecialEffects;
-import net.minecraft.world.level.biome.MobSpawnSettings;
+import net.minecraft.data.worldgen.Carvers;
+import net.minecraft.data.worldgen.placement.AquaticPlacements;
+import net.minecraft.data.worldgen.placement.CavePlacements;
+import net.minecraft.data.worldgen.placement.MiscOverworldPlacements;
+import net.minecraft.data.worldgen.placement.VegetationPlacements;
+import net.minecraft.sounds.Musics;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.level.biome.*;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -22,22 +24,30 @@ public class ModBiomes {
 
     private static Biome createPeachgroveSwamp() {
         MobSpawnSettings.Builder spawnSettings = new MobSpawnSettings.Builder();
-        BiomeDefaultFeatures.farmAnimals(spawnSettings);
-        BiomeDefaultFeatures.monsters(spawnSettings, 50, 0, 50, false);
 
         BiomeGenerationSettings.Builder generationSettings = new BiomeGenerationSettings.Builder();
-        BiomeDefaultFeatures.addDefaultUndergroundVariety(generationSettings);
-        BiomeDefaultFeatures.addDefaultCarversAndLakes(generationSettings);
+        generationSettings.addCarver(GenerationStep.Carving.AIR, Carvers.CAVE);
+        generationSettings.addCarver(GenerationStep.Carving.AIR, Carvers.CAVE_EXTRA_UNDERGROUND);
+        generationSettings.addCarver(GenerationStep.Carving.AIR, Carvers.CANYON);
+        generationSettings.addFeature(GenerationStep.Decoration.LAKES, MiscOverworldPlacements.LAKE_LAVA_UNDERGROUND);
+        generationSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, CavePlacements.GLOW_LICHEN);
+        generationSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_WATERLILY);
+        generationSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_SWAMP);
 
-        BiomeDefaultFeatures.addDefaultOres(generationSettings);
-        BiomeDefaultFeatures.addDefaultSoftDisks(generationSettings);
-        BiomeDefaultFeatures.addDefaultSprings(generationSettings);
-
-        return (new Biome.BiomeBuilder()).precipitation(Biome.Precipitation.RAIN).temperature(0.8F)
-                .downfall(0.4F).specialEffects((new BiomeSpecialEffects.Builder())
-                        .skyColor(7907327).fogColor(12638463).waterColor(4603966)
-                        .waterFogColor(4603966).grassColorOverride(6705463)
-                        .foliageColorOverride(16212834).build()).mobSpawnSettings(spawnSettings.build())
+        return (new Biome.BiomeBuilder())
+                .precipitation(Biome.Precipitation.RAIN)
+                .temperature(0.8F)
+                .downfall(0.4F)
+                .specialEffects((new BiomeSpecialEffects.Builder())
+                        .skyColor(7907327)
+                        .fogColor(12638463)
+                        .waterColor(4603966)
+                        .waterFogColor(4603966)
+                        .grassColorOverride(6705463)
+                        .foliageColorOverride(16212834)
+                        .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
+                        .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_SWAMP)).build())
+                .mobSpawnSettings(spawnSettings.build())
                 .generationSettings(generationSettings.build()).build();
 
     }

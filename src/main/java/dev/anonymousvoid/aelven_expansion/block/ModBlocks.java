@@ -42,6 +42,8 @@ public class ModBlocks {
     private static final BlockBehaviour.Properties azaleaProperties = BlockBehaviour.Properties.copy(Blocks.AZALEA_LEAVES);
     private static final BlockBehaviour.Properties flowerProperties = BlockBehaviour.Properties.of(Material.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ);
     private static final BlockBehaviour.Properties pottedFlowerProperties = BlockBehaviour.Properties.of(Material.DECORATION).instabreak().noOcclusion();
+    private static final BlockBehaviour.Properties replaceablePlantProperties = BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XYZ);
+    private static final BlockBehaviour.Properties mulchProperties = BlockBehaviour.Properties.copy(Blocks.DIRT).color(MaterialColor.TERRACOTTA_CYAN).sound(SoundType.MUD).randomTicks();
 
     private static final BlockBehaviour.Properties chittaProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE).strength(2.0F, 6.0F);
     private static final BlockBehaviour.Properties chittaBrickProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE_BRICKS).strength(2.5F, 6.5F);
@@ -257,22 +259,19 @@ public class ModBlocks {
     public static final RegistryObject<Block> STRIPPED_WARPED_BEAMS = registerBlock("stripped_warped_beams",
             () -> stemBlock(MaterialColor.WARPED_STEM, MaterialColor.WARPED_STEM), null);
 
-    public static final RegistryObject<GrassBlock> MUDDY_MULCH = registerBlock("muddy_mulch",
-            () -> new GrassBlock(BlockBehaviour.Properties.copy(Blocks.MUD)), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
+    public static final RegistryObject<Block> MUDDY_MULCH = registerBlock("muddy_mulch",
+            () -> new MulchBlock(mulchProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> MULCHY_GRASS = registerBlock("mulchy_grass",
-            () -> new TallGrassBlock( flowerProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new TallGrassBlock(replaceablePlantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> TALL_MULCHY_GRASS = registerBlock("tall_mulchy_grass",
-            () -> new TallFlowerBlock(flowerProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new DoublePlantBlock(replaceablePlantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<MangroveRootsBlock> PEACHGROVE_ROOTS = registerBlock("peachgrove_roots",
             () -> new MangroveRootsBlock(BlockBehaviour.Properties.copy(Blocks.MANGROVE_ROOTS)), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<RotatedPillarBlock> MUDDY_PEACHGROVE_ROOTS = registerBlock("muddy_peachgrove_roots",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.MUDDY_MANGROVE_ROOTS)), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> MUDDY_PEACHGROVE_LEAVES = registerBlock("muddy_peachgrove_leaves",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.MUD)), ModCreativeModeTab.MOD_TAB_BLOCKS);
-
-
-
-
 
     public static final RegistryObject<Block> MOONSHADE = registerBlock("moonshade",
             () -> new TallFlowerBlock(flowerProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);

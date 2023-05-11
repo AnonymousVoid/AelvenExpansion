@@ -4,8 +4,21 @@
     "type": "minecraft:noise",
     "settings": "minecraft:overworld",
     "biome_source": {
-      "type": "minecraft:fixed",
-      "biome": "aelven_expansion:peachgrove_swamp"
+      "type": "minecraft:multi_noise",
+      "biomes": [
+        {
+          "biome": "aelven_expansion:peachgrove_swamp",
+          "parameters": {
+            "temperature": [ 0.2, 0.55 ],
+            "humidity": [ -1.0, 1.0 ],
+            "continentalness": [ -0.11, 0.03 ],
+            "erosion": [ 0.55, 1.0 ],
+            "weirdness": 0,
+            "depth": [ 0.05, 0.26666668 ],
+            "offset": 0
+          }
+        }
+      ]
     }
   }
 }
