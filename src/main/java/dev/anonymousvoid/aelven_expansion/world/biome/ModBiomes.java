@@ -19,8 +19,12 @@ public class ModBiomes {
     public static final DeferredRegister<Biome> BIOMES =
             DeferredRegister.create(ForgeRegistries.BIOMES, AelvenExpansion.MODID);
 
+
     public static final RegistryObject<Biome> PEACHGROVE_SWAMP = BIOMES.register("peachgrove_swamp",
             ModBiomes::createPeachgroveSwamp);
+    public static final RegistryObject<Biome> CHALK_PEAKS = BIOMES.register("chalk_peaks",
+            ModBiomes::createChalkPeaks);
+
 
     private static Biome createPeachgroveSwamp() {
         MobSpawnSettings.Builder spawnSettings = new MobSpawnSettings.Builder();
@@ -45,11 +49,35 @@ public class ModBiomes {
                         .waterFogColor(4603966)
                         .grassColorOverride(6705463)
                         .foliageColorOverride(16212834)
-                        .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
                         .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_SWAMP)).build())
                 .mobSpawnSettings(spawnSettings.build())
                 .generationSettings(generationSettings.build()).build();
+    }
 
+    private static Biome createChalkPeaks() {
+        MobSpawnSettings.Builder spawnSettings = new MobSpawnSettings.Builder();
+
+        BiomeGenerationSettings.Builder generationSettings = new BiomeGenerationSettings.Builder();
+        generationSettings.addCarver(GenerationStep.Carving.AIR, Carvers.CAVE);
+        generationSettings.addCarver(GenerationStep.Carving.AIR, Carvers.CAVE_EXTRA_UNDERGROUND);
+        generationSettings.addCarver(GenerationStep.Carving.AIR, Carvers.CANYON);
+        generationSettings.addFeature(GenerationStep.Decoration.LAKES, MiscOverworldPlacements.LAKE_LAVA_UNDERGROUND);
+        generationSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, CavePlacements.GLOW_LICHEN);
+
+        return (new Biome.BiomeBuilder())
+                .precipitation(Biome.Precipitation.NONE)
+                .temperature(0.4F)
+                .downfall(0.0F)
+                .specialEffects((new BiomeSpecialEffects.Builder())
+                        .skyColor(0xCCCCFF)
+                        .fogColor(0xBBBBEE)
+                        .waterColor(0x6688FF)
+                        .waterFogColor(0x4466EE)
+                        .grassColorOverride(0xDDFFDD)
+                        .foliageColorOverride(0xDDFFDD)
+                        .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JAGGED_PEAKS)).build())
+                .mobSpawnSettings(spawnSettings.build())
+                .generationSettings(generationSettings.build()).build();
     }
 
     public static void register(IEventBus eventBus) {

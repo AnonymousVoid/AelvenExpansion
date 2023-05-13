@@ -14,7 +14,19 @@
             "continentalness": [ -0.11, 0.03 ],
             "erosion": [ 0.55, 1.0 ],
             "weirdness": 0,
-            "depth": [ 0.05, 0.26666668 ],
+            "depth": [ 0.05, 0.25 ],
+            "offset": 0
+          }
+        },
+        {
+          "biome": "aelven_expansion:chalk_peaks",
+          "parameters": {
+            "temperature": [ 0.2, 0.55 ],
+            "humidity": [ -1.0, 0.0 ],
+            "continentalness": [ 0.8, 1.0 ],
+            "erosion": [ 0.2, 0.55 ],
+            "weirdness": 0,
+            "depth": [ -0.15, 0.05 ],
             "offset": 0
           }
         }
