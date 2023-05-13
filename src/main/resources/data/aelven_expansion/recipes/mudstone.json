@@ -1,0 +1,11 @@
+{
+  "type": "aelven_expansion:kilning",
+  "ingredients": [
+    {
+      "item": "minecraft:mud"
+    }
+  ],
+  "output": {
+    "item": "aelven_expansion:mudstone"
+  }
+}

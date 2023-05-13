@@ -1,0 +1,7 @@
+{
+  "parent": "aelven_expansion:block/wall_inventory",
+  "textures": {
+    "end": "aelven_expansion:block/mulchy_mudstone_bricks1",
+    "side": "aelven_expansion:block/mulchy_mudstone_bricks1"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "mudstone",
+  "key": {
+    "#": {
+      "item": "aelven_expansion:mudstone_bricks"
+    },
+    "W": {
+      "item": "aelven_expansion:muddy_mulch"
+    }
+  },
+  "pattern": [
+    " # ",
+    "#W#",
+    " # "
+  ],
+  "result": {
+    "item": "aelven_expansion:mulchy_mudstone_bricks",
+    "count": 4
+  }
+}

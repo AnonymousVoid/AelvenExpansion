@@ -1,0 +1,7 @@
+{
+  "parent": "aelven_expansion:block/template_wall_side_tall",
+  "textures": {
+    "end": "aelven_expansion:block/mudstone_bricks",
+    "side": "aelven_expansion:block/mudstone_bricks"
+  }
+}

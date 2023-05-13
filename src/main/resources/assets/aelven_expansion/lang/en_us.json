@@ -329,6 +329,27 @@
 	"block.aelven_expansion.muddy_peachgrove_leaves": "Muddy Peachgrove Leaves",
 	"block.aelven_expansion.muddy_peachgrove_roots": "Muddy Peachgrove Roots",
 	"block.aelven_expansion.peachgrove_roots": "Peachgrove Roots",
+	
+	"block.aelven_expansion.mudstone": "Mudstone",
+	"block.aelven_expansion.mudstone_stairs": "Mudstone Stairs",
+	"block.aelven_expansion.mudstone_slab": "Mudstone Slab",
+	"block.aelven_expansion.mudstone_wall": "Mudstone Wall",
+	
+	"block.aelven_expansion.mudstone_bricks": "Mudstone Bricks",
+	"block.aelven_expansion.mudstone_brick_stairs": "Mudstone Brick Stairs",
+	"block.aelven_expansion.mudstone_brick_slab": "Mudstone Brick Slab",
+	"block.aelven_expansion.mudstone_brick_wall": "Mudstone Brick Wall",
+	
+	"block.aelven_expansion.cracked_mudstone_bricks": "Cracked Mudstone Bricks",
+	"block.aelven_expansion.cracked_mudstone_brick_stairs": "Cracked Mudstone Brick Stairs",
+	"block.aelven_expansion.cracked_mudstone_brick_slab": "Cracked Mudstone Brick Slab",
+	"block.aelven_expansion.cracked_mudstone_brick_wall": "Cracked Mudstone Brick Wall",
+	
+	"block.aelven_expansion.mulchy_mudstone_bricks": "Mulchy Mudstone Bricks",
+	"block.aelven_expansion.mulchy_mudstone_brick_stairs": "Mulchy Mudstone Brick Stairs",
+	"block.aelven_expansion.mulchy_mudstone_brick_slab": "Mulchy Mudstone Brick Slab",
+	"block.aelven_expansion.mulchy_mudstone_brick_wall": "Mulchy Mudstone Brick Wall",
+
 
 	"itemGroup.aelven_expansion_blocks": "Aelven Expansion Blocks",
 	"itemGroup.aelven_expansion_items": "Aelven Expansion Items"

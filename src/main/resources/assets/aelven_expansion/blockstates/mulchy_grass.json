@@ -2,10 +2,13 @@
   "variants": {
     "": [
       {
-        "model": "aelven_expansion:block/mulchy_grass1", "weight": 400
+        "model": "aelven_expansion:block/mulchy_grass1", "weight": 300
       },
       {
-        "model": "aelven_expansion:block/mulchy_grass2", "weight": 200
+        "model": "aelven_expansion:block/mulchy_grass2", "weight": 300
+      },
+      {
+        "model": "aelven_expansion:block/mulchy_grass3", "weight": 300
       }
     ]
   }

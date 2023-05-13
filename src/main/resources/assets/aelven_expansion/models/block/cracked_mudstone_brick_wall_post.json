@@ -1,0 +1,7 @@
+{
+  "parent": "aelven_expansion:block/template_wall_post",
+  "textures": {
+    "end": "aelven_expansion:block/cracked_mudstone_bricks",
+    "side": "aelven_expansion:block/cracked_mudstone_bricks"
+  }
+}

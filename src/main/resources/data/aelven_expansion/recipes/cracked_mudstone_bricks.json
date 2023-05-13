@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "aelven_expansion:mudstone_bricks"
+  },
+  "result": "aelven_expansion:cracked_mudstone_bricks"
+}

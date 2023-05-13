@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "mudstone_stairs",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "aelven_expansion:mudstone_bricks"
+    }
+  },
+  "result": {
+    "item": "aelven_expansion:mudstone_brick_stairs",
+    "count": 6
+  }
+}

@@ -57,6 +57,9 @@ public class ModBlocks {
     private static final BlockBehaviour.Properties drystoneProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DEEPSLATE).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE).strength(1.0F, 6.0F);
     private static final BlockBehaviour.Properties drystoneBrickProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DEEPSLATE).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE_BRICKS).strength(1.5F, 6.5F);
 
+    private static final BlockBehaviour.Properties mudstoneProperties = BlockBehaviour.Properties.copy(Blocks.PACKED_MUD);
+    
+    private static final BlockBehaviour.Properties mudstoneBrickProperties = BlockBehaviour.Properties.copy(Blocks.MUD_BRICKS);
     private static final BlockBehaviour.Properties sandProperties = BlockBehaviour.Properties.copy(Blocks.SAND);
     private static final BlockBehaviour.Properties dustProperties = BlockBehaviour.Properties.copy(Blocks.SAND).requiresCorrectToolForDrops();
     private static final BlockBehaviour.Properties shingleProperties = BlockBehaviour.Properties.copy(Blocks.BONE_BLOCK).strength(1.75F, 1.5F);
@@ -272,6 +275,48 @@ public class ModBlocks {
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.MUDDY_MANGROVE_ROOTS)), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> MUDDY_PEACHGROVE_LEAVES = registerBlock("muddy_peachgrove_leaves",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.MUD)), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    
+    public static final RegistryObject<Block> MUDSTONE = registerBlock("mudstone",
+            () -> new Block(mudstoneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> MUDSTONE_STAIRS = registerBlock("mudstone_stairs",
+            () -> new StairBlock(() -> ModBlocks.MUDSTONE.get().defaultBlockState(),
+                    mudstoneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> MUDSTONE_SLAB = registerBlock("mudstone_slab",
+            () -> new SlabBlock(mudstoneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> MUDSTONE_WALL = registerBlock("mudstone_wall",
+            () -> new WallBlock(mudstoneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    
+    public static final RegistryObject<Block> MUDSTONE_BRICKS = registerBlock("mudstone_bricks",
+            () -> new Block(mudstoneBrickProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> MUDSTONE_BRICK_STAIRS = registerBlock("mudstone_brick_stairs",
+            () -> new StairBlock(() -> ModBlocks.MUDSTONE_BRICKS.get().defaultBlockState(),
+                    mudstoneBrickProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> MUDSTONE_BRICK_SLAB = registerBlock("mudstone_brick_slab",
+            () -> new SlabBlock(mudstoneBrickProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> MUDSTONE_BRICK_WALL = registerBlock("mudstone_brick_wall",
+            () -> new WallBlock(mudstoneBrickProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    
+    public static final RegistryObject<Block> CRACKED_MUDSTONE_BRICKS = registerBlock("cracked_mudstone_bricks",
+            () -> new Block(mudstoneBrickProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> CRACKED_MUDSTONE_BRICK_STAIRS = registerBlock("cracked_mudstone_brick_stairs",
+            () -> new StairBlock(() -> ModBlocks.CRACKED_MUDSTONE_BRICKS.get().defaultBlockState(),
+                    mudstoneBrickProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> CRACKED_MUDSTONE_BRICK_SLAB = registerBlock("cracked_mudstone_brick_slab",
+            () -> new SlabBlock(mudstoneBrickProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> CRACKED_MUDSTONE_BRICK_WALL = registerBlock("cracked_mudstone_brick_wall",
+            () -> new WallBlock(mudstoneBrickProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
+    public static final RegistryObject<Block> MULCHY_MUDSTONE_BRICKS = registerBlock("mulchy_mudstone_bricks",
+            () -> new Block(mudstoneBrickProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> MULCHY_MUDSTONE_BRICK_STAIRS = registerBlock("mulchy_mudstone_brick_stairs",
+            () -> new StairBlock(() -> ModBlocks.MULCHY_MUDSTONE_BRICKS.get().defaultBlockState(),
+                    mudstoneBrickProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> MULCHY_MUDSTONE_BRICK_SLAB = registerBlock("mulchy_mudstone_brick_slab",
+            () -> new SlabBlock(mudstoneBrickProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> MULCHY_MUDSTONE_BRICK_WALL = registerBlock("mulchy_mudstone_brick_wall",
+            () -> new WallBlock(mudstoneBrickProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
+
 
     public static final RegistryObject<Block> MOONSHADE = registerBlock("moonshade",
             () -> new TallFlowerBlock(flowerProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);

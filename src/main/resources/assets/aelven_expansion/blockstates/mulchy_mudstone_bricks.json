@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "aelven_expansion:block/mulchy_mudstone_bricks1", "weight": 700
+      },
+      {
+        "model": "aelven_expansion:block/mulchy_mudstone_bricks2", "weight": 300
+      }
+    ]
+  }
+}
