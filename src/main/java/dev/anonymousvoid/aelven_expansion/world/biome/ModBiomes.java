@@ -37,6 +37,8 @@ public class ModBiomes {
         generationSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, CavePlacements.GLOW_LICHEN);
         generationSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_WATERLILY);
         generationSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_SWAMP);
+        generationSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEA_PICKLE);
+        generationSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.KELP_WARM);
 
         return (new Biome.BiomeBuilder())
                 .precipitation(Biome.Precipitation.RAIN)
@@ -61,8 +63,6 @@ public class ModBiomes {
         generationSettings.addCarver(GenerationStep.Carving.AIR, Carvers.CAVE);
         generationSettings.addCarver(GenerationStep.Carving.AIR, Carvers.CAVE_EXTRA_UNDERGROUND);
         generationSettings.addCarver(GenerationStep.Carving.AIR, Carvers.CANYON);
-        generationSettings.addFeature(GenerationStep.Decoration.LAKES, MiscOverworldPlacements.LAKE_LAVA_UNDERGROUND);
-        generationSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, CavePlacements.GLOW_LICHEN);
 
         return (new Biome.BiomeBuilder())
                 .precipitation(Biome.Precipitation.NONE)
