@@ -103,6 +103,7 @@
           "type": "minecraft:sequence",
           "sequence": [
             {
+              "_comment": " SURFACE LAYER ",
               "type": "minecraft:condition",
               "if_true": {
                 "type": "minecraft:above_preliminary_surface"
@@ -120,12 +121,36 @@
                   "type": "minecraft:sequence",
                   "sequence": [
                     {
+                      "_comment": " GRASS LAYER ",
+                      "type": "minecraft:condition",
+                      "if_true": {
+                        "type": "minecraft:not",
+                        "invert": {
+                          "type": "minecraft:vertical_gradient",
+                          "random_name": "aelfheim:grass_layer",
+                          "true_at_and_below": {
+                            "absolute": 75
+                          },
+                          "false_at_and_above": {
+                            "absolute": 80
+                          }
+                        }
+                      },
+                      "then_run": {
+                        "type": "minecraft:block",
+                        "result_state": {
+                          "Name": "minecraft:grass"
+                        }
+                      }
+                    },
+                    {
+                      "_comment": " MULCH LAYER ",
                       "type": "minecraft:condition",
                       "if_true": {
                         "type": "minecraft:water",
                         "offset": 0,
                         "surface_depth_multiplier": 0,
-                        "add_stone_depth": "false"
+                        "add_stone_depth": false
                       },
                       "then_run": {
                         "type": "minecraft:condition",
@@ -135,22 +160,23 @@
                             "type": "minecraft:vertical_gradient",
                             "random_name": "aelfheim:mulch_layer",
                             "true_at_and_below": {
-                              "absolute": 60
+                              "absolute": 62
                             },
                             "false_at_and_above": {
-                              "absolute": 70
+                              "absolute": 67
                             }
                           }
                         },
                         "then_run": {
                           "type": "minecraft:block",
                           "result_state": {
-                            "Name": "aelven_expansion:mulch"
+                            "Name": "aelven_expansion:muddy_mulch"
                           }
                         }
                       }
                     },
                     {
+                      "_comment": " UNDERWATER MUD LAYER ",
                       "type": "minecraft:block",
                       "result_state": {
                         "Name": "minecraft:mud"
@@ -161,6 +187,7 @@
               }
             },
             {
+              "_comment": " MUD LAYER ",
               "type": "minecraft:condition",
               "if_true": {
                 "type": "minecraft:stone_depth",
@@ -177,6 +204,7 @@
               }
             },
             {
+              "_comment": " MUDSTONE LAYER ",
               "type": "minecraft:condition",
               "if_true": {
                 "type": "minecraft:not",
@@ -214,9 +242,25 @@
           "type": "minecraft:sequence",
           "sequence": [
             {
-              "type": "minecraft:block",
-              "result_state": {
-                "Name": "aelven_expansion:chalk"
+              "type": "minecraft:condition",
+              "if_true": {
+                "type": "minecraft:not",
+                "invert": {
+                  "type": "minecraft:vertical_gradient",
+                  "random_name": "aelfheim:chalk_layer",
+                  "true_at_and_below": {
+                    "absolute": 85
+                  },
+                  "false_at_and_above": {
+                    "absolute": 100
+                  }
+                }
+              },
+              "then_run": {
+                "type": "minecraft:block",
+                "result_state": {
+                  "Name": "aelven_expansion:chalk"
+                }
               }
             }
           ]

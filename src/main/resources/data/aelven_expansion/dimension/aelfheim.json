@@ -9,24 +9,24 @@
         {
           "biome": "aelven_expansion:peachgrove_swamp",
           "parameters": {
-            "temperature": [ 0.2, 0.55 ],
+            "temperature": [ -1.0, 1.0 ],
             "humidity": [ -1.0, 1.0 ],
-            "continentalness": [ 0.1, 0.15 ],
+            "continentalness": [ -0.14, 0.0 ],
             "erosion": [ 0.55, 1.0 ],
             "weirdness": 0,
-            "depth": [ -0.15, 0.0 ],
+            "depth": [ -0.4, -0.26666668 ],
             "offset": 0
           }
         },
         {
           "biome": "aelven_expansion:chalk_peaks",
           "parameters": {
-            "temperature": [ 0.2, 0.55 ],
+            "temperature": [ -0.15, 0.2 ],
             "humidity": [ -1.0, 1.0 ],
-            "continentalness": [ 0.15, 0.2 ],
-            "erosion": [ 0.2, 0.55 ],
+            "continentalness": [ 0.4, 1.0 ],
+            "erosion": [ -0.2225, 0.05 ],
             "weirdness": 0,
-            "depth": [ -0.25, -0.15 ],
+            "depth": [ -0.7666667, -0.56666666 ],
             "offset": 0
           }
         }
