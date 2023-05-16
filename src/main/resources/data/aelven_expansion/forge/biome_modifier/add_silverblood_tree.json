@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
-  "biomes": "minecraft:jungle",
+  "biomes": "aelven_expansion:silverblood_rise",
   "features": "aelven_expansion:silverblood_tree_placed",
   "step": "vegetal_decoration"
 }
