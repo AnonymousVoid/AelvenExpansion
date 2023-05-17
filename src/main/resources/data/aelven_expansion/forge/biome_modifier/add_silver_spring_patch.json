@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
-  "biomes": "minecraft:plains",
+  "biomes": "aelven_expansion:silverblood_rise",
   "features": "aelven_expansion:patch_silver_spring_placed",
   "step": "vegetal_decoration"
 }

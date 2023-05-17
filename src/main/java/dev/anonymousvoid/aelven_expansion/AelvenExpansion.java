@@ -21,6 +21,7 @@ import dev.anonymousvoid.aelven_expansion.world.dimension.ModDimensions;
 import dev.anonymousvoid.aelven_expansion.world.feature.*;
 import dev.anonymousvoid.aelven_expansion.world.feature.ModPlacedFeatures;
 import dev.anonymousvoid.aelven_expansion.world.feature.tree.placer.foliage.ModFoliagePlacerType;
+import dev.anonymousvoid.aelven_expansion.world.feature.tree.placer.roots.ModRootPlacerType;
 import dev.anonymousvoid.aelven_expansion.world.feature.tree.placer.trunk.ModTrunkPlacerType;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.model.geom.ModelLayerLocation;
@@ -55,25 +56,25 @@ public class AelvenExpansion {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
+        ModRecipes.register(modEventBus);
+        ModSounds.register(modEventBus);
+
+        ModBlockEntities.register(modEventBus);
+        ModEntityTypes.register(modEventBus);
+        ModParticles.register(modEventBus);
+
+        ModDimensions.register();
+        ModBiomes.register(modEventBus);
 
         ModBiomeModifiers.register(modEventBus);
-        ModPlacedFeatures.register(modEventBus);
         ModConfiguredFeatures.register(modEventBus);
+        ModPlacedFeatures.register(modEventBus);
 
         ModTrunkPlacerType.register(modEventBus);
         ModFoliagePlacerType.register(modEventBus);
+        ModRootPlacerType.register(modEventBus);
 
-        ModBlockEntities.register(modEventBus);
-        ModMenuTypes.register(modEventBus);
-        ModRecipes.register(modEventBus);
-        ModParticles.register(modEventBus);
-
-        ModSounds.register(modEventBus);
-
-        ModEntityTypes.register(modEventBus);
-
-        ModBiomes.register(modEventBus);
-        ModDimensions.register();
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::clientSetup);

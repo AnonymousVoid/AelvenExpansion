@@ -253,7 +253,7 @@
                 "type": "minecraft:stone_depth",
                 "surface_type": "floor",
                 "add_surface_depth": false,
-                "secondary_depth_range": 1,
+                "secondary_depth_range": 0,
                 "offset": 2
               },
               "then_run": {

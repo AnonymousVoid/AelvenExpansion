@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
   "biomes": "aelven_expansion:peachgrove_swamp",
-  "features": "aelven_expansion:patch_peach_lavender_placed",
+  "features": "aelven_expansion:patch_tall_mulchy_grass_placed",
   "step": "vegetal_decoration"
 }

@@ -4,14 +4,20 @@ import com.google.common.base.Suppliers;
 import dev.anonymousvoid.aelven_expansion.AelvenExpansion;
 import dev.anonymousvoid.aelven_expansion.block.ModBlocks;
 import dev.anonymousvoid.aelven_expansion.world.feature.tree.placer.foliage.DroopyFoliagePlacer;
+import dev.anonymousvoid.aelven_expansion.world.feature.tree.placer.roots.PeachgroveRootPlacement;
+import dev.anonymousvoid.aelven_expansion.world.feature.tree.placer.roots.PeachgroveRootPlacer;
 import dev.anonymousvoid.aelven_expansion.world.feature.tree.placer.trunk.LargeStraightTrunkPlacer;
 import dev.anonymousvoid.aelven_expansion.world.feature.tree.placer.trunk.SlantedTrunkPlacer;
 import net.minecraft.core.Holder;
+import net.minecraft.core.HolderSet;
 import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.features.OreFeatures;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -27,6 +33,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.OptionalInt;
 import java.util.function.Supplier;
 
@@ -49,13 +56,23 @@ public class ModConfiguredFeatures {
                         new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 4),
                         new TwoLayersFeatureSize(1, 0, 2)).build());
 
+        /* > TODO
+         * - ModBlockTags.java Class
+         * - roots_can_grow_through.json BlockTag
+         * - leaves_can_fall_on.json BlockTag
+         */
         public static final Holder<ConfiguredFeature<TreeConfiguration, ?>> PEACHGROVE_TREE =
-                FeatureUtils.register("peachggrove_tree", Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                FeatureUtils.register("peachgrove_tree", Feature.TREE, (new TreeConfiguration.TreeConfigurationBuilder(
                         BlockStateProvider.simple(ModBlocks.PEACHGROVE_LOG.get()),
                         new LargeStraightTrunkPlacer(10, 6, 3),
                         BlockStateProvider.simple(ModBlocks.PEACHGROVE_LEAVES.get()),
                         new DroopyFoliagePlacer(ConstantInt.of(4), ConstantInt.of(0)),
-                        new ThreeLayersFeatureSize(1, 1, 0, 1, 2, OptionalInt.empty())).build());
+                        Optional.of(new PeachgroveRootPlacer(UniformInt.of(0, 0),
+                                BlockStateProvider.simple(ModBlocks.PEACHGROVE_ROOTS.get()), Optional.empty(),
+                                new PeachgroveRootPlacement(Registry.BLOCK.getOrCreateTag(BlockTags.MANGROVE_ROOTS_CAN_GROW_THROUGH), // TODO
+                                HolderSet.direct(Block::builtInRegistryHolder, Blocks.MUD, ModBlocks.MUDDY_PEACHGROVE_ROOTS.get()),
+                                BlockStateProvider.simple(ModBlocks.MUDDY_PEACHGROVE_ROOTS.get()), 3, 9, 0.5F))),
+                        new ThreeLayersFeatureSize(1, 1, 0, 1, 2, OptionalInt.empty()))).build());
 
 
         public static final Holder<PlacedFeature> MOON_FIR_TREE_CHECKED = PlacementUtils.register("moon_fir_tree_checked",
@@ -109,6 +126,18 @@ public class ModConfiguredFeatures {
                 FeatureUtils.register("patch_peach_lilac", Feature.RANDOM_PATCH,
                         FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
                                 new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.PEACH_LILAC.get()))));
+
+        public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> PATCH_MULCHY_GRASS =
+                FeatureUtils.register("patch_mulchy_grass", Feature.RANDOM_PATCH,
+                        FeatureUtils.simpleRandomPatchConfiguration(64,
+                                PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(
+                                        BlockStateProvider.simple(ModBlocks.MULCHY_GRASS.get())))));
+
+        public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> PATCH_TALL_MULCHY_GRASS =
+                FeatureUtils.register("patch_tall_mulchy_grass", Feature.RANDOM_PATCH,
+                        FeatureUtils.simpleRandomPatchConfiguration(64,
+                                PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(
+                                        BlockStateProvider.simple(ModBlocks.TALL_MULCHY_GRASS.get())))));
     }
 
     public static final DeferredRegister<ConfiguredFeature<?, ?>> CONFIGURED_FEATURES =
@@ -128,56 +157,15 @@ public class ModConfiguredFeatures {
     public static final RegistryObject<ConfiguredFeature<?, ?>> SILVER_ORE = CONFIGURED_FEATURES.register("silver_ore",
             () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_SILVER_ORES.get(),4)));
 
-    public static final RegistryObject<ConfiguredFeature<?, ?>> CHITTA_ORE = CONFIGURED_FEATURES.register(
-            "chitta_ore", () -> new ConfiguredFeature<>(Feature.ORE,
-                    new OreConfiguration(OreFeatures.NATURAL_STONE, ModBlocks.CHITTA.get().defaultBlockState(), 64)));
-
     public static final RegistryObject<ConfiguredFeature<?, ?>> DRYSTONE_ORE = CONFIGURED_FEATURES.register(
             "drystone_ore", () -> new ConfiguredFeature<>(Feature.ORE,
                     new OreConfiguration(OreFeatures.NATURAL_STONE, ModBlocks.DRYSTONE.get().defaultBlockState(), 64)));
-
-    public static final RegistryObject<ConfiguredFeature<?, ?>> CHALK_ORE = CONFIGURED_FEATURES.register(
-            "chalk_ore", () -> new ConfiguredFeature<>(Feature.ORE,
-                    new OreConfiguration(OreFeatures.NATURAL_STONE, ModBlocks.CHALK.get().defaultBlockState(), 64)));
 
     public static final RegistryObject<ConfiguredFeature<?, ?>> CHIPSTONE_ORE = CONFIGURED_FEATURES.register(
             "chipstone_ore", () -> new ConfiguredFeature<>(Feature.ORE,
                     new OreConfiguration(OreFeatures.NATURAL_STONE, ModBlocks.CHIPSTONE.get().defaultBlockState(), 64)));
 
-//    public static final RegistryObject<ConfiguredFeature<?, ?>> CHITTA_GEODE = CONFIGURED_FEATURES.register("chitta_geode",
-//            () -> new ConfiguredFeature<>(Feature.GEODE,
-//                    new GeodeConfiguration(new GeodeBlockSettings(BlockStateProvider.simple(Blocks.AIR),
-//                            BlockStateProvider.simple(ModBlocks.CHITTA.get()),
-//                            BlockStateProvider.simple(ModBlocks.CHITTA.get()),
-//                            BlockStateProvider.simple(ModBlocks.CHITTA.get()),
-//                            BlockStateProvider.simple(ModBlocks.DRYSTONE.get()),
-//                            List.of(Blocks.AIR.defaultBlockState()),
-//                            BlockTags.FEATURES_CANNOT_REPLACE , BlockTags.GEODE_INVALID_BLOCKS),
-//                            new GeodeLayerSettings(1.7D, 1.2D, 2.5D, 3.5D),
-//                            new GeodeCrackSettings(0.25D, 1.5D, 1), 0.5D, 0.1D,
-//                            true, UniformInt.of(3, 8),
-//                            UniformInt.of(2, 6), UniformInt.of(1, 2),
-//                            -18, 18, 0.075D, 1)));
-//
-//    public static final RegistryObject<ConfiguredFeature<?, ?>> CHALK_GEODE = CONFIGURED_FEATURES.register("chalk_geode",
-//            () -> new ConfiguredFeature<>(Feature.GEODE,
-//                    new GeodeConfiguration(new GeodeBlockSettings(BlockStateProvider.simple(Blocks.AIR),
-//                            BlockStateProvider.simple(ModBlocks.CHALK.get()),
-//                            BlockStateProvider.simple(ModBlocks.CHALK.get()),
-//                            BlockStateProvider.simple(ModBlocks.CHALK.get()),
-//                            BlockStateProvider.simple(ModBlocks.CHIPSTONE.get()),
-//                            List.of(Blocks.AIR.defaultBlockState()),
-//                            BlockTags.FEATURES_CANNOT_REPLACE , BlockTags.GEODE_INVALID_BLOCKS),
-//                            new GeodeLayerSettings(1.7D, 1.2D, 2.5D, 3.5D),
-//                            new GeodeCrackSettings(0.25D, 1.5D, 1), 0.5D, 0.1D,
-//                            true, UniformInt.of(3, 8),
-//                            UniformInt.of(2, 6), UniformInt.of(1, 2),
-//                            -18, 18, 0.075D, 1)));
 
 
-
-
-    public static void register(IEventBus eventBus) {
-         CONFIGURED_FEATURES.register(eventBus);
-    }
+    public static void register(IEventBus eventBus) { CONFIGURED_FEATURES.register(eventBus); }
 }

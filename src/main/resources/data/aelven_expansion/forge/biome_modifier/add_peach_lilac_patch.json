@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
-  "biomes": "minecraft:birch_forest",
+  "biomes": "aelven_expansion:peachgrove_swamp",
   "features": "aelven_expansion:patch_peach_lilac_placed",
   "step": "vegetal_decoration"
 }
