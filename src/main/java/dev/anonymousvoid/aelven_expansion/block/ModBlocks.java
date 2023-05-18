@@ -59,10 +59,11 @@ public class ModBlocks {
     private static final BlockBehaviour.Properties drystoneBrickProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DEEPSLATE).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE_BRICKS).strength(1.5F, 6.5F);
 
     private static final BlockBehaviour.Properties mudstoneProperties = BlockBehaviour.Properties.copy(Blocks.PACKED_MUD);
-    
     private static final BlockBehaviour.Properties mudstoneBrickProperties = BlockBehaviour.Properties.copy(Blocks.MUD_BRICKS);
-    private static final BlockBehaviour.Properties sandProperties = BlockBehaviour.Properties.copy(Blocks.SAND);
-    private static final BlockBehaviour.Properties dustProperties = BlockBehaviour.Properties.copy(Blocks.SAND).requiresCorrectToolForDrops();
+
+    private static final BlockBehaviour.Properties gravelProperties = BlockBehaviour.Properties.of(Material.SAND, MaterialColor.TERRACOTTA_WHITE).strength(0.5F).sound(SoundType.SAND);
+    private static final BlockBehaviour.Properties chalkDustProperties = BlockBehaviour.Properties.of(Material.SAND, MaterialColor.TERRACOTTA_WHITE).strength(0.5F).sound(SoundType.SAND).randomTicks();
+    private static final BlockBehaviour.Properties chalkDustLayerProperties = BlockBehaviour.Properties.of(Material.SAND, MaterialColor.TERRACOTTA_WHITE).strength(0.3F).sound(SoundType.SAND).requiresCorrectToolForDrops();
     private static final BlockBehaviour.Properties shingleProperties = BlockBehaviour.Properties.copy(Blocks.BONE_BLOCK).strength(1.75F, 1.5F);
 
     private static final BlockBehaviour.Properties eleriumBlockProperties = BlockBehaviour.Properties.copy(Blocks.STONE).requiresCorrectToolForDrops().strength(6.0F, 240.0F);
@@ -459,12 +460,12 @@ public class ModBlocks {
             () -> new WallBlock(chalkProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
     public static final RegistryObject<Block> CHALK_DUST_BLOCK = registerBlock("chalk_dust_block",
-            () -> new FallingBlock(sandProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new ChalkDustBlock(chalkDustProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> CHALK_DUST = registerBlock("chalk_dust",
-            () -> new SnowLayerBlock(dustProperties),  ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new SnowLayerBlock(chalkDustLayerProperties),  ModCreativeModeTab.MOD_TAB_BLOCKS);
 
     public static final RegistryObject<Block> CHIPSTONE_GRAVEL = registerBlock("chipstone_gravel",
-            () -> new FallingBlock(sandProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new FallingBlock(gravelProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
     public static final RegistryObject<RotatedPillarBlock> CHIPSTONE = registerBlock("chipstone",
             () -> new RotatedPillarBlock(chipstoneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);

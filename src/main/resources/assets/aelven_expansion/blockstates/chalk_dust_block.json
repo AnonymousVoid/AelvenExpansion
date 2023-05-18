@@ -1,7 +1,21 @@
 {
   "variants": {
-    "": {
-      "model": "aelven_expansion:block/chalk_dust_block"
-    }
+    "": [
+      {
+        "model": "aelven_expansion:block/chalk_dust_block"
+      },
+      {
+        "model": "aelven_expansion:block/chalk_dust_block",
+        "y": 90
+      },
+      {
+        "model": "aelven_expansion:block/chalk_dust_block",
+        "y": 180
+      },
+      {
+        "model": "aelven_expansion:block/chalk_dust_block",
+        "y": 270
+      }
+    ]
   }
 }
