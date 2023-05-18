@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
-  "biomes": "minecraft:forest",
+  "biomes": "aelven_expansion:silverblood_rise",
   "features": "aelven_expansion:moon_fir_tree_placed",
   "step": "vegetal_decoration"
 }

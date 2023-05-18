@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
-  "biomes": "#minecraft:is_overworld",
+  "biomes": "#aelven_expansion:is_aelfheim",
   "features": "aelven_expansion:drystone_ore_placed",
   "step": "underground_ores"
 }
