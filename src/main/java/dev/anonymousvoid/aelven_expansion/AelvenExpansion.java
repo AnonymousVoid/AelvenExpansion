@@ -5,8 +5,10 @@ import dev.anonymousvoid.aelven_expansion.block.ModBlocks;
 import dev.anonymousvoid.aelven_expansion.block.entity.ModBlockEntities;
 import dev.anonymousvoid.aelven_expansion.block.entity.ModWoodTypes;
 import dev.anonymousvoid.aelven_expansion.entity.ModEntityTypes;
-import dev.anonymousvoid.aelven_expansion.entity.client.ModBoatModel;
-import dev.anonymousvoid.aelven_expansion.entity.client.ModBoatRenderer;
+import dev.anonymousvoid.aelven_expansion.entity.client.model.GnomeModel;
+import dev.anonymousvoid.aelven_expansion.entity.client.model.ModBoatModel;
+import dev.anonymousvoid.aelven_expansion.entity.client.renderer.GnomeRenderer;
+import dev.anonymousvoid.aelven_expansion.entity.client.renderer.ModBoatRenderer;
 import dev.anonymousvoid.aelven_expansion.entity.vehicle.ModBoat;
 import dev.anonymousvoid.aelven_expansion.entity.vehicle.ModChestBoat;
 import dev.anonymousvoid.aelven_expansion.item.ModItems;
@@ -133,8 +135,17 @@ public class AelvenExpansion {
         }
 
         @SubscribeEvent
+        public static void entityRenderer(EntityRenderersEvent.RegisterRenderers event) {
+            event.registerEntityRenderer(ModEntityTypes.GNOME.get(), GnomeRenderer::new);
+        }
+
+        @SubscribeEvent
         public static void registerLayerDefinitions(final EntityRenderersEvent.RegisterLayerDefinitions event) {
 
+            // Gnome
+            event.registerLayerDefinition(GnomeModel.LAYER_LOCATION, GnomeModel::createBodyLayer);
+
+            // Moon Fir Boats
             event.registerLayerDefinition(new ModelLayerLocation(new ResourceLocation(AelvenExpansion.MODID,
                     "mod_boat/" + ModBoat.Type.MOON_FIR.getName()), "main"), () -> {
                 return ModBoatModel.createBodyModel(false);
@@ -144,6 +155,7 @@ public class AelvenExpansion {
                 return ModBoatModel.createBodyModel(true);
             });
 
+            // Silverblood Boats
             event.registerLayerDefinition(new ModelLayerLocation(new ResourceLocation(AelvenExpansion.MODID,
                     "mod_boat/" + ModBoat.Type.SILVERBLOOD.getName()), "main"), () -> {
                 return ModBoatModel.createBodyModel(false);
@@ -153,6 +165,7 @@ public class AelvenExpansion {
                 return ModBoatModel.createBodyModel(true);
             });
 
+            // Peachgrove Boats
             event.registerLayerDefinition(new ModelLayerLocation(new ResourceLocation(AelvenExpansion.MODID,
                     "mod_boat/" + ModBoat.Type.PEACHGROVE.getName()), "main"), () -> {
                 return ModBoatModel.createBodyModel(false);

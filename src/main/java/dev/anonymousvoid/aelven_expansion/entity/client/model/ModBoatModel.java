@@ -1,4 +1,4 @@
-package dev.anonymousvoid.aelven_expansion.entity.client;
+package dev.anonymousvoid.aelven_expansion.entity.client.model;
 
 import com.google.common.collect.ImmutableList;
 import dev.anonymousvoid.aelven_expansion.entity.vehicle.ModBoat;

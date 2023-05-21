@@ -1,6 +1,7 @@
 package dev.anonymousvoid.aelven_expansion.entity;
 
 import dev.anonymousvoid.aelven_expansion.AelvenExpansion;
+import dev.anonymousvoid.aelven_expansion.entity.mob.Gnome;
 import dev.anonymousvoid.aelven_expansion.entity.vehicle.ModBoat;
 import dev.anonymousvoid.aelven_expansion.entity.vehicle.ModChestBoat;
 import net.minecraft.resources.ResourceLocation;
@@ -14,6 +15,13 @@ import net.minecraftforge.registries.RegistryObject;
 public class ModEntityTypes {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES =
             DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, AelvenExpansion.MODID);
+
+
+    public static final RegistryObject<EntityType<Gnome>> GNOME =
+            ENTITY_TYPES.register("gnome",
+                    () -> EntityType.Builder.<Gnome>of(Gnome::new, MobCategory.CREATURE)
+                            .sized(0.8F, 0.8F)
+                            .build(new ResourceLocation(AelvenExpansion.MODID, "gnome").toString()));
 
 
     public static final RegistryObject<EntityType<ModBoat>> MOD_BOAT =

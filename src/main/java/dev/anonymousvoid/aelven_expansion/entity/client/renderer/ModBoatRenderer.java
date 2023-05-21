@@ -1,4 +1,4 @@
-package dev.anonymousvoid.aelven_expansion.entity.client;
+package dev.anonymousvoid.aelven_expansion.entity.client.renderer;
 
 import com.google.common.collect.ImmutableMap;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -7,6 +7,7 @@ import com.mojang.datafixers.util.Pair;
 import com.mojang.math.Quaternion;
 import com.mojang.math.Vector3f;
 import dev.anonymousvoid.aelven_expansion.AelvenExpansion;
+import dev.anonymousvoid.aelven_expansion.entity.client.model.ModBoatModel;
 import dev.anonymousvoid.aelven_expansion.entity.vehicle.ModBoat;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.renderer.MultiBufferSource;
