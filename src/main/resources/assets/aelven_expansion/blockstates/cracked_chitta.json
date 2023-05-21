@@ -1,7 +1,20 @@
 {
   "variants": {
-    "": {
-      "model": "aelven_expansion:block/cracked_chitta"
-    }
+    "": [
+      {
+        "model": "aelven_expansion:block/cracked_chitta"
+      },
+      {
+        "model": "aelven_expansion:block/cracked_chitta_mirrored"
+      },
+      {
+        "model": "aelven_expansion:block/cracked_chitta",
+        "y": 180
+      },
+      {
+        "model": "aelven_expansion:block/cracked_chitta_mirrored",
+        "y": 180
+      }
+    ]
   }
 }

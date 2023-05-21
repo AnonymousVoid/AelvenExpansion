@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "aelven_expansion:block/dusty_cobbled_chitta1", "weight": 200
+      },
+      {
+        "model": "aelven_expansion:block/dusty_cobbled_chitta2", "weight": 200
+      },
+      {
+        "model": "aelven_expansion:block/dusty_cobbled_chitta3", "weight": 100
+      },
+      {
+        "model": "aelven_expansion:block/dusty_cobbled_chitta4", "weight": 150
+      },
+      {
+        "model": "aelven_expansion:block/dusty_cobbled_chitta5", "weight": 100
+      }
+    ]
+  }
+}

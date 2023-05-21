@@ -2,19 +2,58 @@
   "variants": {
     "": [
       {
-        "model": "aelven_expansion:block/chalk_dust_block"
+        "model": "aelven_expansion:block/chalk_dust_block1"
       },
       {
-        "model": "aelven_expansion:block/chalk_dust_block",
+        "model": "aelven_expansion:block/chalk_dust_block1",
         "y": 90
       },
       {
-        "model": "aelven_expansion:block/chalk_dust_block",
+        "model": "aelven_expansion:block/chalk_dust_block1",
         "y": 180
       },
       {
-        "model": "aelven_expansion:block/chalk_dust_block",
+        "model": "aelven_expansion:block/chalk_dust_block1",
         "y": 270
+      },
+      {
+        "model": "aelven_expansion:block/chalk_dust_block1",
+        "x": 90
+      },
+      {
+        "model": "aelven_expansion:block/chalk_dust_block1",
+        "x": 180
+      },
+      {
+        "model": "aelven_expansion:block/chalk_dust_block1",
+        "x": 270
+      },
+      {
+        "model": "aelven_expansion:block/chalk_dust_block2"
+      },
+      {
+        "model": "aelven_expansion:block/chalk_dust_block2",
+        "y": 90
+      },
+      {
+        "model": "aelven_expansion:block/chalk_dust_block2",
+        "y": 180
+      },
+      {
+        "model": "aelven_expansion:block/chalk_dust_block2",
+        "y": 270
+      },
+      {
+        "model": "aelven_expansion:block/chalk_dust_block2",
+        "x": 90
+      },
+      {
+        "model": "aelven_expansion:block/chalk_dust_block2",
+        "x": 180
+      },
+      {
+        "model": "aelven_expansion:block/chalk_dust_block2",
+        "x": 270
       }
     ]
   }

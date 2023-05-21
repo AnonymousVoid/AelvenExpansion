@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "aelven_expansion:block/chalk_dust"
+    "all": "aelven_expansion:block/dusty_cobbled_chitta4"
   }
 }
