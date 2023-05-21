@@ -60,6 +60,7 @@ public class ModBiomes {
         generationSettings.addCarver(GenerationStep.Carving.AIR, Carvers.CAVE_EXTRA_UNDERGROUND);
         generationSettings.addCarver(GenerationStep.Carving.AIR, Carvers.CANYON);
         generationSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_FOREST);
+        generationSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_WARM);
 
         return (new Biome.BiomeBuilder())
                 .precipitation(Biome.Precipitation.RAIN)

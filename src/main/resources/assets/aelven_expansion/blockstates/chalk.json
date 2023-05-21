@@ -1,7 +1,20 @@
 {
   "variants": {
-    "": {
-      "model": "aelven_expansion:block/chalk"
-    }
+    "": [
+      {
+        "model": "aelven_expansion:block/chalk"
+      },
+      {
+        "model": "aelven_expansion:block/chalk_mirrored"
+      },
+      {
+        "model": "aelven_expansion:block/chalk",
+        "y": 180
+      },
+      {
+        "model": "aelven_expansion:block/chalk_mirrored",
+        "y": 180
+      }
+    ]
   }
 }

@@ -330,6 +330,8 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> COBBLED_CHITTA = registerBlock("cobbled_chitta",
             () -> new Block(chittaProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> DUSTY_COBBLED_CHITTA = registerBlock("dusty_cobbled_chitta",
+            () -> new Block(chittaProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> CRACKED_CHITTA = registerBlock("cracked_chitta",
             () -> new Block(chittaProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> CHITTA = registerBlock("chitta",

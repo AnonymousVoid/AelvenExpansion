@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_mirrored",
+  "textures": {
+    "end": "aelven_expansion:block/chipstone_top",
+    "side": "aelven_expansion:block/chipstone_side"
+  }
+}
