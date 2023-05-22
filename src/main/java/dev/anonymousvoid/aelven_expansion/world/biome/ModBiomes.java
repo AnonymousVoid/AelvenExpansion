@@ -24,6 +24,8 @@ public class ModBiomes {
             ModBiomes::createChalkPeaks);
     public static final RegistryObject<Biome> SILVERBLOOD_RISE = BIOMES.register("silverblood_rise",
             ModBiomes::createSilverbloodRise);
+    public static final RegistryObject<Biome> DRYSTONE_PLAINS = BIOMES.register("drystone_plains",
+            ModBiomes::createDrystonePlains);
     public static final RegistryObject<Biome> PEACHGROVE_SWAMP = BIOMES.register("peachgrove_swamp",
             ModBiomes::createPeachgroveSwamp);
 
@@ -78,11 +80,33 @@ public class ModBiomes {
                 .generationSettings(generationSettings.build()).build();
     }
 
+    private static Biome createDrystonePlains() {
+        MobSpawnSettings.Builder spawnSettings = new MobSpawnSettings.Builder();
+
+        BiomeGenerationSettings.Builder generationSettings = new BiomeGenerationSettings.Builder();
+        generationSettings.addCarver(GenerationStep.Carving.AIR, Carvers.CAVE_EXTRA_UNDERGROUND);
+        generationSettings.addCarver(GenerationStep.Carving.AIR, Carvers.CANYON);
+
+        return (new Biome.BiomeBuilder())
+                .precipitation(Biome.Precipitation.NONE)
+                .temperature(0.5F)
+                .downfall(0.0F)
+                .specialEffects((new BiomeSpecialEffects.Builder())
+                        .skyColor(0x444444)
+                        .fogColor(0x444444)
+                        .waterColor(0x666666)
+                        .waterFogColor(0x666666)
+                        .grassColorOverride(0x116633)
+                        .foliageColorOverride(0x116633)
+                        .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_BASALT_DELTAS)).build())
+                .mobSpawnSettings(spawnSettings.build())
+                .generationSettings(generationSettings.build()).build();
+    }
+
     private static Biome createPeachgroveSwamp() {
         MobSpawnSettings.Builder spawnSettings = new MobSpawnSettings.Builder();
 
         BiomeGenerationSettings.Builder generationSettings = new BiomeGenerationSettings.Builder();
-        generationSettings.addCarver(GenerationStep.Carving.AIR, Carvers.CAVE);
         generationSettings.addCarver(GenerationStep.Carving.AIR, Carvers.CAVE_EXTRA_UNDERGROUND);
         generationSettings.addCarver(GenerationStep.Carving.AIR, Carvers.CANYON);
         generationSettings.addFeature(GenerationStep.Decoration.LAKES, MiscOverworldPlacements.LAKE_LAVA_UNDERGROUND);

@@ -23,7 +23,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.common.ForgeMod;
 
 public class Gnome extends PathfinderMob implements RangedAttackMob {
 //    private static final UUID SPEED_MODIFIER_DRINKING_UUID = UUID.fromString("5CD17E52-A79A-43D3-A529-90FDE04B181E");
