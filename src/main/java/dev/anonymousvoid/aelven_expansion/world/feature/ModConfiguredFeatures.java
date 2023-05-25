@@ -157,13 +157,17 @@ public class ModConfiguredFeatures {
     public static final RegistryObject<ConfiguredFeature<?, ?>> SILVER_ORE = CONFIGURED_FEATURES.register("silver_ore",
             () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_SILVER_ORES.get(),4)));
 
-    public static final RegistryObject<ConfiguredFeature<?, ?>> DRYSTONE_ORE = CONFIGURED_FEATURES.register(
-            "drystone_ore", () -> new ConfiguredFeature<>(Feature.ORE,
-                    new OreConfiguration(OreFeatures.NATURAL_STONE, ModBlocks.DRYSTONE.get().defaultBlockState(), 64)));
+    public static final RegistryObject<ConfiguredFeature<?, ?>> DRYSTONE_SPIRE = CONFIGURED_FEATURES.register("drystone_spire",
+            () -> new ConfiguredFeature<>(ModFeatures.SPIRE.get(),
+                    new BlockStateConfiguration(ModBlocks.DRYSTONE.get().defaultBlockState())));
 
-    public static final RegistryObject<ConfiguredFeature<?, ?>> CHIPSTONE_ORE = CONFIGURED_FEATURES.register(
-            "chipstone_ore", () -> new ConfiguredFeature<>(Feature.ORE,
-                    new OreConfiguration(OreFeatures.NATURAL_STONE, ModBlocks.CHIPSTONE.get().defaultBlockState(), 64)));
+    public static final RegistryObject<ConfiguredFeature<?, ?>> CHIPSTONE_SPIRE = CONFIGURED_FEATURES.register("chipstone_spire",
+            () -> new ConfiguredFeature<>(ModFeatures.SPIRE.get(),
+                    new BlockStateConfiguration(ModBlocks.CHIPSTONE.get().defaultBlockState())));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> CHIPSTONE_BLADE = CONFIGURED_FEATURES.register("chipstone_blade",
+            () -> new ConfiguredFeature<>(ModFeatures.BLADE.get(),
+                    new BlockStateConfiguration(ModBlocks.CHIPSTONE.get().defaultBlockState())));
 
 
 

@@ -25,7 +25,7 @@ public class ChalkDustBlock extends FallingBlock {
         if (isFree(level.getBlockState(pos.below())) && pos.getY() >= level.getMinBuildHeight()) {
             FallingBlockEntity fallingblockentity = FallingBlockEntity.fall(level, pos, state);
             this.falling(fallingblockentity);
-        } else if (pos.getY() < level.getMaxBuildHeight()) {
+        } else if (pos.getY() < level.getMaxBuildHeight() && level.canSeeSky(pos)) {
             if (level.getBiome(pos).unwrapKey().get() == ModBiomes.CHALK_PEAKS.getHolder().get().unwrapKey().get()) {
                 BlockState above = level.getBlockState(pos.above());
                 if (above.is(Blocks.AIR) || above.is(ModBlocks.CHALK_DUST.get())) {

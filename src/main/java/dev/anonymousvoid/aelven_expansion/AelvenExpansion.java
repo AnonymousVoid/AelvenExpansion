@@ -68,6 +68,7 @@ public class AelvenExpansion {
 
         ModDimensions.register();
         ModBiomes.register(modEventBus);
+        ModFeatures.register(modEventBus);
 
         ModBiomeModifiers.register(modEventBus);
         ModConfiguredFeatures.register(modEventBus);
