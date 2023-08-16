@@ -8,27 +8,30 @@ import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
-import net.minecraft.world.level.levelgen.feature.configurations.BlockStateConfiguration;
 
-public class SpireFeature extends Feature<BlockStateConfiguration> {
+public class SpireFeature extends Feature<SpireConfiguration> {
 
-    public SpireFeature(Codec<BlockStateConfiguration> pCodec) {
+    public SpireFeature(Codec<SpireConfiguration> pCodec) {
         super(pCodec);
     }
 
-    public boolean place(FeaturePlaceContext<BlockStateConfiguration> context) {
+    public boolean place(FeaturePlaceContext<SpireConfiguration> context) {
         WorldGenLevel level = context.level();
         RandomSource rand = context.random();
         BlockPos pos = context.origin().below();
-        BlockState state = (context.config()).state;
-        int length = rand.nextInt(10) + 15;
 
-        double xOffset = (double)rand.nextIntBetweenInclusive(-10, 10) / 20;
-        double yOffset = (double)rand.nextIntBetweenInclusive(-10, 10) / 20;
+        SpireConfiguration config = context.config();
+        BlockState state = config.state;
+        int length = config.length.sample(rand);
+        int range = config.range.getValue();
+        float slant = config.slant.getValue();
+
+        double xOffset = (double)rand.nextIntBetweenInclusive(-range, range) / 32;
+        double yOffset = (double)rand.nextIntBetweenInclusive(-range, range) / 32;
 
         if (state.isCollisionShapeFullBlock(level, pos)) {
             for (int i = -length; i < length; i++) {
-                double radius = (length - Math.abs(i)) / 4 + 0.5;
+                double radius = (length - Math.abs(i)) / slant + 0.5;
                 for (double x = -radius - 1; x < radius + 1; x++) {
                     for (double y = -radius - 1; y < radius + 1; y++) {
                         BlockPos newPos = pos.above(i)

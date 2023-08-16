@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "aelven_expansion:drystone_plains",
-  "features": "aelven_expansion:chipstone_blade_placed",
-  "step": "vegetal_decoration"
-}

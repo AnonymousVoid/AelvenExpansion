@@ -103,22 +103,10 @@ public class ModPlacedFeatures {
                     commonOrePlacement(8, // VeinsPerChunk
                             HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-100), VerticalAnchor.aboveBottom(100)))));
 
-    public static final RegistryObject<PlacedFeature> DRYSTONE_SPIRE_PLACED =
-            PLACED_FEATURES.register("drystone_spire_placed",
-                    () -> new PlacedFeature(ModConfiguredFeatures.DRYSTONE_SPIRE.getHolder().get(),
-                            List.of(RarityFilter.onAverageOnceEvery(8), InSquarePlacement.spread(),
-                                    PlacementUtils.HEIGHTMAP, BiomeFilter.biome())));
-
     public static final RegistryObject<PlacedFeature> CHIPSTONE_SPIRE_PLACED =
             PLACED_FEATURES.register("chipstone_spire_placed",
                     () -> new PlacedFeature(ModConfiguredFeatures.CHIPSTONE_SPIRE.getHolder().get(),
                             List.of(RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(),
-                                    PlacementUtils.HEIGHTMAP, BiomeFilter.biome())));
-
-    public static final RegistryObject<PlacedFeature> CHIPSTONE_BLADE_PLACED =
-            PLACED_FEATURES.register("chipstone_blade_placed",
-                    () -> new PlacedFeature(ModConfiguredFeatures.CHIPSTONE_BLADE.getHolder().get(),
-                            List.of(RarityFilter.onAverageOnceEvery(16), InSquarePlacement.spread(),
                                     PlacementUtils.HEIGHTMAP, BiomeFilter.biome())));
 
 

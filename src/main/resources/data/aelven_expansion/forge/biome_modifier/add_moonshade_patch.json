@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "aelven_expansion:silverblood_rise",
-  "features": "aelven_expansion:patch_moonshade_placed",
-  "step": "vegetal_decoration"
-}
