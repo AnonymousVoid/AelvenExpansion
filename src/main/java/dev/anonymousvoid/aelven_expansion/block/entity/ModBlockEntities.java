@@ -30,7 +30,11 @@ public class ModBlockEntities {
                             ModBlocks.SILVERBLOOD_WALL_SIGN.get(),
                             ModBlocks.SILVERBLOOD_SIGN.get(),
                             ModBlocks.PEACHGROVE_WALL_SIGN.get(),
-                            ModBlocks.PEACHGROVE_SIGN.get()).build(null));
+                            ModBlocks.PEACHGROVE_SIGN.get(),
+                            ModBlocks.HYDROSATIN_WALL_SIGN.get(),
+                            ModBlocks.HYDROSATIN_SIGN.get()).build(null));
+                    
+
 
 
 

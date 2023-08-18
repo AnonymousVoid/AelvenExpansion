@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "aelven_expansion:block/giant_brain_coral_bottom"
+    },
+    "half=upper": {
+      "model": "aelven_expansion:block/giant_brain_coral_top"
+    }
+  }
+}

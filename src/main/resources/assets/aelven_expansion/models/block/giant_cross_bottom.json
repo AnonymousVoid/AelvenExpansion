@@ -1,0 +1,37 @@
+{
+	"ambientocclusion": false,
+	"render_type": "cutout",
+	"textures": {
+		"particle": "#cross"
+	},
+	"elements": [
+		{
+			"from": [-4.75, 0, 0],
+			"to": [27.25, 16, 0],
+			"shade": false,
+			"rotation": {"angle": -45, "axis": "y", "origin": [0, 0, 0]},
+			"faces": {
+				"north": {"uv": [16, 0, 0, 8], "texture": "#cross"},
+				"east": {"uv": [16, 0, 0, 8], "texture": "#cross"},
+				"south": {"uv": [16, 0, 0, 8], "texture": "#cross"},
+				"west": {"uv": [16, 0, 0, 8], "texture": "#cross"},
+				"up": {"uv": [16, 0, 0, 8], "texture": "#cross"},
+				"down": {"uv": [16, 0, 0, 8], "texture": "#cross"}
+			}
+		},
+		{
+			"from": [11.25, 0, -16],
+			"to": [11.25, 16, 16],
+			"shade": false,
+			"rotation": {"angle": -45, "axis": "y", "origin": [0, 0, 0]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 8], "texture": "#cross"},
+				"east": {"uv": [16, 0, 0, 8], "texture": "#cross"},
+				"south": {"uv": [0, 0, 16, 8], "texture": "#cross"},
+				"west": {"uv": [16, 0, 0, 8], "texture": "#cross"},
+				"up": {"uv": [0, 0, 16, 8], "texture": "#cross"},
+				"down": {"uv": [0, 0, 16, 8], "texture": "#cross"}
+			}
+		}
+	]
+}

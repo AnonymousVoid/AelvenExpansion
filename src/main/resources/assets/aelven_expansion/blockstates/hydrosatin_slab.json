@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "aelven_expansion:block/hydrosatin_slab"
+    },
+    "type=double": {
+      "model": "aelven_expansion:block/hydrosatin_planks"
+    },
+    "type=top": {
+      "model": "aelven_expansion:block/hydrosatin_slab_top"
+    }
+  }
+}

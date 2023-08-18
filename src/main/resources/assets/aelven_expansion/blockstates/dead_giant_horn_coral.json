@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "aelven_expansion:block/dead_giant_horn_coral_bottom"
+    },
+    "half=upper": {
+      "model": "aelven_expansion:block/dead_giant_horn_coral_top"
+    }
+  }
+}

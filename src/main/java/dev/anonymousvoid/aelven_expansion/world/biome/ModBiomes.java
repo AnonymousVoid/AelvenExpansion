@@ -24,10 +24,13 @@ public class ModBiomes {
             ModBiomes::createChalkPeaks);
     public static final RegistryObject<Biome> SILVERBLOOD_RISE = BIOMES.register("silverblood_rise",
             ModBiomes::createSilverbloodRise);
+    public static final RegistryObject<Biome> MOON_FIR_WILDS = BIOMES.register("moon_fir_wilds",
+            ModBiomes::createMoonFirWilds);
     public static final RegistryObject<Biome> DRYSTONE_PLAINS = BIOMES.register("drystone_plains",
             ModBiomes::createDrystonePlains);
     public static final RegistryObject<Biome> PEACHGROVE_SWAMP = BIOMES.register("peachgrove_swamp",
             ModBiomes::createPeachgroveSwamp);
+
 
 
     private static Biome createChalkPeaks() {
@@ -73,9 +76,34 @@ public class ModBiomes {
                         .fogColor(0x88CCFF)
                         .waterColor(0x88CCFF)
                         .waterFogColor(0x88CCFF)
-                        .grassColorOverride(0x22CC44)
-                        .foliageColorOverride(0x22CC44)
+                        .grassColorOverride(0x83D983)
+                        .foliageColorOverride(0x83D983)
                         .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST)).build())
+                .mobSpawnSettings(spawnSettings.build())
+                .generationSettings(generationSettings.build()).build();
+    }
+    private static Biome createMoonFirWilds() {
+        MobSpawnSettings.Builder spawnSettings = new MobSpawnSettings.Builder();
+
+        BiomeGenerationSettings.Builder generationSettings = new BiomeGenerationSettings.Builder();
+        generationSettings.addCarver(GenerationStep.Carving.AIR, Carvers.CAVE);
+        generationSettings.addCarver(GenerationStep.Carving.AIR, Carvers.CAVE_EXTRA_UNDERGROUND);
+        generationSettings.addCarver(GenerationStep.Carving.AIR, Carvers.CANYON);
+        generationSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_FOREST);
+        generationSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_WARM);
+
+        return (new Biome.BiomeBuilder())
+                .precipitation(Biome.Precipitation.RAIN)
+                .temperature(0.5F)
+                .downfall(0.5F)
+                .specialEffects((new BiomeSpecialEffects.Builder())
+                        .skyColor(0x9196c1)
+                        .fogColor(0x6782ab)
+                        .waterColor(0x8298bb)
+                        .waterFogColor(0x6782ab)
+                        .grassColorOverride(0x8288ac)
+                        .foliageColorOverride(0x8288ac)
+                        .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_OLD_GROWTH_TAIGA)).build())
                 .mobSpawnSettings(spawnSettings.build())
                 .generationSettings(generationSettings.build()).build();
     }

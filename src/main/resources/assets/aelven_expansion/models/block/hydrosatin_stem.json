@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "aelven_expansion:block/hydrosatin_stem_top",
+    "side": "aelven_expansion:block/hydrosatin_stem"
+  }
+}

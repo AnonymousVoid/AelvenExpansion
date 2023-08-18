@@ -11,6 +11,11 @@
     "minecraft:mud",
     "aelven_expansion:muddy_mulch",
     "minecraft:muddy_mangrove_roots",
-    "aelven_expansion:muddy_peachgrove_roots"
+    "aelven_expansion:muddy_peachgrove_roots",
+
+
+
+    "aelven_expansion:chipstone",
+    "aelven_expansion:drystone"
   ]
 }

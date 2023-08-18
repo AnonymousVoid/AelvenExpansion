@@ -6,4 +6,5 @@ public class ModWoodTypes {
     public static WoodType MOON_FIR = WoodType.create("moon_fir");
     public static WoodType SILVERBLOOD = WoodType.create("silverblood");
     public static WoodType PEACHGROVE = WoodType.create("peachgrove");
+    public static WoodType HYDROSATIN = WoodType.create("hydrosatin");
 }

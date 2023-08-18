@@ -351,6 +351,44 @@
 	"block.aelven_expansion.mulchy_mudstone_brick_slab": "Mulchy Mudstone Brick Slab",
 	"block.aelven_expansion.mulchy_mudstone_brick_wall": "Mulchy Mudstone Brick Wall",
 
+	"block.aelven_expansion.chipstone_log": "Chipstone Log",
+
+	"block.aelven_expansion.giant_brain_coral": "Giant Brain Coral",
+	"block.aelven_expansion.dead_giant_brain_coral": "Dead Giant Brain Coral",
+
+	"block.aelven_expansion.giant_tube_coral": "Giant Tube Coral",
+	"block.aelven_expansion.dead_giant_tube_coral": "Dead Giant Tube Coral",
+
+	"block.aelven_expansion.giant_fire_coral": "Giant Fire Coral",
+	"block.aelven_expansion.dead_giant_fire_coral": "Dead Giant Fire Coral",
+
+	"block.aelven_expansion.giant_horn_coral": "Giant Horn Coral",
+	"block.aelven_expansion.dead_giant_horn_coral": "Dead Giant Horn Coral",
+
+	"block.aelven_expansion.giant_bubble_coral": "Giant Bubble Coral",
+	"block.aelven_expansion.dead_giant_bubble_coral": "Dead Giant Bubble Coral",
+
+	"block.aelven_expansion.hydrosatin_stem": "Hydrosatin Stem",
+	"block.aelven_expansion.stripped_hydrosatin_stem": "Stripped Hydrosatin Stem",
+	"block.aelven_expansion.hydrosatin_hyphae": "Hydrosatin Hyphae",
+	"block.aelven_expansion.stripped_hydrosatin_hyphae": "Stripped Hydrosatin Hyphae",
+	"block.aelven_expansion.hydrosatin_beams": "Hydrosatin Beams",
+	"block.aelven_expansion.stripped_hydrosatin_beams": "Stripped Hydrosatin Beams",
+	"block.aelven_expansion.hydrosatin_planks": "Hydrosatin Planks",
+	"block.aelven_expansion.hydrosatin_sapling": "Hydrosatin Sapling",
+	"block.aelven_expansion.hydrosatin_cap": "Hydrosatin Cap",
+	"block.aelven_expansion.hydrosatin_stairs": "Hydrosatin Stairs",
+	"block.aelven_expansion.hydrosatin_slab": "Hydrosatin Slab",
+	"block.aelven_expansion.hydrosatin_fence": "Hydrosatin Fence",
+	"block.aelven_expansion.hydrosatin_fence_gate": "Hydrosatin Fence Gate",
+	"block.aelven_expansion.hydrosatin_button": "Hydrosatin Button",
+	"block.aelven_expansion.hydrosatin_pressure_plate": "Hydrosatin Pressure Plate",
+	"block.aelven_expansion.hydrosatin_door": "Hydrosatin Door",
+	"block.aelven_expansion.hydrosatin_trapdoor": "Hydrosatin Trapdoor",
+	"block.aelven_expansion.hydrosatin_sign": "Hydrosatin Sign",
+	"item.aelven_expansion.hydrosatin_boat": "Hydrosatin Boat",
+	"item.aelven_expansion.hydrosatin_chest_boat": "Hydrosatin Boat with Chest",
+
 
 	"itemGroup.aelven_expansion_blocks": "Aelven Expansion Blocks",
 	"itemGroup.aelven_expansion_items": "Aelven Expansion Items"

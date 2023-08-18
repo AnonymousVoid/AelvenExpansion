@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "aelven_expansion:block/dead_giant_tube_coral"
+  }
+}

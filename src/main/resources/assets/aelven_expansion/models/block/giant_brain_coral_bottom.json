@@ -1,0 +1,7 @@
+{
+	"parent": "aelven_expansion:block/giant_cross_bottom",
+	"textures": {
+		"cross": "aelven_expansion:block/giant_brain_coral_bottom",
+		"particle": "minecraft:block/brain_coral"
+	}
+}

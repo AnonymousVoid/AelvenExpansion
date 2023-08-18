@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button",
+  "textures": {
+    "texture": "aelven_expansion:block/hydrosatin_planks"
+  }
+}

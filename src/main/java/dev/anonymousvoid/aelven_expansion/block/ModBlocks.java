@@ -41,6 +41,7 @@ public class ModBlocks {
     private static final BlockBehaviour.Properties woodPropertiesNoOcclude = BlockBehaviour.Properties.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.WOOD).noOcclusion();
     private static final BlockBehaviour.Properties azaleaProperties = BlockBehaviour.Properties.copy(Blocks.AZALEA_LEAVES);
     private static final BlockBehaviour.Properties flowerProperties = BlockBehaviour.Properties.of(Material.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ);
+    private static final BlockBehaviour.Properties coralProperties = BlockBehaviour.Properties.copy(Blocks.BRAIN_CORAL);
     private static final BlockBehaviour.Properties pottedFlowerProperties = BlockBehaviour.Properties.of(Material.DECORATION).instabreak().noOcclusion();
     private static final BlockBehaviour.Properties replaceablePlantProperties = BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XYZ);
     private static final BlockBehaviour.Properties mulchProperties = BlockBehaviour.Properties.copy(Blocks.DIRT).color(MaterialColor.TERRACOTTA_CYAN).sound(SoundType.MUD).randomTicks();
@@ -72,7 +73,7 @@ public class ModBlocks {
     private static final BlockBehaviour.Properties silverBlockProperties = BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK).requiresCorrectToolForDrops().strength(5.0F, 120.0F);
     private static final BlockBehaviour.Properties stoneOreProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.STONE).strength(3.0F, 3.0F);
     private static final BlockBehaviour.Properties deepslateOreProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE).strength(4.5F, 3.0F);
-
+    private static final BlockBehaviour.Properties shroomProperties = BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK);
 
     // BLOCKS
     public static final RegistryObject<Block> MOON_FIR_LOG = registerBlock("moon_fir_log",
@@ -318,7 +319,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> MULCHY_MUDSTONE_BRICK_WALL = registerBlock("mulchy_mudstone_brick_wall",
             () -> new WallBlock(mudstoneBrickProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
-
+    public static final RegistryObject<Block> CHIPSTONE_GRASS = registerBlock("chipstone_grass",
+            () -> new MulchyGrassBlock(replaceablePlantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
     public static final RegistryObject<Block> MOONSHADE = registerBlock("moonshade",
             () -> new TallFlowerBlock(flowerProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
@@ -717,6 +719,82 @@ public class ModBlocks {
             () -> new SlabBlock(shingleProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> BLACK_SHINGLE_WALL = registerBlock("black_shingle_wall",
             () -> new WallBlock(shingleProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
+    public static final RegistryObject<Block> CHIPSTONE_LOG = registerBlock("chipstone_log",
+            () -> logBlock(MaterialColor.COLOR_LIGHT_GRAY, MaterialColor.COLOR_PINK), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
+    public static final RegistryObject<Block> GIANT_BRAIN_CORAL = registerBlock("giant_brain_coral",
+            () -> new TallSeagrassBlock(coralProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> DEAD_GIANT_BRAIN_CORAL = registerBlock("dead_giant_brain_coral",
+            () -> new TallSeagrassBlock(coralProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
+    public static final RegistryObject<Block> GIANT_TUBE_CORAL = registerBlock("giant_tube_coral",
+            () -> new TallSeagrassBlock(coralProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> DEAD_GIANT_TUBE_CORAL = registerBlock("dead_giant_tube_coral",
+            () -> new TallSeagrassBlock(coralProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
+
+    public static final RegistryObject<Block> GIANT_FIRE_CORAL = registerBlock("giant_fire_coral",
+            () -> new TallSeagrassBlock(coralProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> DEAD_GIANT_FIRE_CORAL = registerBlock("dead_giant_fire_coral",
+            () -> new TallSeagrassBlock(coralProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
+
+    public static final RegistryObject<Block> GIANT_HORN_CORAL = registerBlock("giant_horn_coral",
+            () -> new TallSeagrassBlock(coralProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> DEAD_GIANT_HORN_CORAL = registerBlock("dead_giant_horn_coral",
+            () -> new TallSeagrassBlock(coralProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
+
+    public static final RegistryObject<Block> GIANT_BUBBLE_CORAL = registerBlock("giant_bubble_coral",
+            () -> new TallSeagrassBlock(coralProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> DEAD_GIANT_BUBBLE_CORAL = registerBlock("dead_giant_bubble_coral",
+            () -> new TallSeagrassBlock(coralProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
+
+    public static final RegistryObject<Block> HYDROSATIN_STEM = registerBlock("hydrosatin_stem",
+            () -> logBlock(MaterialColor.COLOR_GRAY, MaterialColor.COLOR_BLUE), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> HYDROSATIN_HYPHAE = registerBlock("hydrosatin_hyphae",
+            () -> logBlock(MaterialColor.COLOR_GRAY, MaterialColor.COLOR_BLUE), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> HYDROSATIN_BEAMS = registerBlock("hydrosatin_beams",
+            () -> logBlock(MaterialColor.COLOR_GRAY, MaterialColor.COLOR_BLUE), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> STRIPPED_HYDROSATIN_STEM = registerBlock("stripped_hydrosatin_stem",
+            () -> logBlock(MaterialColor.COLOR_GRAY, MaterialColor.COLOR_BLUE), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> STRIPPED_HYDROSATIN_HYPHAE = registerBlock("stripped_hydrosatin_hyphae",
+            () -> logBlock(MaterialColor.COLOR_GRAY, MaterialColor.COLOR_GRAY), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> STRIPPED_HYDROSATIN_BEAMS = registerBlock("stripped_hydrosatin_beams",
+            () -> logBlock(MaterialColor.COLOR_GRAY, MaterialColor.COLOR_BLUE), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> HYDROSATIN_PLANKS = registerBlock("hydrosatin_planks",
+            () -> flammableBlock(woodProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> HYDROSATIN_STAIRS = registerBlock("hydrosatin_stairs",
+            () -> flammableStairBlock(() -> ModBlocks.HYDROSATIN_PLANKS.get().defaultBlockState(), woodProperties),
+            ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> HYDROSATIN_SLAB = registerBlock("hydrosatin_slab",
+            () -> flammableSlabBlock(woodProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
+    public static final RegistryObject<Block> HYDROSATIN_FENCE = registerBlock("hydrosatin_fence",
+            () -> flammableFenceBlock(woodProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> HYDROSATIN_FENCE_GATE = registerBlock("hydrosatin_fence_gate",
+            () -> flammableFenceGateBlock(woodProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> HYDROSATIN_BUTTON = registerBlock("hydrosatin_button",
+            () -> new WoodButtonBlock(woodPropertiesNoCollide), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> HYDROSATIN_PRESSURE_PLATE = registerBlock("hydrosatin_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, woodProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> HYDROSATIN_DOOR = registerBlock("hydrosatin_door",
+            () -> flammableDoorBlock(woodPropertiesNoOcclude), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> HYDROSATIN_TRAPDOOR = registerBlock("hydrosatin_trapdoor",
+            () -> flammableTrapDoorBlock(woodPropertiesNoOcclude), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> HYDROSATIN_WALL_SIGN = registerBlockWithoutBlockItem("hydrosatin_wall_sign",
+            () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.HYDROSATIN));
+    public static final RegistryObject<Block> HYDROSATIN_SIGN = registerBlockWithoutBlockItem("hydrosatin_sign",
+            () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.HYDROSATIN));
+    public static final RegistryObject<Block> HYDROSATIN_SAPLING = registerBlock("hydrosatin_sapling",
+            () -> new SaplingBlock(new MoonFirTreeGrower(), flowerProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
+    public static final RegistryObject<Block> HYDROSATIN_CAP = registerBlock("hydrosatin_cap",
+            () -> new TransparentWaterloggableBlock(shroomProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
+
 
 
 

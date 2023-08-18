@@ -1,0 +1,7 @@
+{
+  "parent": "aelven_expansion:block/giant_cross_top",
+  "textures": {
+    "cross": "aelven_expansion:block/giant_tube_coral_top",
+    "particle": "minecraft:block/tube_coral"
+  }
+}

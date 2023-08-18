@@ -62,6 +62,17 @@ public class ModLogBlock extends RotatedPillarBlock {
             }
             if (state.is(ModBlocks.PEACHGROVE_BEAMS.get())) {
                 return ModBlocks.STRIPPED_PEACHGROVE_BEAMS.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
+
+            }
+
+            if (state.is(ModBlocks.HYDROSATIN_STEM.get())) {
+                return ModBlocks.STRIPPED_HYDROSATIN_STEM.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
+            }
+            if (state.is(ModBlocks.HYDROSATIN_HYPHAE.get())) {
+                return ModBlocks.STRIPPED_HYDROSATIN_HYPHAE.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
+            }
+            if (state.is(ModBlocks.HYDROSATIN_BEAMS.get())) {
+                return ModBlocks.STRIPPED_HYDROSATIN_BEAMS.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
             }
             
             if (state.is(ModBlocks.OAK_BEAMS.get())) {

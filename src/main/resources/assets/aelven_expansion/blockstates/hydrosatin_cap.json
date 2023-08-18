@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "aelven_expansion:block/hydrosatin_cap"
+      },
+      {
+        "model": "aelven_expansion:block/hydrosatin_cap_mirrored"
+      },
+      {
+        "model": "aelven_expansion:block/hydrosatin_cap",
+        "y": 180
+      },
+      {
+        "model": "aelven_expansion:block/hydrosatin_cap_mirrored",
+        "y": 180
+      }
+    ]
+  }
+}

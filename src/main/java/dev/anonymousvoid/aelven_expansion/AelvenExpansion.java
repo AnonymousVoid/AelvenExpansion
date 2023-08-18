@@ -93,6 +93,8 @@ public class AelvenExpansion {
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.PEACHGROVE_DOOR.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.PEACHGROVE_TRAPDOOR.get(), RenderType.cutout());
 
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.HYDROSATIN_CAP.get(), RenderType.translucent());
+
         WoodType.register(ModWoodTypes.MOON_FIR);
         WoodType.register(ModWoodTypes.SILVERBLOOD);
         WoodType.register(ModWoodTypes.PEACHGROVE);

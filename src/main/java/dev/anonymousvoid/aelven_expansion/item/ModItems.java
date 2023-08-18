@@ -79,6 +79,9 @@ public class ModItems {
     public static final RegistryObject<Item> PEACHGROVE_SIGN = ITEMS.register("peachgrove_sign",
             () -> new SignItem(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS).stacksTo(16),
                     ModBlocks.PEACHGROVE_SIGN.get(), ModBlocks.PEACHGROVE_WALL_SIGN.get()));
+    public static final RegistryObject<Item> HYDROSATIN_SIGN = ITEMS.register("hydrosatin_sign",
+            () -> new SignItem(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS).stacksTo(16),
+                    ModBlocks.HYDROSATIN_SIGN.get(), ModBlocks.HYDROSATIN_WALL_SIGN.get()));
 
     public static final RegistryObject<ModBoatItem> MOON_FIR_BOAT = ITEMS.register("moon_fir_boat",
             () -> new ModBoatItem(false, ModBoat.Type.MOON_FIR,
