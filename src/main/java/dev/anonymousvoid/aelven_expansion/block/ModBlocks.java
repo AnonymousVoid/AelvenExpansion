@@ -788,7 +788,7 @@ public class ModBlocks {
             () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.HYDROSATIN));
     public static final RegistryObject<Block> HYDROSATIN_SIGN = registerBlockWithoutBlockItem("hydrosatin_sign",
             () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.HYDROSATIN));
-    public static final RegistryObject<Block> HYDROSATIN_SAPLING = registerBlock("hydrosatin_sapling",
+    public static final RegistryObject<Block> HYDROSATIN_FUNGUS = registerBlock("hydrosatin_fungus",
             () -> new SaplingBlock(new MoonFirTreeGrower(), flowerProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
     public static final RegistryObject<Block> HYDROSATIN_CAP = registerBlock("hydrosatin_cap",

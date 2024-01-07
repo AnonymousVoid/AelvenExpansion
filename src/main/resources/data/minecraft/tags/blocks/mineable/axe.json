@@ -49,6 +49,22 @@
     "aelven_expansion:peachgrove_pressure_plate",
     "aelven_expansion:peachgrove_button",
     "aelven_expansion:peachgrove_sign",
+    "aelven_expansion:hydrosatin_stem",
+    "aelven_expansion:hydrosatin_hyphae",
+    "aelven_expansion:hydrosatin_beams",
+    "aelven_expansion:stripped_hydrosatin_stem",
+    "aelven_expansion:stripped_hydrosatin_hyphae",
+    "aelven_expansion:stripped_hydrosatin_beams",
+    "aelven_expansion:hydrosatin_planks",
+    "aelven_expansion:hydrosatin_stairs",
+    "aelven_expansion:hydrosatin_slab",
+    "aelven_expansion:hydrosatin_fence",
+    "aelven_expansion:hydrosatin_fence_gate",
+    "aelven_expansion:hydrosatin_door",
+    "aelven_expansion:hydrosatin_trapdoor",
+    "aelven_expansion:hydrosatin_pressure_plate",
+    "aelven_expansion:hydrosatin_button",
+    "aelven_expansion:hydrosatin_sign",
     "aelven_expansion:idol_table"
   ]
 }

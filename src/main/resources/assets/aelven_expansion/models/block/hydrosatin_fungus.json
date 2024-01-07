@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "aelven_expansion:block/hydrosatin_fungus"
+  },
+  "render_type": "cutout"
+}

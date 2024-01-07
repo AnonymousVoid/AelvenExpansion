@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "minecraft:wood",
+  "pattern": [
+    "   ",
+    "## ",
+    "## "
+  ],
+  "key": {
+    "#": {
+      "item": "aelven_expansion:hydrosatin_stem"
+    }
+  },
+  "result": {
+    "item": "aelven_expansion:hydrosatin_hyphae",
+    "count": 3
+  }
+}

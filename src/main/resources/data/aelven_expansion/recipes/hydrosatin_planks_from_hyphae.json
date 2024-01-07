@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "minecraft:planks",
+  "ingredients":[
+    {
+      "item": "aelven_expansion:hydrosatin_hyphae"
+    }
+  ],
+  "result": {
+    "item": "aelven_expansion:hydrosatin_planks",
+    "count": 4
+  }
+}

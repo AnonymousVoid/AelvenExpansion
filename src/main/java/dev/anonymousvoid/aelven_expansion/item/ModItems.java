@@ -102,6 +102,13 @@ public class ModItems {
             () -> new ModBoatItem(true, ModBoat.Type.PEACHGROVE,
                     new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS).stacksTo(1)));
 
+    public static final RegistryObject<ModBoatItem> HYDROSATIN_BOAT = ITEMS.register("hydrosatin_boat",
+            () -> new ModBoatItem(false, ModBoat.Type.HYDROSATIN,
+                    new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS).stacksTo(1)));
+    public static final RegistryObject<ModBoatItem> HYDROSATIN_CHEST_BOAT = ITEMS.register("hydrosatin_chest_boat",
+            () -> new ModBoatItem(true, ModBoat.Type.HYDROSATIN,
+                    new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS).stacksTo(1)));
+
     public static final RegistryObject<Item> MUSIC_DISC = ITEMS.register("music_disc",
             () -> new RecordItem(7, ModSounds.MUSIC_DISC, new Item.Properties().stacksTo(1).tab(ModCreativeModeTab.MOD_TAB_ITEMS).rarity(Rarity.RARE), 203));
 

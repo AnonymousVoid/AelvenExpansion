@@ -99,6 +99,7 @@ public class ModChestBoat extends ModBoat implements HasCustomInventoryScreen, C
             case MOON_FIR -> ModItems.MOON_FIR_CHEST_BOAT.get();
             case SILVERBLOOD -> ModItems.SILVERBLOOD_CHEST_BOAT.get();
             case PEACHGROVE -> ModItems.PEACHGROVE_CHEST_BOAT.get();
+            case HYDROSATIN -> ModItems.HYDROSATIN_CHEST_BOAT.get();
         };
     }
 

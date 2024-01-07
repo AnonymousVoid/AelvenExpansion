@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "minecraft:boat",
+  "key": {
+    "#": {
+      "item": "aelven_expansion:hydrosatin_planks"
+    }
+  },
+  "pattern": [
+    "   ",
+    "# #",
+    "###"
+  ],
+  "result": {
+    "item": "aelven_expansion:hydrosatin_boat"
+  }
+}

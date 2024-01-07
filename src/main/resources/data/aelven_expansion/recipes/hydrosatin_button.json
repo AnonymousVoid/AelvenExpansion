@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "minecraft:wooden_button",
+  "ingredients": [
+    {
+      "item": "aelven_expansion:hydrosatin_planks"
+    }
+  ],
+  "result": {
+    "item": "aelven_expansion:hydrosatin_button"
+  }
+}

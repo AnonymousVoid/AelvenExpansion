@@ -4,6 +4,12 @@
     "aelven_expansion:crimson_beams",
     "aelven_expansion:stripped_crimson_beams",
     "aelven_expansion:warped_beams",
-    "aelven_expansion:stripped_warped_beams"
+    "aelven_expansion:stripped_warped_beams",
+    "aelven_expansion:hydrosatin_stem",
+    "aelven_expansion:hydrosatin_hyphae",
+    "aelven_expansion:hydrosatin_beams",
+    "aelven_expansion:stripped_hydrosatin_stem",
+    "aelven_expansion:stripped_hydrosatin_hyphae",
+    "aelven_expansion:stripped_hydrosatin_beams"
   ]
 }

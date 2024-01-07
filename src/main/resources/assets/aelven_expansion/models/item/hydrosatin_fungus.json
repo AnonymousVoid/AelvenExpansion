@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "aelven_expansion:block/hydrosatin_fungus"
+  },
+"render_type": "cutout"
+}

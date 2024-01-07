@@ -202,6 +202,7 @@ public class ModBoat extends Boat {
             case MOON_FIR -> ModItems.MOON_FIR_BOAT.get();
             case SILVERBLOOD -> ModItems.SILVERBLOOD_BOAT.get();
             case PEACHGROVE -> ModItems.PEACHGROVE_BOAT.get();
+            case HYDROSATIN -> ModItems.HYDROSATIN_BOAT.get();
         };
     }
 
@@ -841,7 +842,8 @@ public class ModBoat extends Boat {
     public static enum Type {
         MOON_FIR(ModBlocks.MOON_FIR_PLANKS.get(), "moon_fir"),
         SILVERBLOOD(ModBlocks.SILVERBLOOD_PLANKS.get(), "silverblood"),
-        PEACHGROVE(ModBlocks.PEACHGROVE_PLANKS.get(), "peachgrove");
+        PEACHGROVE(ModBlocks.PEACHGROVE_PLANKS.get(), "peachgrove"),
+        HYDROSATIN(ModBlocks.HYDROSATIN_PLANKS.get(), "hydrosatin");
 
         private final String name;
         private final Block planks;

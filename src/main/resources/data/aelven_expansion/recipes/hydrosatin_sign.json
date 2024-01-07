@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "minecraft:wooden_sign",
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "W": {
+      "item": "aelven_expansion:hydrosatin_planks"
+    }
+  },
+  "pattern": [
+    "WWW",
+    "WWW",
+    " # "
+  ],
+  "result": {
+    "item": "aelven_expansion:hydrosatin_sign",
+    "count": 3
+  }
+}

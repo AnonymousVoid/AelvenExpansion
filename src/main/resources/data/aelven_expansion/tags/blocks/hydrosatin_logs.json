@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "aelven_expansion:hydrosatin_stem",
+    "aelven_expansion:hydrosatin_hyphae",
+    "aelven_expansion:hydrosatin_beams",
+    "aelven_expansion:stripped_hydrosatin_stem",
+    "aelven_expansion:stripped_hydrosatin_hyphae",
+    "aelven_expansion:stripped_hydrosatin_beams"
+  ]
+}

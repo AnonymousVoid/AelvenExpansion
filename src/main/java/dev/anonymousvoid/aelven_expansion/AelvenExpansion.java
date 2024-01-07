@@ -98,6 +98,7 @@ public class AelvenExpansion {
         WoodType.register(ModWoodTypes.MOON_FIR);
         WoodType.register(ModWoodTypes.SILVERBLOOD);
         WoodType.register(ModWoodTypes.PEACHGROVE);
+        WoodType.register(ModWoodTypes.HYDROSATIN);
         BlockEntityRenderers.register(ModBlockEntities.SIGN_BLOCK_ENTITIES.get(), SignRenderer::new);
 
         EntityRenderers.register(ModEntityTypes.MOD_BOAT.get(), (context) -> {
@@ -114,6 +115,7 @@ public class AelvenExpansion {
         Sheets.addWoodType(ModWoodTypes.MOON_FIR);
         Sheets.addWoodType(ModWoodTypes.SILVERBLOOD);
         Sheets.addWoodType(ModWoodTypes.PEACHGROVE);
+        Sheets.addWoodType(ModWoodTypes.HYDROSATIN);
 
         event.enqueueWork(() -> {
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.MOON_FIR_SAPLING.getId(), ModBlocks.POTTED_MOON_FIR_SAPLING);
@@ -175,6 +177,16 @@ public class AelvenExpansion {
             });
             event.registerLayerDefinition(new ModelLayerLocation(new ResourceLocation(AelvenExpansion.MODID,
                     "mod_chest_boat/" + ModChestBoat.Type.PEACHGROVE.getName()), "main"), () -> {
+                return ModBoatModel.createBodyModel(true);
+            });
+            
+            // Hydrosatin Boats
+            event.registerLayerDefinition(new ModelLayerLocation(new ResourceLocation(AelvenExpansion.MODID,
+                    "mod_boat/" + ModBoat.Type.HYDROSATIN.getName()), "main"), () -> {
+                return ModBoatModel.createBodyModel(false);
+            });
+            event.registerLayerDefinition(new ModelLayerLocation(new ResourceLocation(AelvenExpansion.MODID,
+                    "mod_chest_boat/" + ModChestBoat.Type.HYDROSATIN.getName()), "main"), () -> {
                 return ModBoatModel.createBodyModel(true);
             });
 
