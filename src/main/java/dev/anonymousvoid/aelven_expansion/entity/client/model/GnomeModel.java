@@ -26,18 +26,18 @@ public class GnomeModel extends EntityModel<Gnome> {
 
 		PartDefinition core = partdefinition.addOrReplaceChild("core", CubeListBuilder.create().texOffs(0, 12).addBox(-3.0F, -8.0F, -2.0F, 6.0F, 6.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 24.0F, 0.0F));
 
-		PartDefinition rarm = core.addOrReplaceChild("rarm", CubeListBuilder.create().texOffs(24, 0).addBox(-5.0F, -1.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, -7.0F, 0.0F));
-		PartDefinition larm = core.addOrReplaceChild("larm", CubeListBuilder.create().texOffs(24, 8).addBox(3.0F, -1.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, -7.0F, 0.0F));
+		PartDefinition right_arm = core.addOrReplaceChild("right_arm", CubeListBuilder.create().texOffs(24, 0).addBox(-5.0F, -1.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, -7.0F, 0.0F));
+		PartDefinition left_arm = core.addOrReplaceChild("left_arm", CubeListBuilder.create().texOffs(24, 8).addBox(3.0F, -1.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, -7.0F, 0.0F));
 
-		PartDefinition lleg = core.addOrReplaceChild("lleg", CubeListBuilder.create().texOffs(8, 22).mirror().addBox(0.5F, 1.0F, -1.0F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offset(0.0F, -3.0F, 0.0F));
-		PartDefinition rleg = core.addOrReplaceChild("rleg", CubeListBuilder.create().texOffs(0, 22).mirror().addBox(-2.5F, 1.0F, -1.0F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offset(0.0F, -3.0F, 0.0F));
+		PartDefinition left_leg = core.addOrReplaceChild("left_leg", CubeListBuilder.create().texOffs(8, 22).mirror().addBox(0.5F, 1.0F, -1.0F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offset(0.0F, -3.0F, 0.0F));
+		PartDefinition right_leg = core.addOrReplaceChild("right_leg", CubeListBuilder.create().texOffs(0, 22).mirror().addBox(-2.5F, 1.0F, -1.0F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offset(0.0F, -3.0F, 0.0F));
 
 		PartDefinition head = core.addOrReplaceChild("head", CubeListBuilder.create().texOffs(0, 0).addBox(-3.0F, -6.0F, -3.0F, 6.0F, 6.0F, 6.0F, new CubeDeformation(0.0F))
 				.texOffs(12, 23).addBox(-2.5F, 0.0F, -2.5F, 5.0F, 4.0F, 5.0F, new CubeDeformation(0.0F))
 				.texOffs(20, 20).addBox(-1.5F, -3.0F, -4.0F, 3.0F, 2.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, -8.0F, 0.0F));
 
-		PartDefinition cube_r1 = head.addOrReplaceChild("cube_r1", CubeListBuilder.create().texOffs(0, 0).mirror().addBox(-2.0F, -1.5F, 0.0F, 2.0F, 3.0F, 0.01F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(-3.0F, -3.5F, -1.0F, 0.0873F, 1.1781F, 0.0F));
-		PartDefinition cube_r2 = head.addOrReplaceChild("cube_r2", CubeListBuilder.create().texOffs(0, 0).addBox(0.0F, -1.5F, 0.0F, 2.0F, 3.0F, 0.01F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(3.0F, -3.5F, -1.0F, 0.0873F, -1.1781F, 0.0F));
+		PartDefinition right_ear = head.addOrReplaceChild("right_ear", CubeListBuilder.create().texOffs(0, 0).mirror().addBox(-2.0F, -1.5F, 0.0F, 2.0F, 3.0F, 0.01F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(-3.0F, -3.5F, -1.0F, 0.0873F, 1.1781F, 0.0F));
+		PartDefinition left_ear = head.addOrReplaceChild("left_ear", CubeListBuilder.create().texOffs(0, 0).addBox(0.0F, -1.5F, 0.0F, 2.0F, 3.0F, 0.01F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(3.0F, -3.5F, -1.0F, 0.0873F, -1.1781F, 0.0F));
 
 		return LayerDefinition.create(meshdefinition, 32, 32);
 	}
@@ -47,10 +47,10 @@ public class GnomeModel extends EntityModel<Gnome> {
 		this.core.getChild("head").yRot = netHeadYaw * ((float)Math.PI / 180F);
 		this.core.getChild("head").xRot = headPitch * ((float)Math.PI / 180F);
 
-		this.core.getChild("lleg").xRot = Mth.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount * 0.5F;
-		this.core.getChild("rleg").xRot = Mth.cos(limbSwing * 0.6662F + (float)Math.PI) * 1.4F * limbSwingAmount * 0.5F;
-		this.core.getChild("larm").xRot = Mth.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount * 0.5F;
-		this.core.getChild("rarm").xRot = Mth.cos(limbSwing * 0.6662F + (float)Math.PI) * 1.4F * limbSwingAmount * 0.5F;
+		this.core.getChild("left_leg").xRot = Mth.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount * 0.5F;
+		this.core.getChild("right_leg").xRot = Mth.cos(limbSwing * 0.6662F + (float)Math.PI) * 1.4F * limbSwingAmount * 0.5F;
+		this.core.getChild("left_arm").xRot = Mth.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount * 0.5F;
+		this.core.getChild("right_arm").xRot = Mth.cos(limbSwing * 0.6662F + (float)Math.PI) * 1.4F * limbSwingAmount * 0.5F;
 	}
 
 	@Override
