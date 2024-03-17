@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "aelven_expansion:fading_fortress",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 1094869853,
+    "spacing": 20,
+    "separation": 12,
+    "type": "minecraft:random_spread"
+  }
+}

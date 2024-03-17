@@ -21,7 +21,7 @@ displayName="Aelven Expansion" #mandatory
 #displayURL="https://change.me.to.your.mods.homepage.example.invalid/"
 # A file name (in the root of the mod JAR) containing a logo for display
 logoFile="aelven_expansion.png"
-credits="AnonymousVoid and SamIr0n did all the code with help from Blce. And SamIr0n provided all the textures. MandMLOL provided the music. Kaupenjoe's tutorials helped a lot with navigating forge and makin an easy way to organize our code."
+credits="AnonymousVoid wrote the code, worked with models, structures, mechanics, and refined the world building and ideas. SamIr0n provided all the textures, did most of the models, helped with writing some code, and helped with concepts. MandMLOL provided the music for the Valors Quest music disc. DarkCode404 provided the models for the Gnome entity. Kaupenjoe's youtube tutorials and discord community were very helpful in learning about new areas of modding and bugfixing."
 authors="AnonymousVoid, SamIr0n, MandMLOL"
 # Display Test controls the display for your mod in the server connection screen
 # MATCH_VERSION means that your mod will cause a red X if the versions on client and server differ. This is the default behaviour and should be what you choose if you have server and client elements to your mod.
