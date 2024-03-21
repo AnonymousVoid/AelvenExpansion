@@ -44,7 +44,8 @@ public class ModBlocks {
     private static final BlockBehaviour.Properties coralProperties = BlockBehaviour.Properties.copy(Blocks.BRAIN_CORAL);
     private static final BlockBehaviour.Properties pottedFlowerProperties = BlockBehaviour.Properties.of(Material.DECORATION).instabreak().noOcclusion();
     private static final BlockBehaviour.Properties replaceablePlantProperties = BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XYZ);
-    private static final BlockBehaviour.Properties mulchProperties = BlockBehaviour.Properties.copy(Blocks.DIRT).color(MaterialColor.TERRACOTTA_CYAN).sound(SoundType.MUD).randomTicks();
+    private static final BlockBehaviour.Properties mudProperties = BlockBehaviour.Properties.copy(Blocks.DIRT).color(MaterialColor.TERRACOTTA_CYAN).sound(SoundType.MUD).randomTicks();
+    private static final BlockBehaviour.Properties mulchProperties = BlockBehaviour.Properties.copy(Blocks.DIRT).color(MaterialColor.TERRACOTTA_CYAN).sound(SoundType.MOSS).randomTicks();
     private static final BlockBehaviour.Properties muddyLeafProperties = BlockBehaviour.Properties.copy(Blocks.DIRT).color(MaterialColor.TERRACOTTA_CYAN).sound(SoundType.MUD);
 
     private static final BlockBehaviour.Properties chittaProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE).strength(2.0F, 6.0F);
@@ -121,8 +122,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> POTTED_MOON_BLOOM = registerBlockWithoutBlockItem("potted_moon_bloom",
             () -> new FlowerPotBlock(MOON_BLOOM.get(), pottedFlowerProperties));
     public static final RegistryObject<Block> MOON_FIR_LEAVES = registerBlock("moon_fir_leaves",
-            () -> flammableLeavesBlock(azaleaProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
-
+            () -> aelvenDecayLeavesBlock(azaleaProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
     public static final RegistryObject<Block> SILVERBLOOD_LOG = registerBlock("silverblood_log",
             () -> logBlock(MaterialColor.COLOR_LIGHT_GRAY, MaterialColor.COLOR_PINK), ModCreativeModeTab.MOD_TAB_BLOCKS);
@@ -169,7 +169,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> POTTED_SILVER_MARIGOLD = registerBlockWithoutBlockItem("potted_silver_marigold",
             () -> new FlowerPotBlock(SILVER_MARIGOLD.get(), pottedFlowerProperties));
     public static final RegistryObject<Block> SILVERBLOOD_LEAVES = registerBlock("silverblood_leaves",
-            () -> flammableLeavesBlock(azaleaProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> aelvenDecayLeavesBlock(azaleaProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
 
     public static final RegistryObject<Block> PEACHGROVE_LOG = registerBlock("peachgrove_log",
@@ -217,7 +217,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> POTTED_PEACH_LAVENDER = registerBlockWithoutBlockItem("potted_peach_lavender",
             () -> new FlowerPotBlock(PEACH_LAVENDER.get(), pottedFlowerProperties));
     public static final RegistryObject<Block> PEACHGROVE_LEAVES = registerBlock("peachgrove_leaves",
-            () -> flammableLeavesBlock(azaleaProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> aelvenDecayLeavesBlock(azaleaProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
 
     public static final RegistryObject<Block> OAK_BEAMS = registerBlock("oak_beams",
@@ -267,7 +267,13 @@ public class ModBlocks {
 
 
     public static final RegistryObject<Block> MUDDY_MULCH = registerBlock("muddy_mulch",
+            () -> new MulchBlock(mudProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
+    public static final RegistryObject<Block> MULCH = registerBlock("mulch",
             () -> new MulchBlock(mulchProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
+    public static final RegistryObject<Block> MULCH_CARPET = registerBlock("mulch_carpet",
+            () -> new CarpetBlock(mulchProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> MULCHY_GRASS = registerBlock("mulchy_grass",
             () -> new MulchyGrassBlock(replaceablePlantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> TALL_MULCHY_GRASS = registerBlock("tall_mulchy_grass",
@@ -319,8 +325,6 @@ public class ModBlocks {
     public static final RegistryObject<Block> MULCHY_MUDSTONE_BRICK_WALL = registerBlock("mulchy_mudstone_brick_wall",
             () -> new WallBlock(mudstoneBrickProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
-    public static final RegistryObject<Block> CHIPSTONE_GRASS = registerBlock("chipstone_grass",
-            () -> new MulchyGrassBlock(replaceablePlantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
     public static final RegistryObject<Block> MOONSHADE = registerBlock("moonshade",
             () -> new TallFlowerBlock(flowerProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
@@ -722,6 +726,20 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> CHIPSTONE_LOG = registerBlock("chipstone_log",
             () -> logBlock(MaterialColor.COLOR_LIGHT_GRAY, MaterialColor.COLOR_PINK), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> CHIPSTONE_LEAVES = registerBlock("chipstone_leaves",
+            () -> flammableLeavesBlock(azaleaProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> HANGING_CHIPSTONE_LEAVES = registerBlock("hanging_chipstone_leaves",
+            () -> new HangingRootsBlock(azaleaProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> CHIPSTONE_GRASS = registerBlock("chipstone_grass",
+            () -> new MulchyGrassBlock(replaceablePlantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> CHIPSTONE_BUSH = registerBlock("chipstone_bush",
+            () -> new TallFlowerBlock(flowerProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> CHIPSTONE_BLADES = registerBlock("chipstone_blades",
+            () -> new MulchyGrassBlock(replaceablePlantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> TALL_CHIPSTONE_BLADES = registerBlock("tall_chipstone_blades",
+            () -> new TallFlowerBlock(flowerProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
+
 
     public static final RegistryObject<Block> GIANT_BRAIN_CORAL = registerBlock("giant_brain_coral",
             () -> new TallSeagrassBlock(coralProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
@@ -895,6 +913,14 @@ public class ModBlocks {
     }
     private static LeavesBlock flammableLeavesBlock(BlockBehaviour.Properties properties) {
         return flammableLeavesBlock(properties, 5, 5);
+    }
+    private static LeavesBlock aelvenDecayLeavesBlock(BlockBehaviour.Properties properties) {
+        return new LeavesBlock(properties) {
+            @Override
+            protected boolean decaying(BlockState p_221386_) {
+                return false;
+            }
+        };
     }
 
 

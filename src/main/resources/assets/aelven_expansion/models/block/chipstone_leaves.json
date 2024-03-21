@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "aelven_expansion:block/chipstone_leaves"
+  },
+  "render_type": "cutout"
+}

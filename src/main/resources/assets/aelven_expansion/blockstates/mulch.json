@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "aelven_expansion:block/mulch"
+      },
+      {
+        "model": "aelven_expansion:block/mulch",
+        "y": 90
+      },
+      {
+        "model": "aelven_expansion:block/mulch",
+        "y": 180
+      },
+      {
+        "model": "aelven_expansion:block/mulch",
+        "y": 270
+      }
+    ]
+  }
+}

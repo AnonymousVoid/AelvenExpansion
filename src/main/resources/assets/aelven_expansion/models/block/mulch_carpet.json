@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/carpet",
+  "textures": {
+    "wool": "aelven_expansion:block/mulch"
+  },
+  "render_type": "cutout"
+}

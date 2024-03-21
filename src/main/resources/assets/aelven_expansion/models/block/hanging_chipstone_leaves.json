@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "aelven_expansion:block/hanging_chipstone_leaves"
+  },
+  "render_type": "cutout"
+}

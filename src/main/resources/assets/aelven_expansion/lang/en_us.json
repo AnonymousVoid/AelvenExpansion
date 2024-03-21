@@ -325,6 +325,8 @@
 	"block.aelven_expansion.black_shingle_wall": "Black Shingle Wall",
 
 	"block.aelven_expansion.muddy_mulch": "Muddy Mulch",
+	"block.aelven_expansion.mulch": "Mulch",
+	"block.aelven_expansion.mulch_carpet": "Mulch Carpet",
 	"block.aelven_expansion.mulchy_grass": "Mulchy Grass",
 	"block.aelven_expansion.tall_mulchy_grass": "Tall Mulchy Grass",
 	"block.aelven_expansion.muddy_peachgrove_leaves": "Muddy Peachgrove Leaves",
@@ -352,6 +354,11 @@
 	"block.aelven_expansion.mulchy_mudstone_brick_wall": "Mulchy Mudstone Brick Wall",
 
 	"block.aelven_expansion.chipstone_log": "Chipstone Log",
+	"block.aelven_expansion.chipstone_leaves": "Chipstone Leaves",
+	"block.aelven_expansion.hanging_chipstone_leaves": "Hanging Chipstone Leaves",
+	"block.aelven_expansion.chipstone_grass": "Chipstone Grass",
+	"block.aelven_expansion.chipstone_blades": "Chipstone Blades",
+	"block.aelven_expansion.tall_chipstone_blades": "Tall Chipstone Blades",
 
 	"block.aelven_expansion.giant_brain_coral": "Giant Brain Coral",
 	"block.aelven_expansion.dead_giant_brain_coral": "Dead Giant Brain Coral",
