@@ -1,11 +1,11 @@
 {
-  "name": "aelven_expansion:fading_fortress/base_corner_pool",
+  "name": "aelven_expansion:fading_fortress/basement_room_pool",
   "fallback": "minecraft:empty",
   "elements": [
     {
       "weight": 3,
       "element": {
-        "location": "aelven_expansion:fading_fortress_base_corner_1",
+        "location": "aelven_expansion:fading_fortress/fading_fortress_basement_room_1",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
@@ -14,7 +14,7 @@
     {
       "weight": 3,
       "element": {
-        "location": "aelven_expansion:fading_fortress_base_corner_2",
+        "location": "aelven_expansion:fading_fortress/fading_fortress_basement_room_2",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
@@ -23,7 +23,7 @@
     {
       "weight": 5,
       "element": {
-        "location": "aelven_expansion:fading_fortress_base_corner_3",
+        "location": "aelven_expansion:fading_fortress/fading_fortress_basement_room_3",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
@@ -32,7 +32,7 @@
     {
       "weight": 1,
       "element": {
-        "location": "aelven_expansion:fading_fortress_base_corner_4",
+        "location": "aelven_expansion:fading_fortress/fading_fortress_basement_room_4",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"

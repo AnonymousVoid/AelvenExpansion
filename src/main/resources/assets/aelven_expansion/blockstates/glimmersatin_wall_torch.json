@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "aelven_expansion:block/glimmersatin_wall_torch"
+    },
+    "facing=north": {
+      "model": "aelven_expansion:block/glimmersatin_wall_torch",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "aelven_expansion:block/glimmersatin_wall_torch",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "aelven_expansion:block/glimmersatin_wall_torch",
+      "y": 180
+    }
+  }
+}

@@ -356,7 +356,7 @@
 	"block.aelven_expansion.chipstone_log": "Chipstone Log",
 	"block.aelven_expansion.chipstone_leaves": "Chipstone Leaves",
 	"block.aelven_expansion.hanging_chipstone_leaves": "Hanging Chipstone Leaves",
-	"block.aelven_expansion.chipstone_grass": "Chipstone Grass",
+	"block.aelven_expansion.chipstone_bush": "Chipstone Bush",
 	"block.aelven_expansion.chipstone_blades": "Chipstone Blades",
 	"block.aelven_expansion.tall_chipstone_blades": "Tall Chipstone Blades",
 
@@ -395,6 +395,15 @@
 	"block.aelven_expansion.hydrosatin_sign": "Hydrosatin Sign",
 	"item.aelven_expansion.hydrosatin_boat": "Hydrosatin Boat",
 	"item.aelven_expansion.hydrosatin_chest_boat": "Hydrosatin Boat with Chest",
+
+	"block.aelven_expansion.glimmersatin_block": "Glimmersatin Block",
+	"block.aelven_expansion.glimmersatin_torch": "Glimmersatin Torch",
+	"block.aelven_expansion.glimmersatin_wall_torch": "Glimmersatin Wall Torch",
+	"block.aelven_expansion.silversatin_block": "Silversatin Block",
+	"block.aelven_expansion.silversatin_torch": "Silversatin Torch",
+	"block.aelven_expansion.silversatin_wall_torch": "Silversatin Wall Torch",
+	"item.aelven_expansion.glimmersatin": "Glimmersatin",
+	"item.aelven_expansion.silversatin": "Silversatin",
 
 
 	"itemGroup.aelven_expansion_blocks": "Aelven Expansion Blocks",

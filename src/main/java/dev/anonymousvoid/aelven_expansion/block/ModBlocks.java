@@ -7,11 +7,13 @@ import dev.anonymousvoid.aelven_expansion.block.custom.ModWallSignBlock;
 import dev.anonymousvoid.aelven_expansion.block.entity.ModWoodTypes;
 import dev.anonymousvoid.aelven_expansion.item.ModCreativeModeTab;
 import dev.anonymousvoid.aelven_expansion.item.ModItems;
+import dev.anonymousvoid.aelven_expansion.particle.ModParticles;
 import dev.anonymousvoid.aelven_expansion.world.feature.tree.MoonFirTreeGrower;
 import dev.anonymousvoid.aelven_expansion.world.feature.tree.PeachgroveTreeGrower;
 import dev.anonymousvoid.aelven_expansion.world.feature.tree.SilverbloodTreeGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
@@ -812,6 +814,36 @@ public class ModBlocks {
     public static final RegistryObject<Block> HYDROSATIN_CAP = registerBlock("hydrosatin_cap",
             () -> new TransparentWaterloggableBlock(shroomProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
+
+    public static final RegistryObject<Block> GLIMMERSATIN_BLOCK = registerBlock("glimmersatin_block",
+            () -> new Block(BlockBehaviour.Properties.of(HYDROSATIN_CAP.get().defaultBlockState().getMaterial()).lightLevel((state) -> {
+                return 13;
+            })), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
+    public static final RegistryObject<Block> GLIMMERSATIN_TORCH = registerBlock("glimmersatin_torch",
+            () -> new TorchBlock(BlockBehaviour.Properties.of(Material.DECORATION).noCollission().instabreak().lightLevel((state) -> {
+                return 12;
+            }).sound(SoundType.WOOD), ModParticles.ELERIUM_FLAME_PARTICLES.get()), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
+    public static final RegistryObject<Block> GLIMMERSATIN_WALL_TORCH = registerBlockWithoutBlockItem("glimmersatin_wall_torch",
+            () -> new WallTorchBlock(BlockBehaviour.Properties.of(Material.DECORATION).noCollission().instabreak().lightLevel((state) -> {
+                return 12;
+            }).sound(SoundType.WOOD).dropsLike(GLIMMERSATIN_TORCH.get()), ModParticles.ELERIUM_FLAME_PARTICLES.get()));
+
+    public static final RegistryObject<Block> SILVERSATIN_BLOCK = registerBlock("silversatin_block",
+            () -> new Block(BlockBehaviour.Properties.of(SILVER_BLOCK.get().defaultBlockState().getMaterial()).lightLevel((state) -> {
+                return 15;
+            })), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
+    public static final RegistryObject<Block> SILVERSATIN_TORCH = registerBlock("silversatin_torch",
+            () -> new TorchBlock(BlockBehaviour.Properties.of(Material.DECORATION).noCollission().instabreak().lightLevel((state) -> {
+                return 14;
+            }).sound(SoundType.WOOD), ModParticles.RUNING_PARTICLES.get()), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
+    public static final RegistryObject<Block> SILVERSATIN_WALL_TORCH = registerBlockWithoutBlockItem("silversatin_wall_torch",
+            () -> new WallTorchBlock(BlockBehaviour.Properties.of(Material.DECORATION).noCollission().instabreak().lightLevel((state) -> {
+                return 14;
+            }).sound(SoundType.WOOD).dropsLike(SILVERSATIN_TORCH.get()), ModParticles.RUNING_PARTICLES.get()));
 
 
 
