@@ -112,9 +112,9 @@ public class ModItems {
     public static final RegistryObject<Item> MUSIC_DISC = ITEMS.register("music_disc",
             () -> new RecordItem(7, ModSounds.MUSIC_DISC, new Item.Properties().stacksTo(1).tab(ModCreativeModeTab.MOD_TAB_ITEMS).rarity(Rarity.RARE), 203));
 
-    public static final RegistryObject<Item> GLIMMERSATIN = ITEMS.register("glimmersatin",
+    public static final RegistryObject<Item> GLIMMERSATIN_CHUNK = ITEMS.register("glimmersatin_chunk",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
-    public static final RegistryObject<Item> SILVERSATIN = ITEMS.register("silversatin",
+    public static final RegistryObject<Item> SILVERSATIN_CHUNK = ITEMS.register("silversatin_chunk",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
 
 
