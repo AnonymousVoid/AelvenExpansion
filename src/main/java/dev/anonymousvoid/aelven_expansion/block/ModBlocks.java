@@ -430,6 +430,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> CHITTA_LARGE_TILE_WALL = registerBlock("chitta_large_tile_wall",
             () -> new WallBlock(chittaPolishedProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
+    public static final RegistryObject<Block> CHITTA_PLAYING_TILES = registerBlock("chitta_playing_tiles",
+            () -> new PlayingTilesBlock(chittaPolishedProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
 
     public static final RegistryObject<Block> ELERIUM_ORE = registerBlock("elerium_ore",
             () -> new DropExperienceBlock(stoneOreProperties, UniformInt.of(3, 7)), ModCreativeModeTab.MOD_TAB_BLOCKS);
@@ -823,12 +826,12 @@ public class ModBlocks {
     public static final RegistryObject<Block> GLIMMERSATIN_TORCH = registerBlock("glimmersatin_torch",
             () -> new TorchBlock(BlockBehaviour.Properties.of(Material.DECORATION).noCollission().instabreak().lightLevel((state) -> {
                 return 12;
-            }).sound(SoundType.WOOD), ModParticles.ELERIUM_FLAME_PARTICLES.get()), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            }).sound(SoundType.WOOD), ParticleTypes.SOUL_FIRE_FLAME), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
     public static final RegistryObject<Block> GLIMMERSATIN_WALL_TORCH = registerBlockWithoutBlockItem("glimmersatin_wall_torch",
             () -> new WallTorchBlock(BlockBehaviour.Properties.of(Material.DECORATION).noCollission().instabreak().lightLevel((state) -> {
                 return 12;
-            }).sound(SoundType.WOOD).dropsLike(GLIMMERSATIN_TORCH.get()), ModParticles.ELERIUM_FLAME_PARTICLES.get()));
+            }).sound(SoundType.WOOD).dropsLike(GLIMMERSATIN_TORCH.get()), ParticleTypes.SOUL_FIRE_FLAME));
 
     public static final RegistryObject<Block> SILVERSATIN_BLOCK = registerBlock("silversatin_block",
             () -> new Block(BlockBehaviour.Properties.of(SILVER_BLOCK.get().defaultBlockState().getMaterial()).lightLevel((state) -> {
@@ -838,12 +841,12 @@ public class ModBlocks {
     public static final RegistryObject<Block> SILVERSATIN_TORCH = registerBlock("silversatin_torch",
             () -> new TorchBlock(BlockBehaviour.Properties.of(Material.DECORATION).noCollission().instabreak().lightLevel((state) -> {
                 return 14;
-            }).sound(SoundType.WOOD), ModParticles.RUNING_PARTICLES.get()), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            }).sound(SoundType.WOOD), ParticleTypes.SOUL_FIRE_FLAME), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
     public static final RegistryObject<Block> SILVERSATIN_WALL_TORCH = registerBlockWithoutBlockItem("silversatin_wall_torch",
             () -> new WallTorchBlock(BlockBehaviour.Properties.of(Material.DECORATION).noCollission().instabreak().lightLevel((state) -> {
                 return 14;
-            }).sound(SoundType.WOOD).dropsLike(SILVERSATIN_TORCH.get()), ModParticles.RUNING_PARTICLES.get()));
+            }).sound(SoundType.WOOD).dropsLike(SILVERSATIN_TORCH.get()), ParticleTypes.SOUL_FIRE_FLAME));
 
 
 
