@@ -1,6 +1,6 @@
 {
 	"parent": "item/generated",
 	"textures": {
-		"layer0": "aelven_expansion:item/glimmersatin_torch"
+		"layer0": "aelven_expansion:block/glimmersatin_torch"
 	}
 }

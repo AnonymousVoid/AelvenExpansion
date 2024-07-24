@@ -76,7 +76,8 @@ public class ModBlocks {
     private static final BlockBehaviour.Properties silverBlockProperties = BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK).requiresCorrectToolForDrops().strength(5.0F, 120.0F);
     private static final BlockBehaviour.Properties stoneOreProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.STONE).strength(3.0F, 3.0F);
     private static final BlockBehaviour.Properties deepslateOreProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE).strength(4.5F, 3.0F);
-    private static final BlockBehaviour.Properties shroomProperties = BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK);
+    private static final BlockBehaviour.Properties shroomProperties = BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK).noOcclusion();
+
 
     // BLOCKS
     public static final RegistryObject<Block> MOON_FIR_LOG = registerBlock("moon_fir_log",
@@ -817,23 +818,21 @@ public class ModBlocks {
     public static final RegistryObject<Block> HYDROSATIN_CAP = registerBlock("hydrosatin_cap",
             () -> new TransparentWaterloggableBlock(shroomProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
-
-    public static final RegistryObject<Block> GLIMMERSATIN_BLOCK = registerBlock("glimmersatin_block",
-            () -> new Block(BlockBehaviour.Properties.of(HYDROSATIN_CAP.get().defaultBlockState().getMaterial()).lightLevel((state) -> {
-                return 13;
+    public static final RegistryObject<Block> GLIMMERSATIN = registerBlock("glimmersatin",
+            () -> new TransparentWaterloggableBlock(BlockBehaviour.Properties.copy(HYDROSATIN_CAP.get()).sound(SoundType.SHROOMLIGHT).lightLevel((state) -> {
+                return 9;
             })), ModCreativeModeTab.MOD_TAB_BLOCKS);
-
     public static final RegistryObject<Block> GLIMMERSATIN_TORCH = registerBlock("glimmersatin_torch",
             () -> new TorchBlock(BlockBehaviour.Properties.of(Material.DECORATION).noCollission().instabreak().lightLevel((state) -> {
-                return 12;
+                return 8;
             }).sound(SoundType.WOOD), ParticleTypes.SOUL_FIRE_FLAME), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
     public static final RegistryObject<Block> GLIMMERSATIN_WALL_TORCH = registerBlockWithoutBlockItem("glimmersatin_wall_torch",
             () -> new WallTorchBlock(BlockBehaviour.Properties.of(Material.DECORATION).noCollission().instabreak().lightLevel((state) -> {
-                return 12;
+                return 8;
             }).sound(SoundType.WOOD).dropsLike(GLIMMERSATIN_TORCH.get()), ParticleTypes.SOUL_FIRE_FLAME));
 
-    public static final RegistryObject<Block> SILVERSATIN_BLOCK = registerBlock("silversatin_block",
+    public static final RegistryObject<Block> SILVERSATIN = registerBlock("silversatin",
             () -> new Block(BlockBehaviour.Properties.of(SILVER_BLOCK.get().defaultBlockState().getMaterial()).lightLevel((state) -> {
                 return 15;
             })), ModCreativeModeTab.MOD_TAB_BLOCKS);
