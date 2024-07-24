@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/template_torch_wall",
   "textures": {
-    "torch": "aelven_expansion:block/silversatin_wall_torch"
+    "torch": "aelven_expansion:block/silversatin_torch"
   }
 }

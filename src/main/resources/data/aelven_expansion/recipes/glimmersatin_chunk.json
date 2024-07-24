@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "aelven_expansion:glimmersatin"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "aelven_expansion:glimmersatin_chunk"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "tiles=1": {
+      "model": "aelven_expansion:block/chitta_playing_tiles"
+    },
+    "tiles=2": {
+      "model": "aelven_expansion:block/two_chitta_playing_tiles"
+    },
+    "tiles=3": {
+      "model": "aelven_expansion:block/three_chitta_playing_tiles"
+    },
+    "tiles=4": {
+      "model": "aelven_expansion:block/four_chitta_playing_tiles"
+    }
+  }
+}
