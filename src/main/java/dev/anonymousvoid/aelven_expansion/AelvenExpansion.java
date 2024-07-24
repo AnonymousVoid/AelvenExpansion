@@ -96,7 +96,7 @@ public class AelvenExpansion {
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.HYDROSATIN_CAP.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.GLIMMERSATIN.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.GLIMMERSATIN_TORCH.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.GLIMMERSATIN_WALL_TORCH.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.GLIMMERSATIN_WALL_TORCH.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.SILVERSATIN.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.SILVERSATIN_TORCH.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.SILVERSATIN_WALL_TORCH.get(), RenderType.cutout());

@@ -5,7 +5,7 @@
     {
       "weight": 7,
       "element": {
-        "location": "aelven_expansion:fading_fortress_spiral_stairs",
+        "location": "aelven_expansion:fading_fortress/fading_fortress_spiral_stairs",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
@@ -14,7 +14,7 @@
     {
       "weight": 3,
       "element": {
-        "location": "aelven_expansion:fading_fortress_spiral_stairs_dark",
+        "location": "aelven_expansion:fading_fortress/fading_fortress_spiral_stairs_dark",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"

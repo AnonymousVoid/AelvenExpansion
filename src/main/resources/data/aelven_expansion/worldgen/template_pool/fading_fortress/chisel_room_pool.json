@@ -5,7 +5,7 @@
     {
       "weight": 35,
       "element": {
-        "location": "aelven_expansion:fading_fortress_chisel_room_assorted",
+        "location": "aelven_expansion:fading_fortress/fading_fortress_chisel_room_assorted",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
@@ -14,7 +14,7 @@
     {
       "weight": 15,
       "element": {
-        "location": "aelven_expansion:fading_fortress_chisel_room_1",
+        "location": "aelven_expansion:fading_fortress/fading_fortress_chisel_room_1",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
@@ -23,7 +23,7 @@
     {
       "weight": 15,
       "element": {
-        "location": "aelven_expansion:fading_fortress_chisel_room_2",
+        "location": "aelven_expansion:fading_fortress/fading_fortress_chisel_room_2",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
@@ -32,7 +32,7 @@
     {
       "weight": 15,
       "element": {
-        "location": "aelven_expansion:fading_fortress_chisel_room_3",
+        "location": "aelven_expansion:fading_fortress/fading_fortress_chisel_room_3",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
@@ -41,7 +41,7 @@
     {
       "weight": 15,
       "element": {
-        "location": "aelven_expansion:fading_fortress_chisel_room_4",
+        "location": "aelven_expansion:fading_fortress/fading_fortress_chisel_room_4",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
@@ -50,7 +50,7 @@
     {
       "weight": 5,
       "element": {
-        "location": "aelven_expansion:fading_fortress_chisel_room_empty",
+        "location": "aelven_expansion:fading_fortress/fading_fortress_chisel_room_empty",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"

@@ -5,7 +5,7 @@
     {
       "weight": 4,
       "element": {
-        "location": "aelven_expansion:fading_fortress_large_library",
+        "location": "aelven_expansion:fading_fortress/fading_fortress_large_library",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
@@ -14,7 +14,7 @@
     {
       "weight": 3,
       "element": {
-        "location": "aelven_expansion:fading_fortress_library_1",
+        "location": "aelven_expansion:fading_fortress/fading_fortress_library_1",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
@@ -23,7 +23,7 @@
     {
       "weight": 3,
       "element": {
-        "location": "aelven_expansion:fading_fortress_library_2",
+        "location": "aelven_expansion:fading_fortress/fading_fortress_library_2",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"

@@ -5,7 +5,7 @@
     {
       "weight": 4,
       "element": {
-        "location": "aelven_expansion:fading_fortress_stairwell_kiln",
+        "location": "aelven_expansion:fading_fortress/fading_fortress_stairwell_kiln",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
@@ -14,7 +14,7 @@
     {
       "weight": 2,
       "element": {
-        "location": "aelven_expansion:fading_fortress_stairwell_ladder",
+        "location": "aelven_expansion:fading_fortress/fading_fortress_stairwell_ladder",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
@@ -23,7 +23,7 @@
     {
       "weight": 4,
       "element": {
-        "location": "aelven_expansion:fading_fortress_stairwell_spiral",
+        "location": "aelven_expansion:fading_fortress/fading_fortress_stairwell_spiral",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"

@@ -3,9 +3,36 @@
   "fallback": "minecraft:empty",
   "elements": [
     {
+      "weight": 7,
+      "element": {
+        "location": "aelven_expansion:fading_fortress/fading_fortress_entrance_basic",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 4,
+      "element": {
+        "location": "aelven_expansion:fading_fortress/fading_fortress_entrance_dusty",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
       "weight": 1,
       "element": {
-        "location": "aelven_expansion:fading_fortress_entrance",
+        "location": "aelven_expansion:fading_fortress/fading_fortress_entrance_ruined_left",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "aelven_expansion:fading_fortress/fading_fortress_entrance_ruined_right",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"

@@ -847,9 +847,6 @@ public class ModBlocks {
                 return 14;
             }).sound(SoundType.WOOD).dropsLike(SILVERSATIN_TORCH.get()), ParticleTypes.SOUL_FIRE_FLAME));
 
-
-
-
     private static ModLogBlock logBlock(MaterialColor c1, MaterialColor c2) {
         return new ModLogBlock(BlockBehaviour.Properties.of(Material.WOOD, (state) ->
                 state.getValue(RotatedPillarBlock.AXIS) ==

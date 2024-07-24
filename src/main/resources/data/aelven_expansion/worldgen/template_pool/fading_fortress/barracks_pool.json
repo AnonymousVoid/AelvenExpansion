@@ -5,7 +5,7 @@
     {
       "weight": 4,
       "element": {
-        "location": "aelven_expansion:fading_fortress_barracks_1",
+        "location": "aelven_expansion:fading_fortress/fading_fortress_barracks_1",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
@@ -14,7 +14,7 @@
     {
       "weight": 2,
       "element": {
-        "location": "aelven_expansion:fading_fortress_barracks_2",
+        "location": "aelven_expansion:fading_fortress/fading_fortress_barracks_2",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
@@ -23,7 +23,7 @@
     {
       "weight": 4,
       "element": {
-        "location": "aelven_expansion:fading_fortress_barracks_3",
+        "location": "aelven_expansion:fading_fortress/fading_fortress_barracks_3",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"

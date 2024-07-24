@@ -5,7 +5,7 @@
     {
       "weight": 5,
       "element": {
-        "location": "aelven_expansion:fading_fortress_main_bed_1",
+        "location": "aelven_expansion:fading_fortress/fading_fortress_main_bed_1",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
@@ -14,7 +14,7 @@
     {
       "weight": 5,
       "element": {
-        "location": "aelven_expansion:fading_fortress_main_bed_2",
+        "location": "aelven_expansion:fading_fortress/fading_fortress_main_bed_2",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
