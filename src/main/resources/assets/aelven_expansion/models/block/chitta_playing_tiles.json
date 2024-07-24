@@ -1,0 +1,21 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "aelven_expansion:block/chitta_playing_tiles",
+		"particle": "aelven_expansion:block/chitta_playing_tiles"
+	},
+	"elements": [
+		{
+			"from": [5, 0, 4],
+			"to": [11, 1, 12],
+			"faces": {
+				"north": {"uv": [1, 8, 7, 9], "rotation": 180, "texture": "#0"},
+				"east": {"uv": [6, 8, 7, 16], "rotation": 90, "texture": "#0"},
+				"south": {"uv": [1, 15, 7, 16], "texture": "#0"},
+				"west": {"uv": [1, 8, 2, 16], "rotation": 270, "texture": "#0"},
+				"up": {"uv": [1, 8, 7, 16], "texture": "#0"},
+				"down": {"uv": [1, 8, 7, 16], "texture": "#0"}
+			}
+		}
+	]
+}
