@@ -1,11 +1,11 @@
 {
-  "name": "aelven_expansion:fading_fortress/basement_pool",
+  "name": "aelven_expansion:fading_fortress/entrance_pool",
   "fallback": "minecraft:empty",
   "elements": [
     {
       "weight": 1,
       "element": {
-        "location": "aelven_expansion:fading_fortress/fading_fortress_basement",
+        "location": "aelven_expansion:fading_fortress_entrance",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"

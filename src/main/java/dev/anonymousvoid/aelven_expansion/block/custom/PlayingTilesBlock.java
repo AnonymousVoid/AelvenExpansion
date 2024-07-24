@@ -19,7 +19,7 @@ import javax.annotation.Nullable;
 
 public class PlayingTilesBlock extends Block {
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
-    public static final IntegerProperty TILES = IntegerProperty.create("tiles", 1, 8);
+    public static final IntegerProperty TILES = IntegerProperty.create("tiles", 1, 4);
     protected static final VoxelShape SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 2.0D, 14.0D);
 
     public PlayingTilesBlock(BlockBehaviour.Properties pProperties) {

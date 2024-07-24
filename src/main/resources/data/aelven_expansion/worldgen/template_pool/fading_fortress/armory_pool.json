@@ -1,20 +1,20 @@
 {
-  "name": "aelven_expansion:fading_fortress/start_pool",
+  "name": "aelven_expansion:fading_fortress/armory_pool",
   "fallback": "minecraft:empty",
   "elements": [
     {
-      "weight": 7,
+      "weight": 4,
       "element": {
-        "location": "aelven_expansion:fading_fortress_spiral_stairs",
+        "location": "aelven_expansion:fading_fortress_armory",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
       }
     },
     {
-      "weight": 3,
+      "weight": 6,
       "element": {
-        "location": "aelven_expansion:fading_fortress_spiral_stairs_dark",
+        "location": "aelven_expansion:fading_fortress_armory_table",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
