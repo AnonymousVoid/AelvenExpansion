@@ -7,7 +7,6 @@ import dev.anonymousvoid.aelven_expansion.block.custom.ModWallSignBlock;
 import dev.anonymousvoid.aelven_expansion.block.entity.ModWoodTypes;
 import dev.anonymousvoid.aelven_expansion.item.ModCreativeModeTab;
 import dev.anonymousvoid.aelven_expansion.item.ModItems;
-import dev.anonymousvoid.aelven_expansion.particle.ModParticles;
 import dev.anonymousvoid.aelven_expansion.world.feature.tree.MoonFirTreeGrower;
 import dev.anonymousvoid.aelven_expansion.world.feature.tree.PeachgroveTreeGrower;
 import dev.anonymousvoid.aelven_expansion.world.feature.tree.SilverbloodTreeGrower;
@@ -46,6 +45,8 @@ public class ModBlocks {
     private static final BlockBehaviour.Properties coralProperties = BlockBehaviour.Properties.copy(Blocks.BRAIN_CORAL);
     private static final BlockBehaviour.Properties pottedFlowerProperties = BlockBehaviour.Properties.of(Material.DECORATION).instabreak().noOcclusion();
     private static final BlockBehaviour.Properties replaceablePlantProperties = BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XYZ);
+    private static final BlockBehaviour.Properties stonePlantProperties = BlockBehaviour.Properties.copy(Blocks.BRAIN_CORAL).sound(SoundType.STONE).offsetType(BlockBehaviour.OffsetType.XYZ);
+    private static final BlockBehaviour.Properties stoneLeafProperties = BlockBehaviour.Properties.copy(Blocks.AZALEA_LEAVES).sound(SoundType.STONE);
     private static final BlockBehaviour.Properties mudProperties = BlockBehaviour.Properties.copy(Blocks.DIRT).color(MaterialColor.TERRACOTTA_CYAN).sound(SoundType.MUD).randomTicks();
     private static final BlockBehaviour.Properties mulchProperties = BlockBehaviour.Properties.copy(Blocks.DIRT).color(MaterialColor.TERRACOTTA_CYAN).sound(SoundType.MOSS).randomTicks();
     private static final BlockBehaviour.Properties muddyLeafProperties = BlockBehaviour.Properties.copy(Blocks.DIRT).color(MaterialColor.TERRACOTTA_CYAN).sound(SoundType.MUD);
@@ -732,19 +733,19 @@ public class ModBlocks {
             () -> new WallBlock(shingleProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
     public static final RegistryObject<Block> CHIPSTONE_LOG = registerBlock("chipstone_log",
-            () -> logBlock(MaterialColor.COLOR_LIGHT_GRAY, MaterialColor.COLOR_PINK), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> stemBlock(MaterialColor.COLOR_LIGHT_GRAY, MaterialColor.COLOR_PINK), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> CHIPSTONE_LEAVES = registerBlock("chipstone_leaves",
-            () -> flammableLeavesBlock(azaleaProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new Block(stoneLeafProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> HANGING_CHIPSTONE_LEAVES = registerBlock("hanging_chipstone_leaves",
-            () -> new HangingRootsBlock(azaleaProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new HangingRootsBlock(BlockBehaviour.Properties.copy(Blocks.BRAIN_CORAL).sound(SoundType.STONE)), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> CHIPSTONE_GRASS = registerBlock("chipstone_grass",
-            () -> new MulchyGrassBlock(replaceablePlantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new StoneGrassBlock(stonePlantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> CHIPSTONE_BUSH = registerBlock("chipstone_bush",
-            () -> new TallFlowerBlock(flowerProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new TallBlock(stonePlantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> CHIPSTONE_BLADES = registerBlock("chipstone_blades",
-            () -> new MulchyGrassBlock(replaceablePlantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new StoneGrassBlock(stonePlantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> TALL_CHIPSTONE_BLADES = registerBlock("tall_chipstone_blades",
-            () -> new TallFlowerBlock(flowerProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new TallBlock(stonePlantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
 
 
@@ -776,19 +777,32 @@ public class ModBlocks {
     public static final RegistryObject<Block> DEAD_GIANT_BUBBLE_CORAL = registerBlock("dead_giant_bubble_coral",
             () -> new TallSeagrassBlock(coralProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
-
     public static final RegistryObject<Block> HYDROSATIN_STEM = registerBlock("hydrosatin_stem",
-            () -> logBlock(MaterialColor.COLOR_GRAY, MaterialColor.COLOR_BLUE), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new ModLogBlock(BlockBehaviour.Properties.of(Material.WOOD, (state) ->
+                    state.getValue(RotatedPillarBlock.AXIS) ==
+                            Direction.Axis.Y ? MaterialColor.COLOR_GRAY : MaterialColor.COLOR_BLUE)
+                    .strength(2.0F, 3.0F).sound(SoundType.WOOD)), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> HYDROSATIN_HYPHAE = registerBlock("hydrosatin_hyphae",
-            () -> logBlock(MaterialColor.COLOR_GRAY, MaterialColor.COLOR_BLUE), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new ModLogBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_BLUE)
+                    .strength(2.0F, 3.0F).sound(SoundType.WOOD)), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> HYDROSATIN_BEAMS = registerBlock("hydrosatin_beams",
-            () -> logBlock(MaterialColor.COLOR_GRAY, MaterialColor.COLOR_BLUE), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new ModLogBlock(BlockBehaviour.Properties.of(Material.WOOD, (state) ->
+                            state.getValue(RotatedPillarBlock.AXIS) ==
+                                    Direction.Axis.Y ? MaterialColor.COLOR_GRAY : MaterialColor.COLOR_BLUE)
+                    .strength(2.0F, 3.0F).sound(SoundType.WOOD)), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> STRIPPED_HYDROSATIN_STEM = registerBlock("stripped_hydrosatin_stem",
-            () -> logBlock(MaterialColor.COLOR_GRAY, MaterialColor.COLOR_BLUE), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new ModLogBlock(BlockBehaviour.Properties.of(Material.WOOD, (state) ->
+                            state.getValue(RotatedPillarBlock.AXIS) ==
+                                    Direction.Axis.Y ? MaterialColor.COLOR_GRAY : MaterialColor.COLOR_BLUE)
+                    .strength(2.0F, 3.0F).sound(SoundType.WOOD)), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> STRIPPED_HYDROSATIN_HYPHAE = registerBlock("stripped_hydrosatin_hyphae",
-            () -> logBlock(MaterialColor.COLOR_GRAY, MaterialColor.COLOR_GRAY), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new ModLogBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_GRAY)
+                    .strength(2.0F, 3.0F).sound(SoundType.WOOD)), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> STRIPPED_HYDROSATIN_BEAMS = registerBlock("stripped_hydrosatin_beams",
-            () -> logBlock(MaterialColor.COLOR_GRAY, MaterialColor.COLOR_BLUE), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new ModLogBlock(BlockBehaviour.Properties.of(Material.WOOD, (state) ->
+                            state.getValue(RotatedPillarBlock.AXIS) ==
+                                    Direction.Axis.Y ? MaterialColor.COLOR_GRAY : MaterialColor.COLOR_BLUE)
+                    .strength(2.0F, 3.0F).sound(SoundType.WOOD)), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> HYDROSATIN_PLANKS = registerBlock("hydrosatin_planks",
             () -> flammableBlock(woodProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> HYDROSATIN_STAIRS = registerBlock("hydrosatin_stairs",
