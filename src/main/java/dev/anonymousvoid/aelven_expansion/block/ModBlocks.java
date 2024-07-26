@@ -18,6 +18,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.StandingAndWallBlockItem;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -829,7 +830,6 @@ public class ModBlocks {
             () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.HYDROSATIN));
     public static final RegistryObject<Block> HYDROSATIN_FUNGUS = registerBlock("hydrosatin_fungus",
             () -> new SaplingBlock(new MoonFirTreeGrower(), flowerProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
-
     public static final RegistryObject<Block> HYDROSATIN_CAP = registerBlock("hydrosatin_cap",
             () -> new TransparentWaterloggableBlock(shroomProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
@@ -837,11 +837,10 @@ public class ModBlocks {
             () -> new TransparentWaterloggableBlock(BlockBehaviour.Properties.copy(HYDROSATIN_CAP.get()).sound(SoundType.SHROOMLIGHT).lightLevel((state) -> {
                 return 9;
             })), ModCreativeModeTab.MOD_TAB_BLOCKS);
-    public static final RegistryObject<Block> GLIMMERSATIN_TORCH = registerBlock("glimmersatin_torch",
+    public static final RegistryObject<Block> GLIMMERSATIN_TORCH = registerBlockWithoutBlockItem("glimmersatin_torch",
             () -> new TorchBlock(BlockBehaviour.Properties.of(Material.DECORATION).noCollission().instabreak().lightLevel((state) -> {
                 return 8;
-            }).sound(SoundType.WOOD), ParticleTypes.SOUL_FIRE_FLAME), ModCreativeModeTab.MOD_TAB_BLOCKS);
-
+            }).sound(SoundType.WOOD), ParticleTypes.SOUL_FIRE_FLAME));
     public static final RegistryObject<Block> GLIMMERSATIN_WALL_TORCH = registerBlockWithoutBlockItem("glimmersatin_wall_torch",
             () -> new WallTorchBlock(BlockBehaviour.Properties.of(Material.DECORATION).noCollission().instabreak().lightLevel((state) -> {
                 return 8;
@@ -851,16 +850,16 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of(SILVER_BLOCK.get().defaultBlockState().getMaterial()).lightLevel((state) -> {
                 return 15;
             })), ModCreativeModeTab.MOD_TAB_BLOCKS);
-
-    public static final RegistryObject<Block> SILVERSATIN_TORCH = registerBlock("silversatin_torch",
+    public static final RegistryObject<Block> SILVERSATIN_TORCH = registerBlockWithoutBlockItem("silversatin_torch",
             () -> new TorchBlock(BlockBehaviour.Properties.of(Material.DECORATION).noCollission().instabreak().lightLevel((state) -> {
                 return 14;
-            }).sound(SoundType.WOOD), ParticleTypes.SOUL_FIRE_FLAME), ModCreativeModeTab.MOD_TAB_BLOCKS);
-
+            }).sound(SoundType.WOOD), ParticleTypes.SOUL_FIRE_FLAME));
     public static final RegistryObject<Block> SILVERSATIN_WALL_TORCH = registerBlockWithoutBlockItem("silversatin_wall_torch",
             () -> new WallTorchBlock(BlockBehaviour.Properties.of(Material.DECORATION).noCollission().instabreak().lightLevel((state) -> {
                 return 14;
             }).sound(SoundType.WOOD).dropsLike(SILVERSATIN_TORCH.get()), ParticleTypes.SOUL_FIRE_FLAME));
+
+
 
     private static ModLogBlock logBlock(MaterialColor c1, MaterialColor c2) {
         return new ModLogBlock(BlockBehaviour.Properties.of(Material.WOOD, (state) ->

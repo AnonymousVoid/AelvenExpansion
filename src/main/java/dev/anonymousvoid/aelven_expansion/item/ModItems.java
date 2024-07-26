@@ -9,6 +9,7 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.ForgeTier;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -114,8 +115,14 @@ public class ModItems {
 
     public static final RegistryObject<Item> GLIMMERSATIN_CHUNK = ITEMS.register("glimmersatin_chunk",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
+    public static final RegistryObject<Item> GLIMMERSATIN_TORCH = ITEMS.register("glimmersatin_torch",
+            () -> new StandingAndWallBlockItem(ModBlocks.GLIMMERSATIN_TORCH.get(), ModBlocks.GLIMMERSATIN_WALL_TORCH.get(),
+                    (new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_BLOCKS))));
     public static final RegistryObject<Item> SILVERSATIN_CHUNK = ITEMS.register("silversatin_chunk",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
+    public static final RegistryObject<Item> SILVERSATIN_TORCH = ITEMS.register("silversatin_torch",
+            () -> new StandingAndWallBlockItem(ModBlocks.SILVERSATIN_TORCH.get(), ModBlocks.SILVERSATIN_WALL_TORCH.get(),
+                    (new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_BLOCKS))));
 
 
     public static class Tiers {
