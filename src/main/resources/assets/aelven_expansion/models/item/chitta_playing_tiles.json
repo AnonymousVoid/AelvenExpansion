@@ -1,0 +1,6 @@
+{
+	"parent": "item/handheld",
+	"textures": {
+		"layer0": "aelven_expansion:item/chitta_playing_tiles"
+	}
+}

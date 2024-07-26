@@ -431,8 +431,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> CHITTA_LARGE_TILE_WALL = registerBlock("chitta_large_tile_wall",
             () -> new WallBlock(chittaPolishedProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
-    public static final RegistryObject<Block> CHITTA_PLAYING_TILES = registerBlock("chitta_playing_tiles",
-            () -> new PlayingTilesBlock(chittaPolishedProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> CHITTA_PLAYING_TILES = registerBlockWithItemProperties("chitta_playing_tiles",
+            () -> new PlayingTilesBlock(chittaPolishedProperties), new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_BLOCKS)
+                    .stacksTo(16));
 
 
     public static final RegistryObject<Block> ELERIUM_ORE = registerBlock("elerium_ore",
@@ -966,11 +967,24 @@ public class ModBlocks {
         return toReturn;
     }
 
-
     private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block,
                                                                             CreativeModeTab tab) {
         return ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));
     }
+
+    private static <T extends Block> RegistryObject<T> registerBlockWithItemProperties(String name, Supplier<T> block,
+                                                                                       Item.Properties properties) {
+        RegistryObject<T> toReturn = BLOCKS.register(name, block);
+        registerBlockItemWithProperties(name, toReturn, properties);
+        return toReturn;
+    }
+
+    private static <T extends Block> RegistryObject<Item> registerBlockItemWithProperties(String name, RegistryObject<T> block,
+                                                                                          Item.Properties properties) {
+        return ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), properties));
+    }
+
+
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
     }
