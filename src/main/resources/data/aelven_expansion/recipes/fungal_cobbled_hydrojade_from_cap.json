@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "fungal_cobbled_hydrojade",
+  "ingredients": [
+    {
+      "item": "aelven_expansion:cobbled_hydrojade"
+    },
+    {
+      "item": "aelven_expansion:hydrosatin_cap"
+    }
+  ],
+  "result": {
+    "item": "aelven_expansion:fungal_cobbled_hydrojade"
+  }
+} 

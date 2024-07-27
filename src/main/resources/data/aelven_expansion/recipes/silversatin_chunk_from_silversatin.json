@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "silversatin",
+  "ingredients": [
+    {
+      "item": "aelven_expansion:silversatin"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "aelven_expansion:silversatin_chunk"
+  }
+}

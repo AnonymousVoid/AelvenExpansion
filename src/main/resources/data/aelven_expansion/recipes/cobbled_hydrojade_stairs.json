@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "hydrojade_stairs",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "aelven_expansion:cobbled_hydrojade"
+    }
+  },
+  "result": {
+    "item": "aelven_expansion:cobbled_hydrojade_stairs",
+    "count": 6
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "aelven_expansion:block/hydrojade",
+    "side": "aelven_expansion:block/hydrojade",
+    "top": "aelven_expansion:block/hydrojade"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "hydrojade",
+  "pattern": [
+    "   ",
+    "## ",
+    "## "
+  ],
+  "key": {
+    "#": {
+      "item": "aelven_expansion:hydrojade"
+    }
+  },
+  "result": {
+    "item": "aelven_expansion:polished_hydrojade",
+    "count": 4
+  }
+}

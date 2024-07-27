@@ -46,8 +46,8 @@ public class ModBlocks {
     private static final BlockBehaviour.Properties coralProperties = BlockBehaviour.Properties.copy(Blocks.BRAIN_CORAL);
     private static final BlockBehaviour.Properties pottedFlowerProperties = BlockBehaviour.Properties.of(Material.DECORATION).instabreak().noOcclusion();
     private static final BlockBehaviour.Properties replaceablePlantProperties = BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XYZ);
-    private static final BlockBehaviour.Properties stonePlantProperties = BlockBehaviour.Properties.copy(Blocks.BRAIN_CORAL).sound(SoundType.STONE).offsetType(BlockBehaviour.OffsetType.XYZ);
-    private static final BlockBehaviour.Properties stoneLeafProperties = BlockBehaviour.Properties.copy(Blocks.AZALEA_LEAVES).sound(SoundType.STONE);
+    private static final BlockBehaviour.Properties stonePlantProperties = BlockBehaviour.Properties.copy(Blocks.BRAIN_CORAL).sound(SoundType.TUFF).offsetType(BlockBehaviour.OffsetType.XYZ);
+    private static final BlockBehaviour.Properties stoneLeafProperties = BlockBehaviour.Properties.copy(Blocks.AZALEA_LEAVES).sound(SoundType.MANGROVE_ROOTS);
     private static final BlockBehaviour.Properties mudProperties = BlockBehaviour.Properties.copy(Blocks.DIRT).color(MaterialColor.TERRACOTTA_CYAN).sound(SoundType.MUD).randomTicks();
     private static final BlockBehaviour.Properties mulchProperties = BlockBehaviour.Properties.copy(Blocks.DIRT).color(MaterialColor.TERRACOTTA_CYAN).sound(SoundType.MOSS).randomTicks();
     private static final BlockBehaviour.Properties muddyLeafProperties = BlockBehaviour.Properties.copy(Blocks.DIRT).color(MaterialColor.TERRACOTTA_CYAN).sound(SoundType.MUD);
@@ -80,7 +80,10 @@ public class ModBlocks {
     private static final BlockBehaviour.Properties deepslateOreProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE).strength(4.5F, 3.0F);
     private static final BlockBehaviour.Properties shroomProperties = BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK).noOcclusion();
 
-
+    private static final BlockBehaviour.Properties hydrojadeProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE).strength(2.0F, 6.0F);
+    private static final BlockBehaviour.Properties hydrojadeBrickProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE_BRICKS).strength(2.5F, 6.5F);
+    private static final BlockBehaviour.Properties hydrojadeTileProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE_TILES).strength(2.5F, 6.5F);
+    private static final BlockBehaviour.Properties hydrojadePolishedProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.POLISHED_DEEPSLATE).strength(2.5F, 6.5F);
     // BLOCKS
     public static final RegistryObject<Block> MOON_FIR_LOG = registerBlock("moon_fir_log",
             () -> logBlock(MaterialColor.COLOR_GRAY, MaterialColor.COLOR_BLUE), ModCreativeModeTab.MOD_TAB_BLOCKS);
@@ -229,12 +232,12 @@ public class ModBlocks {
             () -> logBlock(MaterialColor.WOOD, MaterialColor.PODZOL), null);
     public static final RegistryObject<Block> STRIPPED_OAK_BEAMS = registerBlock("stripped_oak_beams",
             () -> logBlock(MaterialColor.WOOD, MaterialColor.WOOD), null);
-    
+
     public static final RegistryObject<Block> SPRUCE_BEAMS = registerBlock("spruce_beams",
             () -> logBlock(MaterialColor.PODZOL, MaterialColor.COLOR_BROWN), null);
     public static final RegistryObject<Block> STRIPPED_SPRUCE_BEAMS = registerBlock("stripped_spruce_beams",
             () -> logBlock(MaterialColor.PODZOL, MaterialColor.PODZOL), null);
-    
+
     public static final RegistryObject<Block> BIRCH_BEAMS = registerBlock("birch_beams",
             () -> logBlock(MaterialColor.SAND, MaterialColor.QUARTZ), null);
     public static final RegistryObject<Block> STRIPPED_BIRCH_BEAMS = registerBlock("stripped_birch_beams",
@@ -259,7 +262,7 @@ public class ModBlocks {
             () -> logBlock(MaterialColor.COLOR_RED, MaterialColor.PODZOL), null);
     public static final RegistryObject<Block> STRIPPED_MANGROVE_BEAMS = registerBlock("stripped_mangrove_beams",
             () -> logBlock(MaterialColor.COLOR_RED, MaterialColor.COLOR_RED), null);
-    
+
     public static final RegistryObject<Block> CRIMSON_BEAMS = registerBlock("crimson_beams",
             () -> stemBlock(MaterialColor.CRIMSON_STEM, MaterialColor.CRIMSON_STEM), null);
     public static final RegistryObject<Block> STRIPPED_CRIMSON_BEAMS = registerBlock("stripped_crimson_beams",
@@ -289,7 +292,7 @@ public class ModBlocks {
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.MUDDY_MANGROVE_ROOTS)), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> MUDDY_PEACHGROVE_LEAVES = registerBlock("muddy_peachgrove_leaves",
             () -> new Block(muddyLeafProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
-    
+
     public static final RegistryObject<Block> MUDSTONE = registerBlock("mudstone",
             () -> new Block(mudstoneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> MUDSTONE_STAIRS = registerBlock("mudstone_stairs",
@@ -299,7 +302,7 @@ public class ModBlocks {
             () -> new SlabBlock(mudstoneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> MUDSTONE_WALL = registerBlock("mudstone_wall",
             () -> new WallBlock(mudstoneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
-    
+
     public static final RegistryObject<Block> MUDSTONE_BRICKS = registerBlock("mudstone_bricks",
             () -> new Block(mudstoneBrickProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> MUDSTONE_BRICK_STAIRS = registerBlock("mudstone_brick_stairs",
@@ -309,7 +312,7 @@ public class ModBlocks {
             () -> new SlabBlock(mudstoneBrickProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> MUDSTONE_BRICK_WALL = registerBlock("mudstone_brick_wall",
             () -> new WallBlock(mudstoneBrickProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
-    
+
     public static final RegistryObject<Block> CRACKED_MUDSTONE_BRICKS = registerBlock("cracked_mudstone_bricks",
             () -> new Block(mudstoneBrickProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> CRACKED_MUDSTONE_BRICK_STAIRS = registerBlock("cracked_mudstone_brick_stairs",
@@ -738,7 +741,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> CHIPSTONE_LEAVES = registerBlock("chipstone_leaves",
             () -> new Block(stoneLeafProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> HANGING_CHIPSTONE_LEAVES = registerBlock("hanging_chipstone_leaves",
-            () -> new HangingRootsBlock(BlockBehaviour.Properties.copy(Blocks.BRAIN_CORAL).sound(SoundType.STONE)), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new HangingRootsBlock(BlockBehaviour.Properties.copy(Blocks.BRAIN_CORAL).sound(SoundType.MANGROVE_ROOTS)), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> CHIPSTONE_GRASS = registerBlock("chipstone_grass",
             () -> new StoneGrassBlock(stonePlantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> CHIPSTONE_BUSH = registerBlock("chipstone_bush",
@@ -859,7 +862,68 @@ public class ModBlocks {
                 return 14;
             }).sound(SoundType.WOOD).dropsLike(SILVERSATIN_TORCH.get()), ParticleTypes.SOUL_FIRE_FLAME));
 
+    public static final RegistryObject<Block> HYDROJADE = registerBlock("hydrojade",
+            () -> new Block(hydrojadeProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> HYDROJADE_STAIRS = registerBlock("hydrojade_stairs",
+            () -> new StairBlock(() -> ModBlocks.HYDROJADE.get().defaultBlockState(),
+                    hydrojadeProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> HYDROJADE_SLAB = registerBlock("hydrojade_slab",
+            () -> new SlabBlock(hydrojadeProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> HYDROJADE_WALL = registerBlock("hydrojade_wall",
+            () -> new WallBlock(hydrojadeProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
+    public static final RegistryObject<Block> COBBLED_HYDROJADE = registerBlock("cobbled_hydrojade",
+            () -> new Block(hydrojadeProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> COBBLED_HYDROJADE_STAIRS = registerBlock("cobbled_hydrojade_stairs",
+            () -> new StairBlock(() -> ModBlocks.COBBLED_HYDROJADE.get().defaultBlockState(),
+                    hydrojadeProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> COBBLED_HYDROJADE_SLAB = registerBlock("cobbled_hydrojade_slab",
+            () -> new SlabBlock(hydrojadeProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> COBBLED_HYDROJADE_WALL = registerBlock("cobbled_hydrojade_wall",
+            () -> new WallBlock(hydrojadeProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
+    public static final RegistryObject<Block> FUNGAL_COBBLED_HYDROJADE = registerBlock("fungal_cobbled_hydrojade",
+            () -> new Block(hydrojadeProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> FUNGAL_COBBLED_HYDROJADE_STAIRS = registerBlock("fungal_cobbled_hydrojade_stairs",
+            () -> new StairBlock(() -> ModBlocks.FUNGAL_COBBLED_HYDROJADE.get().defaultBlockState(),
+                    hydrojadeProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> FUNGAL_COBBLED_HYDROJADE_SLAB = registerBlock("fungal_cobbled_hydrojade_slab",
+            () -> new SlabBlock(hydrojadeProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> FUNGAL_COBBLED_HYDROJADE_WALL = registerBlock("fungal_cobbled_hydrojade_wall",
+            () -> new WallBlock(hydrojadeProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
+    public static final RegistryObject<Block> HYDROJADE_TILES = registerBlock("hydrojade_tiles",
+            () -> new Block(hydrojadeTileProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> HYDROJADE_TILE_STAIRS = registerBlock("hydrojade_tile_stairs",
+            () -> new StairBlock(() -> ModBlocks.HYDROJADE_TILES.get().defaultBlockState(),
+                    hydrojadeTileProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> HYDROJADE_TILE_SLAB = registerBlock("hydrojade_tile_slab",
+            () -> new SlabBlock(hydrojadeTileProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> HYDROJADE_TILE_WALL = registerBlock("hydrojade_tile_wall",
+            () -> new WallBlock(hydrojadeTileProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
+    public static final RegistryObject<Block> HYDROJADE_BRICKS = registerBlock("hydrojade_bricks",
+            () -> new Block(hydrojadeBrickProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> HYDROJADE_BRICK_STAIRS = registerBlock("hydrojade_brick_stairs",
+            () -> new StairBlock(() -> ModBlocks.HYDROJADE_BRICKS.get().defaultBlockState(),
+                    hydrojadeBrickProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> HYDROJADE_BRICK_SLAB = registerBlock("hydrojade_brick_slab",
+            () -> new SlabBlock(hydrojadeBrickProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> HYDROJADE_BRICK_WALL = registerBlock("hydrojade_brick_wall",
+            () -> new WallBlock(hydrojadeBrickProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
+    public static final RegistryObject<Block> POLISHED_HYDROJADE = registerBlock("polished_hydrojade",
+            () -> new Block(hydrojadeProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> POLISHED_HYDROJADE_STAIRS = registerBlock("polished_hydrojade_stairs",
+            () -> new StairBlock(() -> ModBlocks.POLISHED_HYDROJADE.get().defaultBlockState(),
+                    hydrojadeProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> POLISHED_HYDROJADE_SLAB = registerBlock("polished_hydrojade_slab",
+            () -> new SlabBlock(hydrojadeProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> POLISHED_HYDROJADE_WALL = registerBlock("polished_hydrojade_wall",
+            () -> new WallBlock(hydrojadeProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
+    public static final RegistryObject<Block> HYDROJADE_PILLAR = registerBlock("hydrojade_pillar",
+            () -> new RotatedPillarBlock(hydrojadeProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
     private static ModLogBlock logBlock(MaterialColor c1, MaterialColor c2) {
         return new ModLogBlock(BlockBehaviour.Properties.of(Material.WOOD, (state) ->

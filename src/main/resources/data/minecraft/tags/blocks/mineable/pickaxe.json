@@ -170,6 +170,32 @@
     "aelven_expansion:black_shingle_slab",
     "aelven_expansion:black_shingle_wall",
     "aelven_expansion:kiln",
-    "aelven_expansion:chitta_playing_tiles"
+    "aelven_expansion:chitta_playing_tiles",
+    "aelven_expansion:hydrojade",
+    "aelven_expansion:hydrojade_stairs",
+    "aelven_expansion:hydrojade_slab",
+    "aelven_expansion:hydrojade_wall",
+    "aelven_expansion:cobbled_hydrojade",
+    "aelven_expansion:cobbled_hydrojade_stairs",
+    "aelven_expansion:cobbled_hydrojade_slab",
+    "aelven_expansion:cobbled_hydrojade_wall",
+    "aelven_expansion:fungal_cobbled_hydrojade",
+    "aelven_expansion:fungal_cobbled_hydrojade_stairs",
+    "aelven_expansion:fungal_cobbled_hydrojade_slab",
+    "aelven_expansion:fungal_cobbled_hydrojade_wall",
+    "aelven_expansion:hydrojade_bricks",
+    "aelven_expansion:hydrojade_brick_stairs",
+    "aelven_expansion:hydrojade_brick_slab",
+    "aelven_expansion:hydrojade_brick_wall",
+    "aelven_expansion:hydrojade_tiles",
+    "aelven_expansion:hydrojade_tile_stairs",
+    "aelven_expansion:hydrojade_tile_slab",
+    "aelven_expansion:hydrojade_tile_wall",
+    "aelven_expansion:polished_hydrojade",
+    "aelven_expansion:polished_hydrojade_stairs",
+    "aelven_expansion:polished_hydrojade_slab",
+    "aelven_expansion:polished_hydrojade_wall",
+    "aelven_expansion:hydrojade_pillar"
+
   ]
 }
