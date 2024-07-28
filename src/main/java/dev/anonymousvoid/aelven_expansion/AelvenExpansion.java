@@ -93,13 +93,22 @@ public class AelvenExpansion {
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.PEACHGROVE_DOOR.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.PEACHGROVE_TRAPDOOR.get(), RenderType.cutout());
 
+
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.HYDROSATIN_CAP.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.GLIMMERSATIN.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.GLIMMERSATIN_TORCH.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.GLIMMERSATIN_WALL_TORCH.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.GLIMMERSATIN_LANTERN.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.GLIMMERSATIN_CAMPFIRE.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.SILVERSATIN.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.SILVERSATIN_TORCH.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.SILVERSATIN_WALL_TORCH.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.SILVERSATIN_LANTERN.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.SILVERSATIN_CAMPFIRE.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.ELERIUM_TORCH.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.ELERIUM_WALL_TORCH.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.ELERIUM_LANTERN.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.ELERIUM_CAMPFIRE.get(), RenderType.cutout());
 
 
         WoodType.register(ModWoodTypes.MOON_FIR);

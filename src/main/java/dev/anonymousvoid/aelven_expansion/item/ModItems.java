@@ -10,6 +10,7 @@ import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.LanternBlock;
 import net.minecraftforge.common.ForgeTier;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "C": {
+      "item": "aelven_expansion:elerium"
+    },
+    "L": {
+      "tag": "minecraft:logs"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    " S ",
+    "SCS",
+    "LLL"
+  ],
+  "result": {
+    "item": "aelven_expansion:elerium_campfire"
+  }
+}

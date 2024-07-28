@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "aelven_expansion:block/elerium_lantern"
+    },
+    "hanging=true": {
+      "model": "aelven_expansion:block/elerium_lantern_hanging"
+    }
+  }
+}

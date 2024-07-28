@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_lantern",
+  "textures": {
+    "lantern": "aelven_expansion:block/silversatin_lantern"
+  }
+}

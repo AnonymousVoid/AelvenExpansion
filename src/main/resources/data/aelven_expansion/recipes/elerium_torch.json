@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "X": [
+      {
+        "item": "aelven_expansion:elerium"
+      }
+    ]
+  },
+  "pattern": [
+    "X",
+    "#"
+  ],
+  "result": {
+    "count": 4,
+    "item": "aelven_expansion:elerium_torch"
+  }
+}

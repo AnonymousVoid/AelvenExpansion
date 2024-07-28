@@ -155,6 +155,10 @@
 	"block.aelven_expansion.chitta_playing_tiles": "Chitta Playing Tiles",
 
 	"item.aelven_expansion.elerium": "Elerium",
+	"block.aelven_expansion.elerium_torch": "Elerium Torch",
+	"block.aelven_expansion.elerium_lantern": "Elerium Lantern",
+	"block.aelven_expansion.elerium_campfire": "Elerium Campfire",
+
 	"item.aelven_expansion.slime_paste": "Slime Paste",
 	"item.aelven_expansion.elerium_paste": "Elerium Paste",
 
@@ -433,9 +437,13 @@
 
 	"block.aelven_expansion.glimmersatin": "Glimmersatin",
 	"block.aelven_expansion.glimmersatin_torch": "Glimmersatin Torch",
+	"block.aelven_expansion.glimmersatin_lantern": "Glimmersatin Lantern",
+	"block.aelven_expansion.glimmersatin_campfire": "Glimmersatin Campfire",
 	"item.aelven_expansion.glimmersatin_chunk": "Glimmersatin Chunk",
 	"block.aelven_expansion.silversatin": "Silversatin",
 	"block.aelven_expansion.silversatin_torch": "Silversatin Torch",
+	"block.aelven_expansion.silversatin_lantern": "Silversatin Lantern",
+	"block.aelven_expansion.silversatin_campfire": "Silversatin Campfire",
 	"item.aelven_expansion.silversatin_chunk": "Silversatin Chunk",
 	"item.aelven_expansion.scroll": "Scroll",
 
