@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "aelven_expansion:block/hydrojade_tiles",
+    "side": "aelven_expansion:block/hydrojade_tiles",
+    "top": "aelven_expansion:block/hydrojade_tiles"
+  }
+}

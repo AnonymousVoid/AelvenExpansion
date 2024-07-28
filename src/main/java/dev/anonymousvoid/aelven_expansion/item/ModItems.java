@@ -124,6 +124,9 @@ public class ModItems {
             () -> new StandingAndWallBlockItem(ModBlocks.SILVERSATIN_TORCH.get(), ModBlocks.SILVERSATIN_WALL_TORCH.get(),
                     (new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_BLOCKS))));
 
+    public static final RegistryObject<Item> SCROLL = ITEMS.register("scroll",
+            () -> new Item(new Item.Properties().stacksTo(16).tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
+
 
     public static class Tiers {
         public static final Tier SILVER = new ForgeTier(2,200,6.5F,2.75F,25,null, () -> Ingredient.of(ModItems.SILVER_INGOT.get()));

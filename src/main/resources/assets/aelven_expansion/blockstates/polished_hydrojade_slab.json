@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "aelven_expansion:block/polished_hydrojade_slab"
+    },
+    "type=double": {
+      "model": "aelven_expansion:block/polished_hydrojade"
+    },
+    "type=top": {
+      "model": "aelven_expansion:block/polished_hydrojade_slab_top"
+    }
+  }
+}

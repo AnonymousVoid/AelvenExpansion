@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "aelven_expansion:block/fungal_cobbled_hydrojade",
+    "side": "aelven_expansion:block/fungal_cobbled_hydrojade",
+    "top": "aelven_expansion:block/fungal_cobbled_hydrojade"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "aelven_expansion:block/template_wall_side",
+  "textures": {
+    "end": "aelven_expansion:block/hydrojade_bricks",
+    "side": "aelven_expansion:block/hydrojade_bricks"
+  }
+}

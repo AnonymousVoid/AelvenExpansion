@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "aelven_expansion:block/hydrojade_tile_slab"
+    },
+    "type=double": {
+      "model": "aelven_expansion:block/hydrojade_tiles"
+    },
+    "type=top": {
+      "model": "aelven_expansion:block/hydrojade_tile_slab_top"
+    }
+  }
+}

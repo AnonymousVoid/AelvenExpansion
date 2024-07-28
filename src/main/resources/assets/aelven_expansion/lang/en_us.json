@@ -100,6 +100,7 @@
 	"item.aelven_expansion.chitta_chisel": "Chitta Chisel",
 	"item.aelven_expansion.music_disc": "Music Disc",
 	"item.aelven_expansion.music_disc.desc": "Aliyah Jubilee - Valor's Quest",
+	"block.aelven_expansion.chitta_playing_tiles": "Chitta Playing Tiles",
 
 	"block.aelven_expansion.cobbled_chitta": "Cobbled Chitta",
 	"block.aelven_expansion.dusty_cobbled_chitta": "Dusty Cobbled Chitta",
@@ -398,14 +399,47 @@
 	"item.aelven_expansion.hydrosatin_boat": "Hydrosatin Boat",
 	"item.aelven_expansion.hydrosatin_chest_boat": "Hydrosatin Boat with Chest",
 
+	"block.aelven_expansion.hydrojade": "Hydrojade",
+	"block.aelven_expansion.hydrojade_stairs": "Hydrojade Stairs",
+	"block.aelven_expansion.hydrojade_slab": "Hydrojade Slab",
+	"block.aelven_expansion.hydrojade_wall": "Hydrojade Wall",
+
+	"block.aelven_expansion.cobbled_hydrojade": "Cobbled Hydrojade",
+	"block.aelven_expansion.cobbled_hydrojade_stairs": "Cobbled Hydrojade Stairs",
+	"block.aelven_expansion.cobbled_hydrojade_slab": "Cobbled Hydrojade Slab",
+	"block.aelven_expansion.cobbled_hydrojade_wall": "Cobbled Hydrojade Wall",
+	
+	"block.aelven_expansion.polished_hydrojade": "Polished Hydrojade",
+	"block.aelven_expansion.polished_hydrojade_stairs": "Polished Hydrojade Stairs",
+	"block.aelven_expansion.polished_hydrojade_slab": "Polished Hydrojade Slab",
+	"block.aelven_expansion.polished_hydrojade_wall": "Polished Hydrojade Wall",
+	
+	"block.aelven_expansion.hydrojade_bricks": "Hydrojade Bricks",
+	"block.aelven_expansion.hydrojade_brick_stairs": "Hydrojade Brick Stairs",
+	"block.aelven_expansion.hydrojade_brick_slab": "Hydrojade Brick Slab",
+	"block.aelven_expansion.hydrojade_brick_wall": "Hydrojade Brick Wall",
+
+	"block.aelven_expansion.hydrojade_tiles": "Hydrojade Tiles",
+	"block.aelven_expansion.hydrojade_tile_stairs": "Hydrojade Tile Stairs",
+	"block.aelven_expansion.hydrojade_tile_slab": "Hydrojade Tile Slab",
+	"block.aelven_expansion.hydrojade_tile_wall": "Hydrojade Tile Wall",
+
+	"block.aelven_expansion.fungal_cobbled_hydrojade": "Fungal Cobbled Hydrojade",
+	"block.aelven_expansion.fungal_cobbled_hydrojade_stairs": "Fungal Cobbled Hydrojade Stairs",
+	"block.aelven_expansion.fungal_cobbled_hydrojade_slab": "Fungal Cobbled Hydrojade Slab",
+	"block.aelven_expansion.fungal_cobbled_hydrojade_wall": "Fungal Cobbled Hydrojade Wall",
+
+	"block.aelven_expansion.hydrojade_pillar": "Hydrojade Pillar",
+
 	"block.aelven_expansion.glimmersatin": "Glimmersatin",
 	"block.aelven_expansion.glimmersatin_torch": "Glimmersatin Torch",
 	"item.aelven_expansion.glimmersatin_chunk": "Glimmersatin Chunk",
 	"block.aelven_expansion.silversatin": "Silversatin",
 	"block.aelven_expansion.silversatin_torch": "Silversatin Torch",
 	"item.aelven_expansion.silversatin_chunk": "Silversatin Chunk",
+	"item.aelven_expansion.scroll": "Scroll",
 
 
-	"itemGroup.aelven_expansion_blocks": "Aelven Expansion Blocks",
-	"itemGroup.aelven_expansion_items": "Aelven Expansion Items"
+	"itemGroup.aelven_expansion_blocks": "Aelven Expansion: Blocks",
+	"itemGroup.aelven_expansion_items": "Aelven Expansion: Items"
 }

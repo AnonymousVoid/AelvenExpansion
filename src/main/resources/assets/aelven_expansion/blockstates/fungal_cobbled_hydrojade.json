@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "aelven_expansion:block/fungal_cobbled_hydrojade", "weight": 700
+      }
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "aelven_expansion:block/polished_hydrojade",
+    "side": "aelven_expansion:block/polished_hydrojade",
+    "top": "aelven_expansion:block/polished_hydrojade"
+  }
+}

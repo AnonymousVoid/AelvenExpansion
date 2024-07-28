@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "aelven_expansion:block/hydrojade_bricks",
+    "side": "aelven_expansion:block/hydrojade_bricks",
+    "top": "aelven_expansion:block/hydrojade_bricks"
+  }
+}

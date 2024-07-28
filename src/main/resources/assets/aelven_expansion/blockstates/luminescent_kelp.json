@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "aelven_expansion:block/luminescent_kelp_stage0"
+    },
+    "age=1": {
+      "model": "aelven_expansion:block/luminescent_kelp_stage1"
+    },
+    "age=2": {
+      "model": "aelven_expansion:block/luminescent_kelp_stage2"
+    },
+    "age=3": {
+      "model": "aelven_expansion:block/luminescent_kelp_stage3"
+    },
+    "age=4": {
+    "model": "aelven_expansion:block/luminescent_kelp_stage4"
+    }
+  }
+}

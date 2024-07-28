@@ -1,0 +1,7 @@
+{
+  "parent": "aelven_expansion:block/wall_inventory",
+  "textures": {
+    "end": "aelven_expansion:block/fungal_cobbled_hydrojade",
+    "side": "aelven_expansion:block/fungal_cobbled_hydrojade"
+  }
+}
