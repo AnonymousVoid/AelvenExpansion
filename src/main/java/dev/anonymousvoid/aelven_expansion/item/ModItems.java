@@ -113,19 +113,23 @@ public class ModItems {
     public static final RegistryObject<Item> MUSIC_DISC = ITEMS.register("music_disc",
             () -> new RecordItem(7, ModSounds.MUSIC_DISC, new Item.Properties().stacksTo(1).tab(ModCreativeModeTab.MOD_TAB_ITEMS).rarity(Rarity.RARE), 203));
 
+    public static final RegistryObject<Item> SCROLL = ITEMS.register("scroll",
+            () -> new Item(new Item.Properties().stacksTo(16).tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
+
     public static final RegistryObject<Item> GLIMMERSATIN_CHUNK = ITEMS.register("glimmersatin_chunk",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
+    public static final RegistryObject<Item> SILVERSATIN_CHUNK = ITEMS.register("silversatin_chunk",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
+
     public static final RegistryObject<Item> GLIMMERSATIN_TORCH = ITEMS.register("glimmersatin_torch",
             () -> new StandingAndWallBlockItem(ModBlocks.GLIMMERSATIN_TORCH.get(), ModBlocks.GLIMMERSATIN_WALL_TORCH.get(),
                     (new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_BLOCKS))));
-    public static final RegistryObject<Item> SILVERSATIN_CHUNK = ITEMS.register("silversatin_chunk",
-            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
     public static final RegistryObject<Item> SILVERSATIN_TORCH = ITEMS.register("silversatin_torch",
             () -> new StandingAndWallBlockItem(ModBlocks.SILVERSATIN_TORCH.get(), ModBlocks.SILVERSATIN_WALL_TORCH.get(),
                     (new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_BLOCKS))));
-
-    public static final RegistryObject<Item> SCROLL = ITEMS.register("scroll",
-            () -> new Item(new Item.Properties().stacksTo(16).tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
+    public static final RegistryObject<Item> ELERIUM_TORCH = ITEMS.register("elerium_torch",
+            () -> new StandingAndWallBlockItem(ModBlocks.ELERIUM_TORCH.get(), ModBlocks.ELERIUM_WALL_TORCH.get(),
+                    (new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_BLOCKS))));
 
 
     public static class Tiers {

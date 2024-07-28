@@ -7,11 +7,16 @@ import dev.anonymousvoid.aelven_expansion.block.custom.ModWallSignBlock;
 import dev.anonymousvoid.aelven_expansion.block.entity.ModWoodTypes;
 import dev.anonymousvoid.aelven_expansion.item.ModCreativeModeTab;
 import dev.anonymousvoid.aelven_expansion.item.ModItems;
+import dev.anonymousvoid.aelven_expansion.particle.ModParticles;
+import dev.anonymousvoid.aelven_expansion.particle.custom.EleriumFlameParticles;
 import dev.anonymousvoid.aelven_expansion.world.feature.tree.MoonFirTreeGrower;
 import dev.anonymousvoid.aelven_expansion.world.feature.tree.PeachgroveTreeGrower;
 import dev.anonymousvoid.aelven_expansion.world.feature.tree.SilverbloodTreeGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.particles.BlockParticleOption;
+import net.minecraft.core.particles.ItemParticleOption;
+import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.effect.MobEffects;
@@ -23,6 +28,7 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -840,6 +846,11 @@ public class ModBlocks {
             () -> new TransparentWaterloggableBlock(BlockBehaviour.Properties.copy(HYDROSATIN_CAP.get()).sound(SoundType.SHROOMLIGHT).lightLevel((state) -> {
                 return 9;
             })), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> SILVERSATIN = registerBlock("silversatin",
+            () -> new Block(BlockBehaviour.Properties.of(SILVER_BLOCK.get().defaultBlockState().getMaterial()).lightLevel((state) -> {
+                return 15;
+            })), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
     public static final RegistryObject<Block> GLIMMERSATIN_TORCH = registerBlockWithoutBlockItem("glimmersatin_torch",
             () -> new TorchBlock(BlockBehaviour.Properties.of(Material.DECORATION).noCollission().instabreak().lightLevel((state) -> {
                 return 8;
@@ -848,11 +859,6 @@ public class ModBlocks {
             () -> new WallTorchBlock(BlockBehaviour.Properties.of(Material.DECORATION).noCollission().instabreak().lightLevel((state) -> {
                 return 8;
             }).sound(SoundType.WOOD).dropsLike(GLIMMERSATIN_TORCH.get()), ParticleTypes.SOUL_FIRE_FLAME));
-
-    public static final RegistryObject<Block> SILVERSATIN = registerBlock("silversatin",
-            () -> new Block(BlockBehaviour.Properties.of(SILVER_BLOCK.get().defaultBlockState().getMaterial()).lightLevel((state) -> {
-                return 15;
-            })), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> SILVERSATIN_TORCH = registerBlockWithoutBlockItem("silversatin_torch",
             () -> new TorchBlock(BlockBehaviour.Properties.of(Material.DECORATION).noCollission().instabreak().lightLevel((state) -> {
                 return 14;
@@ -861,6 +867,45 @@ public class ModBlocks {
             () -> new WallTorchBlock(BlockBehaviour.Properties.of(Material.DECORATION).noCollission().instabreak().lightLevel((state) -> {
                 return 14;
             }).sound(SoundType.WOOD).dropsLike(SILVERSATIN_TORCH.get()), ParticleTypes.SOUL_FIRE_FLAME));
+    public static final RegistryObject<Block> ELERIUM_TORCH = registerBlockWithoutBlockItem("elerium_torch",
+            () -> new TorchBlock(BlockBehaviour.Properties.of(Material.DECORATION).noCollission().instabreak().lightLevel((state) -> {
+                return 12;
+            }).sound(SoundType.WOOD), ParticleTypes.SOUL_FIRE_FLAME));
+    public static final RegistryObject<Block> ELERIUM_WALL_TORCH = registerBlockWithoutBlockItem("elerium_wall_torch",
+            () -> new WallTorchBlock(BlockBehaviour.Properties.of(Material.DECORATION).noCollission().instabreak().lightLevel((state) -> {
+                return 12;
+            }).sound(SoundType.WOOD).dropsLike(ELERIUM_TORCH.get()), ParticleTypes.SOUL_FIRE_FLAME));
+
+    public static final RegistryObject<Block> GLIMMERSATIN_LANTERN = registerBlock("glimmersatin_lantern",
+            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN).lightLevel((state) -> {
+                return 9;
+            })), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> SILVERSATIN_LANTERN = registerBlock("silversatin_lantern",
+            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN).lightLevel((state) -> {
+                return 15;
+            })), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> ELERIUM_LANTERN = registerBlock("elerium_lantern",
+            () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN).lightLevel((state) -> {
+                return 13;
+            })), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
+    public static final RegistryObject<Block> GLIMMERSATIN_CAMPFIRE = registerBlock("glimmersatin_campfire",
+            () -> new CampfireBlock(false, 1,
+                    BlockBehaviour.Properties.copy(Blocks.CAMPFIRE).lightLevel((state) -> {
+                        return state.getValue(BlockStateProperties.LIT) ? 9 : 5;
+                    })), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> SILVERSATIN_CAMPFIRE = registerBlock("silversatin_campfire",
+            () -> new CampfireBlock(false, 2,
+                    BlockBehaviour.Properties.copy(Blocks.CAMPFIRE).lightLevel((state) -> {
+                        return state.getValue(BlockStateProperties.LIT) ? 15 : 9;
+                    })), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> ELERIUM_CAMPFIRE = registerBlock("elerium_campfire",
+            () -> new CampfireBlock(false, 1,
+                    BlockBehaviour.Properties.copy(Blocks.CAMPFIRE).lightLevel((state) -> {
+                        return state.getValue(BlockStateProperties.LIT) ? 13 : 0;
+                    })), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
+
 
     public static final RegistryObject<Block> HYDROJADE = registerBlock("hydrojade",
             () -> new Block(hydrojadeProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
@@ -924,6 +969,8 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> HYDROJADE_PILLAR = registerBlock("hydrojade_pillar",
             () -> new RotatedPillarBlock(hydrojadeProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
+
 
     private static ModLogBlock logBlock(MaterialColor c1, MaterialColor c2) {
         return new ModLogBlock(BlockBehaviour.Properties.of(Material.WOOD, (state) ->
