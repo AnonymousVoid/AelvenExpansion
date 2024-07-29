@@ -1,0 +1,24 @@
+{
+  "name": "aelven_expansion:fading_fortress/corner_left_top_pool",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 3,
+      "element": {
+        "location": "aelven_expansion:fading_fortress/fading_fortress_corner_left_top_study",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 3,
+      "element": {
+        "location": "aelven_expansion:fading_fortress/fading_fortress_corner_left_top_wip",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

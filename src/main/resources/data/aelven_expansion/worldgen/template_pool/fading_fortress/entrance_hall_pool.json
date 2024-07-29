@@ -1,0 +1,24 @@
+{
+  "name": "aelven_expansion:fading_fortress/entrance_hall_pool",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 3,
+      "element": {
+        "location": "aelven_expansion:fading_fortress/fading_fortress_entrance_hall_basic",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 3,
+      "element": {
+        "location": "aelven_expansion:fading_fortress/fading_fortress_entrance_hall_split_stairs",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}
