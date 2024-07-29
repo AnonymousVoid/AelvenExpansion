@@ -905,8 +905,6 @@ public class ModBlocks {
                         return state.getValue(BlockStateProperties.LIT) ? 13 : 0;
                     })), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
-
-
     public static final RegistryObject<Block> HYDROJADE = registerBlock("hydrojade",
             () -> new Block(hydrojadeProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> HYDROJADE_STAIRS = registerBlock("hydrojade_stairs",
