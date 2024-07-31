@@ -2,7 +2,7 @@
 
   "type": "minecraft:jigsaw",
 
-  "start_pool": "aelven_expansion:fading_fortress/entrance_pool",
+  "start_pool": "aelven_expansion:fading_fortress/start_pool",
 
   "size": 7,
 
@@ -15,7 +15,7 @@
   "terrain_adaptation": "beard_thin",
 
   "start_height": {
-    "absolute": 3
+    "absolute": -4
   },
 
   "project_start_to_heightmap": "WORLD_SURFACE_WG",
