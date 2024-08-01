@@ -29,7 +29,7 @@ public class ChalkDustBlock extends FallingBlock {
             if (level.getBiome(pos).unwrapKey().get() == ModBiomes.CHALK_PEAKS.getHolder().get().unwrapKey().get()) {
                 BlockState above = level.getBlockState(pos.above());
                 if (above.is(Blocks.AIR) || above.is(ModBlocks.CHALK_DUST.get())) {
-                    if (rand.nextInt(5000) + 70 <= pos.getY()) {
+                    if (rand.nextInt(1000) + 70 <= pos.getY()) {
                         if (above.is(ModBlocks.CHALK_DUST.get())) {
                             int layers = above.getValue(BlockStateProperties.LAYERS);
                             if (layers < 8 && rand.nextInt(8) <= 8 - layers) {
