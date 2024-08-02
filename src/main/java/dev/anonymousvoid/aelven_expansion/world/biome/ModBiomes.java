@@ -30,6 +30,8 @@ public class ModBiomes {
             ModBiomes::createDrystonePlains);
     public static final RegistryObject<Biome> PEACHGROVE_SWAMP = BIOMES.register("peachgrove_swamp",
             ModBiomes::createPeachgroveSwamp);
+    public static final RegistryObject<Biome> HYDROSATIN_FOREST = BIOMES.register("hydrosatin_forest",
+            ModBiomes::createHydrosatinForest);
 
 
 
@@ -156,6 +158,31 @@ public class ModBiomes {
                         .grassColorOverride(6705463)
                         .foliageColorOverride(16212834)
                         .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_SWAMP)).build())
+                .mobSpawnSettings(spawnSettings.build())
+                .generationSettings(generationSettings.build()).build();
+    }
+
+    private static Biome createHydrosatinForest() {
+        MobSpawnSettings.Builder spawnSettings = new MobSpawnSettings.Builder();
+
+        BiomeGenerationSettings.Builder generationSettings = new BiomeGenerationSettings.Builder();
+        generationSettings.addCarver(GenerationStep.Carving.AIR, Carvers.CAVE_EXTRA_UNDERGROUND);
+        generationSettings.addCarver(GenerationStep.Carving.AIR, Carvers.CANYON);
+        generationSettings.addFeature(GenerationStep.Decoration.LAKES, MiscOverworldPlacements.LAKE_LAVA_UNDERGROUND);
+        generationSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, CavePlacements.GLOW_LICHEN);
+
+        return (new Biome.BiomeBuilder())
+                .precipitation(Biome.Precipitation.RAIN)
+                .temperature(0.8F)
+                .downfall(1.0F)
+                .specialEffects((new BiomeSpecialEffects.Builder())
+                        .skyColor(7907327)
+                        .fogColor(12638463)
+                        .waterColor(23633)
+                        .waterFogColor(23633)
+                        .grassColorOverride(6705463)
+                        .foliageColorOverride(16212834)
+                        .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_WARPED_FOREST)).build())
                 .mobSpawnSettings(spawnSettings.build())
                 .generationSettings(generationSettings.build()).build();
     }
