@@ -37,6 +37,13 @@ public class ModPlacedFeatures {
                             ModConfiguredFeatures.VegetalGeneration.PEACHGROVE_TREE_SPAWN, VegetationPlacements.treePlacement(
                             PlacementUtils.countExtra(3, 0.1f, 2))));
 
+//    public static final RegistryObject<PlacedFeature> HYDROSATIN_FUNGUS_PLACED =
+//            PLACED_FEATURES.register("hydrosatin_fungus_placed",
+//                    () -> new PlacedFeature((Holder<ConfiguredFeature<?, ?>>)(Holder<? extends ConfiguredFeature<?, ?>>)
+//                            ModConfiguredFeatures.VegetalGeneration.HYDROSATIN_FUNGUS_SPAWN,
+//                            List.of(RarityFilter.onAverageOnceEvery(8), InSquarePlacement.spread(),
+//                                    PlacementUtils.HEIGHTMAP, BiomeFilter.biome())));
+
     public static final RegistryObject<PlacedFeature> PATCH_SILVER_MARIGOLD_PLACED =
             PLACED_FEATURES.register("patch_silver_marigold_placed",
                     () -> new PlacedFeature((Holder<ConfiguredFeature<?,?>>)(Holder<? extends ConfiguredFeature<?, ?>>)
@@ -108,6 +115,12 @@ public class ModPlacedFeatures {
                     () -> new PlacedFeature(ModConfiguredFeatures.CHIPSTONE_SPIRE.getHolder().get(),
                             List.of(RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(),
                                     PlacementUtils.HEIGHTMAP, BiomeFilter.biome())));
+
+    public static final RegistryObject<PlacedFeature> HYDROSATIN_FUNGUS_PLACED =
+            PLACED_FEATURES.register("hydrosatin_fungus_placed",
+                    () -> new PlacedFeature(ModConfiguredFeatures.HYDROSATIN_FUNGUS_FEATURE.getHolder().get(),
+                            List.of(RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(),
+                                    PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome())));
 
 
 

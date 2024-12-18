@@ -26,7 +26,7 @@ public class TransparentWaterloggableBlock extends HalfTransparentBlock implemen
 
     public TransparentWaterloggableBlock(Properties properties) {
         super(properties);
-
+        this.registerDefaultState(this.stateDefinition.any().setValue(WATERLOGGED, true));
     }
 
     public BlockState updateShape(BlockState pState, Direction pFacing, BlockState pFacingState, LevelAccessor pLevel, BlockPos pCurrentPos, BlockPos pFacingPos) {
@@ -35,9 +35,11 @@ public class TransparentWaterloggableBlock extends HalfTransparentBlock implemen
         }
         return pState;
     }
+
     public FluidState getFluidState(BlockState pState) {
         return pState.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(pState);
     }
+
     public void animateTick(BlockState pState, Level pLevel, BlockPos pPos, RandomSource pRandom) {
         if (pLevel.isRainingAt(pPos.above())) {
             if (pRandom.nextInt(15) == 1) {
@@ -52,9 +54,11 @@ public class TransparentWaterloggableBlock extends HalfTransparentBlock implemen
             }
         }
     }
+
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
         pBuilder.add(WATERLOGGED);
     }
+
     public BlockState getStateForPlacement(BlockPlaceContext pContext) {
         FluidState fluidstate = pContext.getLevel().getFluidState(pContext.getClickedPos());
         BlockState blockstate = this.defaultBlockState().setValue(WATERLOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.WATER));

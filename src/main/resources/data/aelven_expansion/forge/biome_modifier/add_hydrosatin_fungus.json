@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "aelven_expansion:hydrosatin_forest",
+  "features": "aelven_expansion:hydrosatin_fungus_placed",
+  "step": "vegetal_decoration"
+}

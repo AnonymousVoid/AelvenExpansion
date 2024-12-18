@@ -7,23 +7,18 @@ import dev.anonymousvoid.aelven_expansion.block.custom.ModWallSignBlock;
 import dev.anonymousvoid.aelven_expansion.block.entity.ModWoodTypes;
 import dev.anonymousvoid.aelven_expansion.item.ModCreativeModeTab;
 import dev.anonymousvoid.aelven_expansion.item.ModItems;
-import dev.anonymousvoid.aelven_expansion.particle.ModParticles;
-import dev.anonymousvoid.aelven_expansion.particle.custom.EleriumFlameParticles;
+import dev.anonymousvoid.aelven_expansion.world.feature.ModConfiguredFeatures;
 import dev.anonymousvoid.aelven_expansion.world.feature.tree.MoonFirTreeGrower;
 import dev.anonymousvoid.aelven_expansion.world.feature.tree.PeachgroveTreeGrower;
 import dev.anonymousvoid.aelven_expansion.world.feature.tree.SilverbloodTreeGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.particles.BlockParticleOption;
-import net.minecraft.core.particles.ItemParticleOption;
-import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.StandingAndWallBlockItem;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -837,8 +832,12 @@ public class ModBlocks {
             () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.HYDROSATIN));
     public static final RegistryObject<Block> HYDROSATIN_SIGN = registerBlockWithoutBlockItem("hydrosatin_sign",
             () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.HYDROSATIN));
+//    public static final RegistryObject<Block> HYDROSATIN_FUNGUS = registerBlock("hydrosatin_fungus",
+//            () -> new WaterloggableFeatureBlock(() -> {
+//                return ModConfiguredFeatures.VegetalGeneration.HYDROSATIN_FUNGUS;
+//            }, flowerProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> HYDROSATIN_FUNGUS = registerBlock("hydrosatin_fungus",
-            () -> new SaplingBlock(new MoonFirTreeGrower(), flowerProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new WaterloggableFeatureBlock(flowerProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> HYDROSATIN_CAP = registerBlock("hydrosatin_cap",
             () -> new TransparentWaterloggableBlock(shroomProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 

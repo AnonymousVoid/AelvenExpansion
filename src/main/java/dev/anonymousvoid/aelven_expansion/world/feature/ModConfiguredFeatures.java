@@ -3,6 +3,7 @@ package dev.anonymousvoid.aelven_expansion.world.feature;
 import com.google.common.base.Suppliers;
 import dev.anonymousvoid.aelven_expansion.AelvenExpansion;
 import dev.anonymousvoid.aelven_expansion.block.ModBlocks;
+import dev.anonymousvoid.aelven_expansion.world.feature.custom.WaterFungusConfiguration;
 import dev.anonymousvoid.aelven_expansion.world.feature.custom.SpireConfiguration;
 import dev.anonymousvoid.aelven_expansion.world.feature.tree.placer.foliage.DroopyFoliagePlacer;
 import dev.anonymousvoid.aelven_expansion.world.feature.tree.placer.roots.PeachgroveRootPlacement;
@@ -77,6 +78,18 @@ public class ModConfiguredFeatures {
                                 BlockStateProvider.simple(ModBlocks.MUDDY_PEACHGROVE_ROOTS.get()), 3, 9, 0.5F))),
                         new ThreeLayersFeatureSize(1, 1, 0, 1, 2, OptionalInt.empty()))).build());
 
+//        public static final Holder<ConfiguredFeature<WaterFungusConfiguration, ?>> HYDROSATIN_FUNGUS =
+//                FeatureUtils.register("hydrosatin_fungus", ModFeatures.WATER_FUNGUS.get(), new WaterFungusConfiguration(
+//                        ModBlocks.FUNGAL_COBBLED_HYDROJADE.get().defaultBlockState(),
+//                        ModBlocks.HYDROSATIN_STEM.get().defaultBlockState(),
+//                        ModBlocks.HYDROSATIN_FUNGUS.get().defaultBlockState(),
+//                        ModBlocks.HYDROSATIN_CAP.get().defaultBlockState(),
+//                        ModBlocks.GLIMMERSATIN.get().defaultBlockState(),
+//                        UniformInt.of(1, 2),
+//                        UniformInt.of(1, 10),
+//                        UniformInt.of(5, 8),
+//                        UniformInt.of(1, 3)));
+
 
         public static final Holder<PlacedFeature> MOON_FIR_TREE_CHECKED = PlacementUtils.register("moon_fir_tree_checked",
                 MOON_FIR_TREE, PlacementUtils.filteredByBlockSurvival(ModBlocks.MOON_FIR_SAPLING.get()));
@@ -84,6 +97,8 @@ public class ModConfiguredFeatures {
                 SILVERBLOOD_TREE, PlacementUtils.filteredByBlockSurvival(ModBlocks.SILVERBLOOD_SAPLING.get()));
         public static final Holder<PlacedFeature> PEACHGROVE_TREE_CHECKED = PlacementUtils.register("peachgrove_tree_checked",
                 PEACHGROVE_TREE, PlacementUtils.filteredByBlockSurvival(ModBlocks.PEACHGROVE_SAPLING.get()));
+//        public static final Holder<PlacedFeature> HYDROSATIN_FUNGUS_CHECKED = PlacementUtils.register("hydrosatin_fungus_checked",
+//                HYDROSATIN_FUNGUS, PlacementUtils.filteredByBlockSurvival(ModBlocks.HYDROSATIN_FUNGUS.get()));
 
 
         public static final Holder<ConfiguredFeature<RandomFeatureConfiguration, ?>> MOON_FIR_TREE_SPAWN =
@@ -98,6 +113,10 @@ public class ModConfiguredFeatures {
                 FeatureUtils.register("peachgrove_tree_spawn", Feature.RANDOM_SELECTOR,
                         new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(PEACHGROVE_TREE_CHECKED,
                                 0.5f)), PEACHGROVE_TREE_CHECKED));
+//        public static final Holder<ConfiguredFeature<RandomFeatureConfiguration, ?>> HYDROSATIN_FUNGUS_SPAWN =
+//                FeatureUtils.register("hydrosatin_fungus_spawn", Feature.RANDOM_SELECTOR,
+//                        new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(HYDROSATIN_FUNGUS_CHECKED,
+//                                0.5f)), HYDROSATIN_FUNGUS_CHECKED));
 
 
         public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> PATCH_SILVER_MARIGOLD =
@@ -166,6 +185,18 @@ public class ModConfiguredFeatures {
                     UniformInt.of(20, 50),
                     ConstantInt.of(10),
                     ConstantFloat.of(5.0F))));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> HYDROSATIN_FUNGUS_FEATURE = CONFIGURED_FEATURES.register("hydrosatin_fungus",
+            () -> new ConfiguredFeature<>(ModFeatures.WATER_FUNGUS.get(), new WaterFungusConfiguration(
+                    ModBlocks.FUNGAL_COBBLED_HYDROJADE.get().defaultBlockState(),
+                    ModBlocks.HYDROSATIN_STEM.get().defaultBlockState(),
+                    ModBlocks.HYDROSATIN_FUNGUS.get().defaultBlockState(),
+                    ModBlocks.HYDROSATIN_CAP.get().defaultBlockState(),
+                    ModBlocks.GLIMMERSATIN.get().defaultBlockState(),
+                    UniformInt.of(1, 2),
+                    UniformInt.of(1, 10),
+                    UniformInt.of(5, 8),
+                    UniformInt.of(1, 3))));
 
 
 
