@@ -45,62 +45,37 @@ public class WaterFungusFeature extends Feature<WaterFungusConfiguration> {
         int stemW = stemWProv.sample(rand);
         int capH = capHProv.sample(rand);
         int capW = capWProv.sample(rand);
-        double offX = ((double)rand.nextInt(5) - 2) / 2;
-        double offY = ((double)rand.nextInt(5) - 2) / 2;
 
         if (true) { // TODO check if theres enough space to grow
-//            replaceBlock(level, pos, stemState);
-//            spreadGround(level, pos, rand, groundState, stemW, capW); TODO does not work?
-            BlockPos cap = placeStem(level, pos, rand, offX, offY, stemState, sporeState, stemW, stemH);
-            placeCap(level, pos, rand, cap, offX, offY, capState, fruitState, capW, capH);
+//            spreadGround(level, pos, rand, groundState, sporeState, stemW, capW); // TODO does not work as expected
+            BlockPos cap = placeStem(level, pos, rand, stemState, sporeState, stemW, stemH);
+            placeCap(level, pos, rand, cap, capState, fruitState, capW, capH);
         }
 
         return true;
 
-//        for(int i = 0; i < height; i++) {
-//            BlockPos blockpos = blockPos.offset(offX * i, i, offY * i);
-//            this.placeBlock();
-//        }
-//
-//        int step = 3;
-//        for (int i = 0; i < height * 0.8; i ++) {
-//            int y = 1 + i + height / 3;
-//            this.placeLeavesRow(level, blockSetter, random, config,
-//                    blockPos.offset(offX * y, y, offY * y),
-//                    ((height - i) / 2 * step) / 7 + (i < height / 2 ? 1 : 0), Direction.Axis.Y);
-//            step = step <= 1 ? 3 : step - 1;
-//        }
-//        for (int i = -2; i < 3; i ++) {
-//            tryPlaceLeaf(level, blockSetter, random, config,
-//                    blockPos.offset(offX * (height + i), height + i - 1, offY * (height + i)));
-//            tryPlaceLeaf(level, blockSetter, random, config,
-//                    blockPos.offset(offX * (height + i), height + i, offY * (height + i)));
-//            tryPlaceLeaf(level, blockSetter, random, config,
-//                    blockPos.offset(offX * (height + i), height + i + 1, offY * (height + i)));
-//        }
     }
 
-    protected void spreadGround(LevelAccessor level, BlockPos pos, RandomSource rand, @Nullable BlockState groundState, int min, int max) {
+    protected void spreadGround(LevelAccessor level, BlockPos pos, RandomSource rand, @Nullable BlockState groundState, @Nullable BlockState sporeState, int min, int max) {
         if (groundState != null) {
-            //(currentState.is(Blocks.WATER) || currentState.is(Blocks.AIR))
-            for(int x = -max; x <= max; ++x) {
-                for(int z = -max; z <= max; ++z) {
-                    double distance = Math.sqrt(Math.abs(x) ^ 2 + Math.abs(z) ^ 2);
-                    BlockPos pos1 = pos.offset(x, level.getHeight(Heightmap.Types.OCEAN_FLOOR, pos.getX() + x, pos.getZ() + z), z);
-                    if (distance <= min) {
-                        replaceBlock(level, pos1, groundState);
-                        replaceBlock(level, pos1.offset(0, -1, 0), groundState);
-                        replaceBlock(level, pos1.offset(0, -2, 0), groundState);
-                    } else if (distance <= max && rand.nextInt(5) < 4) {
-                        replaceBlock(level, pos1.offset(0, -rand.nextInt(2), 0), groundState);
+            for(int x = -max; x < max; x ++) {
+                for(int z = -max; z < max; z ++) {
+                    double distance = Math.sqrt(Math.abs(x)*Math.abs(x) + Math.abs(z)*Math.abs(z));
+                    BlockPos pos1 = pos.offset(x, level.getHeight(Heightmap.Types.OCEAN_FLOOR, pos.getX() + x, pos.getZ() + z) - pos.getY(), z);
+
+                    placeBlock(level, pos1.offset(0, -1, 0), sporeState);
+                    for (int i = 0; i < rand.nextInt(3); i ++) {
+                        if (distance <= max && rand.nextBoolean() && (distance < min || rand.nextBoolean())) {
+                            replaceBlock(level, pos1.offset(0, -i, 0), groundState);
+                        }
                     }
                 }
             }
         }
     }
 
-    protected BlockPos placeStem(LevelAccessor level, BlockPos pos, RandomSource rand, double offsetX, double offsetY,
-                                 BlockState stemState, @Nullable BlockState sporeState, int width, int height) {
+    protected BlockPos placeStem(LevelAccessor level, BlockPos pos, RandomSource rand, BlockState stemState,
+                                 @Nullable BlockState sporeState, int width, int height) {
         for (int y = -2; y < height; y ++) {
             replaceBlock(level, pos.offset(0, y, 0), stemState);
 
@@ -111,28 +86,39 @@ public class WaterFungusFeature extends Feature<WaterFungusConfiguration> {
 
             if (y < height / 2 - rand.nextInt(3)) {
                 placeBlock(level, pos.offset(-1, y, -1), stemState);
+            } else if (level.getBlockState(pos.offset(-1, y, -1).below()).is(stemState.getBlock())) {
+                placeBlock(level, pos.offset(-1, y, -1), sporeState);
             }
+
             if (y < height / 2 - rand.nextInt(3)) {
                 placeBlock(level, pos.offset(1, y, -1), stemState);
+            } else if (level.getBlockState(pos.offset(1, y, -1).below()).is(stemState.getBlock())) {
+                placeBlock(level, pos.offset(1, y, -1), sporeState);
             }
+
             if (y < height / 2 - rand.nextInt(3)) {
                 placeBlock(level, pos.offset(1, y, 1), stemState);
+            } else if (level.getBlockState(pos.offset(1, y, 1).below()).is(stemState.getBlock())) {
+                placeBlock(level, pos.offset(1, y, 1), sporeState);
             }
+
             if (y < height / 2 - rand.nextInt(3)) {
                 placeBlock(level, pos.offset(-1, y, 1), stemState);
+            } else if (level.getBlockState(pos.offset(-1, y, 1).below()).is(stemState.getBlock())) {
+                placeBlock(level, pos.offset(-1, y, 1), sporeState);
             }
         }
         return pos.offset(0, height, 0);
     }
 
-    protected void placeCap(LevelAccessor level, BlockPos pos, RandomSource rand, BlockPos capPos, double offsetX, double offsetY,
-                            BlockState capState, @Nullable BlockState fruitState, int width, int height) {
+    protected void placeCap(LevelAccessor level, BlockPos pos, RandomSource rand, BlockPos capPos, BlockState capState,
+                            @Nullable BlockState fruitState, int width, int height) {
 
         for (int x = -height; x < height; x++) {
             for (int y = -height; y < height; y++) {
                 for (int z = -height; z < height; z++) {
                     double dist = Math.sqrt(Math.abs(x)*Math.abs(x) + Math.abs(y)*Math.abs(y) + Math.abs(z)*Math.abs(z));
-                    BlockState currentState = level.getBlockState(capPos.offset(x, y - height, z));
+                    BlockState currentState = level.getBlockState(capPos.offset(x, y - height + 1, z));
                     if (dist < height && dist >= height - width && y - rand.nextInt(2) >= 0 &&
                             (currentState.is(Blocks.WATER) || currentState.is(Blocks.AIR))) {
                         replaceBlock(level, capPos.offset(x, y - height + 1, z),

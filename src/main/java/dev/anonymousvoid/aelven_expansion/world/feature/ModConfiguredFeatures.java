@@ -170,7 +170,7 @@ public class ModConfiguredFeatures {
 
     public static final RegistryObject<ConfiguredFeature<?, ?>> HYDROSATIN_FUNGUS_FEATURE = CONFIGURED_FEATURES.register("hydrosatin_fungus",
             () -> new ConfiguredFeature<>(ModFeatures.WATER_FUNGUS.get(), new WaterFungusConfiguration(
-                    ModBlocks.FUNGAL_COBBLED_HYDROJADE.get().defaultBlockState(),
+                    ModBlocks.HYDROJADE.get().defaultBlockState(),
                     ModBlocks.HYDROSATIN_STEM.get().defaultBlockState(),
                     ModBlocks.HYDROSATIN_FUNGUS.get().defaultBlockState(),
                     ModBlocks.HYDROSATIN_CAP.get().defaultBlockState(),

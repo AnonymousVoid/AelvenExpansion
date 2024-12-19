@@ -1,10 +1,14 @@
 package dev.anonymousvoid.aelven_expansion.block.custom;
 
+import dev.anonymousvoid.aelven_expansion.world.feature.ModConfiguredFeatures;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.FluidTags;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -19,17 +23,12 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 import javax.annotation.Nullable;
 
-//public class WaterloggableFeatureBlock extends BushBlock implements BonemealableBlock, SimpleWaterloggedBlock {
-public class HydrosatinFungusFeatureBlock extends BushBlock implements SimpleWaterloggedBlock {
+public class HydrosatinFungusFeatureBlock extends BushBlock implements BonemealableBlock, SimpleWaterloggedBlock {
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     protected static final VoxelShape SHAPE = Block.box(4.0D, 0.0D, 4.0D, 12.0D, 9.0D, 12.0D);
-//    private final Supplier<Holder<? extends ConfiguredFeature<WaterFungusConfiguration, ?>>> featureSupplier;
 
-//    public WaterloggableFeatureBlock(Supplier<Holder<? extends ConfiguredFeature<WaterFungusConfiguration, ?>>> pFeatureSupplier, BlockBehaviour.Properties pProperties) {
     public HydrosatinFungusFeatureBlock(BlockBehaviour.Properties pProperties) {
         super(pProperties);
-//        this.featureSupplier = pFeatureSupplier;
-        this.registerDefaultState(this.stateDefinition.any().setValue(WATERLOGGED, true));
     }
 
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
@@ -40,26 +39,17 @@ public class HydrosatinFungusFeatureBlock extends BushBlock implements SimpleWat
         return pState.isSolidRender(pLevel, pPos);
     }
 
-//    public boolean isValidBonemealTarget(BlockGetter pLevel, BlockPos pPos, BlockState pState, boolean pIsClient) {
-//        return mayPlaceOn(pLevel.getBlockState(pPos.below()), pLevel, pPos.below()) && pState.getValue(WATERLOGGED);
-//    }
+    public boolean isValidBonemealTarget(BlockGetter pLevel, BlockPos pPos, BlockState pState, boolean pIsClient) {
+        return mayPlaceOn(pLevel.getBlockState(pPos.below()), pLevel, pPos.below()) && pState.getValue(WATERLOGGED);
+    }
 
-//    public boolean isBonemealSuccess(Level pLevel, RandomSource pRandom, BlockPos pPos, BlockState pState) {
-//        return (double)pRandom.nextFloat() < 0.4D;
-//    }
+    public boolean isBonemealSuccess(Level pLevel, RandomSource pRandom, BlockPos pPos, BlockState pState) {
+        return (double)pRandom.nextFloat() < 0.4D;
+    }
 
-//    public void performBonemeal(ServerLevel pLevel, RandomSource pRandom, BlockPos pPos, BlockState pState) {
-//        this.featureSupplier.get().get().feature().place(new WaterFungusConfiguration(
-//                ModBlocks.FUNGAL_COBBLED_HYDROJADE.get().defaultBlockState(),
-//                ModBlocks.HYDROSATIN_STEM.get().defaultBlockState(),
-//                ModBlocks.HYDROSATIN_FUNGUS.get().defaultBlockState(),
-//                ModBlocks.HYDROSATIN_CAP.get().defaultBlockState(),
-//                ModBlocks.GLIMMERSATIN.get().defaultBlockState(),
-//                UniformInt.of(1, 2),
-//                UniformInt.of(1, 10),
-//                UniformInt.of(5, 8),
-//                UniformInt.of(1, 3)), pLevel, pLevel.getChunkSource().getGenerator(), pRandom, pPos);
-//    }
+    public void performBonemeal(ServerLevel pLevel, RandomSource pRandom, BlockPos pPos, BlockState pState) {
+        ModConfiguredFeatures.HYDROSATIN_FUNGUS_FEATURE.get().place(pLevel, pLevel.getChunkSource().getGenerator(), pRandom, pPos);
+    }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
         pBuilder.add(WATERLOGGED);
