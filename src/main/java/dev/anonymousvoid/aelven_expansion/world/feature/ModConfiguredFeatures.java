@@ -3,6 +3,7 @@ package dev.anonymousvoid.aelven_expansion.world.feature;
 import com.google.common.base.Suppliers;
 import dev.anonymousvoid.aelven_expansion.AelvenExpansion;
 import dev.anonymousvoid.aelven_expansion.block.ModBlocks;
+import dev.anonymousvoid.aelven_expansion.world.feature.custom.OasisConfiguration;
 import dev.anonymousvoid.aelven_expansion.world.feature.custom.WaterFungusConfiguration;
 import dev.anonymousvoid.aelven_expansion.world.feature.custom.SpireConfiguration;
 import dev.anonymousvoid.aelven_expansion.world.feature.tree.placer.foliage.DroopyFoliagePlacer;
@@ -170,16 +171,30 @@ public class ModConfiguredFeatures {
 
     public static final RegistryObject<ConfiguredFeature<?, ?>> HYDROSATIN_FUNGUS_FEATURE = CONFIGURED_FEATURES.register("hydrosatin_fungus",
             () -> new ConfiguredFeature<>(ModFeatures.WATER_FUNGUS.get(), new WaterFungusConfiguration(
-                    ModBlocks.HYDROJADE.get().defaultBlockState(),
                     ModBlocks.HYDROSATIN_STEM.get().defaultBlockState(),
                     ModBlocks.HYDROSATIN_FUNGUS.get().defaultBlockState(),
                     ModBlocks.HYDROSATIN_CAP.get().defaultBlockState(),
                     ModBlocks.GLIMMERSATIN.get().defaultBlockState(),
                     UniformInt.of(6, 10),
-                    UniformInt.of(1, 3),
                     UniformInt.of(4, 6),
                     UniformInt.of(2, 2))));
 
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> CHIPSTONE_OASIS_FEATURE = CONFIGURED_FEATURES.register("chipstone_oasis",
+            () -> new ConfiguredFeature<>(ModFeatures.OASIS.get(), new OasisConfiguration(
+                    ModBlocks.CHIPSTONE_GRAVEL.get().defaultBlockState(),
+                    ModBlocks.CHIPSTONE.get().defaultBlockState(),
+                    ModBlocks.CHIPSTONE_GRASS.get().defaultBlockState(),
+                    ModBlocks.CHIPSTONE_BLADES.get().defaultBlockState(),
+                    ModBlocks.CHIPSTONE_LOG.get().defaultBlockState(),
+                    ModBlocks.CHIPSTONE_LEAVES.get().defaultBlockState(),
+                    ModBlocks.HANGING_CHIPSTONE_LEAVES.get().defaultBlockState(),
+                    ModBlocks.CHIPSTONE.get().defaultBlockState(),
+                    UniformInt.of(9, 12),
+                    UniformInt.of(2, 3),
+                    UniformInt.of(9, 12),
+                    UniformInt.of(1, 2),
+                    UniformInt.of(5, 7))));
 
 
     public static void register(IEventBus eventBus) { CONFIGURED_FEATURES.register(eventBus); }

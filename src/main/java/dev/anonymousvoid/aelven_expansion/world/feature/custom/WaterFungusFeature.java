@@ -2,17 +2,14 @@ package dev.anonymousvoid.aelven_expansion.world.feature.custom;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
-import net.minecraft.world.level.levelgen.placement.PlacementFilter;
 
 import javax.annotation.Nullable;
 
@@ -30,25 +27,21 @@ public class WaterFungusFeature extends Feature<WaterFungusConfiguration> {
     }
 
     protected boolean placeFeature(LevelAccessor level, RandomSource rand, BlockPos pos, WaterFungusConfiguration config) {
-        BlockState groundState = config.ground;
         BlockState stemState = config.stem;
         BlockState sporeState = config.spore;
         BlockState capState = config.cap;
         BlockState fruitState = config.fruit;
         IntProvider stemHProv = config.stem_height;
-        IntProvider stemWProv = config.stem_width;
         IntProvider capHProv = config.cap_height;
         IntProvider capWProv = config.cap_width;
 
 
         int stemH = stemHProv.sample(rand);
-        int stemW = stemWProv.sample(rand);
         int capH = capHProv.sample(rand);
         int capW = capWProv.sample(rand);
 
-        if (true) { // TODO check if theres enough space to grow
-//            spreadGround(level, pos, rand, groundState, sporeState, stemW, capW); // TODO does not work as expected
-            BlockPos cap = placeStem(level, pos, rand, stemState, sporeState, stemW, stemH);
+        if (true) {
+            BlockPos cap = placeStem(level, pos, rand, stemState, sporeState, stemH);
             placeCap(level, pos, rand, cap, capState, fruitState, capW, capH);
         }
 
@@ -56,26 +49,8 @@ public class WaterFungusFeature extends Feature<WaterFungusConfiguration> {
 
     }
 
-    protected void spreadGround(LevelAccessor level, BlockPos pos, RandomSource rand, @Nullable BlockState groundState, @Nullable BlockState sporeState, int min, int max) {
-        if (groundState != null) {
-            for(int x = -max; x < max; x ++) {
-                for(int z = -max; z < max; z ++) {
-                    double distance = Math.sqrt(Math.abs(x)*Math.abs(x) + Math.abs(z)*Math.abs(z));
-                    BlockPos pos1 = pos.offset(x, level.getHeight(Heightmap.Types.OCEAN_FLOOR, pos.getX() + x, pos.getZ() + z) - pos.getY(), z);
-
-                    placeBlock(level, pos1.offset(0, -1, 0), sporeState);
-                    for (int i = 0; i < rand.nextInt(3); i ++) {
-                        if (distance <= max && rand.nextBoolean() && (distance < min || rand.nextBoolean())) {
-                            replaceBlock(level, pos1.offset(0, -i, 0), groundState);
-                        }
-                    }
-                }
-            }
-        }
-    }
-
     protected BlockPos placeStem(LevelAccessor level, BlockPos pos, RandomSource rand, BlockState stemState,
-                                 @Nullable BlockState sporeState, int width, int height) {
+                                 @Nullable BlockState sporeState, int height) {
         for (int y = -2; y < height; y ++) {
             replaceBlock(level, pos.offset(0, y, 0), stemState);
 

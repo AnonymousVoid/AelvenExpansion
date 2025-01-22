@@ -1,10 +1,7 @@
 package dev.anonymousvoid.aelven_expansion.world.feature;
 
 import dev.anonymousvoid.aelven_expansion.AelvenExpansion;
-import dev.anonymousvoid.aelven_expansion.world.feature.custom.WaterFungusConfiguration;
-import dev.anonymousvoid.aelven_expansion.world.feature.custom.WaterFungusFeature;
-import dev.anonymousvoid.aelven_expansion.world.feature.custom.SpireConfiguration;
-import dev.anonymousvoid.aelven_expansion.world.feature.custom.SpireFeature;
+import dev.anonymousvoid.aelven_expansion.world.feature.custom.*;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -20,6 +17,8 @@ public class ModFeatures {
             FEATURES.register("spire", () -> new SpireFeature(SpireConfiguration.CODEC));
     public static final RegistryObject<Feature<WaterFungusConfiguration>> WATER_FUNGUS =
             FEATURES.register("water_fungus", () -> new WaterFungusFeature(WaterFungusConfiguration.CODEC));
+    public static final RegistryObject<Feature<OasisConfiguration>> OASIS =
+            FEATURES.register("oasis", () -> new OasisFeature(OasisConfiguration.CODEC));
 
 
     public static void register(IEventBus bus) { FEATURES.register(bus); }
