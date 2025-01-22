@@ -18,11 +18,13 @@ import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.features.OreFeatures;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.util.random.SimpleWeightedRandomList;
 import net.minecraft.util.valueproviders.ConstantFloat;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -32,6 +34,7 @@ import net.minecraft.world.level.levelgen.feature.featuresize.ThreeLayersFeature
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -143,6 +146,27 @@ public class ModConfiguredFeatures {
                         FeatureUtils.simpleRandomPatchConfiguration(64,
                                 PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(
                                         BlockStateProvider.simple(ModBlocks.TALL_MULCHY_GRASS.get())))));
+
+        public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> PATCH_CHIPSTONE_GRASS_AND_BLADES =
+                FeatureUtils.register("patch_chipstone_grass_and_blades", Feature.RANDOM_PATCH,
+                        FeatureUtils.simpleRandomPatchConfiguration(64,
+                                PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(
+                                        new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+                                                .add(ModBlocks.CHIPSTONE_GRASS.get().defaultBlockState(), 3)
+                                                .add(ModBlocks.CHIPSTONE_BLADES.get().defaultBlockState(), 1))))));
+
+        public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> PATCH_TALL_CHIPSTONE_BLADES =
+                FeatureUtils.register("patch_tall_chipstone_blades", Feature.RANDOM_PATCH,
+                        FeatureUtils.simpleRandomPatchConfiguration(64,
+                                PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(
+                                        BlockStateProvider.simple(ModBlocks.TALL_CHIPSTONE_BLADES.get())))));
+
+        public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> PATCH_CHIPSTONE_BUSH =
+                FeatureUtils.register("patch_chipstone_bush", Feature.RANDOM_PATCH,
+                        FeatureUtils.simpleRandomPatchConfiguration(64,
+                                PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(
+                                        BlockStateProvider.simple(ModBlocks.CHIPSTONE_BUSH.get())))));
+
     }
 
     public static final DeferredRegister<ConfiguredFeature<?, ?>> CONFIGURED_FEATURES =

@@ -93,6 +93,27 @@ public class ModPlacedFeatures {
                             List.of(RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(),
                                     PlacementUtils.HEIGHTMAP, BiomeFilter.biome())));
 
+    public static final RegistryObject<PlacedFeature> PATCH_CHIPSTONE_GRASS_AND_BLADES_PLACED =
+            PLACED_FEATURES.register("patch_chipstone_grass_and_blades_placed",
+                    () -> new PlacedFeature((Holder<ConfiguredFeature<?,?>>)(Holder<? extends ConfiguredFeature<?, ?>>)
+                            ModConfiguredFeatures.VegetalGeneration.PATCH_CHIPSTONE_GRASS_AND_BLADES,
+                            List.of(RarityFilter.onAverageOnceEvery(2), InSquarePlacement.spread(),
+                                    PlacementUtils.HEIGHTMAP, BiomeFilter.biome())));
+
+    public static final RegistryObject<PlacedFeature> PATCH_TALL_CHIPSTONE_BLADES_PLACED =
+            PLACED_FEATURES.register("patch_tall_chipstone_blades_placed",
+                    () -> new PlacedFeature((Holder<ConfiguredFeature<?,?>>)(Holder<? extends ConfiguredFeature<?, ?>>)
+                            ModConfiguredFeatures.VegetalGeneration.PATCH_TALL_CHIPSTONE_BLADES,
+                            List.of(RarityFilter.onAverageOnceEvery(8), InSquarePlacement.spread(),
+                                    PlacementUtils.HEIGHTMAP, BiomeFilter.biome())));
+
+    public static final RegistryObject<PlacedFeature> PATCH_CHIPSTONE_BUSH_PLACED =
+            PLACED_FEATURES.register("patch_chipstone_bush_placed",
+                    () -> new PlacedFeature((Holder<ConfiguredFeature<?,?>>)(Holder<? extends ConfiguredFeature<?, ?>>)
+                            ModConfiguredFeatures.VegetalGeneration.PATCH_CHIPSTONE_BUSH,
+                            List.of(RarityFilter.onAverageOnceEvery(4), InSquarePlacement.spread(),
+                                    PlacementUtils.HEIGHTMAP, BiomeFilter.biome())));
+
     public static final RegistryObject<PlacedFeature> ELERIUM_ORE_PLACED = PLACED_FEATURES.register("elerium_ore_placed",
             () -> new PlacedFeature(ModConfiguredFeatures.ELERIUM_ORE.getHolder().get(),
                     commonOrePlacement(16, // VeinsPerChunk
