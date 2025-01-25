@@ -1,9 +1,6 @@
 package dev.anonymousvoid.aelven_expansion.entity.mob;
 
-import dev.anonymousvoid.aelven_expansion.block.ModBlocks;
-import net.minecraft.core.particles.BlockParticleOption;
-import net.minecraft.core.particles.ParticleOptions;
-import net.minecraft.core.particles.ParticleTypes;
+import dev.anonymousvoid.aelven_expansion.entity.mob.goals.GnomeMischiefGoal;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -13,16 +10,9 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.goal.*;
-import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
-import net.minecraft.world.entity.monster.RangedAttackMob;
+import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.projectile.Snowball;
-import net.minecraft.world.entity.raid.Raider;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.phys.Vec3;
 
 public class Gnome extends PathfinderMob {
     private static final EntityDataAccessor<Boolean> DATA_USING_ITEM = SynchedEntityData.defineId(Gnome.class, EntityDataSerializers.BOOLEAN);
@@ -35,15 +25,14 @@ public class Gnome extends PathfinderMob {
     protected void registerGoals() {
         super.registerGoals();
 //        this.attackPlayersGoal = new NearestAttackableWitchTargetGoal<>(this, Player.class, 10, true, false, (Predicate<LivingEntity>)null);
-//        this.goalSelector.addGoal(1, new FloatGoal(this));
+        this.goalSelector.addGoal(2, new WaterAvoidingRandomStrollGoal(this, 1.5D));
 //        this.goalSelector.addGoal(2, new RangedAttackGoal(this, 1.0D, 60, 10.0F));
-//        this.goalSelector.addGoal(2, new WaterAvoidingRandomStrollGoal(this, 1.0D));
 //        this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 8.0F));
 //        this.goalSelector.addGoal(3, new RandomLookAroundGoal(this));
-//        this.targetSelector.addGoal(1, new HurtByTargetGoal(this, Raider.class));
-//        this.targetSelector.addGoal(3, this.attackPlayersGoal);
 
-        //
+//        this.targetSelector.addGoal(1, new HurtByTargetGoal(this, Raider.class));
+        this.targetSelector.addGoal(3, new GnomeMischiefGoal(this));
+
     }
 
     protected void defineSynchedData() {
