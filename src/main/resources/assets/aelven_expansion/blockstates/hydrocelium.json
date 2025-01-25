@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "aelven_expansion:block/hydrocelium"
+      },
+      {
+        "model": "aelven_expansion:block/hydrocelium",
+        "y": 90
+      },
+      {
+        "model": "aelven_expansion:block/hydrocelium",
+        "y": 180
+      },
+      {
+        "model": "aelven_expansion:block/hydrocelium",
+        "y": 270
+      }
+    ]
+  }
+}

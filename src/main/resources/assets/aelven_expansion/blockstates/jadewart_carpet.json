@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "aelven_expansion:block/jadewart_carpet"
+      },
+      {
+        "model": "aelven_expansion:block/jadewart_carpet",
+        "y": 90
+      },
+      {
+        "model": "aelven_expansion:block/jadewart_carpet",
+        "y": 180
+      },
+      {
+        "model": "aelven_expansion:block/jadewart_carpet",
+        "y": 270
+      }
+    ]
+  }
+}
