@@ -40,10 +40,10 @@ public class SlantedTrunkPlacer extends TrunkPlacer {
         double offY = ((double)random.nextInt(7) - 3) / height;
 
         // Branch Direction
-        int b = random.nextInt(4);
+//        int b = random.nextInt(4);
 
         for(int i = 0; i < height; i++) {
-            b++;
+//            b++;
             BlockPos blockpos = blockPos.offset(offX * i, i, offY * i);
 
             this.placeLog(level, blockSetter, random, blockpos.below(2), config);
@@ -51,23 +51,8 @@ public class SlantedTrunkPlacer extends TrunkPlacer {
             this.placeLog(level, blockSetter, random, blockpos, config);
 
             if (i > height / 4 && random.nextInt(3) == 0) {
-                int side = b % 4;
-                BlockPos p = blockpos;
-                Direction d = Direction.UP;
-
-                if (side == 0) {
-                    p = blockpos.north();
-                    d = Direction.NORTH;
-                } else if (side == 1) {
-                    p = blockpos.east();
-                    d = Direction.EAST;
-                } else if (side == 2) {
-                    p = blockpos.south();
-                    d = Direction.SOUTH;
-                } else if (side == 3) {
-                    p = blockpos.west();
-                    d = Direction.WEST;
-                }
+                Direction d = Direction.Plane.HORIZONTAL.getRandomDirection(random);
+                BlockPos p = blockpos.offset(d.getNormal());
 
                 placeBranch((height - i)/3, p, d, level, blockSetter, random, config);
             }

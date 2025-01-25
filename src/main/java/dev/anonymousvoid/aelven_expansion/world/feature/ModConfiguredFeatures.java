@@ -3,6 +3,7 @@ package dev.anonymousvoid.aelven_expansion.world.feature;
 import com.google.common.base.Suppliers;
 import dev.anonymousvoid.aelven_expansion.AelvenExpansion;
 import dev.anonymousvoid.aelven_expansion.block.ModBlocks;
+import dev.anonymousvoid.aelven_expansion.world.feature.custom.WaterFungusConfiguration;
 import dev.anonymousvoid.aelven_expansion.world.feature.custom.SpireConfiguration;
 import dev.anonymousvoid.aelven_expansion.world.feature.tree.placer.foliage.DroopyFoliagePlacer;
 import dev.anonymousvoid.aelven_expansion.world.feature.tree.placer.roots.PeachgroveRootPlacement;
@@ -166,6 +167,18 @@ public class ModConfiguredFeatures {
                     UniformInt.of(20, 50),
                     ConstantInt.of(10),
                     ConstantFloat.of(5.0F))));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> HYDROSATIN_FUNGUS_FEATURE = CONFIGURED_FEATURES.register("hydrosatin_fungus",
+            () -> new ConfiguredFeature<>(ModFeatures.WATER_FUNGUS.get(), new WaterFungusConfiguration(
+                    ModBlocks.HYDROJADE.get().defaultBlockState(),
+                    ModBlocks.HYDROSATIN_STEM.get().defaultBlockState(),
+                    ModBlocks.HYDROSATIN_FUNGUS.get().defaultBlockState(),
+                    ModBlocks.HYDROSATIN_CAP.get().defaultBlockState(),
+                    ModBlocks.GLIMMERSATIN.get().defaultBlockState(),
+                    UniformInt.of(6, 10),
+                    UniformInt.of(1, 3),
+                    UniformInt.of(4, 6),
+                    UniformInt.of(2, 2))));
 
 
 

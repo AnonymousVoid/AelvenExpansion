@@ -109,6 +109,12 @@ public class ModPlacedFeatures {
                             List.of(RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(),
                                     PlacementUtils.HEIGHTMAP, BiomeFilter.biome())));
 
+    public static final RegistryObject<PlacedFeature> HYDROSATIN_FUNGUS_PLACED =
+            PLACED_FEATURES.register("hydrosatin_fungus_placed",
+                    () -> new PlacedFeature(ModConfiguredFeatures.HYDROSATIN_FUNGUS_FEATURE.getHolder().get(),
+                            List.of(RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(),
+                                    PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome())));
+
 
 
     public static List<PlacementModifier> orePlacement(PlacementModifier p_195347_, PlacementModifier p_195348_) {
