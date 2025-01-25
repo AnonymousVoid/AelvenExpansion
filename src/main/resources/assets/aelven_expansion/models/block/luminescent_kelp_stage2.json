@@ -2,5 +2,6 @@
   "parent": "minecraft:block/tinted_cross",
   "textures": {
     "cross": "aelven_expansion:block/luminescent_kelp_stage2"
-  }
+  },
+  "render_type": "cutout"
 }

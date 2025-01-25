@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "aelven_expansion:block/jadegrass"
+    "layer0": "aelven_expansion:item/jadegrass"
   }
 }

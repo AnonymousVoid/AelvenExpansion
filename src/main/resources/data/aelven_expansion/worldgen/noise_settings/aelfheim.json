@@ -853,7 +853,7 @@
                       "then_run": {
                         "type": "minecraft:block",
                         "result_state": {
-                          "Name": "aelven_expansion:cobbled_hydrojade"
+                          "Name": "aelven_expansion:hydrosatin_nylium"
                         }
                       }
                     },
@@ -873,7 +873,7 @@
                       "then_run": {
                         "type": "minecraft:block",
                         "result_state": {
-                          "Name": "aelven_expansion:fungal_cobbled_hydrojade"
+                          "Name": "aelven_expansion:hydrosatin_nylium"
                         }
                       }
                     },

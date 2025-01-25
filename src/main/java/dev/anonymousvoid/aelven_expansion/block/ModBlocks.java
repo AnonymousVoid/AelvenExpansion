@@ -899,10 +899,6 @@ public class ModBlocks {
                     BlockBehaviour.Properties.copy(Blocks.CAMPFIRE).lightLevel((state) -> {
                         return state.getValue(BlockStateProperties.LIT) ? 13 : 0;
                     })), ModCreativeModeTab.MOD_TAB_BLOCKS);
-
-    public static  final RegistryObject<Block> HYDROSATIN_NYLIUM = registerBlock("hydrosatin_nylium",
-            () -> new Block(hydrosatinNyliumProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
-
     public static final RegistryObject<Block> HYDROJADE = registerBlock("hydrojade",
             () -> new Block(hydrojadeProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> HYDROJADE_STAIRS = registerBlock("hydrojade_stairs",
@@ -968,12 +964,20 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> JADEGRASS = registerBlock("jadegrass",
             () -> new SeagrassBlock(coralProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
-    public static final RegistryObject<Block> TALL_JADEGRASS = registerBlock("tall_jadegrass",
-            () -> new ModSeagrassBlock(coralProperties, JADEGRASS.get()), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> TALL_JADEGRASS = registerBlockWithoutBlockItem("tall_jadegrass",
+            () -> new ModSeagrassBlock(coralProperties, JADEGRASS.get()));
     public static final RegistryObject<Block> HYDROSATIN_SPROUTS = registerBlock("hydrosatin_sprouts",
             () -> new SeagrassBlock(coralProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> TALL_HYDROSATIN_SPROUTS = registerBlock("tall_hydrosatin_sprouts",
             () -> new ModSeagrassBlock(coralProperties, HYDROSATIN_SPROUTS.get()), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
+    public static  final RegistryObject<Block> HYDROSATIN_NYLIUM = registerBlock("hydrosatin_nylium",
+            () -> new Block(hydrosatinNyliumProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
+    public static final RegistryObject<Block> LUMINESCENT_KELP = registerBlock("luminescent_kelp",
+            () -> new KelpBlock(coralProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> LUMINESCENT_KELP_PLANT = registerBlockWithoutBlockItem("luminescent_kelp_plant",
+            () -> new ModKelpPlantBlock(coralProperties, LUMINESCENT_KELP.get()));
 
 
 
