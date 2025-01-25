@@ -157,13 +157,13 @@ public class ModConfiguredFeatures {
 
         public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> PATCH_TALL_CHIPSTONE_BLADES =
                 FeatureUtils.register("patch_tall_chipstone_blades", Feature.RANDOM_PATCH,
-                        FeatureUtils.simpleRandomPatchConfiguration(64,
+                        FeatureUtils.simpleRandomPatchConfiguration(32,
                                 PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(
                                         BlockStateProvider.simple(ModBlocks.TALL_CHIPSTONE_BLADES.get())))));
 
         public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> PATCH_CHIPSTONE_BUSH =
                 FeatureUtils.register("patch_chipstone_bush", Feature.RANDOM_PATCH,
-                        FeatureUtils.simpleRandomPatchConfiguration(64,
+                        FeatureUtils.simpleRandomPatchConfiguration(32,
                                 PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(
                                         BlockStateProvider.simple(ModBlocks.CHIPSTONE_BUSH.get())))));
 
@@ -199,8 +199,8 @@ public class ModConfiguredFeatures {
                     ModBlocks.HYDROSATIN_FUNGUS.get().defaultBlockState(),
                     ModBlocks.HYDROSATIN_CAP.get().defaultBlockState(),
                     ModBlocks.GLIMMERSATIN.get().defaultBlockState(),
-                    UniformInt.of(6, 10),
-                    UniformInt.of(4, 6),
+                    UniformInt.of(8, 10),
+                    UniformInt.of(6, 7),
                     UniformInt.of(2, 2))));
 
 

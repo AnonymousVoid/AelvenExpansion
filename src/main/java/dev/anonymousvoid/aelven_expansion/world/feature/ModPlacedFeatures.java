@@ -104,14 +104,14 @@ public class ModPlacedFeatures {
             PLACED_FEATURES.register("patch_tall_chipstone_blades_placed",
                     () -> new PlacedFeature((Holder<ConfiguredFeature<?,?>>)(Holder<? extends ConfiguredFeature<?, ?>>)
                             ModConfiguredFeatures.VegetalGeneration.PATCH_TALL_CHIPSTONE_BLADES,
-                            List.of(RarityFilter.onAverageOnceEvery(8), InSquarePlacement.spread(),
+                            List.of(RarityFilter.onAverageOnceEvery(16), InSquarePlacement.spread(),
                                     PlacementUtils.HEIGHTMAP, BiomeFilter.biome())));
 
     public static final RegistryObject<PlacedFeature> PATCH_CHIPSTONE_BUSH_PLACED =
             PLACED_FEATURES.register("patch_chipstone_bush_placed",
                     () -> new PlacedFeature((Holder<ConfiguredFeature<?,?>>)(Holder<? extends ConfiguredFeature<?, ?>>)
                             ModConfiguredFeatures.VegetalGeneration.PATCH_CHIPSTONE_BUSH,
-                            List.of(RarityFilter.onAverageOnceEvery(4), InSquarePlacement.spread(),
+                            List.of(RarityFilter.onAverageOnceEvery(16), InSquarePlacement.spread(),
                                     PlacementUtils.HEIGHTMAP, BiomeFilter.biome())));
 
     public static final RegistryObject<PlacedFeature> ELERIUM_ORE_PLACED = PLACED_FEATURES.register("elerium_ore_placed",

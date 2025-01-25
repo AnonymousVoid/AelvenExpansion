@@ -745,11 +745,11 @@ public class ModBlocks {
     public static final RegistryObject<Block> CHIPSTONE_GRASS = registerBlock("chipstone_grass",
             () -> new StoneGrassBlock(stonePlantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> CHIPSTONE_BUSH = registerBlock("chipstone_bush",
-            () -> new TallBlock(stonePlantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);//TODO figure out how to make these place properly when used in features
+            () -> new StoneDoublePlantBlock(stonePlantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);//TODO figure out how to make these place properly when used in features
     public static final RegistryObject<Block> CHIPSTONE_BLADES = registerBlock("chipstone_blades",
             () -> new StoneGrassBlock(stonePlantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> TALL_CHIPSTONE_BLADES = registerBlock("tall_chipstone_blades",
-            () -> new TallBlock(stonePlantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new StoneDoublePlantBlock(stonePlantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
 
 
