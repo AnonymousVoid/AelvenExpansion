@@ -12,6 +12,15 @@
       }
     },
     {
+      "weight": 2,
+      "element": {
+        "location": "aelven_expansion:fading_fortress/fading_fortress_corner_left_large_storeroom",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
       "weight": 3,
       "element": {
         "location": "aelven_expansion:fading_fortress/fading_fortress_corner_left_armorhall",
