@@ -14,7 +14,7 @@
     {
       "weight": 3,
       "element": {
-        "location": "aelven_expansion:fading_fortress/fading_fortress_corner_left_top_wip",
+        "location": "aelven_expansion:fading_fortress/fading_fortress_corner_left_top_library",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"

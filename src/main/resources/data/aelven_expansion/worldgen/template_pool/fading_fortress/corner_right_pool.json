@@ -5,7 +5,7 @@
     {
       "weight": 3,
       "element": {
-        "location": "aelven_expansion:fading_fortress/fading_fortress_corner_right_wip1",
+        "location": "aelven_expansion:fading_fortress/fading_fortress_corner_right_kitchen",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
@@ -14,7 +14,7 @@
     {
       "weight": 3,
       "element": {
-        "location": "aelven_expansion:fading_fortress/fading_fortress_corner_right_wip2",
+        "location": "aelven_expansion:fading_fortress/fading_fortress_corner_right_feasthall",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
