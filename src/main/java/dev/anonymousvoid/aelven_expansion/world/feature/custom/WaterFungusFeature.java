@@ -2,14 +2,18 @@ package dev.anonymousvoid.aelven_expansion.world.feature.custom;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
+import net.minecraft.world.level.material.FluidState;
 
 import javax.annotation.Nullable;
 
@@ -108,21 +112,28 @@ public class WaterFungusFeature extends Feature<WaterFungusConfiguration> {
     protected boolean placeBlock(LevelAccessor level, BlockPos pos, BlockState state) {
         BlockPos blockpos = pos.above();
         BlockState blockstate = level.getBlockState(pos);
-        if (!level.isOutsideBuildHeight(pos) && blockstate.is(Blocks.WATER) && !(level.getBlockState(blockpos).is(Blocks.AIR))) {
-            level.setBlock(pos, state, 3);
-            return true;
-        } else {
-            return false;
+        if (!level.isOutsideBuildHeight(pos) && blockstate.is(Blocks.WATER) || level.getBlockState(blockpos).is(Blocks.AIR)) {
+            if (state.hasProperty(BlockStateProperties.WATERLOGGED)) {
+                level.setBlock(pos, state.setValue(BlockStateProperties.WATERLOGGED,
+                        level.getFluidState(pos).is(FluidTags.WATER)), 3);
+            } else {
+                level.setBlock(pos, state, 3);
+                return true;
+            }
         }
+        return false;
     }
 
     protected boolean replaceBlock(LevelAccessor level, BlockPos pos, BlockState state) {
-        BlockState blockstate = level.getBlockState(pos.above());
         if (!level.isOutsideBuildHeight(pos)) {
-            level.setBlock(pos, state, 3);
-            return true;
-        } else {
-            return false;
+            if (state.hasProperty(BlockStateProperties.WATERLOGGED)) {
+                level.setBlock(pos, state.setValue(BlockStateProperties.WATERLOGGED,
+                        level.getFluidState(pos).is(FluidTags.WATER)), 3);
+            } else {
+                level.setBlock(pos, state, 3);
+                return true;
+            }
         }
+        return false;
     }
 }
