@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "aelven_expansion:block/tall_hydrosatin_sprouts_bottom"
+    },
+    "half=upper": {
+      "model": "aelven_expansion:block/tall_hydrosatin_sprouts_top"
+    }
+  }
+}

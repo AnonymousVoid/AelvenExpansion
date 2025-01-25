@@ -745,7 +745,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> CHIPSTONE_GRASS = registerBlock("chipstone_grass",
             () -> new StoneGrassBlock(stonePlantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> CHIPSTONE_BUSH = registerBlock("chipstone_bush",
-            () -> new StoneDoublePlantBlock(stonePlantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);//TODO figure out how to make these place properly when used in features
+            () -> new StoneDoublePlantBlock(stonePlantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> CHIPSTONE_BLADES = registerBlock("chipstone_blades",
             () -> new StoneGrassBlock(stonePlantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> TALL_CHIPSTONE_BLADES = registerBlock("tall_chipstone_blades",
@@ -961,6 +961,15 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> HYDROJADE_PILLAR = registerBlock("hydrojade_pillar",
             () -> new RotatedPillarBlock(hydrojadeProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
+    public static final RegistryObject<Block> JADEGRASS = registerBlock("jadegrass",
+            () -> new SeagrassBlock(coralProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> TALL_JADEGRASS = registerBlock("tall_jadegrass",
+            () -> new ModSeagrassBlock(coralProperties, JADEGRASS.get()), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> HYDROSATIN_SPROUTS = registerBlock("hydrosatin_sprouts",
+            () -> new SeagrassBlock(coralProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> TALL_HYDROSATIN_SPROUTS = registerBlock("tall_hydrosatin_sprouts",
+            () -> new ModSeagrassBlock(coralProperties, HYDROSATIN_SPROUTS.get()), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
 
 

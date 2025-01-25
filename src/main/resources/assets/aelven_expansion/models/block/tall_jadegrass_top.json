@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/tinted_cross",
+  "textures": {
+    "cross": "aelven_expansion:block/tall_jadegrass_top"
+  },
+  "render_type": "cutout"
+}
