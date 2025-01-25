@@ -84,6 +84,7 @@ public class ModBlocks {
     private static final BlockBehaviour.Properties hydrojadeBrickProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE_BRICKS).strength(2.5F, 6.5F);
     private static final BlockBehaviour.Properties hydrojadeTileProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE_TILES).strength(2.5F, 6.5F);
     private static final BlockBehaviour.Properties hydrojadePolishedProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.POLISHED_DEEPSLATE).strength(2.5F, 6.5F);
+    private static final BlockBehaviour.Properties hydrosatinNyliumProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.NYLIUM).strength(1.8F,5.0F);
     // BLOCKS
     public static final RegistryObject<Block> MOON_FIR_LOG = registerBlock("moon_fir_log",
             () -> logBlock(MaterialColor.COLOR_GRAY, MaterialColor.COLOR_BLUE), ModCreativeModeTab.MOD_TAB_BLOCKS);
@@ -898,6 +899,9 @@ public class ModBlocks {
                     BlockBehaviour.Properties.copy(Blocks.CAMPFIRE).lightLevel((state) -> {
                         return state.getValue(BlockStateProperties.LIT) ? 13 : 0;
                     })), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
+    public static  final RegistryObject<Block> HYDROSATIN_NYLIUM = registerBlock("hydrosatin_nylium",
+            () -> new Block(hydrosatinNyliumProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
     public static final RegistryObject<Block> HYDROJADE = registerBlock("hydrojade",
             () -> new Block(hydrojadeProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
