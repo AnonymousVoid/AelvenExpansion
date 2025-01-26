@@ -152,8 +152,6 @@
 	"block.aelven_expansion.chitta_large_tile_slab": "Chitta Large Tile Slab",
 	"block.aelven_expansion.chitta_large_tile_wall": "Chitta Large Tile Wall",
 
-	"block.aelven_expansion.chitta_playing_tiles": "Chitta Playing Tiles",
-
 	"item.aelven_expansion.elerium": "Elerium",
 	"block.aelven_expansion.elerium_torch": "Elerium Torch",
 	"block.aelven_expansion.elerium_lantern": "Elerium Lantern",
@@ -383,7 +381,6 @@
 	"block.aelven_expansion.giant_bubble_coral": "Giant Bubble Coral",
 	"block.aelven_expansion.dead_giant_bubble_coral": "Dead Giant Bubble Coral",
 
-	"block.aelven_expansion.hydrosatin_nylium": "Hydrosatin Nylium",
 	"block.aelven_expansion.hydrosatin_stem": "Hydrosatin Stem",
 	"block.aelven_expansion.stripped_hydrosatin_stem": "Stripped Hydrosatin Stem",
 	"block.aelven_expansion.hydrosatin_hyphae": "Hydrosatin Hyphae",
@@ -437,6 +434,10 @@
 
 	"block.aelven_expansion.hydrojade_pillar": "Hydrojade Pillar",
 
+	"block.aelven_expansion.jadegrass_nylium": "Jadegrass Nylium",
+	"block.aelven_expansion.hydrocelium": "Hydrocelium",
+	"block.aelven_expansion.jadewart": "Jadewart",
+	"block.aelven_expansion.jadewart_carpet": "Jadewart Carpet",
 	"block.aelven_expansion.jadegrass": "Jadegrass",
 	"block.aelven_expansion.tall_jadegrass": "Tall Jadegrass",
 	"block.aelven_expansion.hydrosatin_sprouts": "Hydrosatin Sprouts",

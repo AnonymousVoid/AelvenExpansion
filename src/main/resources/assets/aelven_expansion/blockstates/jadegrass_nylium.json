@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "aelven_expansion:block/jadegrass_nylium"
+      },
+      {
+        "model": "aelven_expansion:block/jadegrass_nylium",
+        "y": 90
+      },
+      {
+        "model": "aelven_expansion:block/jadegrass_nylium",
+        "y": 180
+      },
+      {
+        "model": "aelven_expansion:block/jadegrass_nylium",
+        "y": 270
+      }
+    ]
+  }
+}

@@ -49,7 +49,7 @@ public class ModBlocks {
     private static final BlockBehaviour.Properties stonePlantProperties = BlockBehaviour.Properties.copy(Blocks.BRAIN_CORAL).sound(SoundType.TUFF).offsetType(BlockBehaviour.OffsetType.XYZ);
     private static final BlockBehaviour.Properties stoneLeafProperties = BlockBehaviour.Properties.copy(Blocks.AZALEA_LEAVES).sound(SoundType.MANGROVE_ROOTS);
     private static final BlockBehaviour.Properties mudProperties = BlockBehaviour.Properties.copy(Blocks.DIRT).color(MaterialColor.TERRACOTTA_CYAN).sound(SoundType.MUD).randomTicks();
-    private static final BlockBehaviour.Properties mulchProperties = BlockBehaviour.Properties.copy(Blocks.DIRT).color(MaterialColor.TERRACOTTA_CYAN).sound(SoundType.MOSS).randomTicks();
+    private static final BlockBehaviour.Properties mulchProperties = BlockBehaviour.Properties.copy(Blocks.DIRT).color(MaterialColor.TERRACOTTA_CYAN).sound(SoundType.MOSS).strength(0.1F).randomTicks();
     private static final BlockBehaviour.Properties muddyLeafProperties = BlockBehaviour.Properties.copy(Blocks.DIRT).color(MaterialColor.TERRACOTTA_CYAN).sound(SoundType.MUD);
 
     private static final BlockBehaviour.Properties chittaProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE).strength(2.0F, 6.0F);
@@ -84,7 +84,7 @@ public class ModBlocks {
     private static final BlockBehaviour.Properties hydrojadeBrickProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE_BRICKS).strength(2.5F, 6.5F);
     private static final BlockBehaviour.Properties hydrojadeTileProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE_TILES).strength(2.5F, 6.5F);
     private static final BlockBehaviour.Properties hydrojadePolishedProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.POLISHED_DEEPSLATE).strength(2.5F, 6.5F);
-    private static final BlockBehaviour.Properties hydrosatinNyliumProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.NYLIUM).strength(1.8F,5.0F);
+    private static final BlockBehaviour.Properties jadegrassNyliumProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.NYLIUM).strength(1.8F,5.0F);
     // BLOCKS
     public static final RegistryObject<Block> MOON_FIR_LOG = registerBlock("moon_fir_log",
             () -> logBlock(MaterialColor.COLOR_GRAY, MaterialColor.COLOR_BLUE), ModCreativeModeTab.MOD_TAB_BLOCKS);
@@ -971,8 +971,14 @@ public class ModBlocks {
     public static final RegistryObject<Block> TALL_HYDROSATIN_SPROUTS = registerBlock("tall_hydrosatin_sprouts",
             () -> new ModTallSeagrassBlock(coralProperties, HYDROSATIN_SPROUTS.get()), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
-    public static  final RegistryObject<Block> HYDROSATIN_NYLIUM = registerBlock("hydrosatin_nylium",
-            () -> new Block(hydrosatinNyliumProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static  final RegistryObject<Block> JADEGRASS_NYLIUM = registerBlock("jadegrass_nylium",
+            () -> new Block(jadegrassNyliumProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static  final RegistryObject<Block> HYDROCELIUM = registerBlock("hydrocelium",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.MYCELIUM)), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static  final RegistryObject<Block> JADEWART = registerBlock("jadewart",
+            () -> new Block(mulchProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static  final RegistryObject<Block> JADEWART_CARPET = registerBlock("jadewart_carpet",
+            () -> new CarpetBlock(mulchProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
     public static final RegistryObject<Block> LUMINESCENT_KELP = registerBlock("luminescent_kelp",
             () -> new KelpBlock(coralProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
