@@ -8,12 +8,10 @@ import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
-import net.minecraft.world.level.material.FluidState;
 
 import javax.annotation.Nullable;
 
@@ -35,22 +33,51 @@ public class WaterFungusFeature extends Feature<WaterFungusConfiguration> {
         BlockState sporeState = config.spore;
         BlockState capState = config.cap;
         BlockState fruitState = config.fruit;
-        IntProvider stemHProv = config.stem_height;
-        IntProvider capHProv = config.cap_height;
-        IntProvider capWProv = config.cap_width;
+        IntProvider stemHeightProv = config.stem_height;
+        IntProvider capHeightProv = config.cap_height;
+        IntProvider capWidthProv = config.cap_width;
+        IntProvider spreadChanceProv = config.spread_chance;
 
 
-        int stemH = stemHProv.sample(rand);
-        int capH = capHProv.sample(rand);
-        int capW = capWProv.sample(rand);
+        int stemHeight = stemHeightProv.sample(rand);
+        int capHeight = capHeightProv.sample(rand);
+        int capWidth = capWidthProv.sample(rand);
+        int spreadChanceMin = spreadChanceProv.getMinValue();
+        int spreadChanceMax = spreadChanceProv.getMaxValue();
 
-        if (true) {
-            BlockPos cap = placeStem(level, pos, rand, stemState, sporeState, stemH);
-            placeCap(level, pos, rand, cap, capState, fruitState, capW, capH);
+        if (rand.nextInt(spreadChanceMax) < spreadChanceMin) {
+            spreadSpores(level, pos, rand, sporeState, stemHeight, capHeight);
+        } else {
+            BlockPos cap = placeStem(level, pos, rand, stemState, sporeState, stemHeight);
+            placeCap(level, pos, rand, cap, capState, fruitState, capWidth, capHeight);
         }
 
         return true;
 
+    }
+
+    protected void spreadSpores(LevelAccessor level, BlockPos pos, RandomSource rand, BlockState sporeState, int distance, int tries) {
+        for (int boulders = 0; boulders < tries; boulders ++) {
+            double horizontal = rand.nextInt(360) * (Math.PI / 180);
+            double length = ((rand.nextInt(180) * (Math.PI / 180)) + (rand.nextInt(180) * (Math.PI / 180))) / 2;
+
+            double x = distance * Math.sin(length) * Math.sin(horizontal);
+            double z = distance * Math.sin(length) * Math.cos(horizontal);
+
+            placeSpore(level, pos.offset(x, 10, z), sporeState);
+        }
+    }
+
+    protected void placeSpore(LevelAccessor level, BlockPos pos, BlockState sporeState) {
+        BlockPos sporePos = pos;
+        for (int i = 0; i < 20; i ++) {
+            if (sporeState.isCollisionShapeFullBlock(level, pos) && level.getBlockState(pos.above()).is(Blocks.WATER)) {
+                placeBlock(level, sporePos, sporeState);
+                return;
+            } else {
+                sporePos = sporePos.below();
+            }
+        }
     }
 
     protected BlockPos placeStem(LevelAccessor level, BlockPos pos, RandomSource rand, BlockState stemState,

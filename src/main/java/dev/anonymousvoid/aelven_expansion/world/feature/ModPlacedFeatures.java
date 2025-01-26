@@ -133,7 +133,7 @@ public class ModPlacedFeatures {
     public static final RegistryObject<PlacedFeature> HYDROSATIN_FUNGUS_PLACED =
             PLACED_FEATURES.register("hydrosatin_fungus_placed",
                     () -> new PlacedFeature(ModConfiguredFeatures.HYDROSATIN_FUNGUS_FEATURE.getHolder().get(),
-                            List.of(RarityFilter.onAverageOnceEvery(2), InSquarePlacement.spread(),
+                            List.of(RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(),
                                     PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome())));
 
     public static final RegistryObject<PlacedFeature> CHIPSTONE_OASIS_PLACED =

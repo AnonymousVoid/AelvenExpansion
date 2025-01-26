@@ -201,7 +201,8 @@ public class ModConfiguredFeatures {
                     ModBlocks.GLIMMERSATIN.get().defaultBlockState(),
                     UniformInt.of(8, 9),
                     UniformInt.of(5, 6),
-                    ConstantInt.of(2))));
+                    ConstantInt.of(2),
+                    UniformInt.of(1, 3))));
 
 
     public static final RegistryObject<ConfiguredFeature<?, ?>> CHIPSTONE_OASIS_FEATURE = CONFIGURED_FEATURES.register("chipstone_oasis",
