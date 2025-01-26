@@ -136,6 +136,13 @@ public class ModPlacedFeatures {
                             List.of(RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(),
                                     PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome())));
 
+    public static final RegistryObject<PlacedFeature> PATCH_HYDROSATIN_SPROUTS_PLACED =
+            PLACED_FEATURES.register("patch_hydrosatin_sprouts_placed",
+                    () -> new PlacedFeature((Holder<ConfiguredFeature<?,?>>)(Holder<? extends ConfiguredFeature<?, ?>>)
+                            ModConfiguredFeatures.VegetalGeneration.PATCH_HYDROSATIN_SPROUTS,
+                            List.of(RarityFilter.onAverageOnceEvery(8), InSquarePlacement.spread(),
+                                    PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome())));
+
     public static final RegistryObject<PlacedFeature> CHIPSTONE_OASIS_PLACED =
             PLACED_FEATURES.register("chipstone_oasis_placed",
                     () -> new PlacedFeature(ModConfiguredFeatures.CHIPSTONE_OASIS_FEATURE.getHolder().get(),

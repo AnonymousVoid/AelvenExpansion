@@ -167,6 +167,11 @@ public class ModConfiguredFeatures {
                                 PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(
                                         BlockStateProvider.simple(ModBlocks.CHIPSTONE_BUSH.get())))));
 
+        public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> PATCH_HYDROSATIN_SPROUTS =
+                FeatureUtils.register("patch_hydrosatin_sprouts", Feature.RANDOM_PATCH,
+                        FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
+                                new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.HYDROSATIN_SPROUTS.get()))));
+
     }
 
     public static final DeferredRegister<ConfiguredFeature<?, ?>> CONFIGURED_FEATURES =

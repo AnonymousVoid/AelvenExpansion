@@ -38,7 +38,7 @@ public class ModBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, AelvenExpansion.MODID);
 
     // BLOCK PROPERTIES
-    private static final BlockBehaviour.Properties woodProperties = BlockBehaviour.Properties.of(Material.WOOD).requiresCorrectToolForDrops().strength(2.0F, 3.0F).sound(SoundType.WOOD);
+    private static final BlockBehaviour.Properties woodProperties = BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD).strength(2.0F, 3.0F).requiresCorrectToolForDrops();
     private static final BlockBehaviour.Properties woodPropertiesNoCollide = BlockBehaviour.Properties.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.WOOD).noCollission();
     private static final BlockBehaviour.Properties woodPropertiesNoOcclude = BlockBehaviour.Properties.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.WOOD).noOcclusion();
     private static final BlockBehaviour.Properties azaleaProperties = BlockBehaviour.Properties.copy(Blocks.AZALEA_LEAVES);
@@ -52,41 +52,48 @@ public class ModBlocks {
     private static final BlockBehaviour.Properties mulchProperties = BlockBehaviour.Properties.copy(Blocks.DIRT).color(MaterialColor.TERRACOTTA_CYAN).sound(SoundType.MOSS).strength(0.1F).randomTicks();
     private static final BlockBehaviour.Properties muddyLeafProperties = BlockBehaviour.Properties.copy(Blocks.DIRT).color(MaterialColor.TERRACOTTA_CYAN).sound(SoundType.MUD);
 
-    private static final BlockBehaviour.Properties chittaProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE).strength(2.0F, 6.0F);
-    private static final BlockBehaviour.Properties chittaBrickProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE_BRICKS).strength(2.5F, 6.5F);
-    private static final BlockBehaviour.Properties chittaTileProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE_TILES).strength(2.5F, 6.5F);
-    private static final BlockBehaviour.Properties chittaPolishedProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.POLISHED_DEEPSLATE).strength(2.5F, 6.5F);
-    private static final BlockBehaviour.Properties chittaKilnProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.POLISHED_DEEPSLATE).strength(3.5F, 8.0F)
+    private static final BlockBehaviour.Properties chittaProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DEEPSLATE).sound(SoundType.DEEPSLATE).strength(2.0F, 6.0F).requiresCorrectToolForDrops();
+    private static final BlockBehaviour.Properties chittaBrickProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DEEPSLATE).sound(SoundType.DEEPSLATE_BRICKS).strength(2.5F, 6.5F).requiresCorrectToolForDrops();
+    private static final BlockBehaviour.Properties chittaTileProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DEEPSLATE).sound(SoundType.DEEPSLATE_TILES).strength(2.5F, 6.5F).requiresCorrectToolForDrops();
+    private static final BlockBehaviour.Properties chittaPolishedProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DEEPSLATE).sound(SoundType.POLISHED_DEEPSLATE).strength(2.5F, 6.5F).requiresCorrectToolForDrops();
+    private static final BlockBehaviour.Properties chittaKilnProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DEEPSLATE).sound(SoundType.POLISHED_DEEPSLATE).strength(3.5F, 8.0F).requiresCorrectToolForDrops()
             .lightLevel(state -> state.getValue(KilnBlock.LIT) ? 15 : 0);
 
-    private static final BlockBehaviour.Properties chalkProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_WHITE).requiresCorrectToolForDrops().sound(SoundType.CALCITE).strength(0.6F, 0.5F);
-    private static final BlockBehaviour.Properties chipstoneProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_GRAY).requiresCorrectToolForDrops().sound(SoundType.TUFF).strength(1.8F, 6.0F);
-    private static final BlockBehaviour.Properties drystoneProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DEEPSLATE).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE).strength(1.0F, 6.0F);
-    private static final BlockBehaviour.Properties drystoneBrickProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DEEPSLATE).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE_BRICKS).strength(1.5F, 6.5F);
+    private static final BlockBehaviour.Properties chalkProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_WHITE).sound(SoundType.CALCITE).strength(0.6F, 0.5F).requiresCorrectToolForDrops();
+    private static final BlockBehaviour.Properties chipstoneProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_GRAY).sound(SoundType.TUFF).strength(1.8F, 6.0F).requiresCorrectToolForDrops();
+    private static final BlockBehaviour.Properties drystoneProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DEEPSLATE).sound(SoundType.DEEPSLATE).strength(1.0F, 6.0F).requiresCorrectToolForDrops();
+    private static final BlockBehaviour.Properties drystoneBrickProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DEEPSLATE).sound(SoundType.DEEPSLATE_BRICKS).strength(1.5F, 6.5F).requiresCorrectToolForDrops();
 
-    private static final BlockBehaviour.Properties mudstoneProperties = BlockBehaviour.Properties.copy(Blocks.PACKED_MUD);
-    private static final BlockBehaviour.Properties mudstoneBrickProperties = BlockBehaviour.Properties.copy(Blocks.MUD_BRICKS);
+    private static final BlockBehaviour.Properties mudstoneProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_CYAN).sound(SoundType.PACKED_MUD).strength(1.0F, 3.0F).requiresCorrectToolForDrops();
+    private static final BlockBehaviour.Properties mudstoneBrickProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_CYAN).sound(SoundType.MUD_BRICKS).strength(1.5F, 3.0F).requiresCorrectToolForDrops();
 
-    private static final BlockBehaviour.Properties gravelProperties = BlockBehaviour.Properties.of(Material.SAND, MaterialColor.TERRACOTTA_WHITE).strength(0.5F).sound(SoundType.SAND);
+    private static final BlockBehaviour.Properties gravelProperties = BlockBehaviour.Properties.of(Material.SAND, MaterialColor.DEEPSLATE).sound(SoundType.SAND).strength(0.5F);
     private static final BlockBehaviour.Properties chalkDustProperties = BlockBehaviour.Properties.of(Material.SAND, MaterialColor.TERRACOTTA_WHITE).strength(0.5F).sound(SoundType.SAND).randomTicks();
     private static final BlockBehaviour.Properties chalkDustLayerProperties = BlockBehaviour.Properties.of(Material.SAND, MaterialColor.TERRACOTTA_WHITE).strength(0.3F).sound(SoundType.SAND).requiresCorrectToolForDrops();
     private static final BlockBehaviour.Properties shingleProperties = BlockBehaviour.Properties.copy(Blocks.BONE_BLOCK).strength(1.75F, 1.5F);
 
-    private static final BlockBehaviour.Properties eleriumBlockProperties = BlockBehaviour.Properties.copy(Blocks.STONE).requiresCorrectToolForDrops().strength(6.0F, 240.0F);
-    private static final BlockBehaviour.Properties elerutiteBlockProperties = BlockBehaviour.Properties.copy(Blocks.COPPER_BLOCK).requiresCorrectToolForDrops().strength(6.0F, 240.0F);
-    private static final BlockBehaviour.Properties rawSilverBlockProperties = BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(5.0F, 120.0F);
-    private static final BlockBehaviour.Properties silverBlockProperties = BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK).requiresCorrectToolForDrops().strength(5.0F, 120.0F);
-    private static final BlockBehaviour.Properties stoneOreProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.STONE).strength(3.0F, 3.0F);
-    private static final BlockBehaviour.Properties deepslateOreProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE).strength(4.5F, 3.0F);
-    private static final BlockBehaviour.Properties shroomProperties = BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK).noOcclusion();
+    private static final BlockBehaviour.Properties eleriumBlockProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_PINK).sound(SoundType.STONE).strength(5.0F, 6.0F).requiresCorrectToolForDrops();
+    private static final BlockBehaviour.Properties elerutiteBlockProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_PINK).sound(SoundType.CORAL_BLOCK).requiresCorrectToolForDrops().strength(6.0F, 240.0F);
+    private static final BlockBehaviour.Properties rawSilverBlockProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.METAL).sound(SoundType.STONE).strength(5.0F, 6.0F).requiresCorrectToolForDrops();
+    private static final BlockBehaviour.Properties silverBlockProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.METAL).sound(SoundType.NETHERITE_BLOCK).strength(5.0F, 120.0F).requiresCorrectToolForDrops();
+    private static final BlockBehaviour.Properties stoneOreProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.STONE).sound(SoundType.STONE).strength(3.0F, 3.0F).requiresCorrectToolForDrops();
+    private static final BlockBehaviour.Properties deepslateOreProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DEEPSLATE).sound(SoundType.DEEPSLATE).strength(4.5F, 3.0F).requiresCorrectToolForDrops();
+    private static final BlockBehaviour.Properties chittaOreProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DEEPSLATE).sound(SoundType.DEEPSLATE).strength(4.5F, 3.0F).requiresCorrectToolForDrops();
+    private static final BlockBehaviour.Properties drystoneOreProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DEEPSLATE).sound(SoundType.DEEPSLATE).strength(4.5F, 3.0F).requiresCorrectToolForDrops();
+    private static final BlockBehaviour.Properties mudstoneOreProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_CYAN).sound(SoundType.PACKED_MUD).strength(2.0F, 3.0F).requiresCorrectToolForDrops();
+    private static final BlockBehaviour.Properties hydrojadeOreProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_CYAN).sound(SoundType.DEEPSLATE).strength(2.5F, 6.0F).requiresCorrectToolForDrops();
+    private static final BlockBehaviour.Properties shroomProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_MAGENTA).sound(SoundType.SLIME_BLOCK).strength(-1.0F, 3600000.8F).noOcclusion();
 
-    private static final BlockBehaviour.Properties hydrojadeProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE).strength(2.0F, 6.0F);
-    private static final BlockBehaviour.Properties hydrojadeBrickProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE_BRICKS).strength(2.5F, 6.5F);
-    private static final BlockBehaviour.Properties hydrojadeTileProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE_TILES).strength(2.5F, 6.5F);
-    private static final BlockBehaviour.Properties hydrojadePolishedProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.POLISHED_DEEPSLATE).strength(2.5F, 6.5F);
-    private static final BlockBehaviour.Properties jadegrassNyliumProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.NYLIUM).strength(1.8F,5.0F);
-    private static final BlockBehaviour.Properties driedKelpProperites = BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.GRASS).strength(0.5F, 2.5F);
+    private static final BlockBehaviour.Properties hydrojadeProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_CYAN).sound(SoundType.DEEPSLATE).strength(2.0F, 6.0F).requiresCorrectToolForDrops();
+    private static final BlockBehaviour.Properties hydrojadeBrickProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_CYAN).sound(SoundType.DEEPSLATE_BRICKS).strength(2.5F, 6.5F).requiresCorrectToolForDrops();
+    private static final BlockBehaviour.Properties hydrojadeTileProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_CYAN).sound(SoundType.DEEPSLATE_TILES).strength(2.5F, 6.5F).requiresCorrectToolForDrops();
+    private static final BlockBehaviour.Properties hydrojadePolishedProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_CYAN).sound(SoundType.POLISHED_DEEPSLATE).strength(2.5F, 6.5F).requiresCorrectToolForDrops();
+    private static final BlockBehaviour.Properties jadegrassNyliumProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_LIGHT_BLUE).sound(SoundType.NYLIUM).strength(1.8F,5.0F).requiresCorrectToolForDrops();
+    private static final BlockBehaviour.Properties driedKelpProperites = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_BLUE).sound(SoundType.GRASS).strength(0.5F, 2.5F);
+
     // BLOCKS
+
+    // Moon Fir Assets
     public static final RegistryObject<Block> MOON_FIR_LOG = registerBlock("moon_fir_log",
             () -> logBlock(MaterialColor.COLOR_GRAY, MaterialColor.COLOR_BLUE), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> MOON_FIR_WOOD = registerBlock("moon_fir_wood",
@@ -134,6 +141,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> MOON_FIR_LEAVES = registerBlock("moon_fir_leaves",
             () -> aelvenDecayLeavesBlock(azaleaProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
+    // Silverblood Assets
     public static final RegistryObject<Block> SILVERBLOOD_LOG = registerBlock("silverblood_log",
             () -> logBlock(MaterialColor.COLOR_LIGHT_GRAY, MaterialColor.COLOR_PINK), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> SILVERBLOOD_WOOD = registerBlock("silverblood_wood",
@@ -181,7 +189,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> SILVERBLOOD_LEAVES = registerBlock("silverblood_leaves",
             () -> aelvenDecayLeavesBlock(azaleaProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
-
+    // Peachgrove Assets
     public static final RegistryObject<Block> PEACHGROVE_LOG = registerBlock("peachgrove_log",
             () -> logBlock(MaterialColor.COLOR_LIGHT_GRAY, MaterialColor.COLOR_PINK), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> PEACHGROVE_WOOD = registerBlock("peachgrove_wood",
@@ -229,6 +237,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> PEACHGROVE_LEAVES = registerBlock("peachgrove_leaves",
             () -> aelvenDecayLeavesBlock(azaleaProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
+    // Vanilla+ Assets
 
     public static final RegistryObject<Block> OAK_BEAMS = registerBlock("oak_beams",
             () -> logBlock(MaterialColor.WOOD, MaterialColor.PODZOL), null);
@@ -275,7 +284,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> STRIPPED_WARPED_BEAMS = registerBlock("stripped_warped_beams",
             () -> stemBlock(MaterialColor.WARPED_STEM, MaterialColor.WARPED_STEM), null);
 
-
+    // Mud Assets
     public static final RegistryObject<Block> MUDDY_MULCH = registerBlock("muddy_mulch",
             () -> new MulchBlock(mudProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
@@ -343,7 +352,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> PEACH_LILAC = registerBlock("peach_lilac",
             () -> new TallFlowerBlock(flowerProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
-
+    // Chitta Assets
     public static final RegistryObject<Block> COBBLED_CHITTA = registerBlock("cobbled_chitta",
             () -> new Block(chittaProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> DUSTY_COBBLED_CHITTA = registerBlock("dusty_cobbled_chitta",
@@ -382,13 +391,6 @@ public class ModBlocks {
             () -> new Block(chittaPolishedProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> CARVED_CHITTA_RUNED_LARGE_TILE = registerBlock("carved_chitta_runed_large_tile",
             () -> new Block(chittaPolishedProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
-
-    public static final RegistryObject<Block> KILN = registerBlock("kiln",
-            () -> new KilnBlock(chittaKilnProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
-
-    public static final RegistryObject<Block> IDOL_TABLE = registerBlock("idol_table",
-            () -> new IdolTableBlock(woodProperties), null);
-
 
     public static final RegistryObject<Block> COBBLED_CHITTA_STAIRS = registerBlock("cobbled_chitta_stairs",
             () -> new StairBlock(() -> ModBlocks.COBBLED_CHITTA.get().defaultBlockState(),
@@ -442,7 +444,13 @@ public class ModBlocks {
             () -> new PlayingTilesBlock(chittaPolishedProperties), new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_BLOCKS)
                     .stacksTo(16));
 
+    public static final RegistryObject<Block> KILN = registerBlock("kiln",
+            () -> new KilnBlock(chittaKilnProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
+    public static final RegistryObject<Block> IDOL_TABLE = registerBlock("idol_table",
+            () -> new IdolTableBlock(woodProperties), null);
+
+    // Elerium Assets
     public static final RegistryObject<Block> ELERIUM_ORE = registerBlock("elerium_ore",
             () -> new DropExperienceBlock(stoneOreProperties, UniformInt.of(3, 7)), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> DEEPSLATE_ELERIUM_ORE = registerBlock("deepslate_elerium_ore",
@@ -452,7 +460,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> ELERUTITE_BLOCK = registerBlock("elerutite_block",
             () -> new Block(elerutiteBlockProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
-
+    // Chalk Assets
     public static final RegistryObject<Block> CHALK = registerBlock("chalk",
             () -> new Block(chalkProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> CHALK_STAIRS = registerBlock("chalk_stairs",
@@ -486,6 +494,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> CHALK_DUST = registerBlock("chalk_dust",
             () -> new SnowLayerBlock(chalkDustLayerProperties),  ModCreativeModeTab.MOD_TAB_BLOCKS);
 
+    // Chipstone Assets
     public static final RegistryObject<Block> CHIPSTONE_GRAVEL = registerBlock("chipstone_gravel",
             () -> new FallingBlock(gravelProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
@@ -509,6 +518,22 @@ public class ModBlocks {
     public static final RegistryObject<Block> POLISHED_CHIPSTONE_WALL = registerBlock("polished_chipstone_wall",
             () -> new WallBlock(chipstoneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
+    public static final RegistryObject<Block> CHIPSTONE_LOG = registerBlock("chipstone_log",
+            () -> stemBlock(MaterialColor.COLOR_LIGHT_GRAY, MaterialColor.COLOR_PINK), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> CHIPSTONE_LEAVES = registerBlock("chipstone_leaves",
+            () -> new Block(stoneLeafProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> HANGING_CHIPSTONE_LEAVES = registerBlock("hanging_chipstone_leaves",
+            () -> new HangingRootsBlock(BlockBehaviour.Properties.copy(Blocks.BRAIN_CORAL).sound(SoundType.MANGROVE_ROOTS)), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> CHIPSTONE_GRASS = registerBlock("chipstone_grass",
+            () -> new StoneGrassBlock(stonePlantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> CHIPSTONE_BUSH = registerBlock("chipstone_bush",
+            () -> new StoneDoublePlantBlock(stonePlantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> CHIPSTONE_BLADES = registerBlock("chipstone_blades",
+            () -> new StoneGrassBlock(stonePlantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> TALL_CHIPSTONE_BLADES = registerBlock("tall_chipstone_blades",
+            () -> new StoneDoublePlantBlock(stonePlantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
+    // Drystone Assets
     public static final RegistryObject<Block> DRYSTONE = registerBlock("drystone",
             () -> new Block(drystoneProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> DRYSTONE_STAIRS = registerBlock("drystone_stairs",
@@ -559,6 +584,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> MOSSY_DRYSTONE_BRICK_WALL = registerBlock("mossy_drystone_brick_wall",
             () -> new WallBlock(drystoneBrickProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
+    // Silver Assets
     public static final RegistryObject<Block> SILVER_ORE = registerBlock("silver_ore",
             () -> new Block(stoneOreProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> DEEPSLATE_SILVER_ORE = registerBlock("deepslate_silver_ore",
@@ -568,6 +594,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> SILVER_BLOCK = registerBlock("silver_block",
             () -> new Block(silverBlockProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
+    // Shingle Assets
     public static final RegistryObject<Block> SHINGLES = registerBlock("shingles",
             () -> new Block(shingleProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> SHINGLE_STAIRS = registerBlock("shingle_stairs",
@@ -738,23 +765,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> BLACK_SHINGLE_WALL = registerBlock("black_shingle_wall",
             () -> new WallBlock(shingleProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
-    public static final RegistryObject<Block> CHIPSTONE_LOG = registerBlock("chipstone_log",
-            () -> stemBlock(MaterialColor.COLOR_LIGHT_GRAY, MaterialColor.COLOR_PINK), ModCreativeModeTab.MOD_TAB_BLOCKS);
-    public static final RegistryObject<Block> CHIPSTONE_LEAVES = registerBlock("chipstone_leaves",
-            () -> new Block(stoneLeafProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
-    public static final RegistryObject<Block> HANGING_CHIPSTONE_LEAVES = registerBlock("hanging_chipstone_leaves",
-            () -> new HangingRootsBlock(BlockBehaviour.Properties.copy(Blocks.BRAIN_CORAL).sound(SoundType.MANGROVE_ROOTS)), ModCreativeModeTab.MOD_TAB_BLOCKS);
-    public static final RegistryObject<Block> CHIPSTONE_GRASS = registerBlock("chipstone_grass",
-            () -> new StoneGrassBlock(stonePlantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
-    public static final RegistryObject<Block> CHIPSTONE_BUSH = registerBlock("chipstone_bush",
-            () -> new StoneDoublePlantBlock(stonePlantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
-    public static final RegistryObject<Block> CHIPSTONE_BLADES = registerBlock("chipstone_blades",
-            () -> new StoneGrassBlock(stonePlantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
-    public static final RegistryObject<Block> TALL_CHIPSTONE_BLADES = registerBlock("tall_chipstone_blades",
-            () -> new StoneDoublePlantBlock(stonePlantProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
-
-
-
+    // Coral Assets
     public static final RegistryObject<Block> GIANT_BRAIN_CORAL = registerBlock("giant_brain_coral",
             () -> new TallSeagrassBlock(coralProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> DEAD_GIANT_BRAIN_CORAL = registerBlock("dead_giant_brain_coral",
@@ -783,6 +794,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> DEAD_GIANT_BUBBLE_CORAL = registerBlock("dead_giant_bubble_coral",
             () -> new TallSeagrassBlock(coralProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
+    // Hydrosatin Assets
     public static final RegistryObject<Block> HYDROSATIN_STEM = registerBlock("hydrosatin_stem",
             () -> new ModLogBlock(BlockBehaviour.Properties.of(Material.WOOD, (state) ->
                     state.getValue(RotatedPillarBlock.AXIS) ==
@@ -839,11 +851,11 @@ public class ModBlocks {
             () -> new TransparentWaterloggableBouncyBlock(shroomProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
     public static final RegistryObject<Block> GLIMMERSATIN = registerBlock("glimmersatin",
-            () -> new TransparentWaterloggableBlock(BlockBehaviour.Properties.copy(HYDROSATIN_CAP.get()).sound(SoundType.SHROOMLIGHT).lightLevel((state) -> {
+            () -> new TransparentWaterloggableBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_PINK).sound(SoundType.SHROOMLIGHT).lightLevel((state) -> {
                 return 9;
             })), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> SILVERSATIN = registerBlock("silversatin",
-            () -> new Block(BlockBehaviour.Properties.of(SILVER_BLOCK.get().defaultBlockState().getMaterial()).lightLevel((state) -> {
+            () -> new Block(BlockBehaviour.Properties.of(RAW_SILVER_BLOCK.get().defaultBlockState().getMaterial()).lightLevel((state) -> {
                 return 15;
             })), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
@@ -900,6 +912,8 @@ public class ModBlocks {
                     BlockBehaviour.Properties.copy(Blocks.CAMPFIRE).lightLevel((state) -> {
                         return state.getValue(BlockStateProperties.LIT) ? 13 : 0;
                     })), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
+    // Hydrojade Assets
     public static final RegistryObject<Block> HYDROJADE = registerBlock("hydrojade",
             () -> new Block(hydrojadeProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> HYDROJADE_STAIRS = registerBlock("hydrojade_stairs",
