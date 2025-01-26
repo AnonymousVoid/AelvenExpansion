@@ -85,6 +85,7 @@ public class ModBlocks {
     private static final BlockBehaviour.Properties hydrojadeTileProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE_TILES).strength(2.5F, 6.5F);
     private static final BlockBehaviour.Properties hydrojadePolishedProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.POLISHED_DEEPSLATE).strength(2.5F, 6.5F);
     private static final BlockBehaviour.Properties jadegrassNyliumProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(SoundType.NYLIUM).strength(1.8F,5.0F);
+    private static final BlockBehaviour.Properties driedKelpProperites = BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.GRASS).strength(0.5F, 2.5F);
     // BLOCKS
     public static final RegistryObject<Block> MOON_FIR_LOG = registerBlock("moon_fir_log",
             () -> logBlock(MaterialColor.COLOR_GRAY, MaterialColor.COLOR_BLUE), ModCreativeModeTab.MOD_TAB_BLOCKS);
@@ -984,6 +985,8 @@ public class ModBlocks {
             () -> new KelpBlock(coralProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> LUMINESCENT_KELP_PLANT = registerBlockWithoutBlockItem("luminescent_kelp_plant",
             () -> new ModKelpPlantBlock(coralProperties, LUMINESCENT_KELP.get()));
+    public static final RegistryObject<Block> DRIED_LUMINESCENT_KELP_BLOCK = registerBlock("dried_luminescent_kelp_block",
+            () -> new Block(driedKelpProperites), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
 
 

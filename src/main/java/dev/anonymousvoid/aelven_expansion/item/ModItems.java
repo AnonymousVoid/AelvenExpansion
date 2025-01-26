@@ -7,6 +7,7 @@ import dev.anonymousvoid.aelven_expansion.item.custom.*;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.vehicle.Boat;
+import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
@@ -17,6 +18,8 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraft.world.item.RecordItem;
+
+import java.util.Properties;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -132,6 +135,10 @@ public class ModItems {
             () -> new StandingAndWallBlockItem(ModBlocks.ELERIUM_TORCH.get(), ModBlocks.ELERIUM_WALL_TORCH.get(),
                     (new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_BLOCKS))));
 
+    public static final RegistryObject<Item> LUMINOUS_FIBRES = ITEMS.register("luminous_fibres",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
+    public static final RegistryObject<Item> DRIED_LUMINESCENT_KELP = ITEMS.register("dried_luminescent_kelp",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS).food(ModFoods.DRIED_LUMINESCENT_KELP)));
 
     public static class Tiers {
         public static final Tier SILVER = new ForgeTier(2,200,6.5F,2.75F,25,null, () -> Ingredient.of(ModItems.SILVER_INGOT.get()));
