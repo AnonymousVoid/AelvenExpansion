@@ -70,7 +70,7 @@ public class ModBlocks {
     private static final BlockBehaviour.Properties gravelProperties = BlockBehaviour.Properties.of(Material.SAND, MaterialColor.DEEPSLATE).sound(SoundType.SAND).strength(0.5F);
     private static final BlockBehaviour.Properties chalkDustProperties = BlockBehaviour.Properties.of(Material.SAND, MaterialColor.TERRACOTTA_WHITE).strength(0.5F).sound(SoundType.SAND).randomTicks();
     private static final BlockBehaviour.Properties chalkDustLayerProperties = BlockBehaviour.Properties.of(Material.SAND, MaterialColor.TERRACOTTA_WHITE).strength(0.3F).sound(SoundType.SAND).requiresCorrectToolForDrops();
-    private static final BlockBehaviour.Properties shingleProperties = BlockBehaviour.Properties.copy(Blocks.BONE_BLOCK).strength(1.75F, 1.5F);
+    private static final BlockBehaviour.Properties shingleProperties = BlockBehaviour.Properties.copy(Blocks.BONE_BLOCK).strength(1.75F, 1.5F).requiresCorrectToolForDrops();
 
     private static final BlockBehaviour.Properties eleriumBlockProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_PINK).sound(SoundType.STONE).strength(5.0F, 6.0F).requiresCorrectToolForDrops();
     private static final BlockBehaviour.Properties elerutiteBlockProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_PINK).sound(SoundType.CORAL_BLOCK).requiresCorrectToolForDrops().strength(6.0F, 240.0F);
@@ -82,7 +82,7 @@ public class ModBlocks {
     private static final BlockBehaviour.Properties drystoneOreProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DEEPSLATE).sound(SoundType.DEEPSLATE).strength(4.5F, 3.0F).requiresCorrectToolForDrops();
     private static final BlockBehaviour.Properties mudstoneOreProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_CYAN).sound(SoundType.PACKED_MUD).strength(2.0F, 3.0F).requiresCorrectToolForDrops();
     private static final BlockBehaviour.Properties hydrojadeOreProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_CYAN).sound(SoundType.DEEPSLATE).strength(2.5F, 6.0F).requiresCorrectToolForDrops();
-    private static final BlockBehaviour.Properties shroomProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_MAGENTA).sound(SoundType.SLIME_BLOCK).strength(-1.0F, 3600000.8F).noOcclusion();
+    private static final BlockBehaviour.Properties shroomProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_MAGENTA).sound(SoundType.SLIME_BLOCK).friction(0.8F).noOcclusion();
 
     private static final BlockBehaviour.Properties hydrojadeProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_CYAN).sound(SoundType.DEEPSLATE).strength(2.0F, 6.0F).requiresCorrectToolForDrops();
     private static final BlockBehaviour.Properties hydrojadeBrickProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_CYAN).sound(SoundType.DEEPSLATE_BRICKS).strength(2.5F, 6.5F).requiresCorrectToolForDrops();
