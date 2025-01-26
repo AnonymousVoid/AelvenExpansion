@@ -836,7 +836,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> HYDROSATIN_FUNGUS = registerBlock("hydrosatin_fungus",
             () -> new HydrosatinFungusFeatureBlock(flowerProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> HYDROSATIN_CAP = registerBlock("hydrosatin_cap",
-            () -> new TransparentWaterloggableBlock(shroomProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new TransparentWaterloggableBouncyBlock(shroomProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
     public static final RegistryObject<Block> GLIMMERSATIN = registerBlock("glimmersatin",
             () -> new TransparentWaterloggableBlock(BlockBehaviour.Properties.copy(HYDROSATIN_CAP.get()).sound(SoundType.SHROOMLIGHT).lightLevel((state) -> {
