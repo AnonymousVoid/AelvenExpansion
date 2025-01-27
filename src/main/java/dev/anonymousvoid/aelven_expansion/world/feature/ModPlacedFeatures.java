@@ -146,7 +146,7 @@ public class ModPlacedFeatures {
     public static final RegistryObject<PlacedFeature> CHIPSTONE_OASIS_PLACED =
             PLACED_FEATURES.register("chipstone_oasis_placed",
                     () -> new PlacedFeature(ModConfiguredFeatures.CHIPSTONE_OASIS_FEATURE.getHolder().get(),
-                            List.of(RarityFilter.onAverageOnceEvery(300), InSquarePlacement.spread(),
+                            List.of(RarityFilter.onAverageOnceEvery(200), InSquarePlacement.spread(),
                                     PlacementUtils.HEIGHTMAP_TOP_SOLID, BiomeFilter.biome())));
 
 
