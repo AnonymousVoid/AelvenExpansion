@@ -2,7 +2,6 @@ package dev.anonymousvoid.aelven_expansion.world.feature.tree.placer.foliage;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import dev.anonymousvoid.aelven_expansion.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.IntProvider;
@@ -63,10 +62,14 @@ public class DroopyFoliagePlacer extends FoliagePlacer {
     }
 
     protected boolean shouldSkipLocationSigned(RandomSource random, int localX, int localY, int localZ, int range, boolean large) {
-        return Util.dist3D(localX, localY+0.5, localZ) >= range - 0.5 || random.nextInt(50) == 0;
+        return distance(localX, localY+0.5, localZ) >= range - 0.5 || random.nextInt(50) == 0;
     }
 
     protected boolean shouldSkipLocation(RandomSource random, int localX, int localY, int localZ, int range, boolean large) {
-        return Util.dist3D(localX, localY+0.5, localZ) >= range - 0.5 || random.nextInt(50) == 0;
+        return distance(localX, localY+0.5, localZ) >= range - 0.5 || random.nextInt(50) == 0;
+    }
+
+    private static double distance(double x, double y, double z) {
+        return Math.sqrt( ( x * x ) + ( y * y )  + ( z * z ) );
     }
 }

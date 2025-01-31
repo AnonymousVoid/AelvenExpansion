@@ -996,9 +996,9 @@ public class ModBlocks {
             () -> new CarpetBlock(mulchProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
     public static final RegistryObject<Block> LUMINESCENT_KELP = registerBlock("luminescent_kelp",
-            () -> new KelpBlock(coralProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new ModLuminescentKelpBlock(coralProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> LUMINESCENT_KELP_PLANT = registerBlockWithoutBlockItem("luminescent_kelp_plant",
-            () -> new ModKelpPlantBlock(coralProperties, LUMINESCENT_KELP.get()));
+            () -> new ModLuminescentKelpPlantBlock(coralProperties));
     public static final RegistryObject<Block> DRIED_LUMINESCENT_KELP_BLOCK = registerBlock("dried_luminescent_kelp_block",
             () -> new Block(driedKelpProperites), ModCreativeModeTab.MOD_TAB_BLOCKS);
 

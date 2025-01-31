@@ -1,7 +1,6 @@
 package dev.anonymousvoid.aelven_expansion.world.feature.custom;
 
 import com.mojang.serialization.Codec;
-import dev.anonymousvoid.aelven_expansion.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
@@ -38,8 +37,8 @@ public class SpireFeature extends Feature<SpireConfiguration> {
                                 .north((int) Math.floor(i * xOffset + x))
                                 .east((int) Math.floor(i * yOffset + y));
                         BlockState newState = state;
-                        if (Util.dist(x, y) < radius * 0.75) {
-                            if (Util.dist(x, y) > radius * 0.7 && rand.nextBoolean()) {
+                        if (distance(x, y) < radius * 0.75) {
+                            if (distance(x, y) > radius * 0.7 && rand.nextBoolean()) {
                                 newState = level.getBlockState(newPos);
                             }
                             this.setBlock(level, newPos, newState);
@@ -50,5 +49,9 @@ public class SpireFeature extends Feature<SpireConfiguration> {
         }
 
         return true;
+    }
+
+    private static double distance(double x, double y) {
+        return Math.sqrt( ( x * x ) + ( y * y ) );
     }
 }
