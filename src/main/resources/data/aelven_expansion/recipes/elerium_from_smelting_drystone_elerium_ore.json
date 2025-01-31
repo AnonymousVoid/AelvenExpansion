@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 0.2,
+  "group": "elerium",
+  "ingredient": {
+    "item": "aelven_expansion:drystone_elerium_ore"
+  },
+  "result": "aelven_expansion:elerium"
+}

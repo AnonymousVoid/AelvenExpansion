@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "vabrium_ingot",
+  "ingredients":[
+    {
+      "item": "aelven_expansion:vabrium_ingot"
+    }
+  ],
+  "result": {
+    "item": "aelven_expansion:vabrium_nugget",
+    "count": 9
+  }
+}

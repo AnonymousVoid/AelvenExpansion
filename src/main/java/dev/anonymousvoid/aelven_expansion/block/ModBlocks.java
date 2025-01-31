@@ -41,7 +41,10 @@ public class ModBlocks {
     private static final BlockBehaviour.Properties woodProperties = BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD).strength(2.0F, 3.0F).requiresCorrectToolForDrops();
     private static final BlockBehaviour.Properties woodPropertiesNoCollide = BlockBehaviour.Properties.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.WOOD).noCollission();
     private static final BlockBehaviour.Properties woodPropertiesNoOcclude = BlockBehaviour.Properties.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.WOOD).noOcclusion();
-    private static final BlockBehaviour.Properties azaleaProperties = BlockBehaviour.Properties.copy(Blocks.AZALEA_LEAVES);
+
+    private static final BlockBehaviour.Properties silverbloodLeavesProperties = BlockBehaviour.Properties.of(Material.LEAVES, MaterialColor.SNOW).sound(SoundType.AZALEA_LEAVES).instabreak().noOcclusion();
+    private static final BlockBehaviour.Properties moonfirLeavesProperties = BlockBehaviour.Properties.of(Material.LEAVES, MaterialColor.COLOR_PURPLE).sound(SoundType.AZALEA_LEAVES).instabreak().noOcclusion();
+    private static final BlockBehaviour.Properties peachgroveLeavesProperties = BlockBehaviour.Properties.of(Material.LEAVES, MaterialColor.TERRACOTTA_RED).sound(SoundType.AZALEA_LEAVES).instabreak().noOcclusion();
     private static final BlockBehaviour.Properties flowerProperties = BlockBehaviour.Properties.of(Material.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ);
     private static final BlockBehaviour.Properties coralProperties = BlockBehaviour.Properties.copy(Blocks.BRAIN_CORAL);
     private static final BlockBehaviour.Properties pottedFlowerProperties = BlockBehaviour.Properties.of(Material.DECORATION).instabreak().noOcclusion();
@@ -139,7 +142,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> POTTED_MOON_BLOOM = registerBlockWithoutBlockItem("potted_moon_bloom",
             () -> new FlowerPotBlock(MOON_BLOOM.get(), pottedFlowerProperties));
     public static final RegistryObject<Block> MOON_FIR_LEAVES = registerBlock("moon_fir_leaves",
-            () -> aelvenDecayLeavesBlock(azaleaProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> aelvenDecayLeavesBlock(moonfirLeavesProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
     // Silverblood Assets
     public static final RegistryObject<Block> SILVERBLOOD_LOG = registerBlock("silverblood_log",
@@ -187,7 +190,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> POTTED_SILVER_MARIGOLD = registerBlockWithoutBlockItem("potted_silver_marigold",
             () -> new FlowerPotBlock(SILVER_MARIGOLD.get(), pottedFlowerProperties));
     public static final RegistryObject<Block> SILVERBLOOD_LEAVES = registerBlock("silverblood_leaves",
-            () -> aelvenDecayLeavesBlock(azaleaProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> aelvenDecayLeavesBlock(silverbloodLeavesProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
     // Peachgrove Assets
     public static final RegistryObject<Block> PEACHGROVE_LOG = registerBlock("peachgrove_log",
@@ -235,7 +238,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> POTTED_PEACH_LAVENDER = registerBlockWithoutBlockItem("potted_peach_lavender",
             () -> new FlowerPotBlock(PEACH_LAVENDER.get(), pottedFlowerProperties));
     public static final RegistryObject<Block> PEACHGROVE_LEAVES = registerBlock("peachgrove_leaves",
-            () -> aelvenDecayLeavesBlock(azaleaProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> aelvenDecayLeavesBlock(peachgroveLeavesProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
     // Vanilla+ Assets
 
@@ -283,6 +286,33 @@ public class ModBlocks {
             () -> stemBlock(MaterialColor.WARPED_STEM, MaterialColor.WARPED_STEM), null);
     public static final RegistryObject<Block> STRIPPED_WARPED_BEAMS = registerBlock("stripped_warped_beams",
             () -> stemBlock(MaterialColor.WARPED_STEM, MaterialColor.WARPED_STEM), null);
+
+    public static final RegistryObject<Block> CHITTA_COAL_ORE = registerBlock("chitta_coal_ore",
+            () -> new DropExperienceBlock(chittaOreProperties, UniformInt.of(3, 7)), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> DRYSTONE_COAL_ORE = registerBlock("drystone_coal_ore",
+            () -> new DropExperienceBlock(drystoneOreProperties, UniformInt.of(3, 7)), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> HYDROJADE_COAL_ORE = registerBlock("hydrojade_coal_ore",
+            () -> new DropExperienceBlock(hydrojadeOreProperties, UniformInt.of(3, 7)), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> MUDSTONE_COAL_ORE = registerBlock("mudstone_coal_ore",
+            () -> new DropExperienceBlock(mudstoneOreProperties, UniformInt.of(3, 7)), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
+    public static final RegistryObject<Block> CHITTA_IRON_ORE = registerBlock("chitta_iron_ore",
+            () -> new DropExperienceBlock(chittaOreProperties, UniformInt.of(3, 7)), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> DRYSTONE_IRON_ORE = registerBlock("drystone_iron_ore",
+            () -> new DropExperienceBlock(drystoneOreProperties, UniformInt.of(3, 7)), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> HYDROJADE_IRON_ORE = registerBlock("hydrojade_iron_ore",
+            () -> new DropExperienceBlock(hydrojadeOreProperties, UniformInt.of(3, 7)), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> MUDSTONE_IRON_ORE = registerBlock("mudstone_iron_ore",
+            () -> new DropExperienceBlock(mudstoneOreProperties, UniformInt.of(3, 7)), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
+    public static final RegistryObject<Block> CHITTA_GOLD_ORE = registerBlock("chitta_gold_ore",
+            () -> new DropExperienceBlock(chittaOreProperties, UniformInt.of(3, 7)), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> DRYSTONE_GOLD_ORE = registerBlock("drystone_gold_ore",
+            () -> new DropExperienceBlock(drystoneOreProperties, UniformInt.of(3, 7)), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> HYDROJADE_GOLD_ORE = registerBlock("hydrojade_gold_ore",
+            () -> new DropExperienceBlock(hydrojadeOreProperties, UniformInt.of(3, 7)), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> MUDSTONE_GOLD_ORE = registerBlock("mudstone_gold_ore",
+            () -> new DropExperienceBlock(mudstoneOreProperties, UniformInt.of(3, 7)), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
     // Mud Assets
     public static final RegistryObject<Block> MUDDY_MULCH = registerBlock("muddy_mulch",
@@ -455,6 +485,15 @@ public class ModBlocks {
             () -> new DropExperienceBlock(stoneOreProperties, UniformInt.of(3, 7)), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> DEEPSLATE_ELERIUM_ORE = registerBlock("deepslate_elerium_ore",
             () -> new DropExperienceBlock(deepslateOreProperties, UniformInt.of(3, 7)), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> CHITTA_ELERIUM_ORE = registerBlock("chitta_elerium_ore",
+            () -> new DropExperienceBlock(chittaOreProperties, UniformInt.of(3, 7)), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> DRYSTONE_ELERIUM_ORE = registerBlock("drystone_elerium_ore",
+            () -> new DropExperienceBlock(drystoneOreProperties, UniformInt.of(3, 7)), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> HYDROJADE_ELERIUM_ORE = registerBlock("hydrojade_elerium_ore",
+            () -> new DropExperienceBlock(hydrojadeOreProperties, UniformInt.of(3, 7)), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> MUDSTONE_ELERIUM_ORE = registerBlock("mudstone_elerium_ore",
+            () -> new DropExperienceBlock(mudstoneOreProperties, UniformInt.of(3, 7)), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    
     public static final RegistryObject<Block> ELERIUM_BLOCK = registerBlock("elerium_block",
             () -> new Block(eleriumBlockProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> ELERUTITE_BLOCK = registerBlock("elerutite_block",
@@ -586,9 +625,17 @@ public class ModBlocks {
 
     // Silver Assets
     public static final RegistryObject<Block> SILVER_ORE = registerBlock("silver_ore",
-            () -> new Block(stoneOreProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new DropExperienceBlock(deepslateOreProperties, UniformInt.of(3, 7)), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> DEEPSLATE_SILVER_ORE = registerBlock("deepslate_silver_ore",
-            () -> new Block(deepslateOreProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new DropExperienceBlock(deepslateOreProperties, UniformInt.of(3, 7)), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> CHITTA_SILVER_ORE = registerBlock("chitta_silver_ore",
+            () -> new DropExperienceBlock(chittaOreProperties, UniformInt.of(3, 7)), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> DRYSTONE_SILVER_ORE = registerBlock("drystone_silver_ore",
+            () -> new DropExperienceBlock(drystoneOreProperties, UniformInt.of(3, 7)), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> HYDROJADE_SILVER_ORE = registerBlock("hydrojade_silver_ore",
+            () -> new DropExperienceBlock(hydrojadeOreProperties, UniformInt.of(3, 7)), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> MUDSTONE_SILVER_ORE = registerBlock("mudstone_silver_ore",
+            () -> new DropExperienceBlock(mudstoneOreProperties, UniformInt.of(3, 7)), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> RAW_SILVER_BLOCK = registerBlock("raw_silver_block",
             () -> new Block(rawSilverBlockProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> SILVER_BLOCK = registerBlock("silver_block",
@@ -1001,6 +1048,44 @@ public class ModBlocks {
             () -> new ModLuminescentKelpPlantBlock(coralProperties));
     public static final RegistryObject<Block> DRIED_LUMINESCENT_KELP_BLOCK = registerBlock("dried_luminescent_kelp_block",
             () -> new Block(driedKelpProperites), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
+    public static final RegistryObject<Block> VABRIUM_ORE = registerBlock("vabrium_ore",
+            () -> new DropExperienceBlock(deepslateOreProperties, UniformInt.of(3, 7)), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> DEEPSLATE_VABRIUM_ORE = registerBlock("deepslate_vabrium_ore",
+            () -> new DropExperienceBlock(deepslateOreProperties, UniformInt.of(3, 7)), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> CHITTA_VABRIUM_ORE = registerBlock("chitta_vabrium_ore",
+            () -> new DropExperienceBlock(chittaOreProperties, UniformInt.of(3, 7)), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> DRYSTONE_VABRIUM_ORE = registerBlock("drystone_vabrium_ore",
+            () -> new DropExperienceBlock(drystoneOreProperties, UniformInt.of(3, 7)), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> HYDROJADE_VABRIUM_ORE = registerBlock("hydrojade_vabrium_ore",
+            () -> new DropExperienceBlock(hydrojadeOreProperties, UniformInt.of(3, 7)), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> MUDSTONE_VABRIUM_ORE = registerBlock("mudstone_vabrium_ore",
+            () -> new DropExperienceBlock(mudstoneOreProperties, UniformInt.of(3, 7)), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
+    public static final RegistryObject<Block> RAW_VABRIUM_BLOCK = registerBlock("raw_vabrium_block",
+            () -> new Block(rawSilverBlockProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> VABRIUM_BLOCK = registerBlock("vabrium_block",
+            () -> new Block(silverBlockProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
+    public static final RegistryObject<Block> ORHALT_ORE = registerBlock("orhalt_ore",
+            () -> new DropExperienceBlock(deepslateOreProperties, UniformInt.of(3, 7)), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> DEEPSLATE_ORHALT_ORE = registerBlock("deepslate_orhalt_ore",
+            () -> new DropExperienceBlock(deepslateOreProperties, UniformInt.of(3, 7)), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> CHITTA_ORHALT_ORE = registerBlock("chitta_orhalt_ore",
+            () -> new DropExperienceBlock(chittaOreProperties, UniformInt.of(3, 7)), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> DRYSTONE_ORHALT_ORE = registerBlock("drystone_orhalt_ore",
+            () -> new DropExperienceBlock(drystoneOreProperties, UniformInt.of(3, 7)), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> HYDROJADE_ORHALT_ORE = registerBlock("hydrojade_orhalt_ore",
+            () -> new DropExperienceBlock(hydrojadeOreProperties, UniformInt.of(3, 7)), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> MUDSTONE_ORHALT_ORE = registerBlock("mudstone_orhalt_ore",
+            () -> new DropExperienceBlock(mudstoneOreProperties, UniformInt.of(3, 7)), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
+    public static final RegistryObject<Block> RAW_ORHALT_BLOCK = registerBlock("raw_orhalt_block",
+            () -> new Block(rawSilverBlockProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+    public static final RegistryObject<Block> ORHALT_BLOCK = registerBlock("orhalt_block",
+            () -> new Block(silverBlockProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+
+
 
 
 

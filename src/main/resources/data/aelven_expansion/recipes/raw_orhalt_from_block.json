@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "raw_orhalt",
+  "ingredients":[
+    {
+      "item": "aelven_expansion:raw_orhalt_block"
+    }
+  ],
+  "result": {
+    "item": "aelven_expansion:raw_orhalt",
+    "count": 9
+  }
+}

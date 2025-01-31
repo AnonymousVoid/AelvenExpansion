@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "orhalt_ingot",
+  "ingredients":[
+    {
+      "item": "aelven_expansion:orhalt_ingot"
+    }
+  ],
+  "result": {
+    "item": "aelven_expansion:orhalt_nugget",
+    "count": 9
+  }
+}

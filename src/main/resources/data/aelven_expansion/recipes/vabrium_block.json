@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "vabrium_block",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "aelven_expansion:vabrium_ingot"
+    }
+  },
+  "result": {
+    "item": "aelven_expansion:vabrium_block"
+  }
+}

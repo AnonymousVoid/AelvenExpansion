@@ -140,6 +140,20 @@ public class ModItems {
     public static final RegistryObject<Item> DRIED_LUMINESCENT_KELP = ITEMS.register("dried_luminescent_kelp",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS).food(ModFoods.DRIED_LUMINESCENT_KELP)));
 
+    public static final RegistryObject<Item> RAW_VABRIUM = ITEMS.register("raw_vabrium",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
+    public static final RegistryObject<Item> VABRIUM_INGOT = ITEMS.register("vabrium_ingot",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
+    public static final RegistryObject<Item> VABRIUM_NUGGET = ITEMS.register("vabrium_nugget",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
+    
+    public static final RegistryObject<Item> RAW_ORHALT = ITEMS.register("raw_orhalt",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
+    public static final RegistryObject<Item> ORHALT_INGOT = ITEMS.register("orhalt_ingot",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
+    public static final RegistryObject<Item> ORHALT_NUGGET = ITEMS.register("orhalt_nugget",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
+
     public static class Tiers {
         public static final Tier SILVER = new ForgeTier(2,200,6.5F,2.75F,25,null, () -> Ingredient.of(ModItems.SILVER_INGOT.get()));
     }

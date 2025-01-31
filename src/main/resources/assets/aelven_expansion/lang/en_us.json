@@ -84,6 +84,21 @@
 	"block.aelven_expansion.warped_beams": "Warped Beams",
 	"block.aelven_expansion.stripped_warped_beams": "Stripped Warped Beams",
 
+	"block.aelven_expansion.chitta_coal_ore": "Chitta Coal Ore",
+	"block.aelven_expansion.drystone_coal_ore": "Drystone Coal Ore",
+	"block.aelven_expansion.hydrojade_coal_ore": "Hydrojade Coal Ore",
+	"block.aelven_expansion.mudstone_coal_ore": "Mudstone Coal Ore",
+
+	"block.aelven_expansion.chitta_iron_ore": "Chitta Iron Ore",
+	"block.aelven_expansion.drystone_iron_ore": "Drystone Iron Ore",
+	"block.aelven_expansion.hydrojade_iron_ore": "Hydrojade Iron Ore",
+	"block.aelven_expansion.mudstone_iron_ore": "Mudstone Iron Ore",
+
+	"block.aelven_expansion.chitta_gold_ore": "Chitta Gold Ore",
+	"block.aelven_expansion.drystone_gold_ore": "Drystone Gold Ore",
+	"block.aelven_expansion.hydrojade_gold_ore": "Hydrojade Gold Ore",
+	"block.aelven_expansion.mudstone_gold_ore": "Mudstone Gold Ore",
+
 	"entity.aelven_expansion.mod_boat": "Boat",
 	"entity.aelven_expansion.mod_chest_boat": "Boat with Chest",
 
@@ -165,6 +180,11 @@
 
 	"block.aelven_expansion.elerium_ore": "Elerium Ore",
 	"block.aelven_expansion.deepslate_elerium_ore": "Deepslate Elerium Ore",
+	"block.aelven_expansion.chitta_elerium_ore": "Chitta Elerium Ore",
+	"block.aelven_expansion.drystone_elerium_ore": "Drystone Elerium Ore",
+	"block.aelven_expansion.hydrojade_elerium_ore": "Hydrojade Elerium Ore",
+	"block.aelven_expansion.mudstone_elerium_ore": "Mudstone Elerium Ore",
+	
 	"block.aelven_expansion.elerium_block": "Block of Elerium",
 
 	"item.aelven_expansion.raw_silver": "Raw Silver",
@@ -174,10 +194,13 @@
 	"item.aelven_expansion.silver_pumice": "Silver Pumice",
 	"block.aelven_expansion.silver_ore": "Silver Ore",
 	"block.aelven_expansion.deepslate_silver_ore": "Deepslate Silver Ore",
+	"block.aelven_expansion.chitta_silver_ore": "Chitta Silver Ore",
+	"block.aelven_expansion.drystone_silver_ore": "Drystone Silver Ore",
+	"block.aelven_expansion.hydrojade_silver_ore": "Hydrojade Silver Ore",
+	"block.aelven_expansion.mudstone_silver_ore": "Mudstone Silver Ore",
 	"block.aelven_expansion.raw_silver_block": "Block of Raw Silver",
 	"block.aelven_expansion.silver_block": "Block of Silver",
-
-
+	
 	"item.aelven_expansion.silver_sword": "Silver Sword",
 	"item.aelven_expansion.silver_dagger": "Silver Dagger",
 	"item.aelven_expansion.silver_shovel": "Silver Shovel",
@@ -457,6 +480,35 @@
 	"block.aelven_expansion.silversatin_campfire": "Silversatin Campfire",
 	"item.aelven_expansion.silversatin_chunk": "Silversatin Chunk",
 	"item.aelven_expansion.scroll": "Scroll",
+
+	"block.aelven_expansion.luminescent_kelp": "Luminescent Kelp",
+	"block.aelven_expansion.dried_luminescent_kelp_block": "Dried Luminescent Kelp Block",
+	"item.aelven_expansion.dried_luminescent_kelp": "Dried Luminescent Kelp",
+	"item.aelven_expansion.luminous_fibres": "Luminous Fibres",
+
+	"item.aelven_expansion.raw_vabrium": "Raw Vabrium",
+	"item.aelven_expansion.vabrium_ingot": "Vabrium Ingot",
+	"item.aelven_expansion.vabrium_nugget": "Vabrium Nugget",
+	"block.aelven_expansion.vabrium_ore": "Vabrium Ore",
+	"block.aelven_expansion.deepslate_vabrium_ore": "Deepslate Vabrium Ore",
+	"block.aelven_expansion.chitta_vabrium_ore": "Chitta Vabrium Ore",
+	"block.aelven_expansion.drystone_vabrium_ore": "Drystone Vabrium Ore",
+	"block.aelven_expansion.hydrojade_vabrium_ore": "Hydrojade Vabrium Ore",
+	"block.aelven_expansion.mudstone_vabrium_ore": "Mudstone Vabrium Ore",
+	"block.aelven_expansion.raw_vabrium_block": "Block of Raw Vabrium",
+	"block.aelven_expansion.vabrium_block": "Block of Vabrium",
+
+	"item.aelven_expansion.raw_orhalt": "Raw Orhalt",
+	"item.aelven_expansion.orhalt_ingot": "Orhalt Ingot",
+	"item.aelven_expansion.orhalt_nugget": "Orhalt Nugget",
+	"block.aelven_expansion.orhalt_ore": "Orhalt Ore",
+	"block.aelven_expansion.deepslate_orhalt_ore": "Deepslate Orhalt Ore",
+	"block.aelven_expansion.chitta_orhalt_ore": "Chitta Orhalt Ore",
+	"block.aelven_expansion.drystone_orhalt_ore": "Drystone Orhalt Ore",
+	"block.aelven_expansion.hydrojade_orhalt_ore": "Hydrojade Orhalt Ore",
+	"block.aelven_expansion.mudstone_orhalt_ore": "Mudstone Orhalt Ore",
+	"block.aelven_expansion.raw_orhalt_block": "Block of Raw Orhalt",
+	"block.aelven_expansion.orhalt_block": "Block of Orhalt",
 
 
 	"itemGroup.aelven_expansion_blocks": "Aelven Expansion: Blocks",

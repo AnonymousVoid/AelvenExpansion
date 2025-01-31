@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "raw_vabrium",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "aelven_expansion:raw_vabrium"
+    }
+  },
+  "result": {
+    "item": "aelven_expansion:raw_vabrium_block"
+  }
+}

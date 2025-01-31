@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "raw_vabrium",
+  "ingredients":[
+    {
+      "item": "aelven_expansion:raw_vabrium_block"
+    }
+  ],
+  "result": {
+    "item": "aelven_expansion:raw_vabrium",
+    "count": 9
+  }
+}

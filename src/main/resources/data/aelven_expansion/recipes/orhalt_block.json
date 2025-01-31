@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "orhalt_block",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "aelven_expansion:orhalt_ingot"
+    }
+  },
+  "result": {
+    "item": "aelven_expansion:orhalt_block"
+  }
+}
