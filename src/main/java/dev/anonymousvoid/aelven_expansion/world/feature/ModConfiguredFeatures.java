@@ -17,7 +17,9 @@ import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.features.OreFeatures;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.util.random.SimpleWeightedRandomList;
 import net.minecraft.util.valueproviders.ConstantFloat;
 import net.minecraft.util.valueproviders.ConstantInt;
@@ -36,6 +38,7 @@ import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlac
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
@@ -177,19 +180,139 @@ public class ModConfiguredFeatures {
     public static final DeferredRegister<ConfiguredFeature<?, ?>> CONFIGURED_FEATURES =
             DeferredRegister.create(Registry.CONFIGURED_FEATURE_REGISTRY, AelvenExpansion.MODID);
 
-    public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_ELERIUM_ORES = Suppliers.memoize(() -> List.of(
-            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ModBlocks.ELERIUM_ORE.get().defaultBlockState()),
-            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.DEEPSLATE_ELERIUM_ORE.get().defaultBlockState())));
+    public static final Supplier<List<OreConfiguration.TargetBlockState>> AELVEN_COAL_ORES = Suppliers.memoize(() -> List.of(
+            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, Blocks.COAL_ORE.defaultBlockState()),
+            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, Blocks.DEEPSLATE_COAL_ORE.defaultBlockState()),
+            OreConfiguration.target(new TagMatchTest(TagKey.create(Registry.BLOCK_REGISTRY,
+                            ResourceLocation.tryBuild(AelvenExpansion.MODID, "chitta_ore_replaceables"))),
+                    ModBlocks.CHITTA_COAL_ORE.get().defaultBlockState()),
+            OreConfiguration.target(new TagMatchTest(TagKey.create(Registry.BLOCK_REGISTRY,
+                            ResourceLocation.tryBuild(AelvenExpansion.MODID, "drystone_ore_replaceables"))),
+                    ModBlocks.DRYSTONE_COAL_ORE.get().defaultBlockState()),
+            OreConfiguration.target(new TagMatchTest(TagKey.create(Registry.BLOCK_REGISTRY,
+                            ResourceLocation.tryBuild(AelvenExpansion.MODID, "hydrojade_ore_replaceables"))),
+                    ModBlocks.HYDROJADE_COAL_ORE.get().defaultBlockState()),
+            OreConfiguration.target(new TagMatchTest(TagKey.create(Registry.BLOCK_REGISTRY,
+                            ResourceLocation.tryBuild(AelvenExpansion.MODID, "mudstone_ore_replaceables"))),
+                    ModBlocks.MUDSTONE_COAL_ORE.get().defaultBlockState())));
 
-    public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_SILVER_ORES = Suppliers.memoize(() -> List.of(
+    public static final Supplier<List<OreConfiguration.TargetBlockState>> AELVEN_IRON_ORES = Suppliers.memoize(() -> List.of(
+            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, Blocks.IRON_ORE.defaultBlockState()),
+            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, Blocks.DEEPSLATE_IRON_ORE.defaultBlockState()),
+            OreConfiguration.target(new TagMatchTest(TagKey.create(Registry.BLOCK_REGISTRY,
+                            ResourceLocation.tryBuild(AelvenExpansion.MODID, "chitta_ore_replaceables"))),
+                    ModBlocks.CHITTA_IRON_ORE.get().defaultBlockState()),
+            OreConfiguration.target(new TagMatchTest(TagKey.create(Registry.BLOCK_REGISTRY,
+                            ResourceLocation.tryBuild(AelvenExpansion.MODID, "drystone_ore_replaceables"))),
+                    ModBlocks.DRYSTONE_IRON_ORE.get().defaultBlockState()),
+            OreConfiguration.target(new TagMatchTest(TagKey.create(Registry.BLOCK_REGISTRY,
+                            ResourceLocation.tryBuild(AelvenExpansion.MODID, "hydrojade_ore_replaceables"))),
+                    ModBlocks.HYDROJADE_IRON_ORE.get().defaultBlockState()),
+            OreConfiguration.target(new TagMatchTest(TagKey.create(Registry.BLOCK_REGISTRY,
+                            ResourceLocation.tryBuild(AelvenExpansion.MODID, "mudstone_ore_replaceables"))),
+                    ModBlocks.MUDSTONE_IRON_ORE.get().defaultBlockState())));
+
+    public static final Supplier<List<OreConfiguration.TargetBlockState>> AELVEN_GOLD_ORES = Suppliers.memoize(() -> List.of(
+            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, Blocks.GOLD_ORE.defaultBlockState()),
+            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, Blocks.DEEPSLATE_GOLD_ORE.defaultBlockState()),
+            OreConfiguration.target(new TagMatchTest(TagKey.create(Registry.BLOCK_REGISTRY,
+                            ResourceLocation.tryBuild(AelvenExpansion.MODID, "chitta_ore_replaceables"))),
+                    ModBlocks.CHITTA_GOLD_ORE.get().defaultBlockState()),
+            OreConfiguration.target(new TagMatchTest(TagKey.create(Registry.BLOCK_REGISTRY,
+                            ResourceLocation.tryBuild(AelvenExpansion.MODID, "drystone_ore_replaceables"))),
+                    ModBlocks.DRYSTONE_GOLD_ORE.get().defaultBlockState()),
+            OreConfiguration.target(new TagMatchTest(TagKey.create(Registry.BLOCK_REGISTRY,
+                            ResourceLocation.tryBuild(AelvenExpansion.MODID, "hydrojade_ore_replaceables"))),
+                    ModBlocks.HYDROJADE_GOLD_ORE.get().defaultBlockState()),
+            OreConfiguration.target(new TagMatchTest(TagKey.create(Registry.BLOCK_REGISTRY,
+                            ResourceLocation.tryBuild(AelvenExpansion.MODID, "mudstone_ore_replaceables"))),
+                    ModBlocks.MUDSTONE_GOLD_ORE.get().defaultBlockState())));
+
+    public static final Supplier<List<OreConfiguration.TargetBlockState>> ELERIUM_ORES = Suppliers.memoize(() -> List.of(
+            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ModBlocks.ELERIUM_ORE.get().defaultBlockState()),
+            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.DEEPSLATE_ELERIUM_ORE.get().defaultBlockState()),
+            OreConfiguration.target(new TagMatchTest(TagKey.create(Registry.BLOCK_REGISTRY,
+                            ResourceLocation.tryBuild(AelvenExpansion.MODID, "chitta_ore_replaceables"))),
+                    ModBlocks.CHITTA_ELERIUM_ORE.get().defaultBlockState()),
+            OreConfiguration.target(new TagMatchTest(TagKey.create(Registry.BLOCK_REGISTRY,
+                            ResourceLocation.tryBuild(AelvenExpansion.MODID, "drystone_ore_replaceables"))),
+                    ModBlocks.DRYSTONE_ELERIUM_ORE.get().defaultBlockState()),
+            OreConfiguration.target(new TagMatchTest(TagKey.create(Registry.BLOCK_REGISTRY,
+                            ResourceLocation.tryBuild(AelvenExpansion.MODID, "hydrojade_ore_replaceables"))),
+                    ModBlocks.HYDROJADE_ELERIUM_ORE.get().defaultBlockState()),
+            OreConfiguration.target(new TagMatchTest(TagKey.create(Registry.BLOCK_REGISTRY,
+                            ResourceLocation.tryBuild(AelvenExpansion.MODID, "mudstone_ore_replaceables"))),
+                    ModBlocks.MUDSTONE_ELERIUM_ORE.get().defaultBlockState())));
+
+    public static final Supplier<List<OreConfiguration.TargetBlockState>> SILVER_ORES = Suppliers.memoize(() -> List.of(
             OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ModBlocks.SILVER_ORE.get().defaultBlockState()),
-            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.DEEPSLATE_SILVER_ORE.get().defaultBlockState())));
+            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.DEEPSLATE_SILVER_ORE.get().defaultBlockState()),
+            OreConfiguration.target(new TagMatchTest(TagKey.create(Registry.BLOCK_REGISTRY,
+                            ResourceLocation.tryBuild(AelvenExpansion.MODID, "chitta_ore_replaceables"))),
+                    ModBlocks.CHITTA_SILVER_ORE.get().defaultBlockState()),
+            OreConfiguration.target(new TagMatchTest(TagKey.create(Registry.BLOCK_REGISTRY,
+                            ResourceLocation.tryBuild(AelvenExpansion.MODID, "drystone_ore_replaceables"))),
+                    ModBlocks.DRYSTONE_SILVER_ORE.get().defaultBlockState()),
+            OreConfiguration.target(new TagMatchTest(TagKey.create(Registry.BLOCK_REGISTRY,
+                            ResourceLocation.tryBuild(AelvenExpansion.MODID, "hydrojade_ore_replaceables"))),
+                    ModBlocks.HYDROJADE_SILVER_ORE.get().defaultBlockState()),
+            OreConfiguration.target(new TagMatchTest(TagKey.create(Registry.BLOCK_REGISTRY,
+                            ResourceLocation.tryBuild(AelvenExpansion.MODID, "mudstone_ore_replaceables"))),
+                    ModBlocks.MUDSTONE_SILVER_ORE.get().defaultBlockState())));
+
+    public static final Supplier<List<OreConfiguration.TargetBlockState>> VABRIUM_ORES = Suppliers.memoize(() -> List.of(
+            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ModBlocks.VABRIUM_ORE.get().defaultBlockState()),
+            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.DEEPSLATE_VABRIUM_ORE.get().defaultBlockState()),
+            OreConfiguration.target(new TagMatchTest(TagKey.create(Registry.BLOCK_REGISTRY,
+                            ResourceLocation.tryBuild(AelvenExpansion.MODID, "chitta_ore_replaceables"))),
+                    ModBlocks.CHITTA_VABRIUM_ORE.get().defaultBlockState()),
+            OreConfiguration.target(new TagMatchTest(TagKey.create(Registry.BLOCK_REGISTRY,
+                            ResourceLocation.tryBuild(AelvenExpansion.MODID, "drystone_ore_replaceables"))),
+                    ModBlocks.DRYSTONE_VABRIUM_ORE.get().defaultBlockState()),
+            OreConfiguration.target(new TagMatchTest(TagKey.create(Registry.BLOCK_REGISTRY,
+                            ResourceLocation.tryBuild(AelvenExpansion.MODID, "hydrojade_ore_replaceables"))),
+                    ModBlocks.HYDROJADE_VABRIUM_ORE.get().defaultBlockState()),
+            OreConfiguration.target(new TagMatchTest(TagKey.create(Registry.BLOCK_REGISTRY,
+                            ResourceLocation.tryBuild(AelvenExpansion.MODID, "mudstone_ore_replaceables"))),
+                    ModBlocks.MUDSTONE_VABRIUM_ORE.get().defaultBlockState())));
+
+    public static final Supplier<List<OreConfiguration.TargetBlockState>> ORHALT_ORES = Suppliers.memoize(() -> List.of(
+            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ModBlocks.ORHALT_ORE.get().defaultBlockState()),
+            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.DEEPSLATE_ORHALT_ORE.get().defaultBlockState()),
+            OreConfiguration.target(new TagMatchTest(TagKey.create(Registry.BLOCK_REGISTRY,
+                            ResourceLocation.tryBuild(AelvenExpansion.MODID, "chitta_ore_replaceables"))),
+                    ModBlocks.CHITTA_ORHALT_ORE.get().defaultBlockState()),
+            OreConfiguration.target(new TagMatchTest(TagKey.create(Registry.BLOCK_REGISTRY,
+                            ResourceLocation.tryBuild(AelvenExpansion.MODID, "drystone_ore_replaceables"))),
+                    ModBlocks.DRYSTONE_ORHALT_ORE.get().defaultBlockState()),
+            OreConfiguration.target(new TagMatchTest(TagKey.create(Registry.BLOCK_REGISTRY,
+                            ResourceLocation.tryBuild(AelvenExpansion.MODID, "hydrojade_ore_replaceables"))),
+                    ModBlocks.HYDROJADE_ORHALT_ORE.get().defaultBlockState()),
+            OreConfiguration.target(new TagMatchTest(TagKey.create(Registry.BLOCK_REGISTRY,
+                            ResourceLocation.tryBuild(AelvenExpansion.MODID, "mudstone_ore_replaceables"))),
+                    ModBlocks.MUDSTONE_ORHALT_ORE.get().defaultBlockState())));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> AELVEN_COAL_ORE = CONFIGURED_FEATURES.register("aelven_coal_ore",
+            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(AELVEN_COAL_ORES.get(),12)));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> AELVEN_IRON_ORE = CONFIGURED_FEATURES.register("aelven_iron_ore",
+            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(AELVEN_IRON_ORES.get(),8)));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> AELVEN_GOLD_ORE = CONFIGURED_FEATURES.register("aelven_gold_ore",
+            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(AELVEN_GOLD_ORES.get(),6)));
 
     public static final RegistryObject<ConfiguredFeature<?, ?>> ELERIUM_ORE = CONFIGURED_FEATURES.register("elerium_ore",
-            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_ELERIUM_ORES.get(),8)));
+            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(ELERIUM_ORES.get(),10)));
 
     public static final RegistryObject<ConfiguredFeature<?, ?>> SILVER_ORE = CONFIGURED_FEATURES.register("silver_ore",
-            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_SILVER_ORES.get(),4)));
+            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(SILVER_ORES.get(),6)));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> VABRIUM_ORE = CONFIGURED_FEATURES.register("vabrium_ore",
+            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(VABRIUM_ORES.get(),6)));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> ORHALT_ORE = CONFIGURED_FEATURES.register("orhalt_ore",
+            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(ORHALT_ORES.get(),6)));
+
 
     public static final RegistryObject<ConfiguredFeature<?, ?>> CHIPSTONE_SPIRE = CONFIGURED_FEATURES.register("chipstone_spire",
             () -> new ConfiguredFeature<>(ModFeatures.SPIRE.get(), new SpireConfiguration(

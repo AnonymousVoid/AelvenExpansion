@@ -238,14 +238,15 @@ public class OasisFeature extends Feature<OasisConfiguration> {
     }
 
     protected void placeLeaf(LevelAccessor level, BlockPos pos, BlockState logState, @Nullable BlockState leafState, @Nullable BlockState hangingLeafState) {
+        boolean flag = level.getBlockState(pos).is(logState.getBlock());
         if (leafState != null) {
             if (level.getBlockState(pos).is(Blocks.AIR)) {
                 this.setBlock(level, pos, leafState);
             }
+            flag = flag || level.getBlockState(pos).is(leafState.getBlock());
         }
         if (hangingLeafState != null) {
-            if ((level.getBlockState(pos).is(logState.getBlock()) || level.getBlockState(pos).is(leafState.getBlock()))
-                    && level.getBlockState(pos.below()).is(Blocks.AIR)) {
+            if (flag && level.getBlockState(pos.below()).is(Blocks.AIR)) {
                 this.setBlock(level, pos.below(), hangingLeafState);
             }
         }

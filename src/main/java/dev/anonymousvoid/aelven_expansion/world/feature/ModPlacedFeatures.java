@@ -114,15 +114,48 @@ public class ModPlacedFeatures {
                             List.of(RarityFilter.onAverageOnceEvery(16), InSquarePlacement.spread(),
                                     PlacementUtils.HEIGHTMAP, BiomeFilter.biome())));
 
+    public static final RegistryObject<PlacedFeature> PATCH_HYDROSATIN_SPROUTS_PLACED =
+            PLACED_FEATURES.register("patch_hydrosatin_sprouts_placed",
+                    () -> new PlacedFeature((Holder<ConfiguredFeature<?,?>>)(Holder<? extends ConfiguredFeature<?, ?>>)
+                            ModConfiguredFeatures.VegetalGeneration.PATCH_HYDROSATIN_SPROUTS,
+                            List.of(RarityFilter.onAverageOnceEvery(8), InSquarePlacement.spread(),
+                                    PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome())));
+
+    public static final RegistryObject<PlacedFeature> AELVEN_COAL_ORE_PLACED = PLACED_FEATURES.register("aelven_coal_ore_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.AELVEN_COAL_ORE.getHolder().get(),
+                    commonOrePlacement(20, // VeinsPerChunk
+                            HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(0), VerticalAnchor.aboveBottom(200)))));
+
+    public static final RegistryObject<PlacedFeature> AELVEN_IRON_ORE_PLACED = PLACED_FEATURES.register("aelven_iron_ore_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.AELVEN_IRON_ORE.getHolder().get(),
+                    commonOrePlacement(16, // VeinsPerChunk
+                            HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-60), VerticalAnchor.aboveBottom(140)))));
+
+    public static final RegistryObject<PlacedFeature> AELVEN_GOLD_ORE_PLACED = PLACED_FEATURES.register("aelven_gold_ore_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.AELVEN_GOLD_ORE.getHolder().get(),
+                    commonOrePlacement(8, // VeinsPerChunk
+                            HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(120)))));
+
     public static final RegistryObject<PlacedFeature> ELERIUM_ORE_PLACED = PLACED_FEATURES.register("elerium_ore_placed",
             () -> new PlacedFeature(ModConfiguredFeatures.ELERIUM_ORE.getHolder().get(),
-                    commonOrePlacement(16, // VeinsPerChunk
+                    commonOrePlacement(12, // VeinsPerChunk
                             HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
 
     public static final RegistryObject<PlacedFeature> SILVER_ORE_PLACED = PLACED_FEATURES.register("silver_ore_placed",
             () -> new PlacedFeature(ModConfiguredFeatures.SILVER_ORE.getHolder().get(),
                     commonOrePlacement(8, // VeinsPerChunk
-                            HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-100), VerticalAnchor.aboveBottom(100)))));
+                            HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-100), VerticalAnchor.aboveBottom(60)))));
+
+    public static final RegistryObject<PlacedFeature> VABRIUM_ORE_PLACED = PLACED_FEATURES.register("vabrium_ore_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.VABRIUM_ORE.getHolder().get(),
+                    commonOrePlacement(8, // VeinsPerChunk
+                            HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-100), VerticalAnchor.aboveBottom(60)))));
+
+    public static final RegistryObject<PlacedFeature> ORHALT_ORE_PLACED = PLACED_FEATURES.register("orhalt_ore_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.ORHALT_ORE.getHolder().get(),
+                    commonOrePlacement(8, // VeinsPerChunk
+                            HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-100), VerticalAnchor.aboveBottom(60)))));
+
 
     public static final RegistryObject<PlacedFeature> CHIPSTONE_SPIRE_PLACED =
             PLACED_FEATURES.register("chipstone_spire_placed",
@@ -134,13 +167,6 @@ public class ModPlacedFeatures {
             PLACED_FEATURES.register("hydrosatin_fungus_placed",
                     () -> new PlacedFeature(ModConfiguredFeatures.HYDROSATIN_FUNGUS_FEATURE.getHolder().get(),
                             List.of(RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(),
-                                    PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome())));
-
-    public static final RegistryObject<PlacedFeature> PATCH_HYDROSATIN_SPROUTS_PLACED =
-            PLACED_FEATURES.register("patch_hydrosatin_sprouts_placed",
-                    () -> new PlacedFeature((Holder<ConfiguredFeature<?,?>>)(Holder<? extends ConfiguredFeature<?, ?>>)
-                            ModConfiguredFeatures.VegetalGeneration.PATCH_HYDROSATIN_SPROUTS,
-                            List.of(RarityFilter.onAverageOnceEvery(8), InSquarePlacement.spread(),
                                     PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome())));
 
     public static final RegistryObject<PlacedFeature> CHIPSTONE_OASIS_PLACED =
