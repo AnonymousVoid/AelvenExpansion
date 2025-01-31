@@ -2,6 +2,7 @@ package dev.anonymousvoid.aelven_expansion.world.feature.custom;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.world.level.LevelAccessor;
@@ -9,8 +10,10 @@ import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.Vec2;
 
 import javax.annotation.Nullable;
@@ -143,45 +146,71 @@ public class OasisFeature extends Feature<OasisConfiguration> {
         BlockPos treePos = pos;
 
         for (int i = 0; i < 20; i ++) {
-            if (isAirOrWater(level, treePos)) {
+            if (level.getBlockState(treePos).is(Blocks.AIR)) {
                 treePos = treePos.below();
-            } else {
-                int rootsNE = rand.nextInt(height / 4);
-                int rootsSE = rand.nextInt(height / 4);
-                int rootsSW = rand.nextInt(height / 4);
-                int rootsNW = rand.nextInt(height / 4);
-                for (double j = -2; j <= height; j ++) {
-                    if (j < rootsNE) this.setBlock(level, treePos.offset(1, j, 1), logState);
-                    if (j < rootsSE) this.setBlock(level, treePos.offset(1, j, -1), logState);
-                    if (j < rootsSW) this.setBlock(level, treePos.offset(-1, j, -1), logState);
-                    if (j < rootsNW) this.setBlock(level, treePos.offset(-1, j, 1), logState);
-
-                    this.setBlock(level, treePos.offset(0, j, 0), logState);
+            } else if (level.getFluidState(treePos).is(Fluids.EMPTY)) {
+                // ROOTS
+                BlockPos rootX = treePos.relative(Direction.fromAxisAndDirection(Direction.Axis.X,
+                        rand.nextBoolean() ? Direction.AxisDirection.NEGATIVE : Direction.AxisDirection.POSITIVE));
+                BlockPos rootZ = treePos.relative(Direction.fromAxisAndDirection(Direction.Axis.Z,
+                        rand.nextBoolean() ? Direction.AxisDirection.NEGATIVE : Direction.AxisDirection.POSITIVE));
+                if (rand.nextBoolean()) {
+                    rootX = rootX.relative(Direction.fromAxisAndDirection(Direction.Axis.Z,
+                            rand.nextBoolean() ? Direction.AxisDirection.NEGATIVE : Direction.AxisDirection.POSITIVE))
+                            .offset(0, -1, 0);
                 }
-                for (double j = -2; j <= height / (rand.nextInt(2) + 2) * 1.5; j ++) {
-                    this.setBlock(level, treePos.offset(1, j, 0), logState);
+                if (rand.nextBoolean()) {
+                    rootZ = rootZ.relative(Direction.fromAxisAndDirection(Direction.Axis.X,
+                            rand.nextBoolean() ? Direction.AxisDirection.NEGATIVE : Direction.AxisDirection.POSITIVE))
+                            .offset(0, -1, 0);
                 }
-                for (double j = -2; j <= height / (rand.nextInt(2) + 2) * 1.5; j ++) {
-                    this.setBlock(level, treePos.offset(0, j, 1), logState);
-                }
-                for (double j = -2; j <= height / (rand.nextInt(2) + 2) * 1.5; j ++) {
-                    this.setBlock(level, treePos.offset(-1, j, 0), logState);
-                }
-                for (double j = -2; j <= height / (rand.nextInt(2) + 2) * 1.5; j ++) {
-                    this.setBlock(level, treePos.offset(0, j, -1), logState);
+                for (double j = 1; j >= -rand.nextInt(3) - 1; j --) {
+                    this.setBlock(level, rootX.offset(0, j, 0), logState);
+                    this.setBlock(level, rootZ.offset(0, j, 0), logState);
                 }
 
-                float min = 0.2588F + (rand.nextInt(5) - 2) / 60;
-                float mid = 0.7071F + (rand.nextInt(5) - 2) / 60;
-                float max = 0.9659F + (rand.nextInt(5) - 2) / 60;
-                placeBranches(level, treePos, rand, logState, leavesState, hangingLeavesState, height * 2 / 3,
-                        new Vec2(min, max), new Vec2(mid, mid), new Vec2(max, min));
-                placeBranches(level, treePos, rand, logState, leavesState, hangingLeavesState, height * 2 / 3,
-                        new Vec2(min, -max), new Vec2(mid, -mid), new Vec2(max, -min));
-                placeBranches(level, treePos, rand, logState, leavesState, hangingLeavesState, height * 2 / 3,
-                        new Vec2(-min, -max), new Vec2(-mid, -mid), new Vec2(-max, -min));
-                placeBranches(level, treePos, rand, logState, leavesState, hangingLeavesState, height * 2 / 3,
-                        new Vec2(-min, max), new Vec2(-mid, mid), new Vec2(-max, min));
+                // TRUNK WITH BRANCHES
+                Direction branchDirection = Direction.Plane.HORIZONTAL.getRandomDirection(rand);
+                System.out.println(branchDirection.getName());
+                for (int j = 0; j <= height; j ++) {
+                    if (j != height) {
+                        this.setBlock(level, treePos.offset(0, j, 0), logState);
+
+                        if (j > height / 3 && j < height * 0.8) {
+                            BlockPos branchPos = treePos.relative(branchDirection).offset(0, j, 0);
+                            BlockState branchState = logState;
+                            if (logState.hasProperty(BlockStateProperties.AXIS)) {
+                                branchState = logState.setValue(BlockStateProperties.AXIS, branchDirection.getAxis());
+                            }
+                            if (rand.nextInt(3) != 0) {
+                                placeBranch(level, branchPos, rand, branchState, leavesState, hangingLeavesState, branchDirection, rand.nextInt(2) + 2);
+                                branchDirection = branchDirection.getClockWise(Direction.Axis.Y);
+                                if (rand.nextInt(4) == 0) {
+                                    branchDirection = branchDirection.getClockWise(Direction.Axis.Y);
+                                }
+                            } else if (rand.nextBoolean()) {
+                                placeBranch(level, branchPos, rand, leavesState, null, hangingLeavesState, branchDirection, rand.nextInt(2) + 1);
+                                branchDirection = branchDirection.getClockWise(Direction.Axis.Y);
+                                if (rand.nextInt(4) == 0) {
+                                    branchDirection = branchDirection.getClockWise(Direction.Axis.Y);
+                                }
+                            }
+                        }
+                    } else {
+                        if (rand.nextBoolean()) {
+                            Direction tipOffset = Direction.Plane.HORIZONTAL.getRandomDirection(rand);
+                            this.setBlock(level, treePos.relative(tipOffset).offset(0, height, 0), logState);
+                        }
+                        Direction tipLeaves = Direction.Plane.HORIZONTAL.getRandomDirection(rand);
+                        placeLeaf(level, treePos.relative(tipLeaves).offset(0, height - rand.nextInt(2), 0),
+                                logState, leavesState, hangingLeavesState);
+                        for (int k = 0; k < rand.nextInt(2) + 1; k ++) {
+                            tipLeaves = tipLeaves.getClockWise(Direction.Axis.Y);
+                        }
+                        placeLeaf(level, treePos.relative(tipLeaves).offset(0, height - rand.nextInt(2), 0),
+                                logState, leavesState, hangingLeavesState);
+                    }
+                }
 
                 return true;
             }
@@ -189,48 +218,37 @@ public class OasisFeature extends Feature<OasisConfiguration> {
         return false;
     }
 
-    protected boolean placeBranches(LevelAccessor level, BlockPos pos, RandomSource rand, BlockState logState,
-                                BlockState leavesState, BlockState hangingLeavesState, int length, Vec2... offsets) {
-        int branchHeight = length / 3;
-        int branchCount = 0;
-        boolean skippedBranch = false;
-
-        for (Vec2 v : offsets) {
-            branchCount ++;
-            BlockPos branchPos = pos.offset(0, branchHeight, 0);
-            branchHeight = (length/2) + (length / offsets.length * (branchCount + rand.nextInt(2)));
-            if (rand.nextInt(5) == 0 && !skippedBranch) {
-                break;
+    protected void placeBranch(LevelAccessor level, BlockPos pos, RandomSource rand, BlockState branchState,
+                                BlockState leavesState, BlockState hangingLeavesState, Direction direction, int length) {
+        BlockPos blockPos = pos;
+        for (int i = 0; i < length; i ++) {
+            this.setBlock(level, blockPos, branchState);
+            blockPos = blockPos.relative(direction);
+            Direction leafDirection = direction;
+            for (int j = 0; j < 4; j ++) {
+                if (rand.nextInt(5) == 0) {
+                    placeLeaf(level, blockPos.relative(leafDirection), branchState, leavesState, hangingLeavesState);
+                }
+                leafDirection = leafDirection.getClockWise(Direction.Axis.Y);
             }
-
-            for (int i = 0; i < length; i ++) {
-                BlockPos currentPos = branchPos.offset(v.x * i, i/2, v.y * i);
-                this.setBlock(level, currentPos, logState);
-                if (rand.nextInt(3) != 0) {
-                    this.setBlock(level, currentPos.above(), leavesState);
-                }
-                if (rand.nextBoolean()) {
-                    boolean direction = rand.nextBoolean();
-                    int place = rand.nextInt(3) - 1;
-                    BlockPos leavesPos = currentPos.offset(direction ? place : 0, 0, !direction ? place : 0);
-                    for (int k = 0; k < rand.nextInt(length / 3) + length / 3; k++) {
-                        BlockPos leafPos = leavesPos.offset(0, -k, 0);
-                        if (!isNotBlocks(level, leafPos, Blocks.AIR, Blocks.WATER, leavesState.getBlock(), hangingLeavesState.getBlock())) {
-                            this.setBlock(level, leafPos, leavesState);
-                            if (!isNotBlocks(level, leafPos.below(), Blocks.AIR, Blocks.WATER, leavesState.getBlock())) {
-                                this.setBlock(level, leafPos.below(), hangingLeavesState);
-                            }
-                        }
-                    }
-                }
+            if (rand.nextInt(3) == 0) {
+                placeLeaf(level, blockPos.offset(0, rand.nextInt(2) * 2 - 1, 0), branchState, leavesState, hangingLeavesState);
             }
         }
-
-        return true;
     }
 
-    protected double branchCurve(int x, int height) {
-        return (Math.pow(-0.08 * x, 2) + (height / 40 * 5) * x);
+    protected void placeLeaf(LevelAccessor level, BlockPos pos, BlockState logState, @Nullable BlockState leafState, @Nullable BlockState hangingLeafState) {
+        if (leafState != null) {
+            if (level.getBlockState(pos).is(Blocks.AIR)) {
+                this.setBlock(level, pos, leafState);
+            }
+        }
+        if (hangingLeafState != null) {
+            if ((level.getBlockState(pos).is(logState.getBlock()) || level.getBlockState(pos).is(leafState.getBlock()))
+                    && level.getBlockState(pos.below()).is(Blocks.AIR)) {
+                this.setBlock(level, pos.below(), hangingLeafState);
+            }
+        }
     }
 
     protected boolean isAirOrWater(LevelAccessor level, BlockPos pos) {
