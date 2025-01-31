@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "cookingtime": 100,
+  "experience": 0.2,
+  "group": "elerium",
+  "ingredient": {
+    "item": "aelven_expansion:hydrojade_elerium_ore"
+  },
+  "result": "aelven_expansion:elerium"
+}

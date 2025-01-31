@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "aelven_expansion:item/vabrium_ingot"
+  }
+}

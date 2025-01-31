@@ -1,0 +1,11 @@
+{
+  "type": "aelven_expansion:kilning",
+  "ingredients": [
+    {
+      "item": "aelven_expansion:chitta_silver_ore"
+    }
+  ],
+  "output": {
+    "item": "aelven_expansion:silver_ingot"
+  }
+}

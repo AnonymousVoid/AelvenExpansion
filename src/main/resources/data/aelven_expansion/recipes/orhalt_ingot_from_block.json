@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "orhalt_block",
+  "ingredients":[
+    {
+      "item": "aelven_expansion:orhalt_block"
+    }
+  ],
+  "result": {
+    "item": "aelven_expansion:orhalt_ingot",
+    "count": 9
+  }
+}

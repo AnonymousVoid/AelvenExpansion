@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "aelven_expansion:block/hydrojade_vabrium_ore"
+  }
+}

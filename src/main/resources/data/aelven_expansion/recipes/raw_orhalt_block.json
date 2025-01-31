@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "raw_orhalt",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "aelven_expansion:raw_orhalt"
+    }
+  },
+  "result": {
+    "item": "aelven_expansion:raw_orhalt_block"
+  }
+}
