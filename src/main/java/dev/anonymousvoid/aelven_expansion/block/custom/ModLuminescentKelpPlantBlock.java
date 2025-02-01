@@ -20,8 +20,6 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.Shapes;
 
-import java.util.Optional;
-
 public class ModLuminescentKelpPlantBlock extends GrowingPlantBodyBlock implements LiquidBlockContainer {
     public static final IntegerProperty AGE = BlockStateProperties.AGE_4;
     protected static final int MAX_AGE = 4;
