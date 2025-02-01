@@ -3,9 +3,7 @@ package dev.anonymousvoid.aelven_expansion.world.feature;
 import com.google.common.base.Suppliers;
 import dev.anonymousvoid.aelven_expansion.AelvenExpansion;
 import dev.anonymousvoid.aelven_expansion.block.ModBlocks;
-import dev.anonymousvoid.aelven_expansion.world.feature.custom.OasisConfiguration;
-import dev.anonymousvoid.aelven_expansion.world.feature.custom.WaterFungusConfiguration;
-import dev.anonymousvoid.aelven_expansion.world.feature.custom.SpireConfiguration;
+import dev.anonymousvoid.aelven_expansion.world.feature.custom.*;
 import dev.anonymousvoid.aelven_expansion.world.feature.tree.placer.foliage.DroopyFoliagePlacer;
 import dev.anonymousvoid.aelven_expansion.world.feature.tree.placer.roots.PeachgroveRootPlacement;
 import dev.anonymousvoid.aelven_expansion.world.feature.tree.placer.roots.PeachgroveRootPlacer;
@@ -170,15 +168,75 @@ public class ModConfiguredFeatures {
                                 PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(
                                         BlockStateProvider.simple(ModBlocks.CHIPSTONE_BUSH.get())))));
 
-        public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> PATCH_HYDROSATIN_SPROUTS =
-                FeatureUtils.register("patch_hydrosatin_sprouts", Feature.RANDOM_PATCH,
-                        FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
-                                new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.HYDROSATIN_SPROUTS.get()))));
-
     }
 
     public static final DeferredRegister<ConfiguredFeature<?, ?>> CONFIGURED_FEATURES =
             DeferredRegister.create(Registry.CONFIGURED_FEATURE_REGISTRY, AelvenExpansion.MODID);
+
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> PATCH_HYDROSATIN_SPROUTS =
+            CONFIGURED_FEATURES.register("patch_hydrosatin_sprouts",
+            () -> new ConfiguredFeature<>(ModFeatures.UNDERWATER_RANDOM_PATCH.get(), new UnderwaterRandomPatchConfiguration(
+                    ModBlocks.HYDROSATIN_SPROUTS.get().defaultBlockState(),
+                    ModBlocks.TALL_HYDROSATIN_SPROUTS.get().defaultBlockState(),
+                    ConstantInt.of(7),
+                    ConstantInt.of(3),
+                    ConstantInt.of(32))));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> PATCH_JADEGRASS =
+            CONFIGURED_FEATURES.register("patch_jadegrass",
+            () -> new ConfiguredFeature<>(ModFeatures.UNDERWATER_RANDOM_PATCH.get(), new UnderwaterRandomPatchConfiguration(
+                    ModBlocks.JADEGRASS.get().defaultBlockState(),
+                    ModBlocks.TALL_JADEGRASS.get().defaultBlockState(),
+                    ConstantInt.of(7),
+                    ConstantInt.of(3),
+                    ConstantInt.of(32))));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> PATCH_LUMINESCENT_KELP =
+            CONFIGURED_FEATURES.register("patch_luminescent_kelp",
+            () -> new ConfiguredFeature<>(ModFeatures.MODDED_KELP_PATCH.get(), new ModdedKelpPatchConfiguration(
+                    ModBlocks.LUMINESCENT_KELP_PLANT.get().defaultBlockState(),
+                    ModBlocks.LUMINESCENT_KELP.get().defaultBlockState(),
+                    ConstantInt.of(7),
+                    ConstantInt.of(3),
+                    UniformInt.of(2, 7),
+                    ConstantInt.of(16))));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> CHIPSTONE_SPIRE = CONFIGURED_FEATURES.register("chipstone_spire",
+            () -> new ConfiguredFeature<>(ModFeatures.SPIRE.get(), new SpireConfiguration(
+                    ModBlocks.CHIPSTONE.get().defaultBlockState(),
+                    UniformInt.of(20, 50),
+                    ConstantInt.of(10),
+                    ConstantFloat.of(5.0F))));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> HYDROSATIN_FUNGUS_FEATURE = CONFIGURED_FEATURES.register("hydrosatin_fungus",
+            () -> new ConfiguredFeature<>(ModFeatures.WATER_FUNGUS.get(), new WaterFungusConfiguration(
+                    ModBlocks.HYDROSATIN_STEM.get().defaultBlockState(),
+                    ModBlocks.HYDROSATIN_FUNGUS.get().defaultBlockState(),
+                    ModBlocks.HYDROSATIN_CAP.get().defaultBlockState(),
+                    ModBlocks.GLIMMERSATIN.get().defaultBlockState(),
+                    ModBlocks.JADEGRASS_NYLIUM.get().defaultBlockState(),
+                    UniformInt.of(8, 9),
+                    UniformInt.of(5, 6),
+                    ConstantInt.of(2))));
+
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> CHIPSTONE_OASIS_FEATURE = CONFIGURED_FEATURES.register("chipstone_oasis",
+            () -> new ConfiguredFeature<>(ModFeatures.OASIS.get(), new OasisConfiguration(
+                    ModBlocks.CHIPSTONE_GRAVEL.get().defaultBlockState(),
+                    ModBlocks.CHIPSTONE.get().defaultBlockState(),
+                    ModBlocks.CHIPSTONE_GRASS.get().defaultBlockState(),
+                    ModBlocks.CHIPSTONE_BLADES.get().defaultBlockState(),
+                    ModBlocks.CHIPSTONE_LOG.get().defaultBlockState(),
+                    ModBlocks.CHIPSTONE_LEAVES.get().defaultBlockState(),
+                    ModBlocks.HANGING_CHIPSTONE_LEAVES.get().defaultBlockState(),
+                    ModBlocks.CHIPSTONE.get().defaultBlockState(),
+                    UniformInt.of(9, 12),
+                    UniformInt.of(2, 3),
+                    UniformInt.of(9, 12),
+                    UniformInt.of(1, 2),
+                    UniformInt.of(5, 7))));
+
 
     public static final Supplier<List<OreConfiguration.TargetBlockState>> AELVEN_COAL_ORES = Suppliers.memoize(() -> List.of(
             OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, Blocks.COAL_ORE.defaultBlockState()),
@@ -313,41 +371,6 @@ public class ModConfiguredFeatures {
     public static final RegistryObject<ConfiguredFeature<?, ?>> ORHALT_ORE = CONFIGURED_FEATURES.register("orhalt_ore",
             () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(ORHALT_ORES.get(),6)));
 
-
-    public static final RegistryObject<ConfiguredFeature<?, ?>> CHIPSTONE_SPIRE = CONFIGURED_FEATURES.register("chipstone_spire",
-            () -> new ConfiguredFeature<>(ModFeatures.SPIRE.get(), new SpireConfiguration(
-                    ModBlocks.CHIPSTONE.get().defaultBlockState(),
-                    UniformInt.of(20, 50),
-                    ConstantInt.of(10),
-                    ConstantFloat.of(5.0F))));
-
-    public static final RegistryObject<ConfiguredFeature<?, ?>> HYDROSATIN_FUNGUS_FEATURE = CONFIGURED_FEATURES.register("hydrosatin_fungus",
-            () -> new ConfiguredFeature<>(ModFeatures.WATER_FUNGUS.get(), new WaterFungusConfiguration(
-                    ModBlocks.HYDROSATIN_STEM.get().defaultBlockState(),
-                    ModBlocks.HYDROSATIN_FUNGUS.get().defaultBlockState(),
-                    ModBlocks.HYDROSATIN_CAP.get().defaultBlockState(),
-                    ModBlocks.GLIMMERSATIN.get().defaultBlockState(),
-                    ModBlocks.JADEGRASS_NYLIUM.get().defaultBlockState(),
-                    UniformInt.of(8, 9),
-                    UniformInt.of(5, 6),
-                    ConstantInt.of(2))));
-
-
-    public static final RegistryObject<ConfiguredFeature<?, ?>> CHIPSTONE_OASIS_FEATURE = CONFIGURED_FEATURES.register("chipstone_oasis",
-            () -> new ConfiguredFeature<>(ModFeatures.OASIS.get(), new OasisConfiguration(
-                    ModBlocks.CHIPSTONE_GRAVEL.get().defaultBlockState(),
-                    ModBlocks.CHIPSTONE.get().defaultBlockState(),
-                    ModBlocks.CHIPSTONE_GRASS.get().defaultBlockState(),
-                    ModBlocks.CHIPSTONE_BLADES.get().defaultBlockState(),
-                    ModBlocks.CHIPSTONE_LOG.get().defaultBlockState(),
-                    ModBlocks.CHIPSTONE_LEAVES.get().defaultBlockState(),
-                    ModBlocks.HANGING_CHIPSTONE_LEAVES.get().defaultBlockState(),
-                    ModBlocks.CHIPSTONE.get().defaultBlockState(),
-                    UniformInt.of(9, 12),
-                    UniformInt.of(2, 3),
-                    UniformInt.of(9, 12),
-                    UniformInt.of(1, 2),
-                    UniformInt.of(5, 7))));
 
 
     public static void register(IEventBus eventBus) { CONFIGURED_FEATURES.register(eventBus); }

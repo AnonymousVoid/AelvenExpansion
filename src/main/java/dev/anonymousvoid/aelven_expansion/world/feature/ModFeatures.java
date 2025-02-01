@@ -19,6 +19,10 @@ public class ModFeatures {
             FEATURES.register("water_fungus", () -> new WaterFungusFeature(WaterFungusConfiguration.CODEC));
     public static final RegistryObject<Feature<OasisConfiguration>> OASIS =
             FEATURES.register("oasis", () -> new OasisFeature(OasisConfiguration.CODEC));
+    public static final RegistryObject<Feature<UnderwaterRandomPatchConfiguration>> UNDERWATER_RANDOM_PATCH =
+            FEATURES.register("underwater_random_patch", () -> new UnderwaterRandomPatchFeature(UnderwaterRandomPatchConfiguration.CODEC));
+    public static final RegistryObject<Feature<ModdedKelpPatchConfiguration>> MODDED_KELP_PATCH =
+            FEATURES.register("modded_kelp_patch", () -> new ModdedKelpPatchFeature(ModdedKelpPatchConfiguration.CODEC));
 
 
     public static void register(IEventBus bus) { FEATURES.register(bus); }

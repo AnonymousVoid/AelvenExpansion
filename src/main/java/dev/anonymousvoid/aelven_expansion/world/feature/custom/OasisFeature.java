@@ -25,10 +25,7 @@ public class OasisFeature extends Feature<OasisConfiguration> {
 
     @Override
     public boolean place(FeaturePlaceContext<OasisConfiguration> context) {
-        WorldGenLevel worldgenlevel = context.level();
-        RandomSource randomsource = context.random();
-        BlockPos blockpos = context.origin();
-        return this.placeFeature(worldgenlevel, randomsource, blockpos, context.config());
+        return this.placeFeature(context.level(), context.random(), context.origin(), context.config());
     }
 
     protected boolean placeFeature(LevelAccessor level, RandomSource rand, BlockPos pos, OasisConfiguration config) {
@@ -171,7 +168,6 @@ public class OasisFeature extends Feature<OasisConfiguration> {
 
                 // TRUNK WITH BRANCHES
                 Direction branchDirection = Direction.Plane.HORIZONTAL.getRandomDirection(rand);
-                System.out.println(branchDirection.getName());
                 for (int j = 0; j <= height; j ++) {
                     if (j != height) {
                         this.setBlock(level, treePos.offset(0, j, 0), logState);

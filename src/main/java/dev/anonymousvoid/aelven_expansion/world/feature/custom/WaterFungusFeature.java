@@ -22,10 +22,7 @@ public class WaterFungusFeature extends Feature<WaterFungusConfiguration> {
     }
 
     public boolean place(FeaturePlaceContext<WaterFungusConfiguration> context) {
-        WorldGenLevel worldgenlevel = context.level();
-        RandomSource randomsource = context.random();
-        BlockPos blockpos = context.origin();
-        return this.placeFeature(worldgenlevel, randomsource, blockpos, context.config());
+        return this.placeFeature(context.level(), context.random(), context.origin(), context.config());
     }
 
     protected boolean placeFeature(LevelAccessor level, RandomSource rand, BlockPos pos, WaterFungusConfiguration config) {
@@ -43,15 +40,13 @@ public class WaterFungusFeature extends Feature<WaterFungusConfiguration> {
         int capHeight = capHeightProv.sample(rand);
         int capWidth = capWidthProv.sample(rand);
 
-        if (rand.nextInt(5) < 2) {
-            boolean f1 = level.getBlockState(pos.above()).is(groundState.getBlock());
-            boolean f2 = level.getBlockState(pos).is(groundState.getBlock());
-            boolean f3 = level.getBlockState(pos.below()).is(groundState.getBlock());
-            if (f1 || f2 || f3) {
-                BlockPos cap = placeStem(level, pos, rand, stemState, sporeState, stemHeight);
-                placeCap(level, pos, rand, cap, capState, fruitState, capWidth, capHeight);
-                return true;
-            }
+        boolean f1 = level.getBlockState(pos.above()).is(groundState.getBlock());
+        boolean f2 = level.getBlockState(pos).is(groundState.getBlock());
+        boolean f3 = level.getBlockState(pos.below()).is(groundState.getBlock());
+        if (f1 || f2 || f3) {
+            BlockPos cap = placeStem(level, pos, rand, stemState, sporeState, stemHeight);
+            placeCap(level, pos, rand, cap, capState, fruitState, capWidth, capHeight);
+            return true;
         }
 
         return false;

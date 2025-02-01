@@ -114,12 +114,43 @@ public class ModPlacedFeatures {
                             List.of(RarityFilter.onAverageOnceEvery(16), InSquarePlacement.spread(),
                                     PlacementUtils.HEIGHTMAP, BiomeFilter.biome())));
 
+
     public static final RegistryObject<PlacedFeature> PATCH_HYDROSATIN_SPROUTS_PLACED =
             PLACED_FEATURES.register("patch_hydrosatin_sprouts_placed",
-                    () -> new PlacedFeature((Holder<ConfiguredFeature<?,?>>)(Holder<? extends ConfiguredFeature<?, ?>>)
-                            ModConfiguredFeatures.VegetalGeneration.PATCH_HYDROSATIN_SPROUTS,
+                    () -> new PlacedFeature(ModConfiguredFeatures.PATCH_HYDROSATIN_SPROUTS.getHolder().get(),
                             List.of(RarityFilter.onAverageOnceEvery(8), InSquarePlacement.spread(),
                                     PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome())));
+
+    public static final RegistryObject<PlacedFeature> PATCH_JADEGRASS_PLACED =
+            PLACED_FEATURES.register("patch_jadegrass_placed",
+                    () -> new PlacedFeature(ModConfiguredFeatures.PATCH_JADEGRASS.getHolder().get(),
+                            List.of(RarityFilter.onAverageOnceEvery(2), InSquarePlacement.spread(),
+                                    PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome())));
+
+    public static final RegistryObject<PlacedFeature> PATCH_LUMINESCENT_KELP_PLACED =
+            PLACED_FEATURES.register("patch_luminescent_kelp_placed",
+                    () -> new PlacedFeature(ModConfiguredFeatures.PATCH_LUMINESCENT_KELP.getHolder().get(),
+                            List.of(RarityFilter.onAverageOnceEvery(8), InSquarePlacement.spread(),
+                                    PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome())));
+
+    public static final RegistryObject<PlacedFeature> CHIPSTONE_SPIRE_PLACED =
+            PLACED_FEATURES.register("chipstone_spire_placed",
+                    () -> new PlacedFeature(ModConfiguredFeatures.CHIPSTONE_SPIRE.getHolder().get(),
+                            List.of(RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(),
+                                    PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome())));
+
+    public static final RegistryObject<PlacedFeature> HYDROSATIN_FUNGUS_PLACED =
+            PLACED_FEATURES.register("hydrosatin_fungus_placed",
+                    () -> new PlacedFeature(ModConfiguredFeatures.HYDROSATIN_FUNGUS_FEATURE.getHolder().get(),
+                            List.of(RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(),
+                                    PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome())));
+
+    public static final RegistryObject<PlacedFeature> CHIPSTONE_OASIS_PLACED =
+            PLACED_FEATURES.register("chipstone_oasis_placed",
+                    () -> new PlacedFeature(ModConfiguredFeatures.CHIPSTONE_OASIS_FEATURE.getHolder().get(),
+                            List.of(RarityFilter.onAverageOnceEvery(200), InSquarePlacement.spread(),
+                                    PlacementUtils.HEIGHTMAP_TOP_SOLID, BiomeFilter.biome())));
+
 
     public static final RegistryObject<PlacedFeature> AELVEN_COAL_ORE_PLACED = PLACED_FEATURES.register("aelven_coal_ore_placed",
             () -> new PlacedFeature(ModConfiguredFeatures.AELVEN_COAL_ORE.getHolder().get(),
@@ -156,24 +187,6 @@ public class ModPlacedFeatures {
                     commonOrePlacement(8, // VeinsPerChunk
                             HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-100), VerticalAnchor.aboveBottom(60)))));
 
-
-    public static final RegistryObject<PlacedFeature> CHIPSTONE_SPIRE_PLACED =
-            PLACED_FEATURES.register("chipstone_spire_placed",
-                    () -> new PlacedFeature(ModConfiguredFeatures.CHIPSTONE_SPIRE.getHolder().get(),
-                            List.of(RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(),
-                                    PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome())));
-
-    public static final RegistryObject<PlacedFeature> HYDROSATIN_FUNGUS_PLACED =
-            PLACED_FEATURES.register("hydrosatin_fungus_placed",
-                    () -> new PlacedFeature(ModConfiguredFeatures.HYDROSATIN_FUNGUS_FEATURE.getHolder().get(),
-                            List.of(RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(),
-                                    PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome())));
-
-    public static final RegistryObject<PlacedFeature> CHIPSTONE_OASIS_PLACED =
-            PLACED_FEATURES.register("chipstone_oasis_placed",
-                    () -> new PlacedFeature(ModConfiguredFeatures.CHIPSTONE_OASIS_FEATURE.getHolder().get(),
-                            List.of(RarityFilter.onAverageOnceEvery(200), InSquarePlacement.spread(),
-                                    PlacementUtils.HEIGHTMAP_TOP_SOLID, BiomeFilter.biome())));
 
 
 

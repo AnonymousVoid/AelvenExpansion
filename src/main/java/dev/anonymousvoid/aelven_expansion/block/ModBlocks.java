@@ -1025,11 +1025,11 @@ public class ModBlocks {
             () -> new RotatedPillarBlock(hydrojadeProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
     public static final RegistryObject<Block> JADEGRASS = registerBlock("jadegrass",
-            () -> new SeagrassBlock(coralProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new JadegrassBlock(coralProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> TALL_JADEGRASS = registerBlockWithoutBlockItem("tall_jadegrass",
             () -> new ModTallSeagrassBlock(coralProperties, JADEGRASS.get()));
     public static final RegistryObject<Block> HYDROSATIN_SPROUTS = registerBlock("hydrosatin_sprouts",
-            () -> new SeagrassBlock(coralProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new HydrosatinSproutsBlock(coralProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static final RegistryObject<Block> TALL_HYDROSATIN_SPROUTS = registerBlock("tall_hydrosatin_sprouts",
             () -> new ModTallSeagrassBlock(coralProperties, HYDROSATIN_SPROUTS.get()), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
