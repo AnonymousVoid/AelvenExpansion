@@ -1,24 +1,40 @@
 package dev.anonymousvoid.aelven_expansion.block.custom;
 
 import dev.anonymousvoid.aelven_expansion.block.ModBlocks;
+import dev.anonymousvoid.aelven_expansion.block.entity.IdolTableBlockEntity;
+import dev.anonymousvoid.aelven_expansion.item.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.ShearsItem;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraftforge.network.NetworkHooks;
 
 public class ModLuminescentKelpPlantBlock extends GrowingPlantBodyBlock implements LiquidBlockContainer {
     public static final IntegerProperty AGE = BlockStateProperties.AGE_4;
@@ -63,18 +79,16 @@ public class ModLuminescentKelpPlantBlock extends GrowingPlantBodyBlock implemen
 
     public void randomTick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {
         if (!pLevel.isAreaLoaded(pPos, 1)) return;
-        if (pLevel.getRawBrightness(pPos, 0) <= 11) {
-            BlockState aboveState = pLevel.getBlockState(pPos.above());
-            int i = this.getAge(pState);
-            if (aboveState.getBlock() != pState.getBlock()) {
-                return;
-            }
-            if (i < this.getMaxAge() && !this.isBelowAge(aboveState, i)) {
-                float f = getGrowthSpeed(this, pLevel, pPos);
-                if (net.minecraftforge.common.ForgeHooks.onCropsGrowPre(pLevel, pPos, pState, pRandom.nextInt((int)(25.0F / f) + 1) == 0)) {
-                    pLevel.setBlock(pPos, this.getStateForAge(i + 1), 2);
-                    net.minecraftforge.common.ForgeHooks.onCropsGrowPost(pLevel, pPos, pState);
-                }
+        BlockState aboveState = pLevel.getBlockState(pPos.above());
+        int i = this.getAge(pState);
+        if (aboveState.getBlock() != pState.getBlock()) {
+            return;
+        }
+        if (i < this.getMaxAge() && !this.isBelowAge(aboveState, i)) {
+            float f = getGrowthSpeed(this, pLevel, pPos);
+            if (net.minecraftforge.common.ForgeHooks.onCropsGrowPre(pLevel, pPos, pState, pRandom.nextInt((int)(25.0F / f) + 1) == 0)) {
+                pLevel.setBlock(pPos, this.getStateForAge(i + 1), 2);
+                net.minecraftforge.common.ForgeHooks.onCropsGrowPost(pLevel, pPos, pState);
             }
         }
     }
@@ -163,5 +177,21 @@ public class ModLuminescentKelpPlantBlock extends GrowingPlantBodyBlock implemen
 
     public boolean placeLiquid(LevelAccessor pLevel, BlockPos pPos, BlockState pState, FluidState pFluidState) {
         return false;
+    }
+
+    @Override
+    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+        int age = pState.getValue(AGE);
+        if (pPlayer.getItemInHand(pHand).getItem() instanceof ShearsItem && age > 1) {
+            int dropCount = 1 + pLevel.random.nextInt(age - 1);
+            popResource(pLevel, pPos, new ItemStack(ModItems.LUMINOUS_FIBRES.get(), dropCount));
+            pLevel.playSound((Player)null, pPos, SoundEvents.SLIME_JUMP, SoundSource.BLOCKS, 1.0F, 0.8F + pLevel.random.nextFloat() * 0.4F);
+            BlockState blockstate = pState.setValue(AGE, Integer.valueOf(1));
+            pLevel.setBlock(pPos, blockstate, 2);
+            pLevel.gameEvent(GameEvent.BLOCK_CHANGE, pPos, GameEvent.Context.of(pPlayer, blockstate));
+            return InteractionResult.sidedSuccess(pLevel.isClientSide);
+        } else {
+            return super.use(pState, pLevel, pPos, pPlayer, pHand, pHit);
+        }
     }
 }

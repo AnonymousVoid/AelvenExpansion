@@ -44,12 +44,12 @@ public class GnomeMischiefGoal extends Goal {
 
         if (this.targetType == Player.class) {
             this.mischiefTarget = this.mob.level.getNearestPlayer(this.targetContext, this.mob, this.mob.getX(), this.mob.getEyeY(), this.mob.getZ());
-            System.out.println("do player mischief?");
+//            System.out.println("do player mischief?");
         } else {
             this.mischiefTarget = this.mob.level.getNearestEntity(this.mob.level.getEntitiesOfClass(this.targetType, this.mob.getBoundingBox().inflate((double)this.seekDistance, 3.0D, (double)this.seekDistance), (entity) -> {
                 return true;
             }), this.targetContext, this.mob, this.mob.getX(), this.mob.getEyeY(), this.mob.getZ());
-            System.out.println("do entity mischief?");
+//            System.out.println("do entity mischief?");
         }
 
         return this.mischiefTarget != null;
