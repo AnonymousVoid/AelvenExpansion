@@ -21,8 +21,8 @@ displayName="Aelven Expansion" #mandatory
 #displayURL="https://change.me.to.your.mods.homepage.example.invalid/"
 # A file name (in the root of the mod JAR) containing a logo for display
 logoFile="aelven_expansion.png"
-credits="AnonymousVoid wrote the code, worked with models, structures, mechanics, and refined the world building and ideas. SamIr0n provided all the textures, did most of the models, helped with writing some code, and helped with concepts. MandMLOL provided the music for the Valors Quest music disc. DarkCode404 provided the models for the Gnome entity. Kaupenjoe's youtube tutorials and discord community were very helpful in learning about new areas of modding and bugfixing."
-authors="AnonymousVoid, SamIr0n, MandMLOL"
+credits="AnonymousVoid wrote the code, worked with models, structures, mechanics, and refined the world building and ideas. SamIr0n provided all the textures, did most of the models, Built the beautiful structures, helped with writing some code, and helped with concepts. MandMLOL provided the music for the Valors Quest music disc. DarkCode404 provided the models for the Gnome entity. Kaupenjoe's youtube tutorials and discord community were very helpful in learning about new areas of modding and bugfixing."
+authors="AnonymousVoid and SamIr0n, with honorable mentions to MandMLOL, DarkCode404, and many friends"
 # Display Test controls the display for your mod in the server connection screen
 # MATCH_VERSION means that your mod will cause a red X if the versions on client and server differ. This is the default behaviour and should be what you choose if you have server and client elements to your mod.
 # IGNORE_SERVER_VERSION means that your mod will not cause a red X if it's present on the server but not on the client. This is what you should use if you're a server only mod.
