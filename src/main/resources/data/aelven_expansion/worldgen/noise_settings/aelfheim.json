@@ -781,15 +781,18 @@
                 "type": "minecraft:above_preliminary_surface"
               },
               "then_run": {
-                "type": "minecraft:not",
-                "invert": {
-                  "type": "minecraft:vertical_gradient",
-                  "random_name": "aelfheim:drystone_layer",
-                  "true_at_and_below": {
-                    "absolute": -32
-                  },
-                  "false_at_and_above": {
-                    "absolute": -16
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:not",
+                  "invert": {
+                    "type": "minecraft:vertical_gradient",
+                    "random_name": "aelfheim:drystone_layer",
+                    "true_at_and_below": {
+                      "absolute": -32
+                    },
+                    "false_at_and_above": {
+                      "absolute": -16
+                    }
                   }
                 },
                 "then_run": {
