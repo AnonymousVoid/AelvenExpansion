@@ -25,13 +25,16 @@ public class Gnome extends PathfinderMob {
     protected void registerGoals() {
         super.registerGoals();
 //        this.attackPlayersGoal = new NearestAttackableWitchTargetGoal<>(this, Player.class, 10, true, false, (Predicate<LivingEntity>)null);
-        this.goalSelector.addGoal(2, new WaterAvoidingRandomStrollGoal(this, 1.5D));
 //        this.goalSelector.addGoal(2, new RangedAttackGoal(this, 1.0D, 60, 10.0F));
 //        this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 8.0F));
 //        this.goalSelector.addGoal(3, new RandomLookAroundGoal(this));
 
+        this.goalSelector.addGoal(2, new WaterAvoidingRandomStrollGoal(this, 1.5D));
+        this.targetSelector.addGoal(3, new GnomeMischiefGoal(this, Player.class, 8.0F));
+        this.targetSelector.addGoal(4, new GnomeMischiefGoal(this, LivingEntity.class, 8.0F));
+//        this.targetSelector.addGoal(5, new GnomeMischiefGoal(this, Player.class, 8.0F)); somehow make it look for structures?
+
 //        this.targetSelector.addGoal(1, new HurtByTargetGoal(this, Raider.class));
-        this.targetSelector.addGoal(3, new GnomeMischiefGoal(this));
 
     }
 
