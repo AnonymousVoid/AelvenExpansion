@@ -4,7 +4,7 @@
   "experience": 0.2,
   "group": "elerium",
   "ingredient": {
-    "item": "aelven_expansion:elerium_ore"
+    "tag": "aelven_expansion:elerium_ore"
   },
   "result": "aelven_expansion:elerium"
 }

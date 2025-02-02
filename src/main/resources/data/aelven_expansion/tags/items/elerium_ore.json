@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "aelven_expansion:elerium_ore",
+    "aelven_expansion:deepslate_elerium_ore",
+    "aelven_expansion:mudstone_elerium_ore",
+    "aelven_expansion:hydrojade_elerium_ore",
+    "aelven_expansion:chitta_elerium_ore",
+    "aelven_expansion:drystone_elerium_ore"
+  ]
+}

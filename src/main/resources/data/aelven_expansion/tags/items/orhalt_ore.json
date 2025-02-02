@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "aelven_expansion:orhalt_ore",
+    "aelven_expansion:deepslate_orhalt_ore",
+    "aelven_expansion:mudstone_orhalt_ore",
+    "aelven_expansion:hydrojade_orhalt_ore",
+    "aelven_expansion:chitta_orhalt_ore",
+    "aelven_expansion:drystone_orhalt_ore"
+  ]
+}

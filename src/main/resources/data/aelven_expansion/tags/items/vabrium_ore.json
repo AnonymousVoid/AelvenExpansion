@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "aelven_expansion:vabrium_ore",
+    "aelven_expansion:deepslate_vabrium_ore",
+    "aelven_expansion:mudstone_vabrium_ore",
+    "aelven_expansion:hydrojade_vabrium_ore",
+    "aelven_expansion:chitta_vabrium_ore",
+    "aelven_expansion:drystone_vabrium_ore"
+  ]
+}

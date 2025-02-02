@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "aelven_expansion:mudstone_iron_ore",
+    "aelven_expansion:hydrojade_iron_ore",
+    "aelven_expansion:chitta_iron_ore",
+    "aelven_expansion:drystone_iron_ore"
+  ]
+}

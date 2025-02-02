@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 0.2,
+  "group": "vabrium_ingot",
+  "ingredient": {
+    "tag": "aelven_expansion:vabrium_ore"
+  },
+  "result": "aelven_expansion:vabrium_ingot"
+}

@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "aelven_expansion:mudstone_coal_ore",
+    "aelven_expansion:hydrojade_coal_ore",
+    "aelven_expansion:chitta_coal_ore",
+    "aelven_expansion:drystone_coal_ore"
+  ]
+}
