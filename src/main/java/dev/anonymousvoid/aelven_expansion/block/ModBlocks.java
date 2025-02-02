@@ -1034,13 +1034,13 @@ public class ModBlocks {
             () -> new ModTallSeagrassBlock(coralProperties, HYDROSATIN_SPROUTS.get()), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
     public static  final RegistryObject<Block> JADEGRASS_NYLIUM = registerBlock("jadegrass_nylium",
-            () -> new Block(jadegrassNyliumProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new SpreadingJadewartBlock(jadegrassNyliumProperties, HYDROJADE.get()), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static  final RegistryObject<Block> HYDROCELIUM = registerBlock("hydrocelium",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.MYCELIUM)), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new SpreadingJadewartBlock(BlockBehaviour.Properties.copy(Blocks.MYCELIUM), Blocks.DIRT), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static  final RegistryObject<Block> JADEWART = registerBlock("jadewart",
             () -> new Block(mulchProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
     public static  final RegistryObject<Block> JADEWART_CARPET = registerBlock("jadewart_carpet",
-            () -> new CarpetBlock(mulchProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
+            () -> new WaterloggableCarpetBlock(mulchProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
 
     public static final RegistryObject<Block> LUMINESCENT_KELP = registerBlock("luminescent_kelp",
             () -> new ModLuminescentKelpBlock(coralProperties), ModCreativeModeTab.MOD_TAB_BLOCKS);
