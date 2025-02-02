@@ -91,7 +91,7 @@ public class ModBlocks {
     private static final BlockBehaviour.Properties hydrojadeBrickProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_CYAN).sound(SoundType.DEEPSLATE_BRICKS).strength(2.5F, 6.5F).requiresCorrectToolForDrops();
     private static final BlockBehaviour.Properties hydrojadeTileProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_CYAN).sound(SoundType.DEEPSLATE_TILES).strength(2.5F, 6.5F).requiresCorrectToolForDrops();
     private static final BlockBehaviour.Properties hydrojadePolishedProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_CYAN).sound(SoundType.POLISHED_DEEPSLATE).strength(2.5F, 6.5F).requiresCorrectToolForDrops();
-    private static final BlockBehaviour.Properties jadegrassNyliumProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_LIGHT_BLUE).sound(SoundType.NYLIUM).strength(1.8F,5.0F).requiresCorrectToolForDrops();
+    private static final BlockBehaviour.Properties jadegrassNyliumProperties = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_LIGHT_BLUE).sound(SoundType.NYLIUM).randomTicks().strength(1.8F,5.0F).requiresCorrectToolForDrops();
     private static final BlockBehaviour.Properties driedKelpProperites = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_BLUE).sound(SoundType.GRASS).strength(0.5F, 2.5F);
 
     // BLOCKS
