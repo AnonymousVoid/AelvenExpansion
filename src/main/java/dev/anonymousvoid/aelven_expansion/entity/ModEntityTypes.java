@@ -2,6 +2,7 @@ package dev.anonymousvoid.aelven_expansion.entity;
 
 import dev.anonymousvoid.aelven_expansion.AelvenExpansion;
 import dev.anonymousvoid.aelven_expansion.entity.mob.Gnome;
+import dev.anonymousvoid.aelven_expansion.entity.projectile.Mudball;
 import dev.anonymousvoid.aelven_expansion.entity.vehicle.ModBoat;
 import dev.anonymousvoid.aelven_expansion.entity.vehicle.ModChestBoat;
 import net.minecraft.resources.ResourceLocation;
@@ -37,6 +38,14 @@ public class ModEntityTypes {
                             .sized(1.375F, 0.5625F)
                             .clientTrackingRange(10)
                             .build(new ResourceLocation(AelvenExpansion.MODID, "mod_chest_boat").toString()));
+
+    public static final RegistryObject<EntityType<Mudball>> MUDBALL =
+            ENTITY_TYPES.register("mudball",
+                    () -> EntityType.Builder.<Mudball>of(Mudball::new, MobCategory.MISC)
+                            .sized(0.25F, 0.25F)
+                            .clientTrackingRange(4)
+                            .updateInterval(10)
+                            .build(new ResourceLocation(AelvenExpansion.MODID, "mudball").toString()));
 
 
     public static void register(IEventBus eventBus) {

@@ -18,7 +18,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Map;
 import java.util.Random;
 
-public class EleriumPasteItem extends CustomItem {
+public class EleriumPasteItem extends ParticleSpawningItem {
     protected static final Map<Block, Block> RUNABLES = (new ImmutableMap.Builder<Block, Block>())
             .put(ModBlocks.CARVED_CHITTA_BRICKS.get(), ModBlocks.CARVED_CHITTA_RUNED_BRICKS.get())
             .put(ModBlocks.CARVED_CHITTA_LARGE_TILE.get(), ModBlocks.CARVED_CHITTA_RUNED_LARGE_TILE.get())

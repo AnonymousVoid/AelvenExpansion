@@ -14,13 +14,12 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;
 import java.util.Random;
 
-public class ChiselItem extends CustomItem {
+public class ChiselItem extends ParticleSpawningItem {
     protected static final Map<Block, Block> CHISELABLES = (new ImmutableMap.Builder<Block, Block>())
             .put(ModBlocks.CHITTA_LARGE_TILE.get(), ModBlocks.CARVED_CHITTA_LARGE_TILE.get())
             .put(ModBlocks.CHITTA_BRICKS.get(), ModBlocks.CARVED_CHITTA_BRICKS.get())

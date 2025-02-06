@@ -18,7 +18,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Map;
 import java.util.Random;
 
-public class SilverPumiceItem extends CustomItem {
+public class SilverPumiceItem extends ParticleSpawningItem {
     protected static final Map<Block, Block> UNRUNABLES = (new ImmutableMap.Builder<Block, Block>())
             .put(ModBlocks.CARVED_CHITTA_RUNED_BRICKS.get(), ModBlocks.CARVED_CHITTA_BRICKS.get())
             .put(ModBlocks.CARVED_CHITTA_RUNED_LARGE_TILE.get(), ModBlocks.CARVED_CHITTA_LARGE_TILE.get())

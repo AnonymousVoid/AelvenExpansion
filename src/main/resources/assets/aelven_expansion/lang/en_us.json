@@ -468,6 +468,8 @@
 
 	"block.aelven_expansion.luminescent_kelp": "Luminescent Kelp",
 	"block.aelven_expansion.dried_luminescent_kelp_block": "Dried Luminescent Kelp Block",
+	"item.aelven_expansion.dried_luminescent_kelp": "Dried Luminescent Kelp",
+	"item.aelven_expansion.luminous_fibres": "Luminous Fibres",
 
 	"block.aelven_expansion.glimmersatin": "Glimmersatin",
 	"block.aelven_expansion.glimmersatin_torch": "Glimmersatin Torch",
@@ -480,11 +482,6 @@
 	"block.aelven_expansion.silversatin_campfire": "Silversatin Campfire",
 	"item.aelven_expansion.silversatin_chunk": "Silversatin Chunk",
 	"item.aelven_expansion.scroll": "Scroll",
-
-	"block.aelven_expansion.luminescent_kelp": "Luminescent Kelp",
-	"block.aelven_expansion.dried_luminescent_kelp_block": "Dried Luminescent Kelp Block",
-	"item.aelven_expansion.dried_luminescent_kelp": "Dried Luminescent Kelp",
-	"item.aelven_expansion.luminous_fibres": "Luminous Fibres",
 
 	"item.aelven_expansion.raw_vabrium": "Raw Vabrium",
 	"item.aelven_expansion.vabrium_ingot": "Vabrium Ingot",
@@ -509,6 +506,8 @@
 	"block.aelven_expansion.mudstone_orhalt_ore": "Mudstone Orhalt Ore",
 	"block.aelven_expansion.raw_orhalt_block": "Block of Raw Orhalt",
 	"block.aelven_expansion.orhalt_block": "Block of Orhalt",
+
+	"item.aelven_expansion.mudball": "Mudball",
 
 
 	"itemGroup.aelven_expansion_blocks": "Aelven Expansion: Blocks",

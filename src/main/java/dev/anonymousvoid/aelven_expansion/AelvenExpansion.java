@@ -9,6 +9,7 @@ import dev.anonymousvoid.aelven_expansion.entity.client.model.GnomeModel;
 import dev.anonymousvoid.aelven_expansion.entity.client.model.ModBoatModel;
 import dev.anonymousvoid.aelven_expansion.entity.client.renderer.GnomeRenderer;
 import dev.anonymousvoid.aelven_expansion.entity.client.renderer.ModBoatRenderer;
+import dev.anonymousvoid.aelven_expansion.entity.client.renderer.MudballRenderer;
 import dev.anonymousvoid.aelven_expansion.entity.vehicle.ModBoat;
 import dev.anonymousvoid.aelven_expansion.entity.vehicle.ModChestBoat;
 import dev.anonymousvoid.aelven_expansion.item.ModItems;
@@ -158,6 +159,7 @@ public class AelvenExpansion {
         @SubscribeEvent
         public static void entityRenderer(EntityRenderersEvent.RegisterRenderers event) {
             event.registerEntityRenderer(ModEntityTypes.GNOME.get(), GnomeRenderer::new);
+            event.registerEntityRenderer(ModEntityTypes.MUDBALL.get(), MudballRenderer::new);
         }
 
         @SubscribeEvent

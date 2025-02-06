@@ -9,8 +9,8 @@ import net.minecraft.world.phys.Vec3;
 
 import java.util.Random;
 
-public class CustomItem extends Item {
-    public CustomItem(Properties properties) {
+public class ParticleSpawningItem extends Item {
+    public ParticleSpawningItem(Properties properties) {
         super(properties);
     }
 

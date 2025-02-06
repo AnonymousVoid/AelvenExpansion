@@ -1,94 +1,120 @@
 package dev.anonymousvoid.aelven_expansion.entity.mob.goals;
 
+import net.minecraft.util.Mth;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.targeting.TargetingConditions;
+import net.minecraft.world.entity.monster.RangedAttackMob;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.Snowball;
+import net.minecraft.world.phys.Vec3;
 
 import javax.annotation.Nullable;
 import java.util.EnumSet;
 
 public class GnomeMischiefGoal extends Goal {
-    protected final Mob mob;
+    private final PathfinderMob mob;
+    private final RangedAttackMob rangedAttackMob;
     @Nullable
-    protected Entity mischiefTarget;
-    protected final float seekDistance;
-    private int seekTime;
+    private LivingEntity target;
+    private int attackTime = -1;
+    private final double speedModifier;
+    private int seeTime;
+    private final float attackRadius;
+    private final float attackRadiusSqr;
     protected final Class<? extends LivingEntity> targetType;
     protected final TargetingConditions targetContext;
 
-    public GnomeMischiefGoal(Mob pMob, Class<? extends LivingEntity> pTargetType, float pSeekDistance) {
-        this.mob = pMob;
-        this.targetType = pTargetType;
-        this.seekDistance = pSeekDistance;
-        this.setFlags(EnumSet.of(Goal.Flag.LOOK));
-        if (pTargetType == Player.class) {
-            this.targetContext = TargetingConditions.forNonCombat().range((double)pSeekDistance).selector((p_25531_) -> {
-                return EntitySelector.notRiding(pMob).test(p_25531_);
-            });
+    public GnomeMischiefGoal(RangedAttackMob pRangedAttackMob, Class<? extends LivingEntity> pTargetType, double pSpeedModifier, float pAttackRadius) {
+        if (!(pRangedAttackMob instanceof LivingEntity)) {
+            throw new IllegalArgumentException("GnomeMischiefGoal requires Mob implements RangedAttackMob");
         } else {
-            this.targetContext = TargetingConditions.forNonCombat().range((double)pSeekDistance);
+            this.rangedAttackMob = pRangedAttackMob;
+            this.mob = (PathfinderMob)pRangedAttackMob;
+            this.targetType = pTargetType;
+            this.speedModifier = pSpeedModifier;
+            this.attackRadius = pAttackRadius;
+            this.attackRadiusSqr = pAttackRadius * pAttackRadius;
+            this.setFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK));
+            if (pTargetType == Player.class) {
+                this.targetContext = TargetingConditions.forNonCombat().range(pAttackRadius).selector((entity) -> {
+                    return EntitySelector.notRiding((Mob)pRangedAttackMob).test(entity);
+                });
+            } else {
+                this.targetContext = TargetingConditions.forNonCombat().range(pAttackRadius);
+            }
         }
     }
 
     public boolean canUse() {
-        // Player player = lookForNearbyPlayer
-        // if player !null, do return true
-        // Entity entity = lookForNearbyEntity
-        // if entity !null, do return true
-        // BlockPos pos = find nearby wall or building?
-        // if pos !null, do return true
-        if (this.mob.getTarget() != null) {
-            this.mischiefTarget = this.mob.getTarget();
+        LivingEntity livingentity = this.mob.getTarget();
+        if (livingentity != null && livingentity.isAlive()) {
+            this.target = livingentity;
+            return true;
         }
 
         if (this.targetType == Player.class) {
-            this.mischiefTarget = this.mob.level.getNearestPlayer(this.targetContext, this.mob, this.mob.getX(), this.mob.getEyeY(), this.mob.getZ());
+            this.target = this.mob.level.getNearestPlayer(this.targetContext, this.mob, this.mob.getX(), this.mob.getEyeY(), this.mob.getZ());
 //            System.out.println("do player mischief?");
         } else {
-            this.mischiefTarget = this.mob.level.getNearestEntity(this.mob.level.getEntitiesOfClass(this.targetType, this.mob.getBoundingBox().inflate((double)this.seekDistance, 3.0D, (double)this.seekDistance), (entity) -> {
+            this.target = this.mob.level.getNearestEntity(this.mob.level.getEntitiesOfClass(this.targetType, this.mob.getBoundingBox().inflate((double)this.attackRadius, 3.0D, (double)this.attackRadius), (entity) -> {
                 return true;
             }), this.targetContext, this.mob, this.mob.getX(), this.mob.getEyeY(), this.mob.getZ());
 //            System.out.println("do entity mischief?");
         }
 
-        return this.mischiefTarget != null;
+        return this.target != null;
     }
 
     public boolean canContinueToUse() {
-        if (!this.mischiefTarget.isAlive()) {
-            return false;
-        } else if (this.mob.distanceToSqr(this.mischiefTarget) > (double)(this.seekDistance * this.seekDistance)) {
-            return false;
-        } else {
-            return this.seekTime > 0;
-        }
-    }
-
-    public void start() {
-        /*
-         * Look for a player to bother
-         * Look for an entity to bother
-         * Look for something to vandalize
-         * If a target is found:
-         * * Commit some form of mischief
-         * * Add RunMischiefGoal
-         */
-        // if player !null, do console log player mischief, add run away goal, and return
-        // if entity !null, do console log entity mischief, add run away goal, and return
-        // if pos !null, do console log vandal mischief, add run away goal, and return
-        this.seekTime = this.adjustedTickDelay(40 + this.mob.getRandom().nextInt(40));
+        return this.canUse() || this.checkTarget() && !this.mob.getNavigation().isDone();
     }
 
     public void stop() {
-        this.mischiefTarget = null;
+        this.target = null;
+        this.seeTime = 0;
+        this.attackTime = -1;
+    }
+
+    public boolean requiresUpdateEveryTick() {
+        return true;
+    }
+
+    public boolean checkTarget() {
+        if (this.target != null) {
+            return this.target.isAlive();
+        }
+        return false;
     }
 
     public void tick() {
-        if (this.mischiefTarget.isAlive()) {
-            this.mob.getLookControl().setLookAt(this.mischiefTarget.getX(), this.mischiefTarget.getEyeY(), this.mischiefTarget.getZ());
-            --this.seekTime;
+        double d0 = this.mob.distanceToSqr(this.target.getX(), this.target.getY(), this.target.getZ());
+        boolean flag = this.mob.getSensing().hasLineOfSight(this.target);
+        if (flag) {
+            ++this.seeTime;
+        } else {
+            this.seeTime = 0;
         }
+
+        if (!(d0 > (double)this.attackRadiusSqr) && this.seeTime >= 5) {
+            this.mob.getNavigation().stop();
+        } else {
+            this.mob.getNavigation().moveTo(this.target, this.speedModifier);
+        }
+
+        this.mob.getLookControl().setLookAt(this.target, 30.0F, 30.0F);
+        if (--this.attackTime == 0) {
+            if (!flag) {
+                return;
+            }
+
+            float f = (float)Math.sqrt(d0) / this.attackRadius;
+            float f1 = Mth.clamp(f, 0.1F, 1.0F);
+            this.rangedAttackMob.performRangedAttack(this.target, f1);
+        } else if (this.attackTime < 0) {
+            this.attackTime = Mth.floor(Mth.lerp(Math.sqrt(d0) / (double)this.attackRadius, 20, 20));
+        }
+
     }
 
 }

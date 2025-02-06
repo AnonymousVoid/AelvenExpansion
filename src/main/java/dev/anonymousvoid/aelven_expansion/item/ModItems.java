@@ -154,6 +154,9 @@ public class ModItems {
     public static final RegistryObject<Item> ORHALT_NUGGET = ITEMS.register("orhalt_nugget",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
 
+    public static final RegistryObject<Item> MUDBALL = ITEMS.register("mudball",
+            () -> new MudballItem(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB_ITEMS)));
+
     public static class Tiers {
         public static final Tier SILVER = new ForgeTier(2,200,6.5F,2.75F,25,null, () -> Ingredient.of(ModItems.SILVER_INGOT.get()));
     }
